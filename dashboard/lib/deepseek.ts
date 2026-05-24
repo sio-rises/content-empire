@@ -73,9 +73,9 @@ function buildPrompt(opts: GenerateOptions): { system: string; user: string } {
 - 箇条書きや表を積極的に使って読みやすく
 - 主観的な断言は避け、根拠を示す
 - アフィリエイト臭やセールス臭は絶対に出さない
-- 全てのシェルコマンドは実在するものだけを使う。`mount --mkdir`のような存在しないオプションをでっち上げてはいけない
-- Linuxの手順を書く場合：ディレクトリ作成とマウントは分けて `mkdir -p <dir> && mount <dev> <dir>` と書く
-- `pacstrap`の`-K`オプションは初心者向け記事では不要なので付けない
+- 全てのシェルコマンドは実在するものだけを使う。mount --mkdir のような存在しないオプションをでっち上げてはいけない
+- Linuxの手順を書く場合：ディレクトリ作成とマウントは分けて mkdir -p <dir> && mount <dev> <dir> と書く
+- pacstrapの-Kオプションは初心者向け記事では不要なので付けない
 - コマンドの役割を1行で説明すること
 - 文字数: ${wordCount}`
 

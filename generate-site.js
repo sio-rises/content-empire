@@ -10,7 +10,7 @@ if (!siteId) { console.error("Usage: DEEPSEEK_API_KEY=sk-xxx node generate-site.
 const SITE_CONFIGS = {
   "nisa-investment": {
     articles: [
-      { topic: "NISAとは 初心者向け 徹底解説 2025", keywords: ["NISA", "初心者", "とは", "2025", "制度", "非課税"], template: "explainer" },
+      { topic: "NISAとは 初心者向け 徹底解説", keywords: ["NISA", "初心者", "とは", "制度", "非課税", "つみたて"], template: "explainer" },
       { topic: "つみたてNISA 成長投資枠 違い 比較", keywords: ["つみたてNISA", "成長投資枠", "違い", "比較", "どっち"], template: "comparison" },
       { topic: "iDeCoとは 初心者 掛金 節税", keywords: ["iDeCo", "初心者", "掛金", "節税", "年金", "仕組み"], template: "explainer" },
       { topic: "NISA iDeCo 併用 どっちが先", keywords: ["NISA", "iDeCo", "併用", "どっちが先", "優先順位", "比較"], template: "comparison" },
@@ -30,6 +30,43 @@ const SITE_CONFIGS = {
       { topic: "ロボアドバイザー おすすめ WealthNavi THEO 比較", keywords: ["ロボアドバイザー", "WealthNavi", "THEO", "比較", "手数料", "自動運用"], template: "comparison" },
       { topic: "米国株 買い方 日本から 初心者 証券口座", keywords: ["米国株", "買い方", "日本から", "初心者", "証券口座", "外国株式"], template: "howto" },
       { topic: "老後資金 2000万円 いくら必要 シミュレーション", keywords: ["老後資金", "2000万円", "いくら必要", "シミュレーション", "年金", "資産形成"], template: "explainer" },
+      { topic: "配当金生活 FIRE 必要資金 計算方法", keywords: ["配当金", "FIRE", "必要資金", "4%ルール", "早期リタイア", "計算"], template: "explainer" },
+      { topic: "個別株 vs 投資信託 初心者 選び方 比較", keywords: ["個別株", "投資信託", "初心者", "選び方", "メリット", "デメリット"], template: "comparison" },
+      { topic: "確定拠出年金 企業型DC iDeCo 併用 限度額", keywords: ["確定拠出年金", "企業型DC", "iDeCo", "併用", "限度額", "会社員"], template: "explainer" },
+    ]
+  },
+  "ai-agent-guide": {
+    articles: [
+      { topic: "OpenCodeとは 使い方 基本ガイド", keywords: ["OpenCode", "使い方", "AIエージェント", "コーディング", "CLIツール", "入門"], template: "explainer" },
+      { topic: "OpenCodeとClaudeCodeの違い 比較", keywords: ["OpenCode", "ClaudeCode", "比較", "AIエージェント", "どっち", "開発ツール"], template: "comparison" },
+      { topic: "AIエージェントにSSH越しでNixOSをインストール", keywords: ["AIエージェント", "NixOS", "SSH", "ClaudeCode", "遠隔操作", "OSインストール"], template: "tutorial" },
+      { topic: "DeepSeek API 使い方 料金 設定", keywords: ["DeepSeek API", "使い方", "料金", "設定", "APIキー", "OpenAI比較"], template: "explainer" },
+      { topic: "DeepSeek vs OpenAI vs Anthropic API 比較", keywords: ["DeepSeek", "OpenAI", "Anthropic", "API比較", "料金", "性能"], template: "comparison" },
+      { topic: "OpenCodeでWebアプリ開発 始め方", keywords: ["OpenCode", "Webアプリ", "開発", "Next.js", "React", "AIコーディング"], template: "tutorial" },
+      { topic: "AIエージェント プロンプトエンジニアリング コツ", keywords: ["AIエージェント", "プロンプトエンジニアリング", "コツ", "効率化", "指示の出し方"], template: "explainer" },
+      { topic: "OpenCodeのスキルシステム カスタマイズ", keywords: ["OpenCode", "スキル", "カスタマイズ", "拡張", "MCP", "プラグイン"], template: "tutorial" },
+      { topic: "AIエージェントに作業を任せる時の注意点とリスク", keywords: ["AIエージェント", "注意点", "ハルシネーション", "セキュリティ", "レビュー"], template: "explainer" },
+      { topic: "ClaudeCodeでサーバー管理を自動化", keywords: ["ClaudeCode", "サーバー管理", "自動化", "SSH", "DevOps", "運用"], template: "tutorial" },
+      { topic: "AIエージェント MCPサーバー 連携 設定", keywords: ["AIエージェント", "MCP", "サーバー", "連携", "設定", "ツール"], template: "explainer" },
+      { topic: "OpenCode CLI インストール セットアップ", keywords: ["OpenCode", "CLI", "インストール", "セットアップ", "npm", "ターミナル"], template: "howto" },
+      { topic: "AIエージェントでブログ記事を自動生成する方法", keywords: ["AIエージェント", "ブログ", "記事自動生成", "SEO", "DeepSeek", "コンテンツ"], template: "tutorial" },
+      { topic: "AIコーディングツール GitHub Copilot Cursor OpenCode 比較", keywords: ["AIコーディング", "GitHub Copilot", "Cursor", "OpenCode", "比較"], template: "comparison" },
+      { topic: "初心者でもわかる AIエージェントとは", keywords: ["AIエージェント", "初心者", "とは", "仕組み", "LLM", "自動化"], template: "explainer" },
+      { topic: "OpenCodeでテストコードを自動生成", keywords: ["OpenCode", "テストコード", "自動生成", "TDD", "Jest", "品質"], template: "tutorial" },
+      { topic: "AIエージェントの活用事例 2026年最新", keywords: ["AIエージェント", "活用事例", "2026", "最新", "開発", "業務効率化"], template: "explainer" },
+      { topic: "DeepSeek APIでコンテンツ量産 コスト試算", keywords: ["DeepSeek API", "コンテンツ", "量産", "コスト", "試算", "SEO"], template: "explainer" },
+      { topic: "AIエージェント マルチエージェント 協調 設計", keywords: ["AIエージェント", "マルチエージェント", "協調", "CrewAI", "AutoGen", "LangGraph"], template: "explainer" },
+      { topic: "OpenCodeでデータベース設計とマイグレーション", keywords: ["OpenCode", "データベース", "設計", "マイグレーション", "Prisma", "SQL"], template: "tutorial" },
+      { topic: "AIエージェントのセキュリティリスクと対策", keywords: ["AIエージェント", "セキュリティ", "リスク", "APIキー", "コードインジェクション", "対策"], template: "explainer" },
+      { topic: "Claude API トークン最適化 コスト削減テクニック", keywords: ["Claude API", "トークン", "最適化", "コスト削減", "プロンプト", "効率"], template: "explainer" },
+      { topic: "OpenCodeでGitHub Actions CI/CD構築", keywords: ["OpenCode", "GitHub Actions", "CI/CD", "自動デプロイ", "DevOps"], template: "tutorial" },
+      { topic: "ローカルLLMとAIエージェントの組み合わせ Ollama", keywords: ["ローカルLLM", "Ollama", "AIエージェント", "プライバシー", "オフライン"], template: "tutorial" },
+      { topic: "AIエージェントでAPIドキュメント自動生成", keywords: ["AIエージェント", "API", "ドキュメント", "自動生成", "Swagger", "OpenAPI"], template: "tutorial" },
+      { topic: "OpenCodeのMCPサーバー自作 カスタムツール追加", keywords: ["OpenCode", "MCPサーバー", "自作", "カスタムツール", "TypeScript", "拡張"], template: "tutorial" },
+      { topic: "AIエージェント開発 ベストプラクティス 2026", keywords: ["AIエージェント", "開発", "ベストプラクティス", "2026", "設計", "運用"], template: "explainer" },
+      { topic: "DeepSeek API バッチ処理 大規模生成のコツ", keywords: ["DeepSeek API", "バッチ処理", "大規模生成", "レート制限", "非同期", "最適化"], template: "howto" },
+      { topic: "AIエージェント vs 従来の自動化 違いと使い分け", keywords: ["AIエージェント", "自動化", "RPA", "違い", "使い分け", "比較"], template: "comparison" },
+      { topic: "AIエージェントにコードレビューをさせる方法", keywords: ["AIエージェント", "コードレビュー", "自動化", "品質", "バグ検出", "OpenCode"], template: "tutorial" },
     ]
   },
   "linux-security": {

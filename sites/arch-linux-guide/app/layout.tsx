@@ -41,6 +41,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <a href="/privacy" className="hover:text-gray-600">プライバシーポリシー</a>
             </div>
             Arch Linux 日本語ガイド — Built with OpenCode + DeepSeek API
+            <div className="border-t border-gray-100 mt-4 pt-3 text-center text-[10px] text-gray-300">
+              <span className="mr-2">関連サイト:</span>
+              <a href="https://ai-agent-guide.pages.dev" class="hover:underline">AIエージェント活用</a>  <a href="https://nisa-investment.pages.dev" class="hover:underline">NISA投資入門</a>  <a href="https://linux-security.pages.dev" class="hover:underline">Linuxセキュリティ</a>  <a href="https://vps-server-guide.pages.dev" class="hover:underline">VPSサーバー構築</a>
+            </div>
           </footer>
         </div>
       </body>
