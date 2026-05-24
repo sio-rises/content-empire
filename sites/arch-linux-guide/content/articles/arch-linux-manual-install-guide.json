@@ -1,0 +1,18 @@
+{
+  "title": "Arch Linux脱初心者ガイド：手動インストールで理解を深める",
+  "slug": "arch-linux-manual-install-guide",
+  "metaDescription": "Arch Linuxを手動インストールしてシステム構造を理解。初心者から中級者へステップアップするための詳細ガイド。",
+  "content": "## はじめに\n\nこの記事では、Arch Linuxを手動でインストールする手順を解説します。自動インストールスクリプトを使わず、一つ一つコマンドを実行することで、Linuxのブートプロセスやパーティション構成への理解が深まります。対象読者は、Linuxの基本的なコマンド操作（ls, cd, viなど）を知っている初心者〜中級者です。仮想環境（VirtualBoxなど）で実践することを推奨します。\n\n## 前提条件\n\n- Arch LinuxのISOイメージをダウンロードし、USBメモリなどに書き込んでいること\n- UEFIモードで起動できる環境（最近のPCなら対応）\n- インターネット接続（有線推奨）\n\n## 手順\n\n### ステップ1：ライブ環境の起動と確認\n\n1. ISOから起動し、\"Arch Linux install medium\"を選択します。\n2. 起動後、以下のコマンドでUEFIモードか確認します。\n\n```bash\nls /sys/firmware/efi/efivars\n```\n\nディレクトリが存在すればUEFIモードです。存在しない場合はBIOS/CSMモードなので、後の手順でパーティションをMBRにする必要があります。\n\n### ステップ2：キーボードレイアウトの設定\n\n日本語キーボードの場合は以下を実行します。\n\n```bash\nloadkeys jp106\n```\n\n### ステップ3：インターネット接続の確認\n\n```bash\nping -c 3 archlinux.org\n```\n\n有線LANなら自動で接続されます。Wi-Fiの場合はiwctlコマンドを使います（詳細はArch Wiki参照）。\n\n### ステップ4：ディスクのパーティショニング\n\nここでは例として、/dev/sdaにUEFI+GPTでパーティションを作成します。\n\n```bash\nfdisk /dev/sda\n```\n\n以下のように設定します。\n\n- パーティション1: 512MB, EFIシステムパーティション (タイプ: EFI System)\n- パーティション2: 4GB, スワップ (タイプ: Linux swap)\n- パーティション3: 残りすべて, ルート (タイプ: Linux filesystem)\n\n変更を書き込んだら、各パーティションをフォーマットします。\n\n```bash\nmkfs.fat -F32 /dev/sda1\nmkswap /dev/sda2\nmkfs.ext4 /dev/sda3\n```\n\n### ステップ5：ファイルシステムのマウント\n\n```bash\nmount /dev/sda3 /mnt\nmkdir -p /mnt/boot && mount /dev/sda1 /mnt/boot\nswapon /dev/sda2\n```\n\n### ステップ6：ベースシステムのインストール\n\n```bash\npacstrap -K /mnt base base-devel linux linux-firmware vim\n```\n\n### ステップ7：fstabの生成\n\n```bash\ngenfstab -U /mnt >> /mnt/etc/fstab\n```\n\n### ステップ8：chrootしてシステム設定\n\n```bash\narch-chroot /mnt\n```\n\n#### タイムゾーンの設定\n\n```bash\nln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime\nhwclock --systohc\n```\n\n#### ロケールの設定\n\n```bash\nvim /etc/locale.gen\n# ja_JP.UTF-8 UTF-8 のコメントを解除\nlocale-gen\necho \"LANG=ja_JP.UTF-8\" > /etc/locale.conf\n```\n\n#### ホスト名の設定\n\n```bash\necho \"myarch\" > /etc/hostname\n```\n\n#### ネットワーク設定\n\n```bash\nvim /etc/hosts\n# 以下を追加\n127.0.0.1 localhost\n::1 localhost\n127.0.1.1 myarch.localdomain myarch\n```\n\n#### パスワード設定\n\n```bash\npasswd\n```\n\n#### ブートローダーのインストール（GRUB）\n\n```bash\npacman -S grub efibootmgr\ngrub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB\ngrub-mkconfig -o /boot/grub/grub.cfg\n```\n\n### ステップ9：再起動\n\n```bash\nexit\numount -R /mnt\nreboot\n```\n\n起動後、ユーザー名root、設定したパスワードでログインします。\n\n## トラブルシューティング\n\n### エラー1：ブートローダーが認識されない\n\nUEFI設定でセキュアブートを無効にしてください。また、ブート順序でGRUBが先頭になっているか確認します。\n\n### エラー2：ネットワークが使えない\n\n```bash\nip link\n```\nでインターフェース名を確認し、\n\n```bash\nsystemctl enable --now dhcpcd\n```\n\nでDHCPクライアントを起動します。\n\n### エラー3：パッケージのインストールに失敗する\n\nミラーリストが古い可能性があります。\n\n```bash\npacman -Syy\n```\n\nで更新してから再試行します。\n\n## まとめ\n\nこれでArch Linuxの手動インストールが完了しました。次はデスクトップ環境の構築に挑戦してみましょう。例えば、WaylandコンポジターのHyprlandをインストールすれば、モダンで軽量な環境が手に入ります。\n\n```bash\npacman -S hyprland\n```\n\nさらに、日本語入力やフォントの設定をすることで、快適なデスクトップ環境が完成します。Arch Wikiやコミュニティフォーラムを活用しながら、自分だけのシステムを構築してください。",
+  "keywords": [
+    "Arch Linux",
+    "インストール",
+    "初心者",
+    "中級者",
+    "脱初心者",
+    "デスクトップ環境",
+    "hyprland",
+    "wayland"
+  ],
+  "template": "howto",
+  "generatedAt": "2026-05-24T15:10:36.146Z"
+}
