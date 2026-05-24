@@ -14,6 +14,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ja">
+      <head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body className="min-h-screen antialiased">
         <div className="flex min-h-screen flex-col">
           <header className="border-b border-gray-200 bg-white">
@@ -23,11 +30,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </a>
               <nav className="flex gap-4 text-sm text-gray-600">
                 <a href="/" className="hover:text-arch">ホーム</a>
+                <a href="/about" className="hover:text-arch">このサイトについて</a>
               </nav>
             </div>
           </header>
           <main className="flex-1">{children}</main>
           <footer className="border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400">
+            <div className="flex justify-center gap-4 mb-2">
+              <a href="/about" className="hover:text-gray-600">このサイトについて</a>
+              <a href="/privacy" className="hover:text-gray-600">プライバシーポリシー</a>
+            </div>
             Arch Linux 日本語ガイド — Built with OpenCode + DeepSeek API
           </footer>
         </div>

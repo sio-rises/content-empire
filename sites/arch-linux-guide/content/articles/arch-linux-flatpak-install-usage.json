@@ -1,0 +1,15 @@
+{
+  "title": "Arch LinuxでFlatpakを導入してサンドボックスアプリを使う方法",
+  "slug": "arch-linux-flatpak-install-usage",
+  "metaDescription": "Arch LinuxにFlatpakをインストールし、Flathubからサンドボックス化されたアプリケーションを安全に利用する手順を詳しく解説。",
+  "content": "## はじめに\n\nFlatpakは、Linuxデスクトップ向けのアプリケーションパッケージ管理・サンドボックス化技術です。Arch Linuxでも公式リポジトリから簡単に導入でき、Flathubなどのリモートリポジトリから様々なアプリをインストールできます。本記事では、Arch LinuxにFlatpakをインストールし、実際にアプリを利用するまでの手順を詳しく解説します。\n\n## Flatpakのインストール\n\nまず、Flatpak本体をインストールします。\n\n```bash\nsudo pacman -S flatpak\n```\n\nインストールが完了したら、バージョンを確認します。\n\n```bash\nflatpak --version\n```\n\n## Flathubの追加\n\nFlatpakの主要なリモートリポジトリであるFlathubを追加します。\n\n```bash\nflatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo\n```\n\n`--if-not-exists` は、既に追加済みの場合にエラーを避けるオプションです。\n\n## アプリの検索とインストール\n\n### アプリの検索\n\nインストールしたいアプリを検索するには、`flatpak search` コマンドを使います。\n\n```bash\nflatpak search <アプリ名>\n```\n\n例えば、GIMPを検索する場合：\n\n```bash\nflatpak search gimp\n```\n\n### アプリのインストール\n\n検索結果に表示されるApplication IDを使ってインストールします。\n\n```bash\nflatpak install flathub <Application ID>\n```\n\n例：GIMPをインストール\n\n```bash\nflatpak install flathub org.gimp.GIMP\n```\n\n### インストール済みアプリの確認\n\n```bash\nflatpak list\n```\n\n## アプリの実行\n\nインストールしたアプリは、通常のコマンドラインからも、デスクトップ環境のランチャーからも起動できます。\n\nコマンドラインから起動する場合：\n\n```bash\nflatpak run <Application ID>\n```\n\n例：\n\n```bash\nflatpak run org.gimp.GIMP\n```\n\n## アプリの更新\n\n全てのFlatpakアプリを更新するには：\n\n```bash\nflatpak update\n```\n\n特定のアプリだけ更新する場合：\n\n```bash\nflatpak update <Application ID>\n```\n\n## アプリの削除\n\n不要になったアプリは以下のコマンドで削除します。\n\n```bash\nflatpak uninstall <Application ID>\n```\n\nまた、使用されていないランタイムを削除してディスク容量を節約できます。\n\n```bash\nflatpak uninstall --unused\n```\n\n## トラブルシューティング\n\n### パーミッションエラー\n\nFlatpakアプリが特定のファイルやデバイスにアクセスできない場合、`flatpak override` コマンドでパーミッションを調整します。\n\n例：ホームディレクトリへのアクセスを許可\n\n```bash\nflatpak override --user --filesystem=home <Application ID>\n```\n\n### 日本語入力ができない\n\nFlatpakアプリ内で日本語入力が効かない場合、必要なインプットメソッドモジュールをインストールします。\n\n```bash\nflatpak install flathub org.freedesktop.Platform.Ime.fcitx5\n```\n\nその後、アプリを再起動してください。\n\n### ネットワーク接続の問題\n\n一部のアプリがネットワークにアクセスできない場合、`--socket=network` オプションを追加します。\n\n```bash\nflatpak override --user --socket=network <Application ID>\n```\n\n\n\n---\n\n*この記事はArch Linuxを実機で日常運用しているSioが、実際のインストール・設定経験に基づいてAI生成コンテンツをレビュー・補完しています。btrfsサブボリュームとLUKS暗号化環境で検証済みです。*\n\n## まとめ\n\nArch LinuxにFlatpakを導入することで、サンドボックス化されたアプリケーションを安全に利用できるようになります。Flathubから豊富なアプリを簡単にインストールでき、システムのパッケージ管理と分離されているため、システムの安定性を損なうリスクが低くなります。本記事で紹介した手順を参考に、ぜひFlatpakを活用してみてください。",
+  "keywords": [
+    "Arch Linux",
+    "flatpak",
+    "サンドボックス",
+    "アプリ",
+    "flathub"
+  ],
+  "template": "howto",
+  "generatedAt": "2026-05-24T15:58:32.367Z"
+}

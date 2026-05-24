@@ -1,0 +1,16 @@
+{
+  "title": "Googleフォトの代替OSS：Immich vs PhotoPrism 徹底比較",
+  "slug": "google-photos-alternative-immich-photoprism-comparison",
+  "metaDescription": "Googleフォトに代わるOSS写真管理ツール、ImmichとPhotoPrismを比較。機能、パフォーマンス、導入難易度を解説し、あなたに最適な選択肢を提案します。",
+  "content": "## はじめに\n\nGoogleフォトは便利な写真管理サービスですが、無料容量の縮小やプライバシー懸念から、オープンソース（OSS）の代替ツールを検討する人が増えています。本記事では、代表的なOSSである**Immich**と**PhotoPrism**を、機能・パフォーマンス・導入のしやすさの観点から徹底比較します。どちらもセルフホスティング可能で、Googleフォトに近い体験を提供しますが、方向性が異なります。\n\n## Immich と PhotoPrism の概要\n\n### Immich\n- **特徴**: モバイルアプリが充実し、Googleフォトライクな自動バックアップと高速な顔認識・検索を提供。\n- **開発**: 活発なコミュニティ（GitHubスター約40k）。\n- **技術**: Node.js + TypeScript + PostgreSQL。\n\n### PhotoPrism\n- **特徴**: 高機能なWebインターフェースとカスタマイズ性。Googleフォトの代替として長く開発されている。\n- **開発**: 安定したリリース（GitHubスター約35k）。\n- **技術**: Go + React + MariaDB/MySQL。\n\n## 機能比較\n\n| 機能 | Immich | PhotoPrism |\n|------|--------|------------|\n| 自動バックアップ | iOS/Androidアプリ対応 | アプリはサードパーティ製のみ |\n| 顔認識 | 機械学習（ML）ベース、高精度 | MLベースだが精度はやや劣る |\n| オブジェクト認識 | 対応（カテゴリ検索） | 対応（タグ自動付与） |\n| メタデータ検索 | 日付、場所、カメラ等 | 同様 |\n| アルバム機能 | 共有アルバム、自動アルバム | 手動アルバム、ラベル管理 |\n| マップ表示 | 対応（OpenStreetMap） | 対応（Google Maps等も可） |\n| 動画サポート | トランスコード対応 | 対応（一部制限あり） |\n| マルチユーザー | 対応（ユーザー管理） | 非対応（シングルユーザー） |\n| 外部ストレージ | 対応（S3互換） | 対応（ローカル・NAS） |\n\n## パフォーマンスとスケーラビリティ\n\n- **Immich**: モバイルバックアップに最適化。大量写真（10万枚以上）でも検索が高速。ただし、ML処理にGPUを推奨。\n- **PhotoPrism**: ライブラリ管理に強く、サーバー負荷は低め。ただし、顔認識はImmichより遅い。\n\n## 導入と運用の難易度\n\n### Immich\n- **推奨環境**: Docker Compose。\n- **手順**: 公式のdocker-compose.ymlをダウンロードし、`.env`ファイルを編集して`docker compose up -d`。\n- **注意点**: PostgreSQLとRedisが必要。初回起動時にMLモデルのダウンロードが発生。\n\n### PhotoPrism\n- **推奨環境**: Docker Compose。\n- **手順**: 同様にdocker-compose.ymlを入手し、設定後起動。\n- **注意点**: MariaDBまたはMySQLが必要。設定ファイルでデータベース接続を指定。\n\n両者ともDockerが推奨ですが、Immichは依存コンポーネントが多く、初心者にはPhotoPrismの方が簡単かもしれません。\n\n## プライバシーとデータ管理\n\nどちらも完全にセルフホストされるため、データは自分のサーバー内に留まります。Googleフォトのように解析されません。ただし、ML処理はローカルで行われるため、プライバシー面は優れています。\n\n## コミュニティとサポート\n\n- **Immich**: 活発なDiscordコミュニティ、頻繁なアップデート。\n- **PhotoPrism**: 安定したフォーラム、ドキュメントが充実。\n\n## まとめ：どちらを選ぶべきか\n\n- **スマホからの自動バックアップと顔認識を重視** → **Immich**。\n- **安定したWeb管理とカスタマイズ性を重視** → **PhotoPrism**。\n- **マルチユーザー機能が必要** → **Immich**。\n- **シンプルなセットアップ** → **PhotoPrism**。\n\n両方試すのも良いでしょう。まずはPhotoPrismで基礎を固め、必要に応じてImmichに移行するのも手です。\n\n## 導入の手順（簡単ガイド）\n\n### Immich のセットアップ\n1. 公式サイトから`docker-compose.yml`と`.env.example`をダウンロード。\n2. `.env.example`を`.env`にリネームし、`UPLOAD_LOCATION`を適宜変更。\n3. `docker compose up -d`を実行。\n4. ブラウザで`http://サーバーIP:2283`にアクセス。\n\n### PhotoPrism のセットアップ\n1. 公式リポジトリから`docker-compose.yml`を取得。\n2. 環境変数（`PHOTOPRISM_ADMIN_PASSWORD`等）を設定。\n3. `docker compose up -d`。\n4. `http://サーバーIP:2342`にアクセス。\n\n## よくある質問（FAQ）\n\n**Q. 既存のGoogleフォトからデータを移行できますか？**\nA. Google Takeoutでデータをダウンロードし、Immich/PhotoPrismのライブラリにインポート可能。ただし、アルバム構造は保持されない場合があります。\n\n**Q. どちらが低スペックなサーバーでも動きますか？**\nA. PhotoPrismの方が軽量。ImmichはML処理にリソースを消費します。\n\n**Q. アップデートは頻繁ですか？**\nA. Immichは週1回程度のリリース。PhotoPrismは月1回程度。\n\n## 最後に\n\nGoogleフォトの代替として、ImmichとPhotoPrismはどちらも優れた選択肢です。自分の使い方に合わせて選んでください。どちらも無料で始められます。",
+  "keywords": [
+    "Googleフォト",
+    "Immich",
+    "PhotoPrism",
+    "OSS",
+    "写真管理",
+    "代替"
+  ],
+  "template": "comparison",
+  "generatedAt": "2026-05-24T17:16:44.425Z"
+}

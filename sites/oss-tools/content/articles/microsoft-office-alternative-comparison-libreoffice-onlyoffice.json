@@ -1,0 +1,16 @@
+{
+  "title": "Microsoft Officeの代替はLibreOfficeとOnlyOfficeのどちらが最適？徹底比較",
+  "slug": "microsoft-office-alternative-comparison-libreoffice-onlyoffice",
+  "metaDescription": "Microsoft Officeの無料代替として人気のLibreOfficeとOnlyOfficeを互換性、機能、使いやすさで徹底比較。自分に合ったOfficeソフトを選びましょう。",
+  "content": "## はじめに\n\nMicrosoft Officeはビジネスや教育現場で広く使われていますが、サブスクリプション料金が高く、無料の代替を探す方も多いでしょう。代表的な無料Officeとして**LibreOffice**と**OnlyOffice**があります。本記事では両者を互換性、機能、使いやすさの観点から比較し、最適な選択をサポートします。\n\n## LibreOfficeの概要\n\nLibreOfficeはThe Document Foundationが開発するオープンソースのオフィススイートです。Writer（文書）、Calc（表計算）、Impress（プレゼンテーション）など6つのアプリケーションで構成され、Windows、Mac、Linuxに対応。長年の開発実績があり、世界中で多くのユーザーに利用されています。\n\n## OnlyOfficeの概要\n\nOnlyOfficeはAscensio System SIAが開発するオープンソースのオフィススイートで、文書、表計算、プレゼンテーションの3つのエディタを提供。クラウド連携やコラボレーション機能に強みを持ち、Windows、Mac、Linux、さらにはiOS/Androidアプリも用意されています。\n\n## 互換性の比較\n\n### Microsoft Officeファイル形式のサポート\n- **LibreOffice**: .docx、.xlsx、.pptxなどの最新形式をサポートしますが、複雑な書式やマクロの互換性に課題があります。特にVBAマクロは部分的にしか動作せず、高度な機能が失われることがあります。\n- **OnlyOffice**: Microsoft Officeとの互換性を重視して設計されており、.docx、.xlsx、.pptxのレンダリング精度が高いです。VBAマクロも一部サポートしていますが、完全ではありません。\n\n### ファイル変換の精度\n- **LibreOffice**: 複雑なテーブルや図形、フォント埋め込みでレイアウトが崩れることがあります。ただし、PDF出力は安定しています。\n- **OnlyOffice**: フォントやスタイルの再現性が高く、特に表計算の数式やグラフの互換性に優れています。\n\n## 機能の比較\n\n### 基本機能\n- **LibreOffice**: 豊富なテンプレート、高度なスタイリング、数式エディタ、データベース機能（Base）など多機能。拡張機能も充実。\n- **OnlyOffice**: 必要最低限の機能に絞られており、シンプル。ただし、アドオンで機能拡張可能。\n\n### コラボレーション機能\n- **LibreOffice**: 標準ではリアルタイム共同編集に対応せず、Nextcloudなどと連携する必要があります。\n- **OnlyOffice**: リアルタイム共同編集、コメント、トラックチェンジが標準搭載。クラウド版（有料）を使えばさらに高度な連携が可能。\n\n### マクロと拡張性\n- **LibreOffice**: LibreOffice Basic、Python、Javaなど複数の言語でマクロ作成可能。拡張機能の数も多い。\n- **OnlyOffice**: プラグインシステムを採用しており、JavaScriptでプラグイン開発が可能。ただし、マクロ機能は限定的。\n\n## 使いやすさの比較\n\n### インターフェース\n- **LibreOffice**: 伝統的なツールバーとメニュー形式。カスタマイズ性は高いが、Microsoft Officeに慣れたユーザーにはやや異質。\n- **OnlyOffice**: リボンインターフェースを採用しており、Microsoft Officeに非常に近い操作性。タブやショートカットも類似。\n\n### インストールとセットアップ\n- **LibreOffice**: ダウンロードサイズ約300MB、インストールは簡単。ポータブル版もあり。\n- **OnlyOffice**: ダウンロードサイズ約200MB、インストールはスムーズ。クラウド版はアカウント作成が必要。\n\n### 日本語対応\n- **LibreOffice**: 日本語のスペルチェック、縦書き、ルビなど日本語文書作成に必要な機能が充実。\n- **OnlyOffice**: 日本語入力は可能だが、縦書きやルビなどの高度な日本語機能は限定的。\n\n## パフォーマンスと安定性\n\n- **LibreOffice**: 大規模な文書でも安定して動作。メモリ使用量はやや多め。\n- **OnlyOffice**: 軽量で起動が速い。ただし、複雑な文書でまれにクラッシュすることがある。\n\n## 価格\n\n両者とも無料のオープンソースソフトウェアです。OnlyOfficeにはクラウド版（有料）もありますが、デスクトップ版は無料で商用利用可能です。LibreOfficeも完全無料で商用利用に制限はありません。\n\n## サポートとコミュニティ\n\n- **LibreOffice**: 大規模なコミュニティと豊富なドキュメント、フォーラムが存在。日本語の情報も多い。\n- **OnlyOffice**: 公式フォーラムやGitHubでのサポート。日本語情報は少なめ。\n\n## どちらを選ぶべきか？\n\n### LibreOfficeがおすすめな人\n- 高度な文書作成（縦書き、ルビなど）が必要な方\n- データベース機能（Base）を使いたい方\n- 豊富な拡張機能やマクロを活用したい方\n- 日本語環境での安定性を重視する方\n\n### OnlyOfficeがおすすめな人\n- Microsoft Officeとの互換性を最優先する方\n- リアルタイム共同編集が必要な方\n- シンプルで軽量なソフトを求める方\n- クラウド連携を活用したい方\n\n## まとめ\n\nLibreOfficeとOnlyOfficeはどちらも優れた無料Officeスイートです。互換性や共同編集を重視するならOnlyOffice、豊富な機能や日本語対応を重視するならLibreOfficeが適しています。まずは両方を試用し、自分の用途に合うか確認することをおすすめします。",
+  "keywords": [
+    "Microsoft Office",
+    "LibreOffice",
+    "OnlyOffice",
+    "代替",
+    "無料",
+    "互換性"
+  ],
+  "template": "comparison",
+  "generatedAt": "2026-05-24T17:12:32.988Z"
+}

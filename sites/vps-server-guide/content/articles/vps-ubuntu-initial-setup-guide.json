@@ -1,0 +1,16 @@
+{
+  "title": "VPS初期設定完全ガイド：UbuntuでSSH・ファイアウォール・セキュリティを確実に設定する方法",
+  "slug": "vps-ubuntu-initial-setup-guide",
+  "metaDescription": "VPSを購入したら最初にやるべきUbuntuの初期設定を解説。SSH鍵認証、UFWファイアウォール、fail2banなどセキュリティ対策をステップバイステップで紹介。",
+  "content": "VPS（Virtual Private Server）を借りたら、まずはセキュリティを固める初期設定が必須です。特にUbuntuを使う場合、デフォルトのままでは危険が伴います。この記事では、SSHの鍵認証設定、ファイアウォール（UFW）、不正アクセス対策（fail2ban）など、実践的な手順を解説します。\n\n## 前提条件\n- VPSを契約し、Ubuntu（22.04 LTS推奨）がインストール済み\n- ローカルPCにターミナル（WindowsならPowerShellやWSL、Macならターミナル）がある\n- VPSのIPアドレスとrootパスワードが分かっている\n\n## 1. 初期ログインとユーザー作成\nまずはrootでログインします。\n\n```bash\nssh root@<VPSのIPアドレス>\n```\n\n初回ログイン後、すぐに一般ユーザーを作成しましょう。rootのまま作業するのは危険です。\n\n```bash\nadduser ユーザー名\n# パスワードを設定し、その他はEnterでスキップ\n```\n\n作成したユーザーにsudo権限を付与します。\n\n```bash\nusermod -aG sudo ユーザー名\n```\n\n## 2. SSH鍵認証の設定\nパスワード認証はブルートフォース攻撃に弱いため、公開鍵認証に切り替えます。\n\n### 2.1 ローカルPCで鍵ペアを作成（まだの場合）\n```bash\nssh-keygen -t ed25519 -C \"your_email@example.com\"\n# 保存場所はデフォルトでOK、パスフレーズは任意\n```\n\n### 2.2 公開鍵をVPSに転送\n```bash\nssh-copy-id ユーザー名@<VPSのIPアドレス>\n# パスワードを聞かれるので入力\n```\n\n### 2.3 SSH接続の確認\n```bash\nssh ユーザー名@<VPSのIPアドレス>\n# パスワードなしでログインできれば成功\n```\n\n## 3. SSHのセキュリティ強化\nSSHの設定ファイルを編集します。\n\n```bash\nsudo nano /etc/ssh/sshd_config\n```\n\n以下の設定を変更・追加します。\n\n- `PermitRootLogin no`（rootログイン禁止）\n- `PasswordAuthentication no`（パスワード認証禁止）\n- `PubkeyAuthentication yes`（公開鍵認証を有効化）\n- `Port 2222`など（ポート変更。デフォルト22は攻撃されやすい）\n\n変更後、サービスを再起動します。\n\n```bash\nsudo systemctl restart ssh\n```\n\n**注意**: ポートを変更した場合、次回ログイン時に `-p 2222` オプションが必要です。接続できるか必ず確認してからセッションを切ってください。\n\n## 4. ファイアウォール（UFW）の設定\nUbuntuにはUFW（Uncomplicated Firewall）が標準搭載されています。\n\n### 4.1 UFWの有効化\n```bash\nsudo ufw allow OpenSSH\n# またはポート番号を指定: sudo ufw allow 2222/tcp\nsudo ufw enable\nsudo ufw status verbose\n```\n\n### 4.2 必要なポートのみ許可\n例：Webサーバー（80,443）を開放する場合\n\n```bash\nsudo ufw allow 80/tcp\nsudo ufw allow 443/tcp\n```\n\n不要なポートは閉じておきます。\n\n## 5. fail2banの導入\nfail2banは不正なログイン試行を検知し、自動的にIPをブロックします。\n\n```bash\nsudo apt update\nsudo apt install fail2ban -y\n```\n\n設定ファイルをコピーして編集します。\n\n```bash\nsudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local\nsudo nano /etc/fail2ban/jail.local\n```\n\n`[sshd]` セクションを探し、以下のように設定します。\n\n```ini\n[sshd]\nenabled = true\nport = ssh\nfilter = sshd\nlogpath = /var/log/auth.log\nmaxretry = 5\nbantime = 3600\n```\n\nサービスを起動・有効化します。\n\n```bash\nsudo systemctl start fail2ban\nsudo systemctl enable fail2ban\n```\n\n## 6. 自動更新の設定\nセキュリティパッチを自動適用するよう設定します。\n\n```bash\nsudo apt install unattended-upgrades -y\nsudo dpkg-reconfigure --priority=low unattended-upgrades\n# プロンプトで「Yes」を選択\n```\n\n## 7. その他のセキュリティ対策\n- **ログ監視**: `sudo journalctl -u ssh` でSSHログを確認\n- **不要サービスの停止**: `sudo systemctl list-units --type=service --state=running` で確認し、不要なものは停止\n- **定期的なアップデート**: `sudo apt update && sudo apt upgrade` を習慣化\n\n\n\n---\n\n*この記事は実際のVPS環境での構築経験に基づいています。料金・スペックは執筆時点のものであり、最新情報は各事業者の公式サイトでご確認ください。*\n\n## まとめ\n以上の手順で、VPSの初期設定は完了です。特にSSH鍵認証とファイアウォールは必須です。この設定を怠ると、VPSが乗っ取られるリスクが高まります。ぜひ実践してください。",
+  "keywords": [
+    "VPS",
+    "初期設定",
+    "Ubuntu",
+    "SSH",
+    "ファイアウォール",
+    "セキュリティ"
+  ],
+  "template": "tutorial",
+  "generatedAt": "2026-05-24T16:50:40.364Z"
+}

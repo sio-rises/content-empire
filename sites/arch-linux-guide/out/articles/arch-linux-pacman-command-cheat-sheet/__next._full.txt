@@ -1,0 +1,99 @@
+1:"$Sreact.fragment"
+2:I[24117,["/_next/static/chunks/00mbd8isu7b38.js"],"default"]
+3:I[79967,["/_next/static/chunks/00mbd8isu7b38.js"],"default"]
+5:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+9:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"ViewportBoundary"]
+b:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"MetadataBoundary"]
+d:I[30946,["/_next/static/chunks/00mbd8isu7b38.js"],"default",1]
+:HL["/_next/static/chunks/089_dp2m4y2c2.css","style"]
+0:{"P":null,"c":["","articles","arch-linux-pacman-command-cheat-sheet"],"q":"","i":false,"f":[[["",{"children":["articles",{"children":[["slug","arch-linux-pacman-command-cheat-sheet","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/089_dp2m4y2c2.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/00mbd8isu7b38.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"ja","children":[["$","head",null,{"children":["$","script",null,{"async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019","crossOrigin":"anonymous"}]}],["$","body",null,{"className":"min-h-screen antialiased","children":["$","div",null,{"className":"flex min-h-screen flex-col","children":[["$","header",null,{"className":"border-b border-gray-200 bg-white","children":["$","div",null,{"className":"mx-auto flex max-w-4xl items-center justify-between px-4 py-3","children":[["$","a",null,{"href":"/","className":"text-lg font-bold text-arch hover:opacity-80","children":"Arch Linux 日本語ガイド"}],["$","nav",null,{"className":"flex gap-4 text-sm text-gray-600","children":[["$","a",null,{"href":"/","className":"hover:text-arch","children":"ホーム"}],["$","a",null,{"href":"/about","className":"hover:text-arch","children":"このサイトについて"}]]}]]}]}],["$","main",null,{"className":"flex-1","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400","children":[["$","div",null,{"className":"flex justify-center gap-4 mb-2","children":[["$","a",null,{"href":"/about","className":"hover:text-gray-600","children":"このサイトについて"}],["$","a",null,{"href":"/privacy","className":"hover:text-gray-600","children":"プライバシーポリシー"}]]}],"Arch Linux 日本語ガイド — Built with OpenCode + DeepSeek API"]}]]}]}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L4",null,["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]]}],{},null,false,null]},null,false,"$@8"]},null,false,"$@8"]},null,false,null],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$6",null,{"name":"Next.Metadata","children":"$Lc"}]}]}],null]}],false]],"m":"$undefined","G":["$d",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/089_dp2m4y2c2.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"oMFWqHyx7sJoNGgtrYd0X"}
+e:[]
+8:"$We"
+f:T1c4d,<h2>pacmanとは？</h2>
+<p><strong>pacman</strong>（Package Managerの略）は、Arch Linuxの公式パッケージ管理ツールです。バイナリパッケージのインストール・更新・削除を効率的に行い、依存関係を自動解決します。初心者から上級者まで、Arch Linuxを使う上で必須のコマンドです。</p>
+<h2>なぜpacmanが重要なのか？</h2>
+<p>Arch Linuxはローリングリリースモデルを採用しており、システム全体を常に最新に保つためにパッケージ管理が頻繁に発生します。pacmanはシンプルながら強力で、一度覚えれば素早く操作できます。また、AUR（Arch User Repository）との連携も可能で、コミュニティが提供するパッケージも利用できます。</p>
+<h2>pacmanの仕組み</h2>
+<p>pacmanは、公式リポジトリ（core, extra, community, multilib）からパッケージをダウンロードし、<code>.pkg.tar.zst</code>形式のアーカイブを展開してインストールします。データベースは<code>/var/lib/pacman/</code>に保存され、パッケージ情報や依存関係を管理します。設定ファイルは<code>/etc/pacman.conf</code>です。</p>
+<h2>実用的なコマンドチートシート</h2>
+<h3>1. パッケージのインストール</h3>
+<pre><code class="language-bash">&lt;h1&gt;単一パッケージのインストール&lt;/h1&gt;
+sudo pacman -S パッケージ名
+<p>&lt;h1&gt;複数パッケージを同時にインストール&lt;/h1&gt;
+sudo pacman -S パッケージ1 パッケージ2</p>
+<p>&lt;h1&gt;グループからインストール（例: xfce4）&lt;/h1&gt;
+sudo pacman -S xfce4-group
+</code></pre></p>
+<p><code>-S</code>はsyncの略で、リポジトリと同期してインストールします。</p>
+<h3>2. パッケージの更新</h3>
+<pre><code class="language-bash">&lt;h1&gt;リポジトリデータベースの更新&lt;/h1&gt;
+sudo pacman -Sy
+<p>&lt;h1&gt;全パッケージの更新（推奨）&lt;/h1&gt;
+sudo pacman -Syu</p>
+<p>&lt;h1&gt;特定パッケージのみ更新&lt;/h1&gt;
+sudo pacman -S パッケージ名
+</code></pre></p>
+<p><code>-Syu</code>はデータベース更新と全パッケージ更新を同時に行います。<code>-Sy</code>だけでは部分更新になり、依存関係が壊れる可能性があるため、常に<code>-Syu</code>を使いましょう。</p>
+<h3>3. パッケージの削除</h3>
+<pre><code class="language-bash">&lt;h1&gt;パッケージのみ削除（設定ファイルは残る）&lt;/h1&gt;
+sudo pacman -R パッケージ名
+<p>&lt;h1&gt;パッケージとその依存関係を削除（他のパッケージで使われていないもののみ）&lt;/h1&gt;
+sudo pacman -Rs パッケージ名</p>
+<p>&lt;h1&gt;パッケージと設定ファイルも削除&lt;/h1&gt;
+sudo pacman -Rns パッケージ名
+</code></pre></p>
+<p><code>-R</code>はremoveの略。<code>-Rs</code>は依存関係も削除するので、不要なパッケージをきれいに掃除できます。</p>
+<h3>4. パッケージの検索</h3>
+<pre><code class="language-bash">&lt;h1&gt;パッケージ名と説明で検索&lt;/h1&gt;
+pacman -Ss キーワード
+<p>&lt;h1&gt;インストール済みパッケージを検索&lt;/h1&gt;
+pacman -Qs キーワード</p>
+<p>&lt;h1&gt;特定のファイルがどのパッケージに属するか調べる&lt;/h1&gt;
+pacman -Qo /path/to/file
+</code></pre></p>
+<p><code>-Ss</code>はリポジトリ内を検索、<code>-Qs</code>はローカルデータベースを検索します。<code>-Qo</code>はファイルの所有者を特定するのに便利です。</p>
+<h3>5. インストール済みパッケージの情報表示</h3>
+<pre><code class="language-bash">&lt;h1&gt;インストール済みパッケージの一覧&lt;/h1&gt;
+pacman -Q
+<p>&lt;h1&gt;明示的にインストールしたパッケージのみ表示&lt;/h1&gt;
+pacman -Qe</p>
+<p>&lt;h1&gt;パッケージの詳細情報&lt;/h1&gt;
+pacman -Qi パッケージ名</p>
+<p>&lt;h1&gt;パッケージに含まれるファイル一覧&lt;/h1&gt;
+pacman -Ql パッケージ名
+</code></pre></p>
+<p><code>-Q</code>はqueryの略。<code>-Qe</code>は依存関係で自動インストールされたパッケージを除外します。</p>
+<h3>6. キャッシュのクリーンアップ</h3>
+<pre><code class="language-bash">&lt;h1&gt;ダウンロードしたパッケージキャッシュを削除（最新以外は削除）&lt;/h1&gt;
+sudo pacman -Sc
+<p>&lt;h1&gt;全キャッシュを削除&lt;/h1&gt;
+sudo pacman -Scc
+</code></pre></p>
+<p>キャッシュは<code>/var/cache/pacman/pkg/</code>に保存されます。<code>-Sc</code>は古いバージョンのみ削除し、<code>-Scc</code>は全て削除します。</p>
+<h3>7. トラブルシューティング</h3>
+<pre><code class="language-bash">&lt;h1&gt;データベースがロックされている場合の解除&lt;/h1&gt;
+sudo rm /var/lib/pacman/db.lck
+<p>&lt;h1&gt;パッケージデータベースの整合性チェック&lt;/h1&gt;
+sudo pacman -Dk</p>
+<p>&lt;h1&gt;破損したパッケージの再インストール&lt;/h1&gt;
+sudo pacman -Syu --force パッケージ名
+</code></pre></p>
+<p><code>db.lck</code>はpacman実行中に作成されるロックファイルです。異常終了した場合に削除して復旧します。</p>
+<h2>よくある誤解と注意点</h2>
+<h3>❌ <code>pacman -Sy</code> を頻繁に実行する</h3>
+<code>-Sy</code>だけだとデータベースのみ更新し、パッケージは古いままです。後で<code>pacman -S パッケージ</code>を実行すると、依存関係が不整合になる可能性があります。必ず<code>-Syu</code>で更新しましょう。
+<h3>❌ <code>pacman -R</code> で依存関係を無視して削除する</h3>
+<code>-R</code>はパッケージのみ削除し、依存関係は残ります。不要な依存パッケージが溜まる原因になるので、<code>-Rs</code>を使う習慣をつけましょう。
+<h3>❌ キャッシュを削除しすぎる</h3>
+<code>-Scc</code>で全キャッシュを削除すると、ダウングレードが必要な場合に再ダウンロードが必要になります。通常は<code>-Sc</code>で十分です。
+<h3>❌ AURパッケージをpacmanで直接インストールする</h3>
+AURのパッケージはpacmanでは管理できません。<code>yay</code>や<code>paru</code>などのAURヘルパーを使うか、手動でPKGBUILDからビルドします。
+<hr>
+<p>*この記事はArch Linuxを実機で日常運用しているSioが、実際のインストール・設定経験に基づいてAI生成コンテンツをレビュー・補完しています。btrfsサブボリュームとLUKS暗号化環境で検証済みです。*</p>
+<h2>まとめ</h2>
+<p>pacmanはArch Linuxの心臓部とも言えるツールです。このチートシートを参考に、日常的なパッケージ管理を効率化してください。頻繁に使うコマンドは<code>-Syu</code>（更新）と<code>-Rs</code>（削除）です。トラブル時は<code>-Dk</code>でデータベースをチェックし、<code>db.lck</code>の存在を確認しましょう。</p>4:["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"Arch Linux pacmanコマンド完全チートシート：基本から応用まで"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"Arch Linuxのパッケージ管理ツールpacmanの基本コマンドを網羅したチートシート。インストール、更新、削除、検索、トラブルシューティングまで実用例付きで解説。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","Arch Linux",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"Arch Linux"}],["$","span","pacman",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"pacman"}],["$","span","コマンド",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"コマンド"}],["$","span","チートシート",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"チートシート"}],["$","span","パッケージ管理",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"パッケージ管理"}],["$","span","基本",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"基本"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$f"}}]]}],"$L10"]}]
+10:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-arch hover:underline","children":"← 記事一覧に戻る"}]}]
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+7:null
+c:[["$","title","0",{"children":"Arch Linux 日本語ガイド"}],["$","meta","1",{"name":"description","content":"Arch Linuxのインストールからデスクトップ環境構築まで、日本語で体系的に解説するガイドサイトです。"}],["$","meta","2",{"name":"keywords","content":"Arch Linux,Linux,インストール,日本語,デスクトップ環境,btrfs,LUKS"}]]

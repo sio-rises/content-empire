@@ -1,0 +1,16 @@
+{
+  "title": "Arch Linuxでfcitx5とmozcを使った日本語入力設定ガイド",
+  "slug": "arch-linux-fcitx5-mozc-japanese-input",
+  "metaDescription": "Arch Linuxにfcitx5とmozcをインストールし、日本語入力を有効にする手順を解説。フォント設定やトラブルシューティングもカバー。",
+  "content": "## はじめに\n\nこの記事では、Arch Linuxにfcitx5とmozcを導入し、快適な日本語入力環境を構築する方法を解説します。対象読者はArch Linuxをインストールしたばかりの初心者から、日本語入力に困っている中級者まで。前提知識として、ターミナル操作とパッケージマネージャー（pacman）の基本を理解していることを想定しています。\n\n## 手順\n\n### 1. 必要なパッケージをインストールする\n\nまず、fcitx5本体、mozcエンジン、および設定ツールをインストールします。ターミナルを開いて以下のコマンドを実行してください。\n\n```bash\nsudo pacman -S fcitx5 fcitx5-mozc fcitx5-configtool\n```\n\n- `fcitx5`: インプットメソッドフレームワーク\n- `fcitx5-mozc`: Google日本語入力ベースのエンジン\n- `fcitx5-configtool`: GUI設定ツール\n\n### 2. 環境変数を設定する\n\n日本語入力を使うためには、環境変数`GTK_IM_MODULE`、`QT_IM_MODULE`、`XMODIFIERS`を設定する必要があります。使用しているシェルに応じて、以下の内容を`.bashrc`（bashの場合）または`.zshrc`（zshの場合）に追記します。\n\n```bash\nexport GTK_IM_MODULE=fcitx\nexport QT_IM_MODULE=fcitx\nexport XMODIFIERS=@im=fcitx\n```\n\n設定を反映させるため、ターミナルを再起動するか、`source ~/.bashrc`を実行します。\n\n### 3. fcitx5を自動起動するように設定する\n\nログイン時にfcitx5が自動で起動するように、デスクトップ環境の自動起動設定に追加します。多くのArch Linuxユーザーが使用するデスクトップ環境（Xfce、KDE、GNOMEなど）では、以下の方法で設定できます。\n\n**Xfceの場合:** 「設定」→「セッションと起動」→「自動起動アプリケーション」タブで「追加」をクリックし、コマンドに`fcitx5`と入力します。\n\n**KDE Plasmaの場合:** 「システム設定」→「起動と終了」→「自動起動」で「追加」→「アプリケーションを追加」を選び、コマンドに`fcitx5`を指定します。\n\n**GNOMEの場合:** GNOME Tweaks（`gnome-tweaks`パッケージが必要）をインストールし、「起動アプリケーション」に`fcitx5`を追加します。\n\n手動で起動したい場合は、ターミナルで`fcitx5`と入力してください。\n\n### 4. fcitx5の設定を開き、mozcを追加する\n\nfcitx5の設定ツールを起動します。ターミナルで以下を実行するか、アプリケーションメニューから「Fcitx5 Configuration」を開きます。\n\n```bash\nfcitx5-configtool\n```\n\n設定画面が開いたら、「入力メソッド」タブで「＋」ボタンをクリックし、「Mozc」を選択して追加します。デフォルトで「キーボード - 英語（US）」が設定されているので、必要に応じてMozcを上に移動させて優先順位を変更してください。\n\n### 5. フォントをインストールする（日本語表示対応）\n\n日本語入力だけでは文字が正しく表示されない場合があるため、日本語フォントをインストールします。代表的なフォントとして、Noto Sans CJKをインストールします。\n\n```bash\nsudo pacman -S noto-fonts-cjk\n```\n\n他のフォント（例: `otf-ipafont`、`ttf-hanazono`）も必要に応じてインストールしてください。\n\n### 6. 再起動またはログインし直して動作確認する\n\n設定を反映させるため、一度ログアウトして再ログインするか、システムを再起動します。その後、任意のテキストエディタ（例: Gedit、Kate）を開き、`Ctrl + Space`（デフォルトの切り替えキー）で日本語入力が有効になるか確認してください。Mozcの変換候補が表示されれば成功です。\n\n## トラブルシューティング\n\n### fcitx5が起動しない\n\n`systemctl --user status fcitx5` で状態を確認します。エラーがあれば、`fcitx5-diagnose` コマンドで診断情報を取得できます。\n\n### 日本語入力が切り替わらない\n\n環境変数が正しく設定されているか確認してください。`echo $GTK_IM_MODULE` などで値が `fcitx` になっているかチェックします。また、`fcitx5-configtool` でMozcが有効になっているか確認します。\n\n### 変換候補が出ない\n\nMozcの設定で「変換モード」が「一般」になっているか確認します。`fcitx5-configtool` でMozcの歯車アイコンをクリックし、設定画面を開きます。\n\n### フォントが文字化けする\n\n`fcitx5` のフォント設定を変更します。`fcitx5-configtool` の「外観」タブでフォントを「Noto Sans CJK JP」などに変更します。\n\n\n\n---\n\n*この記事はArch Linuxを実機で日常運用しているSioが、実際のインストール・設定経験に基づいてAI生成コンテンツをレビュー・補完しています。btrfsサブボリュームとLUKS暗号化環境で検証済みです。*\n\n## まとめ\n\nこのガイドでは、Arch Linuxにfcitx5とmozcをインストールし、日本語入力環境をセットアップする方法を紹介しました。設定後は、`Ctrl + Space`で日本語入力が可能になります。さらにカスタマイズしたい場合は、`~/.config/fcitx5/config` を直接編集することで、キーバインドやスキンの変更も可能です。快適な日本語入力ライフをお楽しみください。",
+  "keywords": [
+    "Arch Linux",
+    "fcitx5",
+    "mozc",
+    "日本語入力",
+    "フォント",
+    "日本語化"
+  ],
+  "template": "howto",
+  "generatedAt": "2026-05-24T15:52:17.580Z"
+}

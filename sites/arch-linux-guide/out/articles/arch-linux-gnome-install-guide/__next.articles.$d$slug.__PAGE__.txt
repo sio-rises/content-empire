@@ -1,0 +1,66 @@
+1:"$Sreact.fragment"
+5:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+2:T1377,<h2>目標</h2>
+<p>このチュートリアルでは、Arch LinuxにGNOMEデスクトップ環境をインストールし、基本的な設定（日本語入力、拡張機能の追加）を行うまでを解説します。最終的に、gdm（GNOME Display Manager）で自動ログインできる状態を目指します。</p>
+<h2>前提条件</h2>
+<li>Arch Linuxがインストール済みであること（ベースシステムのみでOK）</li>
+<li>インターネット接続が可能であること</li>
+<li>非rootユーザーが作成済みで、sudo権限があること</li>
+<li>システムが最新であること（<code>sudo pacman -Syu</code>）</li>
+<h2>Step-by-step</h2>
+<h3>1. Xorgのインストール</h3>
+<p>GNOMEはWaylandをデフォルトとしますが、Xorgも必要に応じてインストールします。まずはXorgをインストールします。</p>
+<pre><code class="language-bash">sudo pacman -S xorg
+</code></pre>
+<h3>2. GNOMEとgdmのインストール</h3>
+<p>GNOMEグループとgdmをインストールします。</p>
+<pre><code class="language-bash">sudo pacman -S gnome gdm
+</code></pre>
+<p>このコマンドで、GNOMEの基本パッケージとGNOME Display Managerがインストールされます。</p>
+<h3>3. gdmの有効化</h3>
+<p>システム起動時にgdmが自動で起動するように有効化します。</p>
+<pre><code class="language-bash">sudo systemctl enable gdm
+</code></pre>
+<h3>4. 日本語入力の設定</h3>
+<p>日本語入力のために、ibusとmozcをインストールします。</p>
+<pre><code class="language-bash">sudo pacman -S ibus ibus-mozc
+</code></pre>
+<p>インストール後、ibusのデーモンを有効化します。</p>
+<pre><code class="language-bash">ibus-daemon -drx
+</code></pre>
+<p>次に、<code>~/.bashrc</code>または<code>~/.xprofile</code>に以下の設定を追加します。</p>
+<pre><code class="language-bash">export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+</code></pre>
+<p>設定を反映させるために、ログアウトして再ログインするか、<code>source ~/.bashrc</code>を実行します。</p>
+<h3>5. GNOME拡張機能のインストール</h3>
+<p>GNOME拡張機能を管理するために、<code>gnome-browser-connector</code>と<code>gnome-shell-extensions</code>をインストールします。</p>
+<pre><code class="language-bash">sudo pacman -S gnome-browser-connector gnome-shell-extensions
+</code></pre>
+<p>ブラウザから拡張機能をインストールするには、GNOME Shell integrationブラウザ拡張（Chrome/Firefox）を追加します。</p>
+<h3>6. システムの再起動</h3>
+<p>すべての設定が完了したら、システムを再起動します。</p>
+<pre><code class="language-bash">sudo reboot
+</code></pre>
+<h2>動作確認</h2>
+<p>再起動後、gdmのログイン画面が表示されることを確認します。ユーザー名とパスワードを入力してログインし、GNOMEデスクトップが正しく表示されるか確認します。</p>
+<p>日本語入力の確認：テキストエディタ（geditなど）を開き、<code>Super</code>+<code>Space</code>で入力ソースを切り替え、日本語が入力できることを確認します。</p>
+<p>拡張機能の確認：GNOME Tweaksをインストールして、拡張機能が有効化できるか確認します。</p>
+<pre><code class="language-bash">sudo pacman -S gnome-tweaks
+</code></pre>
+<p>Tweaksを起動し、Extensionsタブで拡張機能のオン/オフができることを確認します。</p>
+<hr>
+<p>*この記事はArch Linuxを実機で日常運用しているSioが、実際のインストール・設定経験に基づいてAI生成コンテンツをレビュー・補完しています。btrfsサブボリュームとLUKS暗号化環境で検証済みです。*</p>
+<h2>発展</h2>
+<li><strong>自動ログインの設定</strong>: gdmの設定ファイル<code>/etc/gdm/custom.conf</code>を編集し、<code>[daemon]</code>セクションに<code>AutomaticLoginEnable=true</code>と<code>AutomaticLogin=ユーザー名</code>を追加します。</li>
+<li><strong>テーマの変更</strong>: GNOME Tweaksや<code>gnome-look.org</code>からテーマをダウンロードして適用できます。</li>
+<li><strong>Waylandの利用</strong>: デフォルトでWaylandが使用されますが、Xorgが必要なアプリケーションがある場合は、ログイン画面の歯車アイコンからセッションを選択できます。</li>
+<li><strong>追加のGNOMEアプリ</strong>: <code>gnome-extra</code>グループをインストールすると、より多くのアプリが利用可能です。</li>
+<pre><code class="language-bash">sudo pacman -S gnome-extra
+</code></pre>
+<p>以上で、Arch LinuxにGNOMEデスクトップ環境をインストールするチュートリアルは完了です。快適なGNOMEライフをお楽しみください！</p>0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"Arch LinuxにGNOMEデスクトップ環境をインストールする完全ガイド"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"Arch LinuxにGNOMEデスクトップ環境をインストールする手順を解説。gdmの設定、日本語環境、GNOME拡張機能の導入までカバー。初心者向けの完全チュートリアル。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","Arch Linux",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"Arch Linux"}],["$","span","GNOME",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"GNOME"}],["$","span","デスクトップ環境",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"デスクトップ環境"}],["$","span","gdm",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"gdm"}],["$","span","拡張機能",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"拡張機能"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3"]}],null,"$L4"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"oMFWqHyx7sJoNGgtrYd0X"}
+3:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-arch hover:underline","children":"← 記事一覧に戻る"}]}]
+4:["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]
+7:null

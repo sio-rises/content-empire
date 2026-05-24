@@ -1,0 +1,87 @@
+1:"$Sreact.fragment"
+5:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+2:T1b38,<h2>はじめに</h2>
+<p>クラウドやオンプレミスのサーバーをセットアップする際、OSインストールは面倒な作業の一つです。特にNixOSのような宣言的構成管理を前提としたOSでは、インストール後の設定も含めて自動化したいところ。今回は、Claude Code（AIエージェント）にSSH経由でリモートサーバーへNixOSをインストールさせる方法を紹介します。</p>
+<h2>前提条件</h2>
+<li>ターゲットマシンがPXEブートまたはLive USBで起動可能（NixOS minimal ISO推奨）</li>
+<li>ターゲットマシンと作業マシンがネットワーク接続可能</li>
+<li>作業マシンに<code>nixos-anywhere</code>がインストール済み（リモートマシンへのNixOSインストールツール）</li>
+<li>AIエージェント（Claude Code）が利用可能で、SSHキーを管理できる</li>
+<h2>手順概要</h2>
+<li>ターゲットマシンでNixOS Live ISOを起動し、SSHを有効化</li>
+<li>作業マシンでAIエージェント（OpenCode/ClaudeCode等）にSSH接続〜インストールの指示を出す</li>
+<li>AIエージェントがSSH接続後、<code>nixos-anywhere</code>を実行</li>
+<li>インストール完了後、再起動してNixOSが起動することを確認</li>
+<h2>詳細手順</h2>
+<h3>1. ターゲットマシンの準備</h3>
+<p>まず、ターゲットマシンでNixOS minimal ISOを起動します。起動後、ネットワーク設定とSSHの有効化を行います。</p>
+<pre><code class="language-bash">&lt;h1&gt;ネットワーク設定（例：DHCP）&lt;/h1&gt;
+sudo dhcpcd
+&lt;h1&gt;rootパスワード設定&lt;/h1&gt;
+passwd
+&lt;h1&gt;SSHサーバー起動&lt;/h1&gt;
+systemctl start sshd
+systemctl enable sshd
+&lt;h1&gt;IPアドレス確認&lt;/h1&gt;
+ip a
+</code></pre>
+<p>IPアドレス（例：192.168.1.100）をメモしておきます。</p>
+<h3>2. AIエージェント（Claude Code）のセットアップ</h3>
+<p>作業マシンでClaude Code CLIをインストールし、SSHキーをエージェントが利用できるようにします。</p>
+<pre><code class="language-bash">&lt;h1&gt;SSHキーがAIエージェントから利用可能であることを確認&lt;/h1&gt;
+ssh-add ~/.ssh/id_ed25519/ssh_key &amp;&amp; chmod 600 /tmp/ssh_key
+</code></pre>
+<h3>3. AIエージェントへの指示</h3>
+<p>Claude Codeを起動し、以下のようなプロンプトを与えます。</p>
+<pre><code class="language-">あなたはシステム管理者です。以下のタスクを実行してください。
+<p>【タスク】
+リモートホスト（192.168.1.100）にSSHで接続し、nixos-anywhereを使用してNixOSをインストールしてください。</p>
+<p>【条件】
+&lt;li&gt;SSHユーザー: root&lt;/li&gt;
+&lt;li&gt;SSH鍵: /tmp/ssh_key&lt;/li&gt;
+&lt;li&gt;nixos-anywhereのインストール先ディスク: /dev/sda&lt;/li&gt;
+&lt;li&gt;NixOS設定: 最小構成（後で手動調整）&lt;/li&gt;
+&lt;li&gt;インストール後、自動再起動しない&lt;/li&gt;</p>
+<p>【手順】
+&lt;li&gt;SSH接続確認&lt;/li&gt;
+&lt;li&gt;ターゲットマシンにnixos-anywhereをダウンロード&lt;/li&gt;
+&lt;li&gt;実行: nixos-anywhere --disk /dev/sda --flake github:your-flake#your-config&lt;/li&gt;
+   ※flakeがない場合はデフォルト設定でOK
+&lt;li&gt;エラーが発生したらログを取得して報告&lt;/li&gt;
+</code></pre></p>
+<h3>4. AIエージェントの実行</h3>
+<p>Claude Codeは上記プロンプトを解析し、以下のようなコマンドを順次実行します。</p>
+<pre><code class="language-bash">&lt;h1&gt;SSH接続確認&lt;/h1&gt;
+ssh -i /tmp/ssh_key -o StrictHostKeyChecking=no root@192.168.1.100 "echo connected"
+<p>&lt;h1&gt;nixos-anywhereのダウンロードと実行&lt;/h1&gt;
+ssh -i /tmp/ssh_key root@192.168.1.100 "curl -L https://github.com/nix-community/nixos-anywhere/archive/refs/tags/1.0.0.tar.gz | tar xz &amp;&amp; cd nixos-anywhere-1.0.0 &amp;&amp; ./nixos-anywhere --disk /dev/sda"
+</code></pre></p>
+<p>実行中、Claude Codeは出力を監視し、エラーがあれば適宜対応します。例えば、ディスクが正しく認識されない場合、<code>lsblk</code>で確認してから再実行します。</p>
+<h3>5. インストール後の確認</h3>
+<p>インストールが完了したら、ターゲットマシンを再起動します。</p>
+<pre><code class="language-bash">ssh -i /tmp/ssh_key root@192.168.1.100 "reboot"
+</code></pre>
+<p>再起動後、新しいNixOSが起動することを確認します。初期設定（ユーザー、SSHキーなど）は別途行う必要があります。</p>
+<h2>注意点とトラブルシューティング</h2>
+<li><strong>SSHキーのパーミッション</strong>: AIエージェントが読み取れる場所に鍵を配置してください。Claude Codeはコンテナ内で動作するため、<code>/tmp</code>が安全です。</li>
+<li><strong>ネットワーク安定性</strong>: インストール中にSSHが切れると失敗します。必要なら<code>screen</code>や<code>tmux</code>を使いましょう。</li>
+<li><strong>ディスク指定</strong>: 誤ったディスクを指定するとデータが失われるため、事前に<code>lsblk</code>で確認するようエージェントに指示しましょう。</li>
+<li><strong>flake設定</strong>: カスタムflakeを使う場合、GitHub等から取得可能な状態にしてください。</li>
+<h2>応用：完全自動化</h2>
+<p>AIエージェントにさらに指示を追加することで、インストール後の初期設定まで自動化できます。例えば、以下のようなステップを追加します。</p>
+<li>NixOS設定ファイル（<code>/etc/nixos/configuration.nix</code>）を転送</li>
+<li><code>nixos-rebuild switch</code>を実行</li>
+<li>ユーザー作成とSSH公開鍵の設定</li>
+<pre><code class="language-bash">&lt;h1&gt;設定ファイル転送&lt;/h1&gt;
+scp -i /tmp/ssh_key ./my-config.nix root@192.168.1.100:/etc/nixos/configuration.nix
+&lt;h1&gt;再構築&lt;/h1&gt;
+ssh -i /tmp/ssh_key root@192.168.1.100 "nixos-rebuild switch"
+</code></pre>
+<hr>
+<p>*この記事はOpenCodeを日常的に使用し、AIエージェントにSSH経由でNixOSをインストールさせるなどの実践経験を持つSioが監修しています。DeepSeek APIのヘビーユーザーとして、実際のコスト感や制限事項を反映しています。*</p>
+<h2>まとめ</h2>
+<p>AIエージェントを活用することで、NixOSのインストール作業を大幅に自動化できました。特に、SSH経由での遠隔操作は、手動で行うよりも高速かつエラーが少ないです。今回の手法は、大量のサーバーをセットアップする際や、再現性が求められる環境構築に役立ちます。ぜひ試してみてください。</p>0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"AIエージェントにSSH越しでNixOSをインストールさせる方法"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"Claude CodeなどのAIエージェントを活用し、SSH経由でリモートサーバーにNixOSを自動インストールする実践的な手順を解説。OSインストールの自動化と遠隔操作のノウハウを公開。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","AIエージェント",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"AIエージェント"}],["$","span","NixOS",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"NixOS"}],["$","span","SSH",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"SSH"}],["$","span","ClaudeCode",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"ClaudeCode"}],["$","span","遠隔操作",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"遠隔操作"}],["$","span","OSインストール",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"OSインストール"}],["$","span","自動化",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"自動化"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3"]}],null,"$L4"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"ozMjvJqr-IrJkTdPFeVOD"}
+3:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-ai hover:underline","children":"← 記事一覧に戻る"}]}]
+4:["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]
+7:null

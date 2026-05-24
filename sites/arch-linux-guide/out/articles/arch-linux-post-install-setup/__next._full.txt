@@ -1,0 +1,107 @@
+1:"$Sreact.fragment"
+2:I[24117,["/_next/static/chunks/00mbd8isu7b38.js"],"default"]
+3:I[79967,["/_next/static/chunks/00mbd8isu7b38.js"],"default"]
+5:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+9:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"ViewportBoundary"]
+b:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"MetadataBoundary"]
+d:I[30946,["/_next/static/chunks/00mbd8isu7b38.js"],"default",1]
+:HL["/_next/static/chunks/089_dp2m4y2c2.css","style"]
+0:{"P":null,"c":["","articles","arch-linux-post-install-setup"],"q":"","i":false,"f":[[["",{"children":["articles",{"children":[["slug","arch-linux-post-install-setup","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/089_dp2m4y2c2.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/00mbd8isu7b38.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"ja","children":[["$","head",null,{"children":["$","script",null,{"async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019","crossOrigin":"anonymous"}]}],["$","body",null,{"className":"min-h-screen antialiased","children":["$","div",null,{"className":"flex min-h-screen flex-col","children":[["$","header",null,{"className":"border-b border-gray-200 bg-white","children":["$","div",null,{"className":"mx-auto flex max-w-4xl items-center justify-between px-4 py-3","children":[["$","a",null,{"href":"/","className":"text-lg font-bold text-arch hover:opacity-80","children":"Arch Linux 日本語ガイド"}],["$","nav",null,{"className":"flex gap-4 text-sm text-gray-600","children":[["$","a",null,{"href":"/","className":"hover:text-arch","children":"ホーム"}],["$","a",null,{"href":"/about","className":"hover:text-arch","children":"このサイトについて"}]]}]]}]}],["$","main",null,{"className":"flex-1","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400","children":[["$","div",null,{"className":"flex justify-center gap-4 mb-2","children":[["$","a",null,{"href":"/about","className":"hover:text-gray-600","children":"このサイトについて"}],["$","a",null,{"href":"/privacy","className":"hover:text-gray-600","children":"プライバシーポリシー"}]]}],"Arch Linux 日本語ガイド — Built with OpenCode + DeepSeek API"]}]]}]}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L4",null,["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]]}],{},null,false,null]},null,false,"$@8"]},null,false,"$@8"]},null,false,null],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$6",null,{"name":"Next.Metadata","children":"$Lc"}]}]}],null]}],false]],"m":"$undefined","G":["$d",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/089_dp2m4y2c2.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"oMFWqHyx7sJoNGgtrYd0X"}
+e:[]
+8:"$We"
+f:T185c,
+<hr>
+<p>*この記事はArch Linuxを実機で日常運用しているSioが、実際のインストール・設定経験に基づいてAI生成コンテンツをレビュー・補完しています。btrfsサブボリュームとLUKS暗号化環境で検証済みです。*</p>
+<h2>Arch Linux インストール後 やることリスト：初期設定・必須設定を完全網羅</h2>
+<p>Arch Linuxのインストールが完了したら、次にやるべきことは<strong>初期設定</strong>です。この記事では、インストール直後に行うべき必須設定を、初心者にもわかりやすく解説します。</p>
+<h3>1. ネットワークの設定</h3>
+<p>インストール直後はネットワークが使えない場合があります。有線LANの場合はDHCPで自動取得、無線LANの場合は<code>iwd</code>や<code>NetworkManager</code>を使って接続します。</p>
+<p>#### 有線LANの場合
+<code>systemd-networkd</code>と<code>systemd-resolved</code>を有効化します。</p>
+<pre><code class="language-bash">sudo systemctl enable --now systemd-networkd systemd-resolved
+</code></pre>
+<p>#### 無線LANの場合
+<code>iwd</code>をインストールして有効化します。</p>
+<pre><code class="language-bash">sudo pacman -S iwd
+sudo systemctl enable --now iwd
+</code></pre>
+<p>その後、<code>iwctl</code>で接続します。</p>
+<pre><code class="language-bash">iwctl
+[iwd]# device list
+[iwd]# station wlan0 scan
+[iwd]# station wlan0 connect [SSID]
+</code></pre>
+<p><code>NetworkManager</code>を使う場合は、<code>networkmanager</code>パッケージをインストールして有効化します。</p>
+<pre><code class="language-bash">sudo pacman -S networkmanager
+sudo systemctl enable --now NetworkManager
+</code></pre>
+<h3>2. パッケージのアップデートとミラー設定</h3>
+<p>インストール直後はパッケージが古い可能性があるため、まずはアップデートします。</p>
+<pre><code class="language-bash">sudo pacman -Syu
+</code></pre>
+<p>ミラーサーバーを最適化するには、<code>reflector</code>を使います。</p>
+<pre><code class="language-bash">sudo pacman -S reflector
+sudo reflector --latest 5 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+</code></pre>
+<h3>3. ユーザー作成とsudo設定</h3>
+<p>インストール時にrootユーザーしか作成していない場合は、一般ユーザーを作成します。</p>
+<pre><code class="language-bash">useradd -m -G wheel -s /bin/bash ユーザー名
+passwd ユーザー名
+</code></pre>
+<p>sudoを使えるようにするため、<code>sudo</code>パッケージをインストールし、visudoで<code>%wheel ALL=(ALL:ALL) ALL</code>のコメントを外します。</p>
+<pre><code class="language-bash">sudo pacman -S sudo
+EDITOR=vim sudo visudo
+</code></pre>
+<h3>4. デスクトップ環境のインストール（任意）</h3>
+<p>GUIを使いたい場合は、デスクトップ環境をインストールします。代表的なものとして、KDE Plasma、GNOME、Xfceなどがあります。</p>
+<p>例：KDE Plasma</p>
+<pre><code class="language-bash">sudo pacman -S plasma-meta kde-applications-meta
+sudo systemctl enable sddm
+</code></pre>
+<h3>5. AURヘルパーのインストール</h3>
+<p>AUR（Arch User Repository）を使うために、<code>yay</code>や<code>paru</code>をインストールします。</p>
+<pre><code class="language-bash">sudo pacman -S --needed base-devel git
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+</code></pre>
+<h3>6. 日本語入力の設定</h3>
+<p>日本語を入力できるようにするため、<code>fcitx5</code>と日本語入力エンジン<code>mozc</code>をインストールします。</p>
+<pre><code class="language-bash">sudo pacman -S fcitx5 fcitx5-mozc fcitx5-configtool
+</code></pre>
+<p>環境変数を設定します。</p>
+<pre><code class="language-bash">echo 'export GTK_IM_MODULE=fcitx' &gt;&gt; ~/.xprofile
+echo 'export QT_IM_MODULE=fcitx' &gt;&gt; ~/.xprofile
+echo 'export XMODIFIERS=@im=fcitx' &gt;&gt; ~/.xprofile
+</code></pre>
+<h3>7. ファイアウォールの設定</h3>
+<p>セキュリティのために、<code>ufw</code>や<code>firewalld</code>を設定します。簡単なのは<code>ufw</code>です。</p>
+<pre><code class="language-bash">sudo pacman -S ufw
+sudo ufw enable
+sudo ufw allow 22/tcp  # SSHを許可する場合
+</code></pre>
+<h3>8. スワップファイルの作成（任意）</h3>
+<p>スワップ領域がない場合、スワップファイルを作成します。</p>
+<pre><code class="language-bash">sudo fallocate -l 2G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+</code></pre>
+<p><code>/etc/fstab</code>に追記します。</p>
+<pre><code class="language-bash">echo '/swapfile none swap defaults 0 0' | sudo tee -a /etc/fstab
+</code></pre>
+<h3>9. よくある誤解</h3>
+<p>#### 誤解1: <code>pacman -Syu</code>はいつでも安全</p>
+<p><strong>事実</strong>: カーネルやシステムライブラリの更新後は再起動が必要です。また、<code>pacman -Syu</code>は部分アップグレードを避けるため、必ずフルアップグレードを行います。</p>
+<p>#### 誤解2: AURヘルパーは必須</p>
+<p><strong>事実</strong>: AURヘルパーは便利ですが、手動で<code>makepkg</code>を使うこともできます。セキュリティ上、信頼できるPKGBUILDのみを使用しましょう。</p>
+<p>#### 誤解3: デスクトップ環境は必須</p>
+<p><strong>事実</strong>: Arch Linuxはターミナルベースでも十分に使えます。サーバー用途ならデスクトップ環境は不要です。</p>
+<h3>まとめ</h3>
+<p>以上が、Arch Linuxインストール後の初期設定の主要な項目です。ネットワーク設定、パッケージ管理、ユーザー設定、日本語入力、ファイアウォールなど、順を追って設定することで、快適なArch Linux環境が構築できます。</p>
+<p>これらの設定を済ませたら、次はお好みのアプリケーションをインストールして、自分だけのArch Linuxを楽しんでください。</p>4:["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"Arch Linux インストール後にやるべき初期設定・必須設定まとめ"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"Arch Linuxをインストールしたらやるべき初期設定を徹底解説。必須パッケージ、ネットワーク設定、ユーザー設定、AURヘルパーなど、初心者向けに手順をまとめました。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","Arch Linux",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"Arch Linux"}],["$","span","インストール後",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"インストール後"}],["$","span","初期設定",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"初期設定"}],["$","span","やること",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"やること"}],["$","span","必須設定",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"必須設定"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$f"}}]]}],"$L10"]}]
+10:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-arch hover:underline","children":"← 記事一覧に戻る"}]}]
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+7:null
+c:[["$","title","0",{"children":"Arch Linux 日本語ガイド"}],["$","meta","1",{"name":"description","content":"Arch Linuxのインストールからデスクトップ環境構築まで、日本語で体系的に解説するガイドサイトです。"}],["$","meta","2",{"name":"keywords","content":"Arch Linux,Linux,インストール,日本語,デスクトップ環境,btrfs,LUKS"}]]

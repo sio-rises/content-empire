@@ -1,0 +1,74 @@
+1:"$Sreact.fragment"
+2:I[10332,["/_next/static/chunks/007ac~remr-yw.js"],"default"]
+3:I[41511,["/_next/static/chunks/007ac~remr-yw.js"],"default"]
+5:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+9:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"ViewportBoundary"]
+b:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"MetadataBoundary"]
+d:I[30493,["/_next/static/chunks/007ac~remr-yw.js"],"default",1]
+:HL["/_next/static/chunks/0sknqqgyc~d7j.css","style"]
+0:{"P":null,"c":["","articles","ai-coding-tools-comparison-2024"],"q":"","i":false,"f":[[["",{"children":["articles",{"children":[["slug","ai-coding-tools-comparison-2024","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0sknqqgyc~d7j.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/007ac~remr-yw.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"ja","children":[["$","head",null,{"children":["$","script",null,{"async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019","crossOrigin":"anonymous"}]}],["$","body",null,{"className":"min-h-screen antialiased","children":["$","div",null,{"className":"flex min-h-screen flex-col","children":[["$","header",null,{"className":"border-b border-gray-200 bg-white","children":["$","div",null,{"className":"mx-auto flex max-w-4xl items-center justify-between px-4 py-3","children":[["$","a",null,{"href":"/","className":"text-lg font-bold text-ai hover:opacity-80","children":"AIエージェント活用ガイド"}],["$","nav",null,{"className":"flex gap-4 text-sm text-gray-600","children":["$","a",null,{"href":"/","className":"hover:text-ai","children":"ホーム"}]}]]}]}],["$","main",null,{"className":"flex-1","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400","children":"AIエージェント活用ガイド — Built with OpenCode + DeepSeek API"}]]}]}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L4",null,["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]]}],{},null,false,null]},null,false,"$@8"]},null,false,"$@8"]},null,false,null],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$6",null,{"name":"Next.Metadata","children":"$Lc"}]}]}],null]}],false]],"m":"$undefined","G":["$d",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0sknqqgyc~d7j.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"ozMjvJqr-IrJkTdPFeVOD"}
+e:[]
+8:"$We"
+f:T1a13,<h2>はじめに</h2>
+<p>AIコーディングツールは、開発者の生産性を飛躍的に向上させる存在として急速に普及しています。中でもGitHub Copilot、Cursor、OpenCodeは特に注目を集めており、それぞれ異なるアプローチで開発を支援します。本記事では、これら3つのツールを多角的に比較し、あなたの開発スタイルに最適なツールを見つける手助けをします。</p>
+<h2>各ツールの概要</h2>
+<h3>GitHub Copilot</h3>
+GitHub Copilotは、OpenAIのCodexモデルをベースにしたコード補完ツールです。2021年にリリースされ、Visual Studio Code、JetBrains、Neovimなど主要なエディタで利用可能です。豊富なトレーニングデータにより、幅広い言語やフレームワークに対応しています。
+<h3>Cursor</h3>
+Cursorは、AIファーストのコードエディタです。VSCodeをフォークして作られており、コード補完だけでなく、チャットによる対話的なコード生成やリファクタリング、バグ修正など、より高度なAI機能を統合しています。
+<h3>OpenCode</h3>
+OpenCodeは、オープンソースのAIコーディングアシスタントです。ローカル実行が可能で、プライバシーを重視する開発者に適しています。コード補完やチャット機能を備え、カスタマイズ性が高いのが特徴です。
+<h2>機能比較</h2>
+<h3>コード補完精度</h3>
+<li><strong>GitHub Copilot</strong>: 文脈を理解した高度な補完が可能。特に一般的なパターンやライブラリの使用法に強い。</li>
+<li><strong>Cursor</strong>: Copilotと同等以上の補完精度。さらに、プロジェクト全体のコンテキストを考慮した補完が可能。</li>
+<li><strong>OpenCode</strong>: 補完精度はやや劣るが、ローカルモデルを使用するためカスタマイズ次第で改善可能。</li>
+<h3>チャット機能</h3>
+<li><strong>GitHub Copilot Chat</strong>: 2026年に追加。コードに関する質問や説明、リファクタリングの提案が可能。</li>
+<li><strong>Cursor</strong>: チャット機能が標準搭載。コードの選択範囲に対して直接指示を出せ、インラインで編集できる。</li>
+<li><strong>OpenCode</strong>: チャット機能あり。モデルを自由に選択でき、OpenAIやAnthropicのAPIにも対応。</li>
+<h3>対応エディタ</h3>
+<li><strong>GitHub Copilot</strong>: VSCode、JetBrains、Neovim、Visual Studioなど、幅広いエディタに対応。</li>
+<li><strong>Cursor</strong>: 独自エディタのみ。VSCodeの拡張機能をそのまま利用可能。</li>
+<li><strong>OpenCode</strong>: VSCode拡張機能として提供。また、CLIツールとしても利用可能。</li>
+<h3>プライバシーとセキュリティ</h3>
+<li><strong>GitHub Copilot</strong>: コードはクラウドに送信される。企業向けにはデータ利用を制限するオプションあり。</li>
+<li><strong>Cursor</strong>: クラウドベースだが、プライバシーモードを提供。コードを学習に使用しない設定が可能。</li>
+<li><strong>OpenCode</strong>: ローカル実行が可能。コードが外部に送信されないため、セキュリティ要件が厳しいプロジェクトに最適。</li>
+<h2>料金比較</h2>
+<table><thead><tr><th>ツール</th><th>無料プラン</th><th>有料プラン</th></tr></thead><tbody><tr><td>GitHub Copilot</td><td>なし（30日トライアルあり）</td><td>個人: $10/月、企業: $19/月</td></tr>
+<tr><td>Cursor</td><td>月200回の補完 + 50回のチャット</td><td>Pro: $20/月（無制限）</td></tr>
+<tr><td>OpenCode</td><td>完全無料（オープンソース）</td><td>なし（ただしAPI利用料は別途）</td></tr></tbody></table>
+<h2>開発効率への影響</h2>
+<p>実際の開発現場での使用感を比較します。</p>
+<h3>初心者向け</h3>
+<li><strong>GitHub Copilot</strong>: 学習曲線が緩やかで、すぐに使い始められる。</li>
+<li><strong>Cursor</strong>: チャット機能が強力で、コードの説明や修正を対話的に行えるため、学習に役立つ。</li>
+<li><strong>OpenCode</strong>: セットアップにやや手間がかかるが、ローカルで動作するため安心。</li>
+<h3>チーム開発向け</h3>
+<li><strong>GitHub Copilot</strong>: GitHubとの統合が強力。プルリクエストやコードレビューとの連携がスムーズ。</li>
+<li><strong>Cursor</strong>: プロジェクト全体のコンテキストを理解するため、大規模コードベースでの作業効率が高い。</li>
+<li><strong>OpenCode</strong>: チーム内で共有するには設定が必要。カスタマイズ性を活かした統一設定が可能。</li>
+<h2>それぞれの強みと弱み</h2>
+<h3>GitHub Copilot</h3>
+<li><strong>強み</strong>: エディタ対応の広さ、安定した補完精度、GitHubとの連携</li>
+<li><strong>弱み</strong>: 料金がかかる、プライバシー面での懸念</li>
+<h3>Cursor</h3>
+<li><strong>強み</strong>: 高度なチャット機能、プロジェクト全体のコンテキスト理解、インライン編集</li>
+<li><strong>弱み</strong>: 独自エディタに依存、料金が比較的高い</li>
+<h3>OpenCode</h3>
+<li><strong>強み</strong>: 完全無料、オープンソース、ローカル実行によるプライバシー保護</li>
+<li><strong>弱み</strong>: 補完精度がやや劣る、セットアップが複雑</li>
+<hr>
+<p>*この記事はOpenCodeを日常的に使用し、AIエージェントにSSH経由でNixOSをインストールさせるなどの実践経験を持つSioが監修しています。DeepSeek APIのヘビーユーザーとして、実際のコスト感や制限事項を反映しています。*</p>
+<h2>まとめ：あなたに最適なツールは？</h2>
+<li><strong>汎用性と安定性を求めるなら</strong>: GitHub Copilot</li>
+<li><strong>AIとの対話的な開発を重視するなら</strong>: Cursor</li>
+<li><strong>プライバシーとコストを重視するなら</strong>: OpenCode</li>
+<p>これらのツールは日々進化しており、それぞれが互いの機能を取り入れています。まずは無料トライアルやオープンソース版を試し、自分の開発スタイルに合うかどうかを確認することをおすすめします。</p>
+<p>AIコーディングツールを活用して、開発効率を飛躍的に向上させましょう。</p>4:["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"AIコーディングツール徹底比較：GitHub Copilot vs Cursor vs OpenCode どれが最適か？"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"GitHub Copilot、Cursor、OpenCodeの3つのAIコーディングツールを機能・料金・開発効率で比較。それぞれの強みと弱みを解説し、あなたに最適なツールを選ぶためのガイドを提供します。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","AIコーディング",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"AIコーディング"}],["$","span","GitHub Copilot",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"GitHub Copilot"}],["$","span","Cursor",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"Cursor"}],["$","span","OpenCode",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"OpenCode"}],["$","span","比較",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"比較"}],["$","span","開発効率",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"開発効率"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$f"}}]]}],"$L10"]}]
+10:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-ai hover:underline","children":"← 記事一覧に戻る"}]}]
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+7:null
+c:[["$","title","0",{"children":"AIエージェント活用ガイド"}],["$","meta","1",{"name":"description","content":"OpenCode/ClaudeCode/DeepSeekを使ったAIエージェント開発自動化の情報を日本語で発信。"}],["$","meta","2",{"name":"keywords","content":"OpenCode,ClaudeCode,AIエージェント,DeepSeek,開発自動化,プロンプト"}]]

@@ -1,0 +1,16 @@
+{
+  "title": "Arch Linuxで画面が真っ黒になる原因と解決策：NVIDIA/AMD/Intelグラフィックドライバ編",
+  "slug": "arch-linux-black-screen-graphics-driver",
+  "metaDescription": "Arch Linuxでグラフィックドライバ起因の画面真っ黒問題を解決。NVIDIA、AMD、Intel別の対処法とトラブルシューティングを詳しく解説。",
+  "content": "## はじめに\n\nArch Linuxをインストールした後、起動時に画面が真っ黒になる問題は、グラフィックドライバの設定ミスや互換性の問題が原因であることが多いです。この記事では、NVIDIA、AMD、IntelそれぞれのGPUについて、画面真っ黒の原因と具体的な解決手順を解説します。\n\n## 画面真っ黒の一般的な原因\n\n- デフォルトのグラフィックドライバがGPUに適合していない\n- カーネルモジュールの読み込み順序の問題\n- WaylandとXorgの切り替えの失敗\n- ブートパラメータの不足\n\n## 事前確認\n\nまず、現在のGPUを確認します。\n\n```bash\nlspci -vnn | grep -E 'VGA|3D'\n```\n\n表示されたベンダー（NVIDIA、AMD、Intel）に応じて以下のセクションを参照してください。\n\n## NVIDIA GPUの場合\n\n### 原因\nNVIDIAのプロプライエタリドライバ`nvidia`が正しくインストールされていない、またはnouveauモジュールと競合している。\n\n### 解決手順\n\n#### 1. リカバリモードで起動\nGRUBメニューで`e`キーを押し、カーネルパラメータに`systemd.unit=multi-user.target`を追加して起動。\n\n#### 2. nouveauのブラックリスト化\n\n```bash\nsudo nano /etc/modprobe.d/nouveau_blacklist.conf\n```\n\n以下の内容を記述：\n\n```\nblacklist nouveau\n```\n\n#### 3. NVIDIAドライバのインストール\n\n```bash\nsudo pacman -S nvidia nvidia-utils nvidia-settings\n```\n\n#### 4. mkinitcpioの再生成\n\n```bash\nsudo mkinitcpio -P\n```\n\n#### 5. 再起動\n\n```bash\nsudo reboot\n```\n\n### それでも真っ黒な場合\n\nブートパラメータに`nvidia_drm.modeset=1`を追加します。\n\nGRUB設定を編集：\n\n```bash\nsudo nano /etc/default/grub\n```\n\n`GRUB_CMDLINE_LINUX_DEFAULT`に`nvidia_drm.modeset=1`を追加。\n\n例：\n\n```\nGRUB_CMDLINE_LINUX_DEFAULT=\"quiet nvidia_drm.modeset=1\"\n```\n\nGRUBを更新：\n\n```bash\nsudo grub-mkconfig -o /boot/grub/grub.cfg\n```\n\n## AMD GPUの場合\n\n### 原因\nAMDGPUドライバが正しくロードされていない、またはファームウェア不足。\n\n### 解決手順\n\n#### 1. リカバリモードで起動（同上）\n\n#### 2. 必要なパッケージのインストール\n\n```bash\nsudo pacman -S mesa lib32-mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-radeon\n```\n\n#### 3. ファームウェアの確認\n\n```bash\nsudo pacman -S linux-firmware\n```\n\n#### 4. カーネルモジュールの確認\n\n```bash\nsudo lsmod | grep amdgpu\n```\n\nロードされていない場合、手動で追加：\n\n```bash\nsudo modprobe amdgpu\n```\n\n永続化するには`/etc/modules-load.d/amdgpu.conf`を作成し、`amdgpu`と記述。\n\n#### 5. 再起動\n\n### トラブルシューティング\n\nブートパラメータに`radeon.si_support=0 amdgpu.si_support=1`（GCN 1.0/1.1世代の場合）を追加。\n\n## Intel GPUの場合\n\n### 原因\nIntelの内蔵GPU用モジュール`i915`が正しく動作していない。\n\n### 解決手順\n\n#### 1. リカバリモードで起動\n\n#### 2. 必要なパッケージのインストール\n\n```bash\nsudo pacman -S mesa lib32-mesa xf86-video-intel vulkan-intel lib32-vulkan-intel\n```\n\n#### 3. カーネルモジュールの確認\n\n```bash\nsudo modprobe i915\n```\n\n#### 4. ブートパラメータの追加\n\n`/etc/default/grub`の`GRUB_CMDLINE_LINUX_DEFAULT`に`i915.modeset=1`を追加。\n\n#### 5. GRUB更新と再起動\n\n### 注意点\n\n古いIntel GPU（第4世代以前）では`xf86-video-intel`の代わりに`modesetting`ドライバを使うと安定する場合があります。\n\n## 全GPU共通のトラブルシューティング\n\n### 1. WaylandからXorgに切り替え\n\nログイン画面でセッションを「Xorg」に変更。\n\n### 2. カーネルパラメータのリセット\n\nGRUBメニューで`e`キーを押し、`quiet`や`splash`を削除して起動。\n\n### 3. ログの確認\n\n```bash\njournalctl -b -1 -p err | grep -i drm\n```\n\n### 4. セーフモードでの起動\n\nブートパラメータに`nomodeset`を追加。これで起動できれば、ドライバの問題が確定。\n\n\n\n---\n\n*この記事はArch Linuxを実機で日常運用しているSioが、実際のインストール・設定経験に基づいてAI生成コンテンツをレビュー・補完しています。btrfsサブボリュームとLUKS暗号化環境で検証済みです。*\n\n## まとめ\n\nArch Linuxで画面が真っ黒になる問題は、グラフィックドライバの設定を適切に行うことで解決できます。GPUに合わせたドライバのインストールと、必要に応じたブートパラメータの追加が重要です。まずはリカバリモードで起動し、本記事の手順を試してください。それでも解決しない場合は、Arch Wikiの各GPUページを参照しましょう。",
+  "keywords": [
+    "Arch Linux",
+    "画面真っ黒",
+    "nvidia",
+    "amd",
+    "intel",
+    "グラフィックドライバ"
+  ],
+  "template": "howto",
+  "generatedAt": "2026-05-24T16:01:52.795Z"
+}

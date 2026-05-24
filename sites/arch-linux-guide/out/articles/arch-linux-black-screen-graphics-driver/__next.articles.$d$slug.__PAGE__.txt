@@ -1,0 +1,102 @@
+1:"$Sreact.fragment"
+5:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+2:T172a,<h2>はじめに</h2>
+<p>Arch Linuxをインストールした後、起動時に画面が真っ黒になる問題は、グラフィックドライバの設定ミスや互換性の問題が原因であることが多いです。この記事では、NVIDIA、AMD、IntelそれぞれのGPUについて、画面真っ黒の原因と具体的な解決手順を解説します。</p>
+<h2>画面真っ黒の一般的な原因</h2>
+<li>デフォルトのグラフィックドライバがGPUに適合していない</li>
+<li>カーネルモジュールの読み込み順序の問題</li>
+<li>WaylandとXorgの切り替えの失敗</li>
+<li>ブートパラメータの不足</li>
+<h2>事前確認</h2>
+<p>まず、現在のGPUを確認します。</p>
+<pre><code class="language-bash">lspci -vnn | grep -E 'VGA|3D'
+</code></pre>
+<p>表示されたベンダー（NVIDIA、AMD、Intel）に応じて以下のセクションを参照してください。</p>
+<h2>NVIDIA GPUの場合</h2>
+<h3>原因</h3>
+NVIDIAのプロプライエタリドライバ<code>nvidia</code>が正しくインストールされていない、またはnouveauモジュールと競合している。
+<h3>解決手順</h3>
+<p>#### 1. リカバリモードで起動
+GRUBメニューで<code>e</code>キーを押し、カーネルパラメータに<code>systemd.unit=multi-user.target</code>を追加して起動。</p>
+<p>#### 2. nouveauのブラックリスト化</p>
+<pre><code class="language-bash">sudo nano /etc/modprobe.d/nouveau_blacklist.conf
+</code></pre>
+<p>以下の内容を記述：</p>
+<pre><code class="language-">blacklist nouveau
+</code></pre>
+<p>#### 3. NVIDIAドライバのインストール</p>
+<pre><code class="language-bash">sudo pacman -S nvidia nvidia-utils nvidia-settings
+</code></pre>
+<p>#### 4. mkinitcpioの再生成</p>
+<pre><code class="language-bash">sudo mkinitcpio -P
+</code></pre>
+<p>#### 5. 再起動</p>
+<pre><code class="language-bash">sudo reboot
+</code></pre>
+<h3>それでも真っ黒な場合</h3>
+<p>ブートパラメータに<code>nvidia_drm.modeset=1</code>を追加します。</p>
+<p>GRUB設定を編集：</p>
+<pre><code class="language-bash">sudo nano /etc/default/grub
+</code></pre>
+<p><code>GRUB_CMDLINE_LINUX_DEFAULT</code>に<code>nvidia_drm.modeset=1</code>を追加。</p>
+<p>例：</p>
+<pre><code class="language-">GRUB_CMDLINE_LINUX_DEFAULT="quiet nvidia_drm.modeset=1"
+</code></pre>
+<p>GRUBを更新：</p>
+<pre><code class="language-bash">sudo grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre>
+<h2>AMD GPUの場合</h2>
+<h3>原因</h3>
+AMDGPUドライバが正しくロードされていない、またはファームウェア不足。
+<h3>解決手順</h3>
+<p>#### 1. リカバリモードで起動（同上）</p>
+<p>#### 2. 必要なパッケージのインストール</p>
+<pre><code class="language-bash">sudo pacman -S mesa lib32-mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-radeon
+</code></pre>
+<p>#### 3. ファームウェアの確認</p>
+<pre><code class="language-bash">sudo pacman -S linux-firmware
+</code></pre>
+<p>#### 4. カーネルモジュールの確認</p>
+<pre><code class="language-bash">sudo lsmod | grep amdgpu
+</code></pre>
+<p>ロードされていない場合、手動で追加：</p>
+<pre><code class="language-bash">sudo modprobe amdgpu
+</code></pre>
+<p>永続化するには<code>/etc/modules-load.d/amdgpu.conf</code>を作成し、<code>amdgpu</code>と記述。</p>
+<p>#### 5. 再起動</p>
+<h3>トラブルシューティング</h3>
+<p>ブートパラメータに<code>radeon.si_support=0 amdgpu.si_support=1</code>（GCN 1.0/1.1世代の場合）を追加。</p>
+<h2>Intel GPUの場合</h2>
+<h3>原因</h3>
+Intelの内蔵GPU用モジュール<code>i915</code>が正しく動作していない。
+<h3>解決手順</h3>
+<p>#### 1. リカバリモードで起動</p>
+<p>#### 2. 必要なパッケージのインストール</p>
+<pre><code class="language-bash">sudo pacman -S mesa lib32-mesa xf86-video-intel vulkan-intel lib32-vulkan-intel
+</code></pre>
+<p>#### 3. カーネルモジュールの確認</p>
+<pre><code class="language-bash">sudo modprobe i915
+</code></pre>
+<p>#### 4. ブートパラメータの追加</p>
+<p><code>/etc/default/grub</code>の<code>GRUB_CMDLINE_LINUX_DEFAULT</code>に<code>i915.modeset=1</code>を追加。</p>
+<p>#### 5. GRUB更新と再起動</p>
+<h3>注意点</h3>
+<p>古いIntel GPU（第4世代以前）では<code>xf86-video-intel</code>の代わりに<code>modesetting</code>ドライバを使うと安定する場合があります。</p>
+<h2>全GPU共通のトラブルシューティング</h2>
+<h3>1. WaylandからXorgに切り替え</h3>
+<p>ログイン画面でセッションを「Xorg」に変更。</p>
+<h3>2. カーネルパラメータのリセット</h3>
+<p>GRUBメニューで<code>e</code>キーを押し、<code>quiet</code>や<code>splash</code>を削除して起動。</p>
+<h3>3. ログの確認</h3>
+<pre><code class="language-bash">journalctl -b -1 -p err | grep -i drm
+</code></pre>
+<h3>4. セーフモードでの起動</h3>
+<p>ブートパラメータに<code>nomodeset</code>を追加。これで起動できれば、ドライバの問題が確定。</p>
+<hr>
+<p>*この記事はArch Linuxを実機で日常運用しているSioが、実際のインストール・設定経験に基づいてAI生成コンテンツをレビュー・補完しています。btrfsサブボリュームとLUKS暗号化環境で検証済みです。*</p>
+<h2>まとめ</h2>
+<p>Arch Linuxで画面が真っ黒になる問題は、グラフィックドライバの設定を適切に行うことで解決できます。GPUに合わせたドライバのインストールと、必要に応じたブートパラメータの追加が重要です。まずはリカバリモードで起動し、本記事の手順を試してください。それでも解決しない場合は、Arch Wikiの各GPUページを参照しましょう。</p>0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"Arch Linuxで画面が真っ黒になる原因と解決策：NVIDIA/AMD/Intelグラフィックドライバ編"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"Arch Linuxでグラフィックドライバ起因の画面真っ黒問題を解決。NVIDIA、AMD、Intel別の対処法とトラブルシューティングを詳しく解説。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","Arch Linux",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"Arch Linux"}],["$","span","画面真っ黒",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"画面真っ黒"}],["$","span","nvidia",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"nvidia"}],["$","span","amd",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"amd"}],["$","span","intel",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"intel"}],["$","span","グラフィックドライバ",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"グラフィックドライバ"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3"]}],null,"$L4"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"oMFWqHyx7sJoNGgtrYd0X"}
+3:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-arch hover:underline","children":"← 記事一覧に戻る"}]}]
+4:["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]
+7:null

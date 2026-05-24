@@ -1,0 +1,17 @@
+{
+  "title": "ターミナル入門：初心者が覚えるべき基本コマンドと使い方",
+  "slug": "terminal-beginners-guide",
+  "metaDescription": "初心者向けにターミナルの基本コマンド（ls, cd, cpなど）をわかりやすく解説。MacとWindows（WSL）対応。ファイル操作やディレクトリ移動の実践例も紹介。",
+  "content": "## はじめに\n\nターミナル（コマンドライン）は、パソコンをテキストベースで操作するための強力なツールです。GUI（グラフィカルユーザーインターフェース）に慣れている初心者には難しく感じるかもしれませんが、基本コマンドを覚えるだけで作業効率が格段に向上します。本記事では、ターミナルの起動方法から、ファイル操作、ディレクトリ移動の基本コマンドを実践例とともに解説します。\n\n## ターミナルとは？\n\nターミナルは、キーボードからコマンドを入力してコンピュータを操作するためのインターフェースです。Macでは「ターミナル.app」、Windowsでは「コマンドプロンプト」や「PowerShell」がありますが、本記事ではUnix系のコマンドを基本とし、WindowsではWSL（Windows Subsystem for Linux）の利用を推奨します。\n\n## ターミナルの起動方法\n\n### Macの場合\n1. Finderを開き、「アプリケーション」→「ユーティリティ」→「ターミナル」をダブルクリック。\n2. またはSpotlight検索（Command+Space）で「ターミナル」と入力。\n\n### Windowsの場合（WSL推奨）\n1. Microsoft Storeから「Ubuntu」などのLinuxディストリビューションをインストール。\n2. スタートメニューから「Ubuntu」を起動。\n\n## 基本コマンドの前に：用語の理解\n\n- **カレントディレクトリ**：現在自分がいるフォルダの場所。\n- **パス**：ファイルやフォルダの住所のようなもの。絶対パスと相対パスがある。\n- **コマンド**：ターミナルに打ち込む命令文。\n\n## 基本コマンド一覧\n\n### 1. `pwd`：現在地を表示\n```bash\npwd\n# 出力例: /Users/username/Documents\n```\n\n### 2. `ls`：ファイル一覧を表示\n```bash\nls          # 簡易表示\nls -l       # 詳細表示（パーミッション、サイズ、日時）\nls -a       # 隠しファイルも表示\nls -la      # 組み合わせ\n```\n\n### 3. `cd`：ディレクトリを移動\n```bash\ncd Documents          # Documentsフォルダに移動（相対パス）\ncd /Users/username    # 絶対パスで移動\ncd ..                 # 一つ上の階層に移動\ncd ~                  # ホームディレクトリに移動\ncd -                  # 直前のディレクトリに戻る\n```\n\n### 4. `mkdir`：ディレクトリを作成\n```bash\nmkdir new_folder      # カレントディレクトリにnew_folderを作成\nmkdir -p path/to/folder  # 中間ディレクトリも同時に作成\n```\n\n### 5. `touch`：空ファイルを作成\n```bash\ntouch file.txt        # 空のfile.txtを作成\ntouch file1.txt file2.txt  # 複数ファイル作成\n```\n\n### 6. `cp`：ファイルやディレクトリをコピー\n```bash\ncp source.txt dest.txt        # ファイルをコピー\ncp -r folder1 folder2         # ディレクトリを再帰的にコピー\ncp *.txt /target/directory/   # 複数ファイルをコピー\n```\n\n### 7. `mv`：ファイルを移動・リネーム\n```bash\nmv old.txt new.txt            # リネーム\nmv file.txt /target/directory/ # 移動\n```\n\n### 8. `rm`：ファイルやディレクトリを削除\n```bash\nrm file.txt                   # ファイルを削除\nrm -r folder                  # ディレクトリを削除（注意！）\nrm -f file.txt                # 確認なしで強制削除\n```\n\n### 9. `cat`：ファイルの中身を表示\n```bash\ncat file.txt                  # ファイル内容を表示\ncat file1.txt file2.txt       # 複数ファイルを結合表示\n```\n\n### 10. `man`：コマンドのマニュアルを表示\n```bash\nman ls                        # lsコマンドの詳細な使い方を表示\n```\n\n## 実践的な操作例\n\n### 例1：新しいプロジェクトフォルダを作成し、ファイルをコピー\n```bash\n# ホームディレクトリに移動\ncd ~\n\n# プロジェクトフォルダを作成\nmkdir my_project\n\n# プロジェクトフォルダに移動\ncd my_project\n\n# 空のファイルを作成\ntouch index.html style.css\n\n# テンプレートファイルをコピー（例として）\ncp /path/to/template/index.html ./\n```\n\n### 例2：ファイルをバックアップ\n```bash\n# バックアップ用フォルダを作成\nmkdir backup\n\n# すべての.txtファイルをバックアップフォルダにコピー\ncp *.txt backup/\n\n# バックアップフォルダの内容を確認\nls -l backup/\n```\n\n## よくある間違いと注意点\n\n- **rm -rf の誤用**：`rm -rf /` はシステム全体を削除する危険なコマンド。必ずカレントディレクトリを確認。\n- **スペースを含むファイル名**：ダブルクォーテーションで囲むか、バックスラッシュでエスケープ。例：`my file.txt` → `\"my file.txt\"`\n- **権限エラー**：ファイルのパーミッションが不足している場合、`sudo` を使うが、慎重に。\n\n## 次のステップ\n\n基本コマンドに慣れたら、以下のスキルを学びましょう。\n- **パイプとリダイレクト**：`|` や `>` を使ってコマンドを連結。\n- **テキストエディタ**：VimやNanoの基本操作。\n- **シェルスクリプト**：複数のコマンドを自動化。\n\nターミナルは最初はとっつきにくいですが、繰り返し使うことで自然と身につきます。ぜひ日常のファイル操作で活用してみてください。",
+  "keywords": [
+    "ターミナル",
+    "入門",
+    "初心者",
+    "基本コマンド",
+    "ls",
+    "cd",
+    "cp"
+  ],
+  "template": "explainer",
+  "generatedAt": "2026-05-24T16:57:17.204Z"
+}

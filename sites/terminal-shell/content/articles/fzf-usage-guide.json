@@ -1,0 +1,16 @@
+{
+  "title": "fzf（ファジーファインダー）の使い方と設定ガイド",
+  "slug": "fzf-usage-guide",
+  "metaDescription": "fzf（ファジーファインダー）の基本的な使い方から応用的な設定まで解説。インストール方法、キーバインド、カスタマイズ、履歴検索など実用的な情報を提供します。",
+  "content": "## fzf（ファジーファインダー）とは？\n\nfzfは、コマンドライン上で動作する高速なファジーファインダー（曖昧検索ツール）です。標準入力から受け取ったリストをインクリメンタルに絞り込み、選択した結果を標準出力に返します。シェルの履歴検索やファイル検索、プロセス管理など、様々な用途に利用できます。\n\n## fzfのインストール方法\n\n### macOS\nHomebrewを使ってインストールします。\n```bash\nbrew install fzf\n```\n\n### Linux（Ubuntu/Debian）\nパッケージマネージャーからインストールします。\n```bash\nsudo apt update && sudo apt install fzf\n```\n\n### ソースからビルドする場合\nGitHubからクローンしてビルドします。\n```bash\ngit clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf\n~/.fzf/install\n```\n\n## 基本的な使い方\n\n### 標準入力からのフィルタリング\nパイプで渡したテキストをfzfで絞り込みます。\n```bash\nls -la | fzf\n```\n選択した行がそのまま出力されます。\n\n### インタラクティブな検索\nfzfを単体で起動すると、カレントディレクトリのファイルを検索できます。\n```bash\nfzf\n```\n\n### 選択結果の利用\nfzfの出力を変数に代入したり、コマンドの引数として利用します。\n```bash\nfile=$(fzf)\n# または\nvim $(fzf)\n```\n\n## シェルとの統合\n\nfzfをインストールすると、以下の便利なキーバインドが自動的に設定されます（`install`スクリプトを実行した場合）。\n\n### Ctrl+T：ファイル・ディレクトリの検索\n現在のカーソル位置に選択したファイルパスを挿入します。\n\n### Ctrl+R：コマンド履歴の検索\nシェルのコマンド履歴をfzfで絞り込み、選択したコマンドを実行します。\n\n### Alt+C：ディレクトリの移動\nサブディレクトリを検索し、選択したディレクトリに`cd`します。\n\n## 高度な使い方\n\n### プレビュー機能\n`--preview`オプションで選択中のファイルの内容を表示できます。\n```bash\nfzf --preview 'cat {}'\n```\n`{}`は選択中のアイテムに置き換わります。\n\n### 複数選択\n`-m`オプションで複数アイテムを選択できます。TABキーで選択、Shift+TABで解除します。\n```bash\nfzf -m | xargs rm\n```\n\n### カスタムキーバインド\n`--bind`オプションでキー操作をカスタマイズします。\n```bash\nfzf --bind 'ctrl-d:delete-char'\n```\n\n### 検索モードの指定\n`-e`で完全一致、`-i`で大文字小文字を区別しない、`+i`で区別するなど。\n```bash\nfzf -e --no-sort\n```\n\n## 設定ファイルのカスタマイズ\n\nfzfの設定は環境変数`FZF_DEFAULT_OPTS`で行います。`.bashrc`や`.zshrc`に追加します。\n\n### デフォルトオプションの設定例\n```bash\nexport FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'\n```\n\n### プレビューウィンドウのカスタマイズ\n```bash\nexport FZF_DEFAULT_OPTS='--preview \"bat --style=numbers --color=always {}\" --preview-window=right:60%'\n```\n`bat`は`cat`の代替で、シンタックスハイライトに対応しています。\n\n### テーマの変更\n```bash\nexport FZF_DEFAULT_OPTS='--color=fg:#d0d0d0,bg:#121212,hl:#5f87af --color=fg+:#d0d0d0,bg+:#262626,hl+:#5fd7ff --color=info:#afaf87,prompt:#d7005f,pointer:#af5fff --color=marker:#87ff00,spinner:#af5fff,header:#87afaf'\n```\n\n## 実用的な応用例\n\n### プロセス管理\n```bash\nps aux | fzf --header-lines=1 | awk '{print $2}' | xargs kill -9\n```\n\n### Gitブランチの切り替え\n```bash\ngit branch -a | tr -d ' *' | fzf | xargs git checkout\n```\n\n### Dockerコンテナの停止\n```bash\ndocker ps | fzf --header-lines=1 | awk '{print $1}' | xargs docker stop\n```\n\n### ファイル検索と編集\n```bash\nfind . -type f | fzf | xargs vim\n```\n\n## よくある質問\n\n### Q: インストール後にCtrl+Rが使えない\nA: `~/.fzf/shell/key-bindings.bash`（または`.zsh`）をsourceしているか確認してください。`install`スクリプトを実行すると自動で設定されます。\n\n### Q: プレビューが遅い\nA: プレビューコマンドを軽量なものに変更するか、`--preview-window=hidden`でデフォルト非表示にし、`?`キーで表示するように設定できます。\n\n### Q: カスタムコマンドと組み合わせたい\nA: 関数を定義してfzfに渡します。例：\n```bash\nfzf-git-branch() {\n  git branch -a | tr -d ' *' | fzf --preview 'git log --oneline {}'\n}\n```\n\n## まとめ\n\nfzfはシンプルながら強力なツールで、シェル操作の効率を大幅に向上させます。本記事で紹介した基本的な使い方から応用までを習得すれば、日常のコマンドライン作業がより快適になるでしょう。ぜひ自分好みにカスタマイズして活用してください。",
+  "keywords": [
+    "fzf",
+    "ファジーファインダー",
+    "使い方",
+    "設定",
+    "検索",
+    "履歴"
+  ],
+  "template": "howto",
+  "generatedAt": "2026-05-24T16:58:55.122Z"
+}

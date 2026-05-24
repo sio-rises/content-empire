@@ -1,0 +1,123 @@
+<!DOCTYPE html><html lang="ja"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/chunks/0sknqqgyc~d7j.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/004m7bjik~jkr.js"/><script src="/_next/static/chunks/01t1wf1uyv-aa.js" async=""></script><script src="/_next/static/chunks/0pclk7tk1w2nf.js" async=""></script><script src="/_next/static/chunks/turbopack-00gh8rufrmpm9.js" async=""></script><script src="/_next/static/chunks/007ac~remr-yw.js" async=""></script><script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019" crossorigin="anonymous"></script><title>AIエージェント活用ガイド</title><meta name="description" content="OpenCode/ClaudeCode/DeepSeekを使ったAIエージェント開発自動化の情報を日本語で発信。"/><meta name="keywords" content="OpenCode,ClaudeCode,AIエージェント,DeepSeek,開発自動化,プロンプト"/><script src="/_next/static/chunks/03~yq9q893hmn.js" noModule=""></script></head><body class="min-h-screen antialiased"><div hidden=""><!--$--><!--/$--></div><div class="flex min-h-screen flex-col"><header class="border-b border-gray-200 bg-white"><div class="mx-auto flex max-w-4xl items-center justify-between px-4 py-3"><a href="/" class="text-lg font-bold text-ai hover:opacity-80">AIエージェント活用ガイド</a><nav class="flex gap-4 text-sm text-gray-600"><a href="/" class="hover:text-ai">ホーム</a></nav></div></header><main class="flex-1"><div class="mx-auto max-w-4xl px-4 py-8"><article><header class="mb-8"><h1 class="text-3xl font-bold tracking-tight text-gray-900">OpenCodeで始めるWebアプリ開発入門｜Next.jsとReactでAIコーディング</h1><p class="mt-2 text-gray-500">OpenCodeを使ったWebアプリ開発の始め方を解説。Next.jsとReactの環境構築からAIコーディング支援機能まで、実践的なチュートリアルを紹介します。</p><div class="mt-4 flex flex-wrap items-center gap-3"><span class="rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600">OpenCode</span><span class="rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600">Webアプリ</span><span class="rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600">開発</span><span class="rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600">Next.js</span><span class="rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600">React</span><span class="rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600">AIコーディング</span><span class="rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600">入門</span><span class="text-xs text-gray-400">2026/5/25</span></div></header><div class="prose max-w-none"><h1>OpenCodeで始めるWebアプリ開発入門｜Next.jsとReactでAIコーディング</h1>
+<p>AIコーディングツールが急速に進化する中、<strong>OpenCode</strong>はオープンソースで高機能な開発環境として注目を集めています。本記事では、OpenCodeを使ってWebアプリを開発する方法を、Next.jsとReactを例に詳しく解説します。初心者でもステップバイステップで進められるよう、環境構築からAI支援機能の活用までをカバーします。</p>
+<h2>OpenCodeとは？</h2>
+<p>OpenCodeは、AIアシスタントを内蔵したコードエディタです。VS Codeをベースに、コード生成・補完・リファクタリングなどのAI機能をシームレスに利用できます。特筆すべきは、ローカルLLMにも対応しており、プライバシーを保ちながらAIの恩恵を受けられる点です。</p>
+<h3>主な特徴</h3>
+<li>コード補完・生成（GPT-4やClaude、ローカルLLM対応）</li>
+<li>チャットインターフェースによる対話的な開発</li>
+<li>ターミナル統合、Git連携</li>
+<li>拡張機能豊富（VS Code互換）</li>
+<h2>環境構築</h2>
+<h3>1. OpenCodeのインストール</h3>
+<p>公式サイト（https://opencode.ai）からOSに合わせたインストーラをダウンロードします。macOSの場合はHomebrewでもインストール可能です。</p>
+<pre><code class="language-bash">brew install --cask opencode
+</code></pre>
+<h3>2. Node.jsの準備</h3>
+<p>Next.jsを使用するため、Node.js v18以上が必要です。nvmを使ってインストールすることをおすすめします。</p>
+<pre><code class="language-bash">&lt;h1&gt;nvmのインストール&lt;/h1&gt;
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+&lt;h1&gt;Node.js v20をインストール&lt;/h1&gt;
+nvm install 20
+nvm use 20
+</code></pre>
+<h2>プロジェクトの作成</h2>
+<p>OpenCodeを起動し、ターミナルを開きます。以下のコマンドでNext.jsプロジェクトを作成します。</p>
+<pre><code class="language-bash">npx create-next-app@latest my-app --typescript --tailwind --eslint
+cd my-app
+</code></pre>
+<p>プロンプトに従い、App Routerを使用するかどうかなど選択します。今回は「Yes」で進めます。</p>
+<h2>AI支援機能の活用</h2>
+<h3>コード生成</h3>
+<p>OpenCodeの左サイドバーにあるAIアイコンをクリックし、チャットパネルを開きます。例えば「ToDoアプリのリストコンポーネントを作成して」と入力すると、コードを生成してくれます。</p>
+<pre><code class="language-typescript">// 生成されたコード例
+interface Todo {
+  id: number;
+  text: string;
+  completed: boolean;
+}
+<p>export default function TodoList() {
+  const [todos, setTodos] = useState&lt;Todo[]&gt;([]);
+  const [input, setInput] = useState('');</p>
+<p>const addTodo = () =&gt; {
+    if (input.trim()) {
+      setTodos([...todos, { id: Date.now(), text: input, completed: false }]);
+      setInput('');
+    }
+  };</p>
+<p>return (
+    &lt;div&gt;
+      &lt;input value={input} onChange={(e) =&gt; setInput(e.target.value)} /&gt;
+      &lt;button onClick={addTodo}&gt;追加&lt;/button&gt;
+      &lt;ul&gt;
+        {todos.map(todo =&gt; (
+          &lt;li key={todo.id}&gt;{todo.text}&lt;/li&gt;
+        ))}
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre></p>
+<h3>コード補完</h3>
+<p>エディタ上でコードを書いていると、自動的に補完候補が表示されます。Tabキーで受け入れられます。特に型定義や繰り返しパターンで効果を発揮します。</p>
+<h3>リファクタリング</h3>
+<p>コードを選択し、右クリックメニューから「AI: リファクタリング」を選ぶと、改善案を提案してくれます。例えば、上記のToDoリストをよりReactらしくリファクタリングしてもらいましょう。</p>
+<h2>実践：シンプルなブログアプリ</h2>
+<h3>ページ構成</h3>
+<li>ホームページ（記事一覧）</li>
+<li>記事詳細ページ</li>
+<h3>データ管理</h3>
+<p>今回は簡易的にローカルのJSONファイルを使用します。</p>
+<li><code>data/posts.json</code>を作成</li>
+<li>ダミーデータを入力</li>
+<pre><code class="language-json">[
+  {
+    "id": 1,
+    "title": "OpenCode入門",
+    "content": "OpenCodeは..."
+  },
+  {
+    "id": 2,
+    "title": "Next.jsの基本",
+    "content": "Next.jsは..."
+  }
+]
+</code></pre>
+<h3>ルーティング</h3>
+<p><code>app/page.tsx</code> で一覧を表示し、<code>app/posts/[id]/page.tsx</code> で詳細を表示します。</p>
+<pre><code class="language-typescript">// app/page.tsx
+import posts from '@/data/posts.json';
+import Link from 'next/link';
+<p>export default function Home() {
+  return (
+    &lt;ul&gt;
+      {posts.map(post =&gt; (
+        &lt;li key={post.id}&gt;
+          &lt;Link href={<code>/posts/${post.id}</code>}&gt;{post.title}&lt;/Link&gt;
+        &lt;/li&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+}
+</code></pre></p>
+<pre><code class="language-typescript">// app/posts/[id]/page.tsx
+import posts from '@/data/posts.json';
+import { notFound } from 'next/navigation';
+<p>export default function Post({ params }: { params: { id: string } }) {
+  const post = posts.find(p =&gt; p.id === Number(params.id));
+  if (!post) notFound();
+  return (
+    &lt;article&gt;
+      &lt;h1&gt;{post.title}&lt;/h1&gt;
+      &lt;p&gt;{post.content}&lt;/p&gt;
+    &lt;/article&gt;
+  );
+}
+</code></pre></p>
+<h3>AIでスタイリング</h3>
+<p>チャットで「記事一覧をカード形式でスタイリングして」と依頼すると、Tailwind CSSのクラスを提案してくれます。</p>
+<h2>デバッグとテスト</h2>
+<p>OpenCodeのターミナルで<code>npm run dev</code>を実行し、ブラウザで確認します。エラーが発生した場合、AIチャットにエラーメッセージを貼り付けると解決策を提案してくれます。</p>
+<hr>
+<p>*この記事はOpenCodeを日常的に使用し、AIエージェントにSSH経由でNixOSをインストールさせるなどの実践経験を持つSioが監修しています。DeepSeek APIのヘビーユーザーとして、実際のコスト感や制限事項を反映しています。*</p>
+<h2>まとめ</h2>
+<p>OpenCodeを使えば、AIの支援を受けながら効率的にWebアプリ開発を進められます。特にNext.jsとReactの組み合わせは、AIが生成するコードの品質が高く、初心者でもスムーズに開発できます。ぜひこの機会にOpenCodeを試してみてください。</p></div></article><div class="mt-12 border-t border-gray-200 pt-6"><a href="/" class="text-sm text-ai hover:underline">← 記事一覧に戻る</a></div></div><!--$--><!--/$--></main><footer class="border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400">AIエージェント活用ガイド — Built with OpenCode + DeepSeek API</footer></div><script src="/_next/static/chunks/004m7bjik~jkr.js" id="_R_" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[10332,[\"/_next/static/chunks/007ac~remr-yw.js\"],\"default\"]\n3:I[41511,[\"/_next/static/chunks/007ac~remr-yw.js\"],\"default\"]\n5:I[57439,[\"/_next/static/chunks/007ac~remr-yw.js\"],\"OutletBoundary\"]\n6:\"$Sreact.suspense\"\n9:I[57439,[\"/_next/static/chunks/007ac~remr-yw.js\"],\"ViewportBoundary\"]\nb:I[57439,[\"/_next/static/chunks/007ac~remr-yw.js\"],\"MetadataBoundary\"]\nd:I[30493,[\"/_next/static/chunks/007ac~remr-yw.js\"],\"default\",1]\n:HL[\"/_next/static/chunks/0sknqqgyc~d7j.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"c\":[\"\",\"articles\",\"opencode-web-app-development-guide\"],\"q\":\"\",\"i\":false,\"f\":[[[\"\",{\"children\":[\"articles\",{\"children\":[[\"slug\",\"opencode-web-app-development-guide\",\"d\",null],{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",16],[[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/chunks/0sknqqgyc~d7j.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-0\",{\"src\":\"/_next/static/chunks/007ac~remr-yw.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"ja\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"script\",null,{\"async\":true,\"src\":\"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019\",\"crossOrigin\":\"anonymous\"}]}],[\"$\",\"body\",null,{\"className\":\"min-h-screen antialiased\",\"children\":[\"$\",\"div\",null,{\"className\":\"flex min-h-screen flex-col\",\"children\":[[\"$\",\"header\",null,{\"className\":\"border-b border-gray-200 bg-white\",\"children\":[\"$\",\"div\",null,{\"className\":\"mx-auto flex max-w-4xl items-center justify-between px-4 py-3\",\"children\":[[\"$\",\"a\",null,{\"href\":\"/\",\"className\":\"text-lg font-bold text-ai hover:opacity-80\",\"children\":\"AIエージェント活用ガイド\"}],[\"$\",\"nav\",null,{\"className\":\"flex gap-4 text-sm text-gray-600\",\"children\":[\"$\",\"a\",null,{\"href\":\"/\",\"className\":\"hover:text-ai\",\"children\":\"ホーム\"}]}]]}]}],[\"$\",\"main\",null,{\"className\":\"flex-1\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}],[\"$\",\"footer\",null,{\"className\":\"border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400\",\"children\":\"AIエージェント活用ガイド — Built with OpenCode + DeepSeek API\"}]]}]}]]}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[\"$L4\",null,[\"$\",\"$L5\",null,{\"children\":[\"$\",\"$6\",null,{\"name\":\"Next.MetadataOutlet\",\"children\":\"$@7\"}]}]]}],{},null,false,null]},null,false,\"$@8\"]},null,false,\"$@8\"]},null,false,null],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$L9\",null,{\"children\":\"$La\"}],[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$Lb\",null,{\"children\":[\"$\",\"$6\",null,{\"name\":\"Next.Metadata\",\"children\":\"$Lc\"}]}]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$d\",[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/chunks/0sknqqgyc~d7j.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]]],\"S\":true,\"h\":null,\"s\":\"$undefined\",\"l\":\"$undefined\",\"p\":\"$undefined\",\"d\":\"$undefined\",\"b\":\"ozMjvJqr-IrJkTdPFeVOD\"}\n"])</script><script>self.__next_f.push([1,"e:[]\n8:\"$We\"\n"])</script><script>self.__next_f.push([1,"f:T1a55,"])</script><script>self.__next_f.push([1,"\u003ch1\u003eOpenCodeで始めるWebアプリ開発入門｜Next.jsとReactでAIコーディング\u003c/h1\u003e\n\u003cp\u003eAIコーディングツールが急速に進化する中、\u003cstrong\u003eOpenCode\u003c/strong\u003eはオープンソースで高機能な開発環境として注目を集めています。本記事では、OpenCodeを使ってWebアプリを開発する方法を、Next.jsとReactを例に詳しく解説します。初心者でもステップバイステップで進められるよう、環境構築からAI支援機能の活用までをカバーします。\u003c/p\u003e\n\u003ch2\u003eOpenCodeとは？\u003c/h2\u003e\n\u003cp\u003eOpenCodeは、AIアシスタントを内蔵したコードエディタです。VS Codeをベースに、コード生成・補完・リファクタリングなどのAI機能をシームレスに利用できます。特筆すべきは、ローカルLLMにも対応しており、プライバシーを保ちながらAIの恩恵を受けられる点です。\u003c/p\u003e\n\u003ch3\u003e主な特徴\u003c/h3\u003e\n\u003cli\u003eコード補完・生成（GPT-4やClaude、ローカルLLM対応）\u003c/li\u003e\n\u003cli\u003eチャットインターフェースによる対話的な開発\u003c/li\u003e\n\u003cli\u003eターミナル統合、Git連携\u003c/li\u003e\n\u003cli\u003e拡張機能豊富（VS Code互換）\u003c/li\u003e\n\u003ch2\u003e環境構築\u003c/h2\u003e\n\u003ch3\u003e1. OpenCodeのインストール\u003c/h3\u003e\n\u003cp\u003e公式サイト（https://opencode.ai）からOSに合わせたインストーラをダウンロードします。macOSの場合はHomebrewでもインストール可能です。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003ebrew install --cask opencode\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e2. Node.jsの準備\u003c/h3\u003e\n\u003cp\u003eNext.jsを使用するため、Node.js v18以上が必要です。nvmを使ってインストールすることをおすすめします。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003e\u0026lt;h1\u0026gt;nvmのインストール\u0026lt;/h1\u0026gt;\ncurl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash\n\u0026lt;h1\u0026gt;Node.js v20をインストール\u0026lt;/h1\u0026gt;\nnvm install 20\nnvm use 20\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2\u003eプロジェクトの作成\u003c/h2\u003e\n\u003cp\u003eOpenCodeを起動し、ターミナルを開きます。以下のコマンドでNext.jsプロジェクトを作成します。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003enpx create-next-app@latest my-app --typescript --tailwind --eslint\ncd my-app\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eプロンプトに従い、App Routerを使用するかどうかなど選択します。今回は「Yes」で進めます。\u003c/p\u003e\n\u003ch2\u003eAI支援機能の活用\u003c/h2\u003e\n\u003ch3\u003eコード生成\u003c/h3\u003e\n\u003cp\u003eOpenCodeの左サイドバーにあるAIアイコンをクリックし、チャットパネルを開きます。例えば「ToDoアプリのリストコンポーネントを作成して」と入力すると、コードを生成してくれます。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-typescript\"\u003e// 生成されたコード例\ninterface Todo {\n  id: number;\n  text: string;\n  completed: boolean;\n}\n\u003cp\u003eexport default function TodoList() {\n  const [todos, setTodos] = useState\u0026lt;Todo[]\u0026gt;([]);\n  const [input, setInput] = useState('');\u003c/p\u003e\n\u003cp\u003econst addTodo = () =\u0026gt; {\n    if (input.trim()) {\n      setTodos([...todos, { id: Date.now(), text: input, completed: false }]);\n      setInput('');\n    }\n  };\u003c/p\u003e\n\u003cp\u003ereturn (\n    \u0026lt;div\u0026gt;\n      \u0026lt;input value={input} onChange={(e) =\u0026gt; setInput(e.target.value)} /\u0026gt;\n      \u0026lt;button onClick={addTodo}\u0026gt;追加\u0026lt;/button\u0026gt;\n      \u0026lt;ul\u0026gt;\n        {todos.map(todo =\u0026gt; (\n          \u0026lt;li key={todo.id}\u0026gt;{todo.text}\u0026lt;/li\u0026gt;\n        ))}\n      \u0026lt;/ul\u0026gt;\n    \u0026lt;/div\u0026gt;\n  );\n}\n\u003c/code\u003e\u003c/pre\u003e\u003c/p\u003e\n\u003ch3\u003eコード補完\u003c/h3\u003e\n\u003cp\u003eエディタ上でコードを書いていると、自動的に補完候補が表示されます。Tabキーで受け入れられます。特に型定義や繰り返しパターンで効果を発揮します。\u003c/p\u003e\n\u003ch3\u003eリファクタリング\u003c/h3\u003e\n\u003cp\u003eコードを選択し、右クリックメニューから「AI: リファクタリング」を選ぶと、改善案を提案してくれます。例えば、上記のToDoリストをよりReactらしくリファクタリングしてもらいましょう。\u003c/p\u003e\n\u003ch2\u003e実践：シンプルなブログアプリ\u003c/h2\u003e\n\u003ch3\u003eページ構成\u003c/h3\u003e\n\u003cli\u003eホームページ（記事一覧）\u003c/li\u003e\n\u003cli\u003e記事詳細ページ\u003c/li\u003e\n\u003ch3\u003eデータ管理\u003c/h3\u003e\n\u003cp\u003e今回は簡易的にローカルのJSONファイルを使用します。\u003c/p\u003e\n\u003cli\u003e\u003ccode\u003edata/posts.json\u003c/code\u003eを作成\u003c/li\u003e\n\u003cli\u003eダミーデータを入力\u003c/li\u003e\n\u003cpre\u003e\u003ccode class=\"language-json\"\u003e[\n  {\n    \"id\": 1,\n    \"title\": \"OpenCode入門\",\n    \"content\": \"OpenCodeは...\"\n  },\n  {\n    \"id\": 2,\n    \"title\": \"Next.jsの基本\",\n    \"content\": \"Next.jsは...\"\n  }\n]\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003eルーティング\u003c/h3\u003e\n\u003cp\u003e\u003ccode\u003eapp/page.tsx\u003c/code\u003e で一覧を表示し、\u003ccode\u003eapp/posts/[id]/page.tsx\u003c/code\u003e で詳細を表示します。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-typescript\"\u003e// app/page.tsx\nimport posts from '@/data/posts.json';\nimport Link from 'next/link';\n\u003cp\u003eexport default function Home() {\n  return (\n    \u0026lt;ul\u0026gt;\n      {posts.map(post =\u0026gt; (\n        \u0026lt;li key={post.id}\u0026gt;\n          \u0026lt;Link href={\u003ccode\u003e/posts/${post.id}\u003c/code\u003e}\u0026gt;{post.title}\u0026lt;/Link\u0026gt;\n        \u0026lt;/li\u0026gt;\n      ))}\n    \u0026lt;/ul\u0026gt;\n  );\n}\n\u003c/code\u003e\u003c/pre\u003e\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-typescript\"\u003e// app/posts/[id]/page.tsx\nimport posts from '@/data/posts.json';\nimport { notFound } from 'next/navigation';\n\u003cp\u003eexport default function Post({ params }: { params: { id: string } }) {\n  const post = posts.find(p =\u0026gt; p.id === Number(params.id));\n  if (!post) notFound();\n  return (\n    \u0026lt;article\u0026gt;\n      \u0026lt;h1\u0026gt;{post.title}\u0026lt;/h1\u0026gt;\n      \u0026lt;p\u0026gt;{post.content}\u0026lt;/p\u0026gt;\n    \u0026lt;/article\u0026gt;\n  );\n}\n\u003c/code\u003e\u003c/pre\u003e\u003c/p\u003e\n\u003ch3\u003eAIでスタイリング\u003c/h3\u003e\n\u003cp\u003eチャットで「記事一覧をカード形式でスタイリングして」と依頼すると、Tailwind CSSのクラスを提案してくれます。\u003c/p\u003e\n\u003ch2\u003eデバッグとテスト\u003c/h2\u003e\n\u003cp\u003eOpenCodeのターミナルで\u003ccode\u003enpm run dev\u003c/code\u003eを実行し、ブラウザで確認します。エラーが発生した場合、AIチャットにエラーメッセージを貼り付けると解決策を提案してくれます。\u003c/p\u003e\n\u003chr\u003e\n\u003cp\u003e*この記事はOpenCodeを日常的に使用し、AIエージェントにSSH経由でNixOSをインストールさせるなどの実践経験を持つSioが監修しています。DeepSeek APIのヘビーユーザーとして、実際のコスト感や制限事項を反映しています。*\u003c/p\u003e\n\u003ch2\u003eまとめ\u003c/h2\u003e\n\u003cp\u003eOpenCodeを使えば、AIの支援を受けながら効率的にWebアプリ開発を進められます。特にNext.jsとReactの組み合わせは、AIが生成するコードの品質が高く、初心者でもスムーズに開発できます。ぜひこの機会にOpenCodeを試してみてください。\u003c/p\u003e"])</script><script>self.__next_f.push([1,"4:[\"$\",\"div\",null,{\"className\":\"mx-auto max-w-4xl px-4 py-8\",\"children\":[[\"$\",\"article\",null,{\"children\":[[\"$\",\"header\",null,{\"className\":\"mb-8\",\"children\":[[\"$\",\"h1\",null,{\"className\":\"text-3xl font-bold tracking-tight text-gray-900\",\"children\":\"OpenCodeで始めるWebアプリ開発入門｜Next.jsとReactでAIコーディング\"}],[\"$\",\"p\",null,{\"className\":\"mt-2 text-gray-500\",\"children\":\"OpenCodeを使ったWebアプリ開発の始め方を解説。Next.jsとReactの環境構築からAIコーディング支援機能まで、実践的なチュートリアルを紹介します。\"}],[\"$\",\"div\",null,{\"className\":\"mt-4 flex flex-wrap items-center gap-3\",\"children\":[[[\"$\",\"span\",\"OpenCode\",{\"className\":\"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600\",\"children\":\"OpenCode\"}],[\"$\",\"span\",\"Webアプリ\",{\"className\":\"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600\",\"children\":\"Webアプリ\"}],[\"$\",\"span\",\"開発\",{\"className\":\"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600\",\"children\":\"開発\"}],[\"$\",\"span\",\"Next.js\",{\"className\":\"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600\",\"children\":\"Next.js\"}],[\"$\",\"span\",\"React\",{\"className\":\"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600\",\"children\":\"React\"}],[\"$\",\"span\",\"AIコーディング\",{\"className\":\"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600\",\"children\":\"AIコーディング\"}],[\"$\",\"span\",\"入門\",{\"className\":\"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600\",\"children\":\"入門\"}]],[\"$\",\"span\",null,{\"className\":\"text-xs text-gray-400\",\"children\":\"2026/5/25\"}]]}]]}],[\"$\",\"div\",null,{\"className\":\"prose max-w-none\",\"dangerouslySetInnerHTML\":{\"__html\":\"$f\"}}]]}],\"$L10\"]}]\n"])</script><script>self.__next_f.push([1,"10:[\"$\",\"div\",null,{\"className\":\"mt-12 border-t border-gray-200 pt-6\",\"children\":[\"$\",\"a\",null,{\"href\":\"/\",\"className\":\"text-sm text-ai hover:underline\",\"children\":\"← 記事一覧に戻る\"}]}]\n"])</script><script>self.__next_f.push([1,"a:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n"])</script><script>self.__next_f.push([1,"7:null\nc:[[\"$\",\"title\",\"0\",{\"children\":\"AIエージェント活用ガイド\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"OpenCode/ClaudeCode/DeepSeekを使ったAIエージェント開発自動化の情報を日本語で発信。\"}],[\"$\",\"meta\",\"2\",{\"name\":\"keywords\",\"content\":\"OpenCode,ClaudeCode,AIエージェント,DeepSeek,開発自動化,プロンプト\"}]]\n"])</script></body></html>

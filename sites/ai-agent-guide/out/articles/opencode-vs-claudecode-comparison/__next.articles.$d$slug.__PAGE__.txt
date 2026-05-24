@@ -1,0 +1,67 @@
+1:"$Sreact.fragment"
+5:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+2:T15a8,<h1>OpenCode vs ClaudeCode比較：AIエージェント開発ツールの違いを徹底解説</h1>
+<p>AIエージェント開発の分野で注目を集める「OpenCode」と「ClaudeCode」。どちらもコード生成やタスク自動化を支援するツールですが、そのアプローチや機能には大きな違いがあります。本記事では、両者を徹底比較し、あなたの開発スタイルに合ったツールを見つける手助けをします。</p>
+<h2>1. 基本概要</h2>
+<h3>OpenCode</h3>
+OpenCodeは、オープンソースのAIエージェントフレームワークです。主にターミナル上で動作し、自然言語の指示からコードの生成・編集・実行までを自律的に行います。AnthropicのClaude APIをデフォルトで使用しますが、他のLLMにも対応可能です。
+<h3>ClaudeCode</h3>
+ClaudeCodeは、Anthropicが提供する公式のAIエージェントツールです。Claudeモデルに特化して最適化されており、ターミナル上でコード生成やデバッグ、ファイル操作などを実行します。
+<h2>2. 機能比較</h2>
+<table><thead><tr><th>機能</th><th>OpenCode</th><th>ClaudeCode</th></tr></thead><tbody><tr><td>対応LLM</td><td>Claude, GPT-4, Gemini など複数</td><td>Claude (Sonnet/Opus) のみ</td></tr>
+<tr><td>コード生成</td><td>〇</td><td>〇</td></tr>
+<tr><td>ファイル編集</td><td>〇</td><td>〇</td></tr>
+<tr><td>ターミナルコマンド実行</td><td>〇</td><td>〇</td></tr>
+<tr><td>自律的なタスク実行</td><td>〇</td><td>〇</td></tr>
+<tr><td>カスタムツール追加</td><td>〇 (プラグイン)</td><td>×</td></tr>
+<tr><td>マルチモーダル</td><td>×</td><td>〇 (画像入力)</td></tr>
+<tr><td>料金</td><td>無料 (API費用別)</td><td>無料 (API費用別)</td></tr>
+<tr><td>セットアップ</td><td>やや複雑</td><td>簡単</td></tr>
+<tr><td>コミュニティ</td><td>活発 (OSS)</td><td>Anthropic公式サポート</td></tr></tbody></table>
+<h2>3. セットアップの違い</h2>
+<h3>OpenCodeのセットアップ</h3>
+<li>公式ドキュメントに従ってOpenCodeをインストール</li>
+<li>環境変数にAPIキーを設定 (<code>ANTHROPIC_API_KEY</code> または <code>DEEPSEEK_API_KEY</code> など)</li>
+<li><code>opencode</code> コマンドで起動</li>
+<p>複数のLLMを切り替えられる柔軟性がある一方、初期設定に手間がかかります。</p>
+<h3>ClaudeCodeのセットアップ</h3>
+<li>Anthropic公式サイトからClaude Codeをインストール</li>
+<li><code>claude</code> コマンドで起動 (初回にAPIキーを求められる)</li>
+<p>ほぼワンステップで使い始められる手軽さが魅力です。</p>
+<h2>4. 実際の使用感</h2>
+<h3>OpenCode</h3>
+<li>複数のモデルを試せるため、比較検討しやすい</li>
+<li>プラグインで機能拡張が可能 (例: データベース操作、API連携)</li>
+<li>日本語の指示でも安定して動作</li>
+<li>ただし、モデルによって応答品質にばらつきがある</li>
+<h3>ClaudeCode</h3>
+<li>Claudeとの統合が深く、コード生成の品質が高い</li>
+<li>画像を読み込んでHTML/CSSに変換するなどのマルチモーダル機能が強力</li>
+<li>シンプルなUIで学習コストが低い</li>
+<li>モデルが固定されているため、選択肢が限られる</li>
+<h2>5. 料金比較</h2>
+<p>両者ともツール自体は無料ですが、API利用料が発生します。</p>
+<li><strong>OpenCode</strong>: 使用するLLMのAPI料金に依存。Claude APIの場合、入力$3/Mトークン、出力$15/Mトークン（Claude 3.5 Sonnet）。</li>
+<li><strong>ClaudeCode</strong>: Claude APIの料金体系そのまま。同様に$3/$15。</li>
+<p>実質的なコストは同じですが、OpenCodeはより安価なモデル（GPT-4o-miniなど）に切り替えられるため、コスト最適化が可能です。</p>
+<h2>6. どちらを選ぶべきか？</h2>
+<h3>OpenCodeを選ぶべきケース</h3>
+<li>複数のLLMを比較しながら開発したい</li>
+<li>カスタムツールやプラグインで機能を拡張したい</li>
+<li>コストを抑えたい（安価なモデルを使いたい）</li>
+<li>オープンソースのコミュニティに貢献したい</li>
+<h3>ClaudeCodeを選ぶべきケース</h3>
+<li>すぐに使い始めたい、セットアップが面倒</li>
+<li>Claudeの高品質なコード生成を最大限活用したい</li>
+<li>画像入力などのマルチモーダル機能が必要</li>
+<li>Anthropicの公式サポートを受けたい</li>
+<hr>
+<p>*この記事はOpenCodeを日常的に使用し、AIエージェントにSSH経由でNixOSをインストールさせるなどの実践経験を持つSioが監修しています。DeepSeek APIのヘビーユーザーとして、実際のコスト感や制限事項を反映しています。*</p>
+<h2>7. まとめ</h2>
+<p>OpenCodeとClaudeCodeは、どちらもAIエージェント開発に有用なツールですが、その哲学が異なります。OpenCodeは「柔軟性と拡張性」、ClaudeCodeは「統合と使いやすさ」を重視しています。</p>
+<p>まずは両方を試してみることをおすすめします。セットアップはどちらも簡単なので、実際に使ってみて自分のワークフローに合う方を選んでください。</p>
+<p>あなたの開発がより効率的になることを願っています。</p>0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"OpenCode vs ClaudeCode比較：AIエージェント開発ツールの違いを徹底解説"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"OpenCodeとClaudeCodeの違いを比較。機能、料金、セットアップ、ユースケースを詳しく解説し、どちらを選ぶべきか判断するためのガイド。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","OpenCode",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"OpenCode"}],["$","span","ClaudeCode",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"ClaudeCode"}],["$","span","比較",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"比較"}],["$","span","AIエージェント",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"AIエージェント"}],["$","span","どっち",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"どっち"}],["$","span","開発ツール",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"開発ツール"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3"]}],null,"$L4"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"ozMjvJqr-IrJkTdPFeVOD"}
+3:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-ai hover:underline","children":"← 記事一覧に戻る"}]}]
+4:["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]
+7:null

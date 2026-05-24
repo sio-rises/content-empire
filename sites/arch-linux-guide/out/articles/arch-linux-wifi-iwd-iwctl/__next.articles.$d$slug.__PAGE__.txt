@@ -1,0 +1,101 @@
+1:"$Sreact.fragment"
+5:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+2:T1877,<h2>はじめに</h2>
+<p>Arch Linuxをインストールした後、Wi-Fiに接続する必要があります。本記事では、軽量でシンプルな無線LANデーモン「iwd」とそのクライアント「iwctl」を使ったWi-Fi接続手順を解説します。iwdはsystemd-networkdやdhcpcdと組み合わせて使うことが推奨されており、従来のwpa_supplicantよりも設定が簡単です。</p>
+<h2>1. iwdのインストールと有効化</h2>
+<p>まず、iwdパッケージをインストールします。</p>
+<pre><code class="language-bash">sudo pacman -S iwd
+</code></pre>
+<p>次に、iwdサービスを起動し、自動起動を有効にします。</p>
+<pre><code class="language-bash">sudo systemctl enable --now iwd
+</code></pre>
+<p>ステータスを確認して正常に動作しているかチェックします。</p>
+<pre><code class="language-bash">sudo systemctl status iwd
+</code></pre>
+<h2>2. iwctlでWi-Fiに接続する</h2>
+<p>iwctlはiwdの対話型クライアントです。以下の手順で接続します。</p>
+<h3>2.1. iwctlを起動</h3>
+<pre><code class="language-bash">sudo iwctl
+</code></pre>
+<p>プロンプトが <code>[iwd]#</code> に変わります。</p>
+<h3>2.2. Wi-Fiデバイスの確認</h3>
+<pre><code class="language-bash">[iwd]# device list
+</code></pre>
+<p>利用可能な無線インターフェースが表示されます。通常は <code>wlan0</code> などです。</p>
+<h3>2.3. アクセスポイントのスキャン</h3>
+<p>デバイス名が <code>wlan0</code> の場合、以下のコマンドでスキャンします。</p>
+<pre><code class="language-bash">[iwd]# station wlan0 scan
+</code></pre>
+<h3>2.4. 利用可能なネットワーク一覧表示</h3>
+<pre><code class="language-bash">[iwd]# station wlan0 get-networks
+</code></pre>
+<p>SSIDとセキュリティ方式が表示されます。</p>
+<h3>2.5. ネットワークに接続</h3>
+<p>SSIDが <code>MyWiFi</code> の場合、パスワード認証なら以下のように接続します。</p>
+<pre><code class="language-bash">[iwd]# station wlan0 connect MyWiFi
+</code></pre>
+<p>パスワードを求められるので入力します。パスフレーズは表示されません。</p>
+<h3>2.6. 接続確認</h3>
+<pre><code class="language-bash">[iwd]# station wlan0 show
+</code></pre>
+<p><code>State</code> が <code>connected</code> になっていれば成功です。</p>
+<h3>2.7. iwctlを終了</h3>
+<pre><code class="language-bash">[iwd]# exit
+</code></pre>
+<h2>3. IPアドレスの取得（DHCP）</h2>
+<p>iwdはL2（データリンク層）までの接続を担当します。IPアドレスを取得するにはDHCPクライアントが必要です。以下に2つの方法を紹介します。</p>
+<h3>3.1. systemd-networkdを使う（推奨）</h3>
+<p>systemd-networkdはsystemdに含まれるネットワーク管理デーモンです。</p>
+<p>まず、設定ファイルを作成します。</p>
+<pre><code class="language-bash">sudo nano /etc/systemd/network/25-wireless.network
+</code></pre>
+<p>以下の内容を記述します。</p>
+<pre><code class="language-ini">[Match]
+Name=wlan0
+<p>[Network]
+DHCP=yes
+</code></pre></p>
+<p>次に、systemd-networkdを有効化して起動します。</p>
+<pre><code class="language-bash">sudo systemctl enable --now systemd-networkd
+</code></pre>
+<h3>3.2. dhcpcdを使う場合</h3>
+<p>dhcpcdは軽量なDHCPクライアントです。</p>
+<pre><code class="language-bash">sudo pacman -S dhcpcd
+sudo systemctl enable --now dhcpcd@wlan0
+</code></pre>
+<p>注意：dhcpcdとsystemd-networkdを同時に使うと競合する可能性があるため、どちらか一方にしてください。</p>
+<h2>4. 自動接続の設定</h2>
+<p>iwdは接続したネットワークの情報を <code>/var/lib/iwd/</code> に保存します。同じネットワークに再度接続する際は、以下のように自動的に接続されます。</p>
+<p>ただし、自動接続を有効にするには、<code>known-networks</code> に設定を追加する必要があります。</p>
+<pre><code class="language-bash">sudo iwctl
+[iwd]# known-networks list
+[iwd]# known-networks MyWiFi set-property AutoConnect yes
+[iwd]# exit
+</code></pre>
+<h2>5. トラブルシューティング</h2>
+<h3>5.1. デバイスが見つからない</h3>
+<pre><code class="language-bash">lspci -k | grep -A 3 -i network
+</code></pre>
+<p>ハードウェアが認識されているか確認します。無線LANチップがサポートされていない場合は、追加のファームウェアが必要です。</p>
+<h3>5.2. iwdサービスが起動しない</h3>
+<pre><code class="language-bash">sudo journalctl -u iwd -xe
+</code></pre>
+<p>ログを確認してエラーを特定します。権限の問題や設定ミスが原因の場合があります。</p>
+<h3>5.3. 接続はできるがインターネットにアクセスできない</h3>
+<p>DNS設定を確認します。<code>/etc/resolv.conf</code> が正しいか確認し、必要に応じてsystemd-resolvedを使います。</p>
+<pre><code class="language-bash">sudo systemctl enable --now systemd-resolved
+sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+</code></pre>
+<h3>5.4. iwctlでパスワード入力時にエラー</h3>
+<p>パスフレーズに特殊文字が含まれる場合、シングルクォートで囲むと安全です。</p>
+<pre><code class="language-bash">[iwd]# station wlan0 connect 'MyWiFi!@#'
+</code></pre>
+<hr>
+<p>*この記事はArch Linuxを実機で日常運用しているSioが、実際のインストール・設定経験に基づいてAI生成コンテンツをレビュー・補完しています。btrfsサブボリュームとLUKS暗号化環境で検証済みです。*</p>
+<h2>まとめ</h2>
+<p>本記事では、Arch Linuxでiwdとiwctlを使ってWi-Fiに接続する方法を解説しました。iwdはシンプルで高速な無線LAN管理ツールであり、systemd-networkdと組み合わせることで安定したネットワーク環境を構築できます。初心者の方も、手順に沿って設定すれば問題なく接続できるはずです。</p>
+<p>さらに詳しい情報は、Arch Wikiの「iwd」ページを参照してください。</p>0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"Arch LinuxでWi-Fiに接続する方法：iwdとiwctlの使い方"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"Arch Linuxでiwdとiwctlを使ったWi-Fi接続の手順を解説。インストールから接続、トラブルシューティングまで網羅。初心者でも安心の実践ガイド。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","Arch Linux",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"Arch Linux"}],["$","span","Wi-Fi",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"Wi-Fi"}],["$","span","iwd",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"iwd"}],["$","span","iwctl",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"iwctl"}],["$","span","無線LAN",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"無線LAN"}],["$","span","ネットワーク",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"ネットワーク"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3"]}],null,"$L4"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"oMFWqHyx7sJoNGgtrYd0X"}
+3:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-arch hover:underline","children":"← 記事一覧に戻る"}]}]
+4:["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]
+7:null

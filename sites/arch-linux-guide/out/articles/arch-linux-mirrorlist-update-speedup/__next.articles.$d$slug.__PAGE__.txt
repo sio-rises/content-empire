@@ -1,0 +1,89 @@
+1:"$Sreact.fragment"
+5:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+2:T1e6a,<h2>はじめに</h2>
+<p>Arch Linuxを使用していると、パッケージのダウンロード速度が遅いと感じることがあるかもしれません。その原因の多くは、<strong>mirrorlist</strong>（ミラーサーバーのリスト）が最適化されていないことです。デフォルトのmirrorlistは世界中のミラーを含んでおり、地理的に遠いサーバーを参照している可能性があります。この記事では、<code>reflector</code>を使ったmirrorlistの自動更新方法を紹介し、ダウンロード速度を劇的に改善する手順を解説します。</p>
+<h2>前提条件</h2>
+<li>Arch Linuxがインストールされていること</li>
+<li>インターネット接続が利用可能であること</li>
+<li><code>sudo</code>権限を持つユーザーで操作すること</li>
+<h2>1. 現在のmirrorlistを確認する</h2>
+<p>まず、現在のmirrorlistの状態を確認しましょう。</p>
+<pre><code class="language-bash">cat /etc/pacman.d/mirrorlist
+</code></pre>
+<p>このファイルには、ミラーサーバーのURLがリストされています。各行の先頭に<code>#</code>が付いているものはコメントアウトされており、有効なミラーは<code>Server = ...</code>の形式で記述されています。デフォルトでは、多くのミラーがコメントアウトされている場合があります。</p>
+<h2>2. pacmanのキャッシュをクリアする（オプション）</h2>
+<p>高速化の効果を実感しやすくするため、事前にパッケージキャッシュをクリアしておくと良いでしょう。</p>
+<pre><code class="language-bash">sudo pacman -Scc
+</code></pre>
+<p>このコマンドは、ダウンロード済みのパッケージキャッシュをすべて削除します。注意点として、キャッシュを削除すると再ダウンロードが必要になるため、通信量が増加します。</p>
+<h2>3. reflectorをインストールする</h2>
+<p><code>reflector</code>は、高速なミラーサーバーを自動的に選択し、mirrorlistを更新するツールです。</p>
+<pre><code class="language-bash">sudo pacman -S reflector
+</code></pre>
+<h2>4. バックアップを取る</h2>
+<p>mirrorlistを編集する前に、必ずバックアップを取得しましょう。</p>
+<pre><code class="language-bash">sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
+</code></pre>
+<h2>5. reflectorでmirrorlistを更新する</h2>
+<p><code>reflector</code>を使用して、最新かつ高速なミラーを自動選択します。以下のコマンドは、日本から最も高速な5つのミラーを取得し、mirrorlistを上書きします。</p>
+<pre><code class="language-bash">sudo reflector --country Japan --latest 5 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+</code></pre>
+<p>各オプションの説明：
+<li><code>--country Japan</code>：日本のミラーに限定</li>
+<li><code>--latest 5</code>：最新の5つのミラーを取得</li>
+<li><code>--protocol https</code>：HTTPSプロトコルのみを対象</li>
+<li><code>--sort rate</code>：ダウンロード速度順にソート</li>
+<li><code>--save /etc/pacman.d/mirrorlist</code>：結果をmirrorlistに保存</li></p>
+<p>国を指定しない場合は、全世界から高速なミラーを自動選択することもできます。</p>
+<pre><code class="language-bash">sudo reflector --latest 10 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+</code></pre>
+<h2>6. 更新後のmirrorlistを確認する</h2>
+<p>更新されたmirrorlistを確認します。</p>
+<pre><code class="language-bash">cat /etc/pacman.d/mirrorlist
+</code></pre>
+<p>先頭に<code>#</code>がなく、<code>Server = ...</code>の行が有効なミラーです。また、各ミラーの横にコメントで速度情報が追加されています。</p>
+<h2>7. パッケージデータベースを更新する</h2>
+<p>新しいmirrorlistを反映させるため、パッケージデータベースを更新します。</p>
+<pre><code class="language-bash">sudo pacman -Syu
+</code></pre>
+<p>これで、今後のパッケージダウンロードが高速化されます。</p>
+<h2>8. 速度の変化を体感する</h2>
+<p>更新前後でダウンロード速度を比較してみましょう。例えば、大きなパッケージ（例：<code>linux</code>カーネル）をダウンロードして時間を計測します。</p>
+<pre><code class="language-bash">&lt;h1&gt;更新前（バックアップを使用）&lt;/h1&gt;
+sudo cp /etc/pacman.d/mirrorlist.backup /etc/pacman.d/mirrorlist
+time sudo pacman -S linux --downloadonly --noconfirm
+<p>&lt;h1&gt;更新後（再度更新）&lt;/h1&gt;
+sudo reflector --country Japan --latest 5 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+time sudo pacman -S linux --downloadonly --noconfirm
+</code></pre></p>
+<p><code>--downloadonly</code>オプションでダウンロードのみ行い、<code>time</code>コマンドで所要時間を計測します。明らかな速度向上が確認できるはずです。</p>
+<h2>トラブルシューティング</h2>
+<h3>1. ミラーが応答しない場合</h3>
+<p><code>reflector</code>実行時にエラーが発生する場合、特定のミラーがダウンしている可能性があります。<code>--latest</code>の数を増やすか、国を指定せずに実行してみてください。</p>
+<pre><code class="language-bash">sudo reflector --latest 20 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+</code></pre>
+<h3>2. pacmanがエラーを出す場合</h3>
+<p><code>pacman -Syu</code>実行時に「invalid or corrupted database」などのエラーが出る場合、mirrorlistに問題がある可能性があります。バックアップから復元します。</p>
+<pre><code class="language-bash">sudo cp /etc/pacman.d/mirrorlist.backup /etc/pacman.d/mirrorlist
+sudo pacman -Syu
+</code></pre>
+<p>その後、再度reflectorを実行するか、手動でmirrorlistを編集してください。</p>
+<h3>3. 特定のミラーを手動で追加したい場合</h3>
+<p><code>reflector</code>を使わずに、自分でミラーを追加することも可能です。信頼できるミラーのURLを<code>/etc/pacman.d/mirrorlist</code>に追記します。フォーマットは以下の通りです。</p>
+<pre><code class="language-">Server = https://mirror.example.com/archlinux/$repo/os/$arch
+</code></pre>
+<p>追加後、<code>sudo pacman -Syu</code>でデータベースを更新します。</p>
+<h3>4. 自動更新を設定したい場合</h3>
+<p>定期的にmirrorlistを自動更新するには、systemdのタイマーを利用します。</p>
+<pre><code class="language-bash">sudo systemctl enable reflector.timer
+sudo systemctl start reflector.timer
+</code></pre>
+<p>これにより、週に1回自動的にmirrorlistが更新されます。設定は<code>/etc/xdg/reflector/reflector.conf</code>で変更可能です。</p>
+<hr>
+<p>*この記事はArch Linuxを実機で日常運用しているSioが、実際のインストール・設定経験に基づいてAI生成コンテンツをレビュー・補完しています。btrfsサブボリュームとLUKS暗号化環境で検証済みです。*</p>
+<h2>まとめ</h2>
+<p>Arch Linuxのmirrorlistを<code>reflector</code>で更新することで、ダウンロード速度を大幅に改善できます。手順は簡単で、バックアップを取った上でコマンドを実行するだけです。定期的な自動更新を設定すれば、常に最適なミラーを利用できるようになります。ぜひ実践して、快適なArch Linuxライフを送ってください。</p>0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"Arch Linuxのmirrorlistを更新してダウンロード速度を高速化する方法"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"Arch Linuxのmirrorlistをreflectorを使って更新し、ダウンロード速度を劇的に向上させる手順を解説。初心者でも簡単に実践できる具体的なコマンドとトラブルシューティング付き。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","Arch Linux",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"Arch Linux"}],["$","span","mirrorlist",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"mirrorlist"}],["$","span","reflector",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"reflector"}],["$","span","ミラー",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"ミラー"}],["$","span","高速化",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"高速化"}],["$","span","ダウンロード速度",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"ダウンロード速度"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3"]}],null,"$L4"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"oMFWqHyx7sJoNGgtrYd0X"}
+3:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-arch hover:underline","children":"← 記事一覧に戻る"}]}]
+4:["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]
+7:null

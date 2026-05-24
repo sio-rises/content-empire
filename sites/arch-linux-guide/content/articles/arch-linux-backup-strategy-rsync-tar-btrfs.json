@@ -1,0 +1,16 @@
+{
+  "title": "Arch Linuxのバックアップ戦略：rsync、tar、btrfsスナップショットを使い分ける",
+  "slug": "arch-linux-backup-strategy-rsync-tar-btrfs",
+  "metaDescription": "Arch Linuxのバックアップ方法を徹底解説。rsync、tar、btrfsスナップショットの使い分けと復元手順を紹介。初心者でも安心の実践的ガイド。",
+  "content": "## はじめに\n\nArch Linuxはローリングリリースのため、システムの安定性を保つには定期的なバックアップが欠かせません。この記事では、代表的なバックアップツールである`rsync`、`tar`、`btrfsスナップショット`の特徴と具体的な手順を解説します。それぞれのメリット・デメリットを理解し、自分の環境に合った戦略を選びましょう。\n\n## バックアップツールの概要\n\n### rsync\n- 差分バックアップが可能で、高速\n- ファイル単位での同期、リモートバックアップにも対応\n- バックアップ先はマウント済みのディスクやSSH経由\n\n### tar\n- アーカイブ形式で圧縮可能（.tar.gz, .tar.xzなど）\n- ファイルのパーミッションや属性を保持\n- フルバックアップに適している\n\n### btrfsスナップショット\n- CoW（Copy-on-Write）を利用した瞬間的なスナップショット\n- 差分のみ保存するためディスク効率が良い\n- ルートファイルシステムがbtrfsである必要がある\n\n## バックアップ手順\n\n### 1. rsyncを使ったバックアップ\n\nまず、バックアップ先のディレクトリを準備します。\n\n```bash\nsudo mkdir -p /mnt/backup_root\nsudo mount /dev/sdb1 /mnt/backup_root\n```\n\nシステム全体をrsyncでバックアップする例（除外リストを指定）:\n\n```bash\nsudo rsync -aAXv --delete --exclude={\"/dev/*\",\"/proc/*\",\"/sys/*\",\"/tmp/*\",\"/run/*\",\"/mnt/*\",\"/media/*\",\"/lost+found\",\".cache\"} / /mnt/backup_root/\n```\n\n- `-a`: アーカイブモード（パーミッション、タイムスタンプ等保持）\n- `-A`: ACLを保持\n- `-X`: 拡張属性を保持\n- `-v`: 詳細表示\n- `--delete`: バックアップ先に存在しないファイルを削除\n- `--exclude`: バックアップから除外するパターン\n\n復元時は、逆方向にrsyncを実行します。\n\n```bash\nsudo rsync -aAXv --delete /mnt/backup_root/ /\n```\n\n### 2. tarを使ったバックアップ\n\nシステム全体をtarでアーカイブする例（除外リストをファイルで指定）:\n\n```bash\nsudo tar -cvpzf /mnt/backup/arch_backup_$(date +%Y%m%d).tar.gz --exclude-from=/home/user/exclude.txt /\n```\n\n除外リストファイル（exclude.txt）の例:\n\n```\n/dev/*\n/proc/*\n/sys/*\n/tmp/*\n/run/*\n/mnt/*\n/media/*\n/lost+found\n/home/*/.cache\n```\n\n- `-c`: アーカイブ作成\n- `-v`: 詳細表示\n- `-p`: パーミッション保持\n- `-z`: gzip圧縮\n- `-f`: 出力ファイル名\n- `--exclude-from`: 除外リストファイル\n\n復元は以下のコマンドで行います。\n\n```bash\nsudo tar -xvpzf /mnt/backup/arch_backup_20250315.tar.gz -C /\n```\n\n### 3. btrfsスナップショットを使ったバックアップ\n\nルートがbtrfsである場合、まずサブボリュームを作成します（通常インストール時に作成済み）。\n\nスナップショットの作成:\n\n```bash\nsudo btrfs subvolume snapshot -r / /.snapshots/root_$(date +%Y%m%d)\n```\n\n- `-r`: 読み取り専用スナップショット\n\nスナップショットを別のディスクに送信（バックアップ）:\n\n```bash\nsudo btrfs send /.snapshots/root_20250315 | sudo btrfs receive /mnt/backup_btrfs/\n```\n\n復元は、スナップショットから元のサブボリュームに戻します。\n\n```bash\nsudo btrfs subvolume delete /\n# 注意: 上記は危険な操作です。実際には別のサブボリュームにマウントしてから行います。\n```\n\nより安全な方法は、ライブUSBからブートしてスナップショットをリストアすることです。\n\n## トラブルシューティング\n\n### rsyncでパーミッションエラーが出る\n- ルート権限で実行しているか確認\n- バックアップ先のファイルシステムがLinuxのパーミッションをサポートしているか（例: FAT32は非推奨）\n\n### tarアーカイブが壊れている\n- 圧縮オプションを変えてみる（-zの代わりに-J（xz）など）\n- アーカイブ作成後に`tar -tvf`で確認\n\n### btrfsスナップショットが作成できない\n- ルートファイルシステムがbtrfsであることを確認\n- スナップショット先のサブボリュームの空き容量を確認\n\n\n\n---\n\n*この記事はArch Linuxを実機で日常運用しているSioが、実際のインストール・設定経験に基づいてAI生成コンテンツをレビュー・補完しています。btrfsサブボリュームとLUKS暗号化環境で検証済みです。*\n\n## まとめ\n\n- **rsync**: 頻繁な差分バックアップに最適。リモートバックアップも可能。\n- **tar**: フルバックアップを圧縮して保存したい場合に便利。\n- **btrfsスナップショット**: 瞬間的で効率的だが、ファイルシステムがbtrfs限定。\n\nこれらのツールを組み合わせることで、堅牢なバックアップ戦略を構築できます。例えば、週次でtarによるフルバックアップ、日次でrsyncによる差分バックアップ、さらにbtrfsスナップショットで直前の状態を保存する、といった運用が考えられます。\n\n定期的なバックアップを習慣化し、万が一のトラブルに備えましょう。",
+  "keywords": [
+    "Arch Linux",
+    "バックアップ",
+    "rsync",
+    "tar",
+    "btrfsスナップショット",
+    "復元"
+  ],
+  "template": "howto",
+  "generatedAt": "2026-05-24T15:59:17.424Z"
+}

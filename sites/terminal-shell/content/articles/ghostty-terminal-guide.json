@@ -1,0 +1,16 @@
+{
+  "title": "Ghosttyターミナル入門：インストール・設定・使い方完全ガイド",
+  "slug": "ghostty-terminal-guide",
+  "metaDescription": "高速GPUアクセラレーションターミナル「Ghostty」のインストール方法、基本設定、カスタマイズテクニックを詳しく解説。初心者から上級者まで役立つ実践ガイド。",
+  "content": "## Ghosttyとは？\n\nGhosttyは、GPUアクセラレーションを活用した高速ターミナルエミュレータです。ネイティブパフォーマンスとモダンな機能を備え、開発者やパワーユーザーに最適です。クロスプラットフォーム対応（macOS, Linux, Windows）で、設定はシンプルな設定ファイルで管理できます。\n\n## 主な特徴\n\n- **GPUレンダリング**: 高速描画でスクロールも滑らか\n- **低レイテンシ**: 入力遅延が最小限\n- **カスタマイズ性**: カラースキーム、フォント、キーバインドを自由に設定\n- **タブとペイン**: 内蔵タブと分割ペイン機能\n- **Unicode対応**: 絵文字や特殊文字を正しく表示\n\n## インストール方法\n\n### macOS (Homebrew)\n```bash\nbrew install --cask ghostty\n```\n\n### Linux (パッケージマネージャ)\n- **Arch Linux**: `yay -S ghostty`\n- **Ubuntu/Debian**: 公式リポジトリにないため、AppImageを利用。\n```bash\n# AppImageのダウンロードと実行\nwget https://github.com/ghostty-org/ghostty/releases/latest/download/Ghostty-x86_64.AppImage\nchmod +x Ghostty-x86_64.AppImage\n./Ghostty-x86_64.AppImage\n```\n\n### Windows\n現在Windows版はベータ版です。GitHub Releasesからインストーラをダウンロードしてください。\n\n## 初期設定\n\nGhosttyは設定ファイル `~/.config/ghostty/config` で管理します。初回起動時に自動生成されます。\n\n### 基本設定例\n```\n# フォント設定\nfont-family = \"JetBrains Mono\"\nfont-size = 14\n\n# テーマ\ntheme = \"catppuccin-mocha\"\n\n# 背景透過\nbackground-opacity = 0.9\n\n# キーバインド\nkeybind = super+d -> split:right\nkeybind = super+shift+d -> split:down\nkeybind = super+w -> close:surface\n```\n\n### 設定ファイルの場所\n- **macOS/Linux**: `~/.config/ghostty/config`\n- **Windows**: `%APPDATA%\\ghostty\\config`\n\n設定変更後は、Ghosttyを再起動するか、`ghostty +reload` で反映できます。\n\n## カスタマイズテクニック\n\n### テーマの変更\n内蔵テーマ一覧は `ghostty +list-themes` で確認。人気のテーマ：\n- catppuccin-mocha\n- dracula\n- tokyonight-storm\n\n外部テーマを読み込むには：\n```\ntheme = /path/to/theme/file\n```\n\n### フォント設定\nNerd Fonts対応。アイコンフォントも表示可能。\n```\nfont-family = \"FiraCode Nerd Font\"\nfont-features = \"calt\", \"liga\"\n```\n\n### キーバインドのカスタマイズ\nよく使う操作を割り当て：\n```\nkeybind = ctrl+shift+up -> scroll:lines:-5\nkeybind = ctrl+shift+down -> scroll:lines:5\n```\n\n## 実用的な使い方\n\n### タブとペインの活用\n- `Super+D`: 右に分割\n- `Super+Shift+D`: 下に分割\n- `Super+T`: 新規タブ\n- `Super+W`: 現在のペインタブを閉じる\n\n### コピー＆ペースト\n- 選択で自動コピー（設定で変更可）\n- `Ctrl+Shift+V`: ペースト\n\n### 検索機能\n- `Ctrl+Shift+F`: インクリメンタル検索\n\n## パフォーマンスの最適化\n\n### GPUレンダリングの確認\n```bash\necho $TERM\n# 出力: xterm-ghostty\n```\n\nレンダリングが遅い場合は、設定で `gpu-acceleration = false` にすると改善する場合があります。\n\n### フォントレンダリングの調整\n```\nfont-size = 13\nfont-thicken = true\n```\n\n## トラブルシューティング\n\n### 設定が反映されない\n1. 設定ファイルの構文チェック: `ghostty +validate`\n2. 再起動: `ghostty +reload`\n\n### 文字化けする\n- フォントがUnicodeに対応しているか確認\n- `font-family` を正しく設定\n\n### クラッシュする\n- 最新版にアップデート\n- `~/.config/ghostty/` のログを確認\n\n## まとめ\n\nGhosttyは、高速でカスタマイズ性に優れたターミナルエミュレータです。設定ファイルによる管理が簡単で、GPUアクセラレーションにより快適な操作感を提供します。まだ試していない方は、ぜひインストールしてその速度を体感してください。\n\n公式ドキュメント: [https://ghostty.org/docs](https://ghostty.org/docs)",
+  "keywords": [
+    "Ghostty",
+    "ターミナル",
+    "インストール",
+    "設定",
+    "高速",
+    "GPU"
+  ],
+  "template": "tutorial",
+  "generatedAt": "2026-05-24T16:59:21.539Z"
+}

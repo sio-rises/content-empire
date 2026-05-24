@@ -1,0 +1,118 @@
+1:"$Sreact.fragment"
+5:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+2:T1c49,<h2>はじめに</h2>
+<p>この記事では、既にWindowsがインストールされている環境にArch Linuxを追加でインストールし、GRUBで起動を管理するデュアルブート環境の構築方法を解説します。UEFI + GPT構成を前提とし、EFIパーティションをWindowsと共有する方法を取ります。</p>
+<h2>事前準備</h2>
+<li><strong>Windowsのセットアップ</strong></li>
+   - 高速スタートアップを無効にする（コントロールパネル → 電源オプション → 電源ボタンの動作 → 現在利用可能ではない設定を変更 → 高速スタートアップのチェックを外す）
+   - BitLockerが有効な場合は一時的に無効にする
+<li><strong>Arch Linuxのインストールメディアを作成</strong></li>
+   - <a href="https://archlinux.org/download/" target="_blank" rel="noopener">Arch Linux公式サイト</a>からISOをダウンロード
+   - RufusやddコマンドでUSBメモリに書き込む
+<li><strong>ディスクの空き領域を確保</strong></li>
+   - Windowsのディスク管理ツールで、既存のパーティションを縮小して未割り当て領域を作成（最低20GB推奨）
+<h2>インストール手順</h2>
+<h3>1. Arch Linuxのインストール</h3>
+<p>USBメモリから起動し、以下の手順でインストールを進めます。</p>
+<pre><code class="language-bash">&lt;h1&gt;キーボードレイアウトの設定（日本語キーボードの場合）&lt;/h1&gt;
+loadkeys jp106
+<p>&lt;h1&gt;UEFIモードか確認&lt;/h1&gt;
+ls /sys/firmware/efi/efivars
+&lt;h1&gt;空でなければUEFIモード&lt;/h1&gt;</p>
+<p>&lt;h1&gt;インターネット接続の確認&lt;/h1&gt;
+ping -c 3 google.com</p>
+<p>&lt;h1&gt;パーティションの作成（例: /dev/sdaにインストール）&lt;/h1&gt;
+&lt;h1&gt;既存のWindowsパーティションは変更しない&lt;/h1&gt;
+&lt;h1&gt;未割り当て領域に以下のパーティションを作成&lt;/h1&gt;
+fdisk /dev/sda
+&lt;h1&gt;コマンド例:&lt;/h1&gt;
+&lt;h1&gt;n (新しいパーティション)&lt;/h1&gt;
+&lt;h1&gt;パーティションタイプ: EFI System (既存のEFIパーティションがある場合は作成しない)&lt;/h1&gt;
+&lt;h1&gt;パーティションタイプ: Linux filesystem (ルート用)&lt;/h1&gt;
+&lt;h1&gt;パーティションタイプ: Linux swap (スワップ用、必要に応じて)&lt;/h1&gt;</p>
+<p>&lt;h1&gt;パーティションをフォーマット&lt;/h1&gt;
+mkfs.fat -F32 /dev/sdaX   # EFIパーティション（既存の場合はフォーマットしない）
+mkfs.ext4 /dev/sdaY       # ルートパーティション
+mkswap /dev/sdaZ          # スワップパーティション
+swapon /dev/sdaZ</p>
+<p>&lt;h1&gt;マウント&lt;/h1&gt;
+mount /dev/sdaY /mnt
+mount --mkdir /dev/sdaX /mnt/boot  # EFIパーティションを/bootにマウント</p>
+<p>&lt;h1&gt;ベースシステムのインストール&lt;/h1&gt;
+pacstrap -K /mnt base base-devel linux linux-firmware vim grub efibootmgr networkmanager</p>
+<p>&lt;h1&gt;fstabの生成&lt;/h1&gt;
+genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</p>
+<p>&lt;h1&gt;chroot&lt;/h1&gt;
+arch-chroot /mnt</p>
+<p>&lt;h1&gt;タイムゾーンとロケールの設定&lt;/h1&gt;
+ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+hwclock --systohc
+echo "en_US.UTF-8 UTF-8" &gt;&gt; /etc/locale.gen
+echo "ja_JP.UTF-8 UTF-8" &gt;&gt; /etc/locale.gen
+locale-gen
+echo "LANG=en_US.UTF-8" &gt; /etc/locale.conf</p>
+<p>&lt;h1&gt;ホスト名の設定&lt;/h1&gt;
+echo "archlinux" &gt; /etc/hostname</p>
+<p>&lt;h1&gt;rootパスワードの設定&lt;/h1&gt;
+passwd</p>
+<p>&lt;h1&gt;ユーザーの作成（任意）&lt;/h1&gt;
+useradd -m -G wheel -s /bin/bash username
+passwd username</p>
+<p>&lt;h1&gt;sudoの設定（wheelグループにsudo権限）&lt;/h1&gt;
+echo "%wheel ALL=(ALL:ALL) ALL" &gt;&gt; /etc/sudoers</p>
+<p>&lt;h1&gt;ネットワークマネージャーの有効化&lt;/h1&gt;
+systemctl enable NetworkManager</p>
+<p>&lt;h1&gt;GRUBのインストール（UEFI）&lt;/h1&gt;
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB</p>
+<p>&lt;h1&gt;GRUB設定ファイルの生成&lt;/h1&gt;
+grub-mkconfig -o /boot/grub/grub.cfg</p>
+<p>&lt;h1&gt;終了と再起動&lt;/h1&gt;
+exit
+umount -R /mnt
+reboot
+</code></pre></p>
+<h3>2. WindowsとArch Linuxのデュアルブート確認</h3>
+<p>再起動後、UEFIブートメニューで「GRUB」を選択すると、GRUBメニューが表示されます。Windows Boot ManagerとArch Linuxの両方が表示されることを確認します。</p>
+<h2>トラブルシューティング</h2>
+<h3>WindowsがGRUBメニューに表示されない</h3>
+<p>原因: os-proberが正しく動作していない可能性があります。</p>
+<p>解決策:
+<pre><code class="language-bash">&lt;h1&gt;os-proberをインストール&lt;/h1&gt;
+sudo pacman -S os-prober</p>
+<p>&lt;h1&gt;GRUB設定を再生成&lt;/h1&gt;
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre></p>
+<h3>GRUBが起動しない / UEFI設定が消える</h3>
+<p>原因: EFIパーティションのブートエントリが正しく設定されていない。</p>
+<p>解決策:
+<pre><code class="language-bash">&lt;h1&gt;Arch Linuxのインストールメディアから起動し、chrootする&lt;/h1&gt;
+&lt;h1&gt;EFIパーティションをマウント&lt;/h1&gt;
+mount /dev/sdaX /mnt/boot
+arch-chroot /mnt</p>
+<p>&lt;h1&gt;GRUBを再インストール&lt;/h1&gt;
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB --recheck
+grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre></p>
+<h3>Windowsが起動しない（GRUBから選択しても）</h3>
+<p>原因: Windowsの高速スタートアップが有効、またはBitLockerが原因。</p>
+<p>解決策:
+<li>Windowsで高速スタートアップを無効にする。</li>
+<li>BitLockerを一時的に解除する。</li></p>
+<h3>時刻がずれる</h3>
+<p>Windowsはローカル時刻、LinuxはUTCをデフォルトで使用するため、時刻がずれることがあります。</p>
+<p>解決策: Linuxでローカル時刻を使用するように設定。
+<pre><code class="language-bash">sudo timedatectl set-local-rtc 1
+</code></pre></p>
+<hr>
+<p>*この記事はArch Linuxを実機で日常運用しているSioが、実際のインストール・設定経験に基づいてAI生成コンテンツをレビュー・補完しています。btrfsサブボリュームとLUKS暗号化環境で検証済みです。*</p>
+<h2>まとめ</h2>
+<p>この記事では、Arch LinuxとWindowsのデュアルブート環境をGRUB + EFIで構築する方法を解説しました。ポイントは以下の通りです。</p>
+<li>Windowsの高速スタートアップを無効にしておく</li>
+<li>EFIパーティションはWindowsと共有するため、フォーマットせずに/bootにマウント</li>
+<li>GRUBのインストール後、<code>grub-mkconfig</code>でWindowsを自動検出</li>
+<li>トラブル時はos-proberのインストールやGRUBの再インストールを試す</li>
+<p>デュアルブート環境は、両OSのメリットを活かせる便利な構成です。ぜひ挑戦してみてください。</p>0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"Arch LinuxとWindowsのデュアルブート設定ガイド（GRUB + EFI）"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"Arch LinuxとWindowsのデュアルブート設定を詳しく解説。EFIパーティションの共有、GRUBの設定、トラブルシューティングまで網羅。初心者でも安心の手順。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","Arch Linux",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"Arch Linux"}],["$","span","デュアルブート",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"デュアルブート"}],["$","span","Windows",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"Windows"}],["$","span","GRUB",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"GRUB"}],["$","span","EFIパーティション",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"EFIパーティション"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3"]}],null,"$L4"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"oMFWqHyx7sJoNGgtrYd0X"}
+3:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-arch hover:underline","children":"← 記事一覧に戻る"}]}]
+4:["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]
+7:null

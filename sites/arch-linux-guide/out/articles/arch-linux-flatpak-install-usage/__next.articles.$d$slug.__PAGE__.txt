@@ -1,0 +1,79 @@
+1:"$Sreact.fragment"
+5:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+2:T137b,<h2>はじめに</h2>
+<p>Flatpakは、Linuxデスクトップ向けのアプリケーションパッケージ管理・サンドボックス化技術です。Arch Linuxでも公式リポジトリから簡単に導入でき、Flathubなどのリモートリポジトリから様々なアプリをインストールできます。本記事では、Arch LinuxにFlatpakをインストールし、実際にアプリを利用するまでの手順を詳しく解説します。</p>
+<h2>Flatpakのインストール</h2>
+<p>まず、Flatpak本体をインストールします。</p>
+<pre><code class="language-bash">sudo pacman -S flatpak
+</code></pre>
+<p>インストールが完了したら、バージョンを確認します。</p>
+<pre><code class="language-bash">flatpak --version
+</code></pre>
+<h2>Flathubの追加</h2>
+<p>Flatpakの主要なリモートリポジトリであるFlathubを追加します。</p>
+<pre><code class="language-bash">flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+</code></pre>
+<p><code>--if-not-exists</code> は、既に追加済みの場合にエラーを避けるオプションです。</p>
+<h2>アプリの検索とインストール</h2>
+<h3>アプリの検索</h3>
+<p>インストールしたいアプリを検索するには、<code>flatpak search</code> コマンドを使います。</p>
+<pre><code class="language-bash">flatpak search &lt;アプリ名&gt;
+</code></pre>
+<p>例えば、GIMPを検索する場合：</p>
+<pre><code class="language-bash">flatpak search gimp
+</code></pre>
+<h3>アプリのインストール</h3>
+<p>検索結果に表示されるApplication IDを使ってインストールします。</p>
+<pre><code class="language-bash">flatpak install flathub &lt;Application ID&gt;
+</code></pre>
+<p>例：GIMPをインストール</p>
+<pre><code class="language-bash">flatpak install flathub org.gimp.GIMP
+</code></pre>
+<h3>インストール済みアプリの確認</h3>
+<pre><code class="language-bash">flatpak list
+</code></pre>
+<h2>アプリの実行</h2>
+<p>インストールしたアプリは、通常のコマンドラインからも、デスクトップ環境のランチャーからも起動できます。</p>
+<p>コマンドラインから起動する場合：</p>
+<pre><code class="language-bash">flatpak run &lt;Application ID&gt;
+</code></pre>
+<p>例：</p>
+<pre><code class="language-bash">flatpak run org.gimp.GIMP
+</code></pre>
+<h2>アプリの更新</h2>
+<p>全てのFlatpakアプリを更新するには：</p>
+<pre><code class="language-bash">flatpak update
+</code></pre>
+<p>特定のアプリだけ更新する場合：</p>
+<pre><code class="language-bash">flatpak update &lt;Application ID&gt;
+</code></pre>
+<h2>アプリの削除</h2>
+<p>不要になったアプリは以下のコマンドで削除します。</p>
+<pre><code class="language-bash">flatpak uninstall &lt;Application ID&gt;
+</code></pre>
+<p>また、使用されていないランタイムを削除してディスク容量を節約できます。</p>
+<pre><code class="language-bash">flatpak uninstall --unused
+</code></pre>
+<h2>トラブルシューティング</h2>
+<h3>パーミッションエラー</h3>
+<p>Flatpakアプリが特定のファイルやデバイスにアクセスできない場合、<code>flatpak override</code> コマンドでパーミッションを調整します。</p>
+<p>例：ホームディレクトリへのアクセスを許可</p>
+<pre><code class="language-bash">flatpak override --user --filesystem=home &lt;Application ID&gt;
+</code></pre>
+<h3>日本語入力ができない</h3>
+<p>Flatpakアプリ内で日本語入力が効かない場合、必要なインプットメソッドモジュールをインストールします。</p>
+<pre><code class="language-bash">flatpak install flathub org.freedesktop.Platform.Ime.fcitx5
+</code></pre>
+<p>その後、アプリを再起動してください。</p>
+<h3>ネットワーク接続の問題</h3>
+<p>一部のアプリがネットワークにアクセスできない場合、<code>--socket=network</code> オプションを追加します。</p>
+<pre><code class="language-bash">flatpak override --user --socket=network &lt;Application ID&gt;
+</code></pre>
+<hr>
+<p>*この記事はArch Linuxを実機で日常運用しているSioが、実際のインストール・設定経験に基づいてAI生成コンテンツをレビュー・補完しています。btrfsサブボリュームとLUKS暗号化環境で検証済みです。*</p>
+<h2>まとめ</h2>
+<p>Arch LinuxにFlatpakを導入することで、サンドボックス化されたアプリケーションを安全に利用できるようになります。Flathubから豊富なアプリを簡単にインストールでき、システムのパッケージ管理と分離されているため、システムの安定性を損なうリスクが低くなります。本記事で紹介した手順を参考に、ぜひFlatpakを活用してみてください。</p>0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"Arch LinuxでFlatpakを導入してサンドボックスアプリを使う方法"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"Arch LinuxにFlatpakをインストールし、Flathubからサンドボックス化されたアプリケーションを安全に利用する手順を詳しく解説。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","Arch Linux",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"Arch Linux"}],["$","span","flatpak",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"flatpak"}],["$","span","サンドボックス",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"サンドボックス"}],["$","span","アプリ",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"アプリ"}],["$","span","flathub",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"flathub"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3"]}],null,"$L4"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"oMFWqHyx7sJoNGgtrYd0X"}
+3:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-arch hover:underline","children":"← 記事一覧に戻る"}]}]
+4:["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]
+7:null

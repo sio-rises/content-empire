@@ -1,0 +1,16 @@
+{
+  "title": "jqコマンド完全ガイド：JSON処理の基本から応用まで",
+  "slug": "jq-command-guide",
+  "metaDescription": "jqコマンドの使い方を基礎から応用まで解説。JSONのパース、フィルタリング、変換方法を具体例で学べます。APIレスポンスの処理やシェルスクリプトでの活用に最適。",
+  "content": "## jqとは？\n\njqはコマンドラインでJSONデータを処理するための軽量かつ強力なツールです。シェル上でJSONのパース、フィルタリング、変換を簡単に行えます。APIレスポンスの解析やログファイルの処理など、幅広い用途で活躍します。\n\n### 主な特徴\n- **フィルタリング**: 条件に合うデータだけを抽出\n- **変換**: JSONの構造を変更したり、フォーマットを整えたり\n- **パイプライン**: 他のコマンドと組み合わせて複雑な処理\n\n## インストール方法\n\n### macOS\n```bash\nbrew install jq\n```\n\n### Ubuntu/Debian\n```bash\nsudo apt-get install jq\n```\n\n### CentOS/RHEL\n```bash\nsudo yum install jq\n```\n\n### Windows\nChocolateyを使用:\n```bash\nchoco install jq\n```\n\n## 基本的な使い方\n\n### シンプルなJSONのパース\n\n`sample.json`:\n```json\n{\n  \"name\": \"Alice\",\n  \"age\": 30,\n  \"city\": \"Tokyo\"\n}\n```\n\n```bash\njq '.' sample.json\n```\n出力:\n```json\n{\n  \"name\": \"Alice\",\n  \"age\": 30,\n  \"city\": \"Tokyo\"\n}\n```\n\n特定のキーの値を取得:\n```bash\njq '.name' sample.json\n# \"Alice\"\n```\n\n### 配列の処理\n\n`array.json`:\n```json\n[\n  {\"id\": 1, \"name\": \"Apple\"},\n  {\"id\": 2, \"name\": \"Banana\"},\n  {\"id\": 3, \"name\": \"Cherry\"}\n]\n```\n\n最初の要素:\n```bash\njq '.[0]' array.json\n```\n\n特定のキーの値だけを取得:\n```bash\njq '.[].name' array.json\n# \"Apple\"\n# \"Banana\"\n# \"Cherry\"\n```\n\n### パイプでデータを渡す\n\n```bash\ncurl -s https://api.example.com/data | jq '.'\n```\n\n## フィルタリングと条件指定\n\n### 条件に合う要素を抽出\n\n```bash\njq '.[] | select(.age > 25)' users.json\n```\n\n### 複数条件\n\n```bash\njq '.[] | select(.age > 25 and .city == \"Tokyo\")' users.json\n```\n\n## データの変換\n\n### キーの名前変更\n\n```bash\njq '{new_name: .old_name}' data.json\n```\n\n### 配列をオブジェクトに変換\n\n```bash\njq 'map({key: .id, value: .name}) | from_entries' data.json\n```\n\n### フラット化\n\n```bash\njq 'flatten' nested.json\n```\n\n## 実践的な使用例\n\n### APIレスポンスから特定のデータを抽出\n\nGitHub APIでリポジトリ名を取得:\n```bash\ncurl -s https://api.github.com/users/octocat/repos | jq '.[].name'\n```\n\n### JSONの整形\n\n```bash\ncat messy.json | jq '.'\n```\n\n### CSVへの変換\n\n```bash\njq -r '.[] | [.name, .age, .city] | @csv' data.json > output.csv\n```\n\n## 高度なテクニック\n\n### 変数の使用\n\n```bash\njq --arg key \"name\" '.[] | .[$key]' data.json\n```\n\n### 関数の定義\n\n```bash\njq 'def add(x;y): x + y; add(1;2)'\n```\n\n### 再帰的な処理\n\n```bash\njq '.. | .name? | select(. != null)' data.json\n```\n\n## よくあるエラーと対処法\n\n- **parse error**: JSONが不正。`jq .`で構文チェック\n- **Cannot iterate over null**: 配列やオブジェクトがnull。`// empty`で回避\n- **jq: error: syntax error**: フィルタの構文ミス。引用符の確認\n\n## まとめ\n\njqはシェル上でJSONを扱う際の必須ツールです。基本的なパースから複雑な変換まで、一度覚えれば作業効率が大幅に向上します。まずは簡単なフィルタから試し、徐々に応用を身につけましょう。",
+  "keywords": [
+    "jq",
+    "JSON",
+    "コマンド",
+    "API",
+    "シェル",
+    "パース"
+  ],
+  "template": "howto",
+  "generatedAt": "2026-05-24T16:59:47.493Z"
+}

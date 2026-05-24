@@ -1,0 +1,16 @@
+{
+  "title": "Pythonデータ分析入門：pandasとmatplotlibでCSVデータをグラフ化する方法",
+  "slug": "python-data-analysis-pandas-matplotlib-csv",
+  "metaDescription": "Pythonを使ったデータ分析の入門記事。pandasでCSVを読み込み、matplotlibでグラフを作成する手順をサンプルコード付きで解説。初心者でも実践できる内容です。",
+  "content": "## はじめに\n\nPythonはデータ分析の分野で広く使われています。特に、pandasとmatplotlibは必須のライブラリです。本記事では、CSVファイルを読み込み、データを加工し、グラフを作成するまでの流れを実践的に解説します。サンプルコードをコピーしてすぐに試せるので、ぜひご自身の環境で実行してみてください。\n\n## 必要なライブラリのインストール\n\nまずはpandasとmatplotlibをインストールしましょう。pipコマンドで簡単にインストールできます。\n\n```bash\npip install pandas matplotlib\n```\n\n## サンプルデータの準備\n\n今回は架空の売上データ（sales.csv）を使用します。以下の内容をコピーして、`sales.csv`というファイル名で保存してください。\n\n```csv\n日付,商品,数量,金額\n2023-01-01,りんご,10,1000\n2023-01-02,みかん,15,1500\n2023-01-03,りんご,8,800\n2023-01-04,バナナ,20,2000\n2023-01-05,みかん,12,1200\n2023-01-06,りんご,5,500\n2023-01-07,バナナ,25,2500\n```\n\n## pandasでCSVを読み込む\n\npandasの`read_csv`関数を使うと、CSVファイルを簡単に読み込めます。\n\n```python\nimport pandas as pd\n\ndf = pd.read_csv('sales.csv')\nprint(df)\n```\n\n実行結果：\n\n```\n         日付   商品  数量   金額\n0  2023-01-01  りんご  10  1000\n1  2023-01-02  みかん  15  1500\n2  2023-01-03  りんご   8   800\n3  2023-01-04  バナナ  20  2000\n4  2023-01-05  みかん  12  1200\n5  2023-01-06  りんご   5   500\n6  2023-01-07  バナナ  25  2500\n```\n\n## データの基本情報を確認する\n\n読み込んだデータの概要を把握するために、`info()`や`describe()`を使います。\n\n```python\nprint(df.info())\nprint(df.describe())\n```\n\n## データの集計：商品別の売上合計\n\npandasの`groupby`を使うと、カテゴリごとに集計できます。\n\n```python\n# 商品別の数量と金額の合計\nsummary = df.groupby('商品')[['数量', '金額']].sum()\nprint(summary)\n```\n\n結果：\n\n```\n        数量   金額\n商品            \nバナナ   45  4500\nみかん   27  2700\nりんご   23  2300\n```\n\n## matplotlibで棒グラフを作成\n\n集計結果を棒グラフで可視化します。\n\n```python\nimport matplotlib.pyplot as plt\n\n# 日本語フォントの設定（Macの場合、Windowsの場合は'MS Gothic'など）\nplt.rcParams['font.family'] = 'AppleGothic'  # Windowsなら 'MS Gothic'\n\n# 棒グラフの作成\nsummary['金額'].plot(kind='bar')\nplt.title('商品別売上金額')\nplt.xlabel('商品')\nplt.ylabel('金額（円）')\nplt.show()\n```\n\n## 日付ごとの売上推移を折れ線グラフで表示\n\n日付をインデックスに設定し、折れ線グラフを描画します。\n\n```python\n# 日付をdatetime型に変換\ndf['日付'] = pd.to_datetime(df['日付'])\n\n# 日付ごとに金額を集計\ndaily_sales = df.groupby('日付')['金額'].sum()\n\n# 折れ線グラフ\ndaily_sales.plot(kind='line', marker='o')\nplt.title('日別売上推移')\nplt.xlabel('日付')\nplt.ylabel('売上金額')\nplt.grid(True)\nplt.show()\n```\n\n## グラフを画像として保存\n\n作成したグラフは`savefig`で画像ファイルとして保存できます。\n\n```python\nplt.figure()\ndaily_sales.plot(kind='line')\nplt.savefig('daily_sales.png')\n```\n\n## まとめ\n\nこの記事では、Pythonのpandasとmatplotlibを使って、CSVデータを読み込み、集計し、グラフ化する基本的な流れを解説しました。データ分析の第一歩として、ぜひ実際に手を動かして試してみてください。より高度な分析には、seabornやplotlyなどのライブラリも便利です。\n\n## 参考リンク\n\n- [pandas公式ドキュメント](https://pandas.pydata.org/docs/)\n- [matplotlib公式ドキュメント](https://matplotlib.org/stable/contents.html)",
+  "keywords": [
+    "Python",
+    "データ分析",
+    "pandas",
+    "matplotlib",
+    "CSV",
+    "グラフ"
+  ],
+  "template": "tutorial",
+  "generatedAt": "2026-05-24T17:06:30.351Z"
+}

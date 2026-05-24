@@ -1,0 +1,94 @@
+1:"$Sreact.fragment"
+5:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+2:T1a47,<h2>はじめに</h2>
+<p>OpenCodeは、AIエージェントやLLMアプリケーションの開発を支援するオープンソースのCLIツールです。本記事では、OpenCode CLIのインストール手順から基本的なセットアップ方法までを詳しく解説します。ターミナル操作に不安がある方でも、ステップバイステップで進められるように構成しています。</p>
+<h2>前提条件</h2>
+<p>OpenCode CLIを利用するには、以下の環境が必要です。</p>
+<li><strong>Node.js</strong> (v18以上推奨)</li>
+<li><strong>npm</strong> (通常Node.jsに同梱)</li>
+<li><strong>ターミナル</strong> (macOS: Terminal, Windows: PowerShell/コマンドプロンプト, Linux: 任意のシェル)</li>
+<p>Node.jsがインストールされていない場合は、<a href="https://nodejs.org/" target="_blank" rel="noopener">公式サイト</a>から最新のLTS版をダウンロードしてインストールしてください。</p>
+<h2>インストール手順</h2>
+<h3>1. npmを使用したグローバルインストール</h3>
+<p>ターミナルを開き、以下のコマンドを実行します。</p>
+<pre><code class="language-bash">npm install -g @opencode/cli
+</code></pre>
+<p><code>-g</code>フラグを付けることで、システム全体で<code>opencode</code>コマンドが利用可能になります。インストールが完了すると、以下のようなメッセージが表示されます。</p>
+<pre><code class="language-">+ @opencode/cli@1.0.0
+added 1 package in 5s
+</code></pre>
+<h3>2. インストールの確認</h3>
+<p>正しくインストールされたか確認するため、バージョンを表示します。</p>
+<pre><code class="language-bash">opencode --version
+</code></pre>
+<p>バージョン番号（例：<code>1.0.0</code>）が表示されれば成功です。</p>
+<h3>3. ヘルプの表示</h3>
+<p>利用可能なコマンドを確認するには、以下のコマンドを実行します。</p>
+<pre><code class="language-bash">opencode --help
+</code></pre>
+<p>主要なコマンドが一覧表示されます。</p>
+<h2>セットアップ手順</h2>
+<h3>1. プロジェクトの初期化</h3>
+<p>OpenCodeを使用するプロジェクトのディレクトリを作成し、移動します。</p>
+<pre><code class="language-bash">mkdir my-opencode-project
+cd my-opencode-project
+</code></pre>
+<p>次に、OpenCodeの設定ファイルを初期化します。</p>
+<pre><code class="language-bash">opencode init
+</code></pre>
+<p>このコマンドを実行すると、対話形式でいくつかの質問が表示されます。</p>
+<li><strong>プロジェクト名</strong>: 任意の名前を入力（デフォルトはディレクトリ名）</li>
+<li><strong>デフォルトモデル</strong>: 使用するAIモデル（例：gpt-4, claude-3）</li>
+<li><strong>APIキー</strong>: 必要に応じて設定（後からでも変更可能）</li>
+<p>入力が完了すると、<code>opencode.json</code>という設定ファイルが生成されます。</p>
+<h3>2. 設定ファイルの編集</h3>
+<p><code>opencode.json</code>をテキストエディタで開き、必要に応じて設定を変更します。以下は設定例です。</p>
+<pre><code class="language-json">{
+  "projectName": "My OpenCode Project",
+  "defaultModel": "gpt-4",
+  "apiKey": "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "temperature": 0.7,
+  "maxTokens": 2048
+}
+</code></pre>
+<p>各項目の説明：</p>
+<li><strong>projectName</strong>: プロジェクト名</li>
+<li><strong>defaultModel</strong>: デフォルトで使用するモデル</li>
+<li><strong>apiKey</strong>: OpenAIなどのAPIキー（環境変数から読み込むことも可能）</li>
+<li><strong>temperature</strong>: 生成のランダム性（0.0〜1.0）</li>
+<li><strong>maxTokens</strong>: 最大トークン数</li>
+<h3>3. 環境変数の設定（推奨）</h3>
+<p>APIキーを設定ファイルに直接記述する代わりに、環境変数を使用するとより安全です。</p>
+<p><strong>macOS/Linux</strong>:
+<pre><code class="language-bash">export OPENAI_API_KEY="sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+</code></pre></p>
+<p><strong>Windows (PowerShell)</strong>:
+<pre><code class="language-powershell">$env:OPENAI_API_KEY="sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+</code></pre></p>
+<p>環境変数が設定されている場合、<code>opencode.json</code>の<code>apiKey</code>フィールドは省略できます。</p>
+<h3>4. 動作確認</h3>
+<p>簡単なプロンプトを実行して、正しく動作するか確認します。</p>
+<pre><code class="language-bash">opencode run "Hello, world!"
+</code></pre>
+<p>設定したモデルからの応答が表示されれば、セットアップ完了です。</p>
+<h2>トラブルシューティング</h2>
+<h3>コマンドが見つからない</h3>
+<p><code>opencode: command not found</code>と表示される場合、npmのグローバルインストールパスが通っていない可能性があります。以下のコマンドでパスを確認し、必要に応じて追加してください。</p>
+<pre><code class="language-bash">npm root -g
+</code></pre>
+<p>表示されたパスを環境変数<code>PATH</code>に追加します。</p>
+<h3>インストールに失敗する</h3>
+<p>権限エラーが発生する場合は、<code>sudo</code>を付けて再実行します（macOS/Linux）。</p>
+<pre><code class="language-bash">sudo npm install -g @opencode/cli
+</code></pre>
+<h3>APIキーエラー</h3>
+<p><code>401 Unauthorized</code>などのエラーが表示される場合、APIキーが正しく設定されているか確認してください。環境変数を使用している場合は、変数名が正しいか（例：<code>OPENAI_API_KEY</code>）チェックします。</p>
+<hr>
+<p>*この記事はOpenCodeを日常的に使用し、AIエージェントにSSH経由でNixOSをインストールさせるなどの実践経験を持つSioが監修しています。DeepSeek APIのヘビーユーザーとして、実際のコスト感や制限事項を反映しています。*</p>
+<h2>まとめ</h2>
+<p>本記事では、OpenCode CLIのインストールからセットアップまでの手順を解説しました。npmを使った簡単なインストールと、<code>opencode init</code>によるプロジェクト初期化で、すぐに使い始めることができます。AIエージェント開発の強力なツールとして、ぜひ活用してください。</p>
+<p>より詳しい使い方やコマンドリファレンスは、公式ドキュメント（<code>opencode docs</code>）を参照してください。</p>0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"OpenCode CLIのインストールとセットアップ完全ガイド"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"OpenCode CLIのインストールからセットアップまでを詳しく解説。npmを使った環境構築やターミナルでの初期設定方法をステップバイステップで紹介します。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","OpenCode",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"OpenCode"}],["$","span","CLI",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"CLI"}],["$","span","インストール",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"インストール"}],["$","span","セットアップ",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"セットアップ"}],["$","span","npm",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"npm"}],["$","span","ターミナル",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"ターミナル"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3"]}],null,"$L4"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"ozMjvJqr-IrJkTdPFeVOD"}
+3:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-ai hover:underline","children":"← 記事一覧に戻る"}]}]
+4:["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]
+7:null

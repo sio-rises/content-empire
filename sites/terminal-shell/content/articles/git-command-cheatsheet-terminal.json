@@ -1,0 +1,16 @@
+{
+  "title": "Gitコマンド完全チートシート：ターミナルで使う基本操作まとめ",
+  "slug": "git-command-cheatsheet-terminal",
+  "metaDescription": "Gitの基本コマンドをターミナルで使うためのチートシート。コミット、ブランチ、マージなど初心者向けに実例付きで解説。",
+  "content": "## Git コマンド チートシート：ターミナルでよく使う操作一覧\n\nGitは分散型バージョン管理システムで、ターミナルからコマンドを実行して操作します。この記事では、初心者が覚えておくべき基本的なGitコマンドを、実際の使用例とともにまとめました。\n\n### 1. 設定と初期化\n\n#### `git init`\n新しいGitリポジトリを作成します。\n```bash\ngit init\n```\n\n#### `git config`\nユーザー名やメールアドレスを設定します。\n```bash\ngit config --global user.name \"Your Name\"\ngit config --global user.email \"your@email.com\"\n```\n\n### 2. 変更の追跡とコミット\n\n#### `git status`\n現在のリポジトリの状態を表示します。変更されたファイル、ステージングされたファイルなどを確認できます。\n```bash\ngit status\n```\n\n#### `git add`\n変更をステージングエリアに追加します。\n```bash\n# 特定のファイルを追加\ngit add filename\n\n# すべての変更を追加\ngit add .\n```\n\n#### `git commit`\nステージングされた変更をコミット（記録）します。\n```bash\ngit commit -m \"コミットメッセージ\"\n```\n\n#### `git log`\nコミット履歴を表示します。\n```bash\ngit log --oneline  # 簡潔に表示\n```\n\n### 3. ブランチ操作\n\n#### `git branch`\nブランチの一覧表示、作成、削除を行います。\n```bash\n# ブランチ一覧\ngit branch\n\n# 新しいブランチを作成\ngit branch new-feature\n\n# ブランチを削除\ngit branch -d old-feature\n```\n\n#### `git checkout` / `git switch`\nブランチを切り替えます。\n```bash\n# ブランチを切り替え\ngit checkout main\n# または\ngit switch main\n\n# 新しいブランチを作成して切り替え\ngit checkout -b new-feature\n# または\ngit switch -c new-feature\n```\n\n### 4. マージとリベース\n\n#### `git merge`\n現在のブランチに別のブランチの変更を取り込みます。\n```bash\ngit checkout main\ngit merge feature-branch\n```\n\n#### `git rebase`\nコミット履歴をきれいにするために使います。\n```bash\ngit checkout feature\ngit rebase main\n```\n\n### 5. リモートリポジトリとの連携\n\n#### `git clone`\nリモートリポジトリをローカルにコピーします。\n```bash\ngit clone https://github.com/user/repo.git\n```\n\n#### `git remote`\nリモートリポジトリの設定を管理します。\n```bash\n# リモートの一覧\ngit remote -v\n\n# リモートを追加\ngit remote add origin https://github.com/user/repo.git\n```\n\n#### `git push`\nローカルの変更をリモートにアップロードします。\n```bash\ngit push origin main\n```\n\n#### `git pull`\nリモートの変更をローカルに取り込みます（fetch + merge）。\n```bash\ngit pull origin main\n```\n\n### 6. 変更の取り消し\n\n#### `git reset`\nコミットやステージングを取り消します。\n```bash\n# ステージングを取り消す\ngit reset HEAD filename\n\n# 直前のコミットを取り消し、変更は保持\ngit reset --soft HEAD~1\n\n# 直前のコミットを取り消し、変更も破棄\ngit reset --hard HEAD~1\n```\n\n#### `git revert`\n特定のコミットを打ち消す新しいコミットを作成します。\n```bash\ngit revert <commit-hash>\n```\n\n### 7. その他の便利コマンド\n\n#### `git stash`\n現在の作業を一時的に退避します。\n```bash\ngit stash\ngit stash pop  # 戻す\n```\n\n#### `git diff`\n変更内容を表示します。\n```bash\ngit diff  # ワーキングディレクトリとステージングの差分\ngit diff --staged  # ステージングと最新コミットの差分\n```\n\n#### `git tag`\nタグ（リリースポイント）を管理します。\n```bash\ngit tag v1.0.0\ngit push origin v1.0.0\n```\n\n### まとめ\n\nこのチートシートでは、Gitの基本的なコマンドをカテゴリ別にまとめました。ターミナルでの操作に慣れるために、実際にコマンドを打ちながら練習することをおすすめします。さらに詳しい使い方は、公式ドキュメントや`git help`コマンドを参照してください。",
+  "keywords": [
+    "Git",
+    "ターミナル",
+    "チートシート",
+    "コミット",
+    "ブランチ",
+    "マージ"
+  ],
+  "template": "explainer",
+  "generatedAt": "2026-05-24T17:00:18.741Z"
+}

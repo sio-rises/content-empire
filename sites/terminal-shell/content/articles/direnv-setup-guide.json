@@ -1,0 +1,15 @@
+{
+  "title": "プロジェクト別に環境変数を自動切替！direnvの設定方法と使い方",
+  "slug": "direnv-setup-guide",
+  "metaDescription": "direnvを使ったプロジェクトごとの環境変数自動切替設定方法を解説。インストールから基本的な使い方、便利な設定まで実践的に紹介します。",
+  "content": "## direnvとは？\n\n`direnv`は、ディレクトリに応じて環境変数を自動で切り替えるツールです。プロジェクトごとに異なる環境変数（APIキー、データベースURLなど）を手動で設定・解除する手間を省き、安全に管理できます。シェルの拡張機能として動作し、ディレクトリ移動時に`.envrc`ファイルを読み込みます。\n\n## インストール方法\n\n### macOS (Homebrew)\n```bash\nbrew install direnv\n```\n\n### Linux (apt)\n```bash\nsudo apt install direnv\n```\n\n### その他のOS\n公式サイト（https://direnv.net）からバイナリをダウンロードするか、パッケージマネージャでインストールしてください。\n\n## シェルへのフック設定\n\nインストール後、シェルにフックを追加します。使用しているシェルに応じて以下の設定を`.bashrc`や`.zshrc`に追記します。\n\n### Bash\n```bash\neval \"$(direnv hook bash)\"\n```\n\n### Zsh\n```zsh\neval \"$(direnv hook zsh)\"\n```\n\n### Fish\n```fish\ndirenv hook fish | source\n```\n\n設定後、シェルを再読み込みしてください。\n```bash\nsource ~/.bashrc  # または ~/.zshrc\n```\n\n## 基本的な使い方\n\n### 1. プロジェクトディレクトリに`.envrc`ファイルを作成\n\nプロジェクトのルートディレクトリに移動し、`.envrc`ファイルを作成します。\n```bash\ncd /path/to/your/project\ntouch .envrc\n```\n\n### 2. 環境変数を記述\n\n`.envrc`に設定したい環境変数を`export`で記述します。\n```bash\nexport DATABASE_URL=\"postgres://user:pass@localhost:5432/mydb\"\nexport API_KEY=\"your-api-key-here\"\nexport NODE_ENV=\"development\"\n```\n\n### 3. ファイルを許可\n\n初めて`.envrc`を作成した場合、`direnv`はセキュリティのため自動で読み込みません。以下のコマンドで許可します。\n```bash\ndirenv allow\n```\n\n### 4. 動作確認\n\nディレクトリに移動すると、自動的に環境変数が設定されます。シェルに以下のようなメッセージが表示されます。\n```\ndirenv: loading .envrc\ndirenv: export +DATABASE_URL +API_KEY +NODE_ENV\n```\n\n別のディレクトリに移動すると、自動的にunloadされます。\n```\ndirenv: unloading\n```\n\n## 便利な設定例\n\n### 複数行の値や特殊文字を含む場合\n```bash\nexport SECRET=\"line1\nline2\"\nexport PATH=\"$PWD/bin:$PATH\"\n```\n\n### 他のファイルから読み込む\n```bash\nsource .env  # .envファイルを読み込み\n```\n\n### 条件分岐\n```bash\nif [ -n \"$CI\" ]; then\n  export NODE_ENV=\"test\"\nfi\n```\n\n### コマンドの実行結果を代入\n```bash\nexport CURRENT_UID=$(id -u)\n```\n\n### 複数のプロジェクトで共通の設定を共有\n共通設定を`~/.config/direnv/lib/`に置き、`.envrc`で読み込みます。\n```bash\n# ~/.config/direnv/lib/common.sh\nexport COMMON_VAR=\"value\"\n```\n\n```bash\n# .envrc\nsource_env \"$HOME/.config/direnv/lib/common.sh\"\nexport PROJECT_SPECIFIC=\"value\"\n```\n\n## セキュリティに関する注意\n\n- `.envrc`はシェルスクリプトとして実行されるため、信頼できないソースからコピーしないでください。\n- `direnv allow`を実行する前に、ファイル内容を確認しましょう。\n- パスワードやAPIキーなどの機密情報は、バージョン管理に含めず、`.envrc`を`.gitignore`に追加することを推奨します。\n\n## トラブルシューティング\n\n### 環境変数が反映されない\n- シェルのフック設定が正しく行われているか確認。\n- `.envrc`の構文エラーがないかチェック。\n- `direnv allow`を実行したか確認。\n\n### 読み込み時にエラーが発生する\n```bash\ndirenv: error .envrc: line X: syntax error\n```\nエラーメッセージに従って修正してください。\n\n### 特定のディレクトリでdirenvを無効にする\n`.envrc`の代わりに空の`.envrc`を作成し、`direnv allow`すると、そのディレクトリでは何も読み込まれません。\n\n## まとめ\n\n`direnv`を使うことで、プロジェクトごとの環境変数管理が劇的に楽になります。インストールと設定は数分で完了し、日常の開発ワークフローに自然に溶け込みます。ぜひ導入して、手動での環境変数切り替えから解放されましょう。\n\n詳細は公式ドキュメント（https://direnv.net）を参照してください。",
+  "keywords": [
+    "direnv",
+    "環境変数",
+    "プロジェクト",
+    "自動切替",
+    "設定"
+  ],
+  "template": "howto",
+  "generatedAt": "2026-05-24T17:01:09.843Z"
+}

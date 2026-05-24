@@ -1,0 +1,89 @@
+1:"$Sreact.fragment"
+5:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+2:T187d,<h2>はじめに</h2>
+<p>AIエージェントは、タスクを自律的に実行する強力なツールです。しかし、その性能を最大限に引き出すには、適切なプロンプトエンジニアリングが欠かせません。本記事では、AIエージェントのプロンプトエンジニアリングのコツを、具体例を交えながら解説します。</p>
+<h2>プロンプトエンジニアリングとは</h2>
+<p>プロンプトエンジニアリングとは、AIモデルに対して望ましい出力を得るために、入力（プロンプト）を設計・最適化する技術です。AIエージェントの場合、単なるテキスト生成だけでなく、ツールの呼び出しやマルチステップのタスク実行を指示する必要があります。</p>
+<h2>AIエージェントのプロンプト設計の基本</h2>
+<h3>1. 明確な役割と目標の設定</h3>
+<p>AIエージェントに「あなたは〇〇です」と役割を与え、達成すべき目標を具体的に記述します。</p>
+<p><strong>悪い例:</strong>
+<pre><code class="language-">データを分析して。
+</code></pre></p>
+<p><strong>良い例:</strong>
+<pre><code class="language-">あなたはデータアナリストです。与えられたCSVファイルの売上データを分析し、月別のトレンドと異常値を特定してください。
+</code></pre></p>
+<h3>2. タスクの分解とステップの明示</h3>
+<p>複雑なタスクは、複数のステップに分解して指示します。AIエージェントはステップバイステップで実行することで、精度が向上します。</p>
+<p><strong>例:</strong>
+<pre><code class="language-">以下の手順でレポートを作成してください。
+&lt;li&gt;データを読み込む&lt;/li&gt;
+&lt;li&gt;欠損値を確認する&lt;/li&gt;
+&lt;li&gt;月別の集計を行う&lt;/li&gt;
+&lt;li&gt;グラフを生成する&lt;/li&gt;
+&lt;li&gt;結果を要約する&lt;/li&gt;
+</code></pre></p>
+<h3>3. ツールの使用方法の指定</h3>
+<p>AIエージェントが外部ツール（API、データベース、計算機など）を使う場合、その使い方を明示します。</p>
+<p><strong>例:</strong>
+<pre><code class="language-">天気API（https://api.weather.com）から東京の今日の天気を取得し、結果を日本語で教えてください。
+</code></pre></p>
+<h3>4. 出力形式の指定</h3>
+<p>出力のフォーマットを指定することで、後続の処理が容易になります。</p>
+<p><strong>例:</strong>
+<pre><code class="language-">結果をJSON形式で出力してください。{"city": "Tokyo", "temperature": 25, "condition": "sunny"}
+</code></pre></p>
+<h2>効率化のためのコツ</h2>
+<h3>1. コンテキストの活用</h3>
+<p>過去の会話やタスクの履歴をプロンプトに含めることで、一貫性のある応答を得られます。</p>
+<p><strong>例:</strong>
+<pre><code class="language-">前回の会話では、顧客Aのデータを分析しました。今回は顧客Bのデータを同様に分析してください。
+</code></pre></p>
+<h3>2. 制約条件の追加</h3>
+<p>AIエージェントの行動範囲を制限することで、不要な処理を防ぎます。</p>
+<p><strong>例:</strong>
+<pre><code class="language-">インターネット検索は使用せず、与えられたデータのみを使用してください。
+</code></pre></p>
+<h3>3. エラーハンドリングの指示</h3>
+<p>失敗した場合の対処法を事前に指示しておきます。</p>
+<p><strong>例:</strong>
+<pre><code class="language-">もしAPIからエラーが返った場合は、3回までリトライし、それでも失敗したらエラーメッセージを報告してください。
+</code></pre></p>
+<h3>4. プロンプトのテンプレート化</h3>
+<p>よく使うプロンプトはテンプレート化し、変数部分だけを変更することで効率化します。</p>
+<p><strong>テンプレート例:</strong>
+<pre><code class="language-">あなたは{role}です。以下のデータに対して{task}を実行し、{output_format}で出力してください。
+データ: {data}
+</code></pre></p>
+<h2>実践例：マーケティングレポートの自動生成</h2>
+<p>以下は、AIエージェントにマーケティングレポートを生成させるプロンプトの例です。</p>
+<pre><code class="language-">あなたはマーケティングアナリストです。以下の手順で週次レポートを作成してください。
+<p>手順:
+&lt;li&gt;データベースから今週の広告費用とコンバージョンデータを取得する（ツール: get_ad_data）&lt;/li&gt;
+&lt;li&gt;前週との比較分析を行う&lt;/li&gt;
+&lt;li&gt;改善点を3つ挙げる&lt;/li&gt;
+&lt;li&gt;レポートをMarkdown形式で出力する&lt;/li&gt;</p>
+<p>制約:
+&lt;li&gt;データは過去30日間のみ使用&lt;/li&gt;
+&lt;li&gt;数値は小数点第2位まで表示&lt;/li&gt;</p>
+<p>出力例:
+&lt;h1&gt;週次マーケティングレポート&lt;/h1&gt;
+&lt;li&gt;期間: 2023/10/1 - 2023/10/7&lt;/li&gt;
+&lt;li&gt;総費用: 100,000円&lt;/li&gt;
+&lt;li&gt;コンバージョン数: 50&lt;/li&gt;
+&lt;li&gt;前週比: +10%&lt;/li&gt;</p>
+<p>改善点:
+&lt;li&gt;...&lt;/li&gt;
+</code></pre></p>
+<h2>注意点</h2>
+<li>AIエージェントの能力を過信しない：複雑なタスクは分割し、検証を挟む</li>
+<li>セキュリティ：機密情報をプロンプトに含めない</li>
+<li>コスト：過剰なトークン使用を避けるため、プロンプトは簡潔に</li>
+<hr>
+<p>*この記事はOpenCodeを日常的に使用し、AIエージェントにSSH経由でNixOSをインストールさせるなどの実践経験を持つSioが監修しています。DeepSeek APIのヘビーユーザーとして、実際のコスト感や制限事項を反映しています。*</p>
+<h2>まとめ</h2>
+<p>AIエージェントのプロンプトエンジニアリングは、役割・タスク・ツール・出力形式を明確に指定し、効率化のためのテクニックを適用することで、その効果を最大化できます。ぜひ実践してみてください。</p>0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"AIエージェントのプロンプトエンジニアリング：効率化のコツと指示の出し方"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"AIエージェントを活用するためのプロンプトエンジニアリングのコツを解説。指示の出し方や効率化のポイントを具体例とともに紹介します。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","AIエージェント",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"AIエージェント"}],["$","span","プロンプトエンジニアリング",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"プロンプトエンジニアリング"}],["$","span","コツ",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"コツ"}],["$","span","効率化",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"効率化"}],["$","span","指示の出し方",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"指示の出し方"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3"]}],null,"$L4"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"ozMjvJqr-IrJkTdPFeVOD"}
+3:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-ai hover:underline","children":"← 記事一覧に戻る"}]}]
+4:["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]
+7:null

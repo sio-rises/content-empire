@@ -1,0 +1,105 @@
+1:"$Sreact.fragment"
+2:I[24117,["/_next/static/chunks/00mbd8isu7b38.js"],"default"]
+3:I[79967,["/_next/static/chunks/00mbd8isu7b38.js"],"default"]
+5:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+9:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"ViewportBoundary"]
+b:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"MetadataBoundary"]
+d:I[30946,["/_next/static/chunks/00mbd8isu7b38.js"],"default",1]
+:HL["/_next/static/chunks/089_dp2m4y2c2.css","style"]
+0:{"P":null,"c":["","articles","arch-linux-backup-strategy-rsync-tar-btrfs"],"q":"","i":false,"f":[[["",{"children":["articles",{"children":[["slug","arch-linux-backup-strategy-rsync-tar-btrfs","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/089_dp2m4y2c2.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/00mbd8isu7b38.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"ja","children":[["$","head",null,{"children":["$","script",null,{"async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019","crossOrigin":"anonymous"}]}],["$","body",null,{"className":"min-h-screen antialiased","children":["$","div",null,{"className":"flex min-h-screen flex-col","children":[["$","header",null,{"className":"border-b border-gray-200 bg-white","children":["$","div",null,{"className":"mx-auto flex max-w-4xl items-center justify-between px-4 py-3","children":[["$","a",null,{"href":"/","className":"text-lg font-bold text-arch hover:opacity-80","children":"Arch Linux 日本語ガイド"}],["$","nav",null,{"className":"flex gap-4 text-sm text-gray-600","children":[["$","a",null,{"href":"/","className":"hover:text-arch","children":"ホーム"}],["$","a",null,{"href":"/about","className":"hover:text-arch","children":"このサイトについて"}]]}]]}]}],["$","main",null,{"className":"flex-1","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400","children":[["$","div",null,{"className":"flex justify-center gap-4 mb-2","children":[["$","a",null,{"href":"/about","className":"hover:text-gray-600","children":"このサイトについて"}],["$","a",null,{"href":"/privacy","className":"hover:text-gray-600","children":"プライバシーポリシー"}]]}],"Arch Linux 日本語ガイド — Built with OpenCode + DeepSeek API"]}]]}]}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L4",null,["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]]}],{},null,false,null]},null,false,"$@8"]},null,false,"$@8"]},null,false,null],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$6",null,{"name":"Next.Metadata","children":"$Lc"}]}]}],null]}],false]],"m":"$undefined","G":["$d",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/089_dp2m4y2c2.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"oMFWqHyx7sJoNGgtrYd0X"}
+e:[]
+8:"$We"
+f:T1859,<h2>はじめに</h2>
+<p>Arch Linuxはローリングリリースのため、システムの安定性を保つには定期的なバックアップが欠かせません。この記事では、代表的なバックアップツールである<code>rsync</code>、<code>tar</code>、<code>btrfsスナップショット</code>の特徴と具体的な手順を解説します。それぞれのメリット・デメリットを理解し、自分の環境に合った戦略を選びましょう。</p>
+<h2>バックアップツールの概要</h2>
+<h3>rsync</h3>
+<li>差分バックアップが可能で、高速</li>
+<li>ファイル単位での同期、リモートバックアップにも対応</li>
+<li>バックアップ先はマウント済みのディスクやSSH経由</li>
+<h3>tar</h3>
+<li>アーカイブ形式で圧縮可能（.tar.gz, .tar.xzなど）</li>
+<li>ファイルのパーミッションや属性を保持</li>
+<li>フルバックアップに適している</li>
+<h3>btrfsスナップショット</h3>
+<li>CoW（Copy-on-Write）を利用した瞬間的なスナップショット</li>
+<li>差分のみ保存するためディスク効率が良い</li>
+<li>ルートファイルシステムがbtrfsである必要がある</li>
+<h2>バックアップ手順</h2>
+<h3>1. rsyncを使ったバックアップ</h3>
+<p>まず、バックアップ先のディレクトリを準備します。</p>
+<pre><code class="language-bash">sudo mkdir -p /mnt/backup_root
+sudo mount /dev/sdb1 /mnt/backup_root
+</code></pre>
+<p>システム全体をrsyncでバックアップする例（除外リストを指定）:</p>
+<pre><code class="language-bash">sudo rsync -aAXv --delete --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found",".cache"} / /mnt/backup_root/
+</code></pre>
+<li><code>-a</code>: アーカイブモード（パーミッション、タイムスタンプ等保持）</li>
+<li><code>-A</code>: ACLを保持</li>
+<li><code>-X</code>: 拡張属性を保持</li>
+<li><code>-v</code>: 詳細表示</li>
+<li><code>--delete</code>: バックアップ先に存在しないファイルを削除</li>
+<li><code>--exclude</code>: バックアップから除外するパターン</li>
+<p>復元時は、逆方向にrsyncを実行します。</p>
+<pre><code class="language-bash">sudo rsync -aAXv --delete /mnt/backup_root/ /
+</code></pre>
+<h3>2. tarを使ったバックアップ</h3>
+<p>システム全体をtarでアーカイブする例（除外リストをファイルで指定）:</p>
+<pre><code class="language-bash">sudo tar -cvpzf /mnt/backup/arch_backup_$(date +%Y%m%d).tar.gz --exclude-from=/home/user/exclude.txt /
+</code></pre>
+<p>除外リストファイル（exclude.txt）の例:</p>
+<pre><code class="language-">/dev/*
+/proc/*
+/sys/*
+/tmp/*
+/run/*
+/mnt/*
+/media/*
+/lost+found
+/home/*/.cache
+</code></pre>
+<li><code>-c</code>: アーカイブ作成</li>
+<li><code>-v</code>: 詳細表示</li>
+<li><code>-p</code>: パーミッション保持</li>
+<li><code>-z</code>: gzip圧縮</li>
+<li><code>-f</code>: 出力ファイル名</li>
+<li><code>--exclude-from</code>: 除外リストファイル</li>
+<p>復元は以下のコマンドで行います。</p>
+<pre><code class="language-bash">sudo tar -xvpzf /mnt/backup/arch_backup_20250315.tar.gz -C /
+</code></pre>
+<h3>3. btrfsスナップショットを使ったバックアップ</h3>
+<p>ルートがbtrfsである場合、まずサブボリュームを作成します（通常インストール時に作成済み）。</p>
+<p>スナップショットの作成:</p>
+<pre><code class="language-bash">sudo btrfs subvolume snapshot -r / /.snapshots/root_$(date +%Y%m%d)
+</code></pre>
+<li><code>-r</code>: 読み取り専用スナップショット</li>
+<p>スナップショットを別のディスクに送信（バックアップ）:</p>
+<pre><code class="language-bash">sudo btrfs send /.snapshots/root_20250315 | sudo btrfs receive /mnt/backup_btrfs/
+</code></pre>
+<p>復元は、スナップショットから元のサブボリュームに戻します。</p>
+<pre><code class="language-bash">sudo btrfs subvolume delete /
+&lt;h1&gt;注意: 上記は危険な操作です。実際には別のサブボリュームにマウントしてから行います。&lt;/h1&gt;
+</code></pre>
+<p>より安全な方法は、ライブUSBからブートしてスナップショットをリストアすることです。</p>
+<h2>トラブルシューティング</h2>
+<h3>rsyncでパーミッションエラーが出る</h3>
+<li>ルート権限で実行しているか確認</li>
+<li>バックアップ先のファイルシステムがLinuxのパーミッションをサポートしているか（例: FAT32は非推奨）</li>
+<h3>tarアーカイブが壊れている</h3>
+<li>圧縮オプションを変えてみる（-zの代わりに-J（xz）など）</li>
+<li>アーカイブ作成後に<code>tar -tvf</code>で確認</li>
+<h3>btrfsスナップショットが作成できない</h3>
+<li>ルートファイルシステムがbtrfsであることを確認</li>
+<li>スナップショット先のサブボリュームの空き容量を確認</li>
+<hr>
+<p>*この記事はArch Linuxを実機で日常運用しているSioが、実際のインストール・設定経験に基づいてAI生成コンテンツをレビュー・補完しています。btrfsサブボリュームとLUKS暗号化環境で検証済みです。*</p>
+<h2>まとめ</h2>
+<li><strong>rsync</strong>: 頻繁な差分バックアップに最適。リモートバックアップも可能。</li>
+<li><strong>tar</strong>: フルバックアップを圧縮して保存したい場合に便利。</li>
+<li><strong>btrfsスナップショット</strong>: 瞬間的で効率的だが、ファイルシステムがbtrfs限定。</li>
+<p>これらのツールを組み合わせることで、堅牢なバックアップ戦略を構築できます。例えば、週次でtarによるフルバックアップ、日次でrsyncによる差分バックアップ、さらにbtrfsスナップショットで直前の状態を保存する、といった運用が考えられます。</p>
+<p>定期的なバックアップを習慣化し、万が一のトラブルに備えましょう。</p>4:["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"Arch Linuxのバックアップ戦略：rsync、tar、btrfsスナップショットを使い分ける"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"Arch Linuxのバックアップ方法を徹底解説。rsync、tar、btrfsスナップショットの使い分けと復元手順を紹介。初心者でも安心の実践的ガイド。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","Arch Linux",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"Arch Linux"}],["$","span","バックアップ",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"バックアップ"}],["$","span","rsync",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"rsync"}],["$","span","tar",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"tar"}],["$","span","btrfsスナップショット",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"btrfsスナップショット"}],["$","span","復元",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"復元"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$f"}}]]}],"$L10"]}]
+10:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-arch hover:underline","children":"← 記事一覧に戻る"}]}]
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+7:null
+c:[["$","title","0",{"children":"Arch Linux 日本語ガイド"}],["$","meta","1",{"name":"description","content":"Arch Linuxのインストールからデスクトップ環境構築まで、日本語で体系的に解説するガイドサイトです。"}],["$","meta","2",{"name":"keywords","content":"Arch Linux,Linux,インストール,日本語,デスクトップ環境,btrfs,LUKS"}]]

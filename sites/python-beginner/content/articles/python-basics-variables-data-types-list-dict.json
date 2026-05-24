@@ -1,0 +1,16 @@
+{
+  "title": "Pythonの基礎：変数、データ型、リスト、辞書を初心者向けに解説",
+  "slug": "python-basics-variables-data-types-list-dict",
+  "metaDescription": "Pythonの変数、データ型（数値・文字列・ブール）、リスト、辞書の基本を実例付きで解説。初心者でも理解しやすい基礎知識をまとめました。",
+  "content": "## Pythonの変数とデータ型の基礎\n\nPythonはシンプルで読みやすいコードが書けるプログラミング言語です。まずは変数とデータ型の基本を押さえましょう。\n\n### 変数とは\n変数はデータを格納するための名前付きの箱です。Pythonでは、変数に値を代入するだけで自動的に型が決まります（動的型付け）。\n\n```python\nmessage = \"Hello, Python!\"\nnumber = 42\npi = 3.14\nis_active = True\n```\n\n### 主なデータ型\nPythonにはいくつかの基本的なデータ型があります。\n\n| データ型 | 説明 | 例 |\n|----------|------|----|\n| `int` | 整数 | `10`, `-5`, `0` |\n| `float` | 浮動小数点数 | `3.14`, `-0.5`, `1.0` |\n| `str` | 文字列 | `\"Python\"`, `'Hello'` |\n| `bool` | 真偽値 | `True`, `False` |\n\n#### 数値型（int, float）\n数値は計算に使えます。\n\n```python\na = 10\nb = 3\nprint(a + b)  # 13\nprint(a / b)  # 3.333...\nprint(a // b) # 3（整数除算）\nprint(a % b)  # 1（余り）\n```\n\n#### 文字列（str）\n文字列はシングルクォートまたはダブルクォートで囲みます。\n\n```python\nname = \"Alice\"\ngreeting = 'Hello'\nprint(name + \" \" + greeting)  # 連結\nprint(f\"{name} says {greeting}\")  # f文字列（Python 3.6以降）\n```\n\n#### 真偽値（bool）\n条件分岐などで使います。\n\n```python\nis_sunny = True\nif is_sunny:\n    print(\"今日は晴れです\")\n```\n\n### 型の確認と変換\n`type()`関数で型を確認できます。\n\n```python\nx = 10\nprint(type(x))  # <class 'int'>\n\ny = str(x)  # \"10\" に変換\nprint(type(y))  # <class 'str'>\n```\n\n## リストの基本\nリストは複数の要素を順序付けて格納できるデータ構造です。\n\n### リストの作成と操作\n```python\nfruits = [\"apple\", \"banana\", \"cherry\"]\nprint(fruits[0])  # \"apple\"（インデックスは0から）\nprint(fruits[-1]) # \"cherry\"（負のインデックスで後ろから）\n\n# 要素の追加\nfruits.append(\"orange\")\nprint(fruits)  # ['apple', 'banana', 'cherry', 'orange']\n\n# 要素の削除\nfruits.remove(\"banana\")\nprint(fruits)  # ['apple', 'cherry', 'orange']\n```\n\n### リストのスライス\n```python\nnumbers = [0, 1, 2, 3, 4, 5]\nprint(numbers[1:4])  # [1, 2, 3]（開始インデックス:終了インデックス）\nprint(numbers[:3])   # [0, 1, 2]（最初から）\nprint(numbers[2:])   # [2, 3, 4, 5]（最後まで）\n```\n\n### リスト内包表記\n簡潔にリストを生成できます。\n\n```python\nsquares = [x**2 for x in range(5)]\nprint(squares)  # [0, 1, 4, 9, 16]\n```\n\n## 辞書の基本\n辞書はキーと値のペアを格納するデータ構造です。\n\n### 辞書の作成と操作\n```python\nperson = {\n    \"name\": \"Alice\",\n    \"age\": 30,\n    \"city\": \"Tokyo\"\n}\n\nprint(person[\"name\"])  # \"Alice\"\nprint(person.get(\"age\"))  # 30（キーが存在しない場合はNone）\n\n# 値の更新\nperson[\"age\"] = 31\nprint(person)  # {'name': 'Alice', 'age': 31, 'city': 'Tokyo'}\n\n# 新しいキーを追加\nperson[\"job\"] = \"Engineer\"\nprint(person)  # {'name': 'Alice', 'age': 31, 'city': 'Tokyo', 'job': 'Engineer'}\n```\n\n### 辞書のループ\n```python\nfor key, value in person.items():\n    print(f\"{key}: {value}\")\n# 出力:\n# name: Alice\n# age: 31\n# city: Tokyo\n# job: Engineer\n```\n\n### 辞書内包表記\n```python\nsquares_dict = {x: x**2 for x in range(5)}\nprint(squares_dict)  # {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}\n```\n\n## まとめ\nPythonの変数、データ型、リスト、辞書はプログラミングの基礎です。これらをしっかり理解することで、より複雑なプログラムを書く準備が整います。実際にコードを書いて試してみてください。\n\n### 練習問題\n1. 自分の名前と年齢を格納する変数を作成し、表示してみましょう。\n2. 好きな果物を3つ含むリストを作り、2番目の要素を出力しましょう。\n3. 自分に関する情報（名前、年齢、趣味など）を辞書で表現し、ループで表示しましょう。\n\nこれらの演習を通じて、Pythonの基礎を確実に身につけてください。",
+  "keywords": [
+    "Python",
+    "変数",
+    "データ型",
+    "リスト",
+    "辞書",
+    "基礎"
+  ],
+  "template": "explainer",
+  "generatedAt": "2026-05-24T17:04:47.755Z"
+}

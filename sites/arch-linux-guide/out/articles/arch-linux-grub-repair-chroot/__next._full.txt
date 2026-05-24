@@ -1,0 +1,124 @@
+1:"$Sreact.fragment"
+2:I[24117,["/_next/static/chunks/00mbd8isu7b38.js"],"default"]
+3:I[79967,["/_next/static/chunks/00mbd8isu7b38.js"],"default"]
+5:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+9:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"ViewportBoundary"]
+b:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"MetadataBoundary"]
+d:I[30946,["/_next/static/chunks/00mbd8isu7b38.js"],"default",1]
+:HL["/_next/static/chunks/089_dp2m4y2c2.css","style"]
+0:{"P":null,"c":["","articles","arch-linux-grub-repair-chroot"],"q":"","i":false,"f":[[["",{"children":["articles",{"children":[["slug","arch-linux-grub-repair-chroot","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/089_dp2m4y2c2.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/00mbd8isu7b38.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"ja","children":[["$","head",null,{"children":["$","script",null,{"async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019","crossOrigin":"anonymous"}]}],["$","body",null,{"className":"min-h-screen antialiased","children":["$","div",null,{"className":"flex min-h-screen flex-col","children":[["$","header",null,{"className":"border-b border-gray-200 bg-white","children":["$","div",null,{"className":"mx-auto flex max-w-4xl items-center justify-between px-4 py-3","children":[["$","a",null,{"href":"/","className":"text-lg font-bold text-arch hover:opacity-80","children":"Arch Linux 日本語ガイド"}],["$","nav",null,{"className":"flex gap-4 text-sm text-gray-600","children":[["$","a",null,{"href":"/","className":"hover:text-arch","children":"ホーム"}],["$","a",null,{"href":"/about","className":"hover:text-arch","children":"このサイトについて"}]]}]]}]}],["$","main",null,{"className":"flex-1","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400","children":[["$","div",null,{"className":"flex justify-center gap-4 mb-2","children":[["$","a",null,{"href":"/about","className":"hover:text-gray-600","children":"このサイトについて"}],["$","a",null,{"href":"/privacy","className":"hover:text-gray-600","children":"プライバシーポリシー"}]]}],"Arch Linux 日本語ガイド — Built with OpenCode + DeepSeek API"]}]]}]}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L4",null,["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]]}],{},null,false,null]},null,false,"$@8"]},null,false,"$@8"]},null,false,null],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$6",null,{"name":"Next.Metadata","children":"$Lc"}]}]}],null]}],false]],"m":"$undefined","G":["$d",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/089_dp2m4y2c2.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"oMFWqHyx7sJoNGgtrYd0X"}
+e:[]
+8:"$We"
+f:T214b,<h2>はじめに</h2>
+<p>筆者も実際に経験したトラブルです。デュアルブート環境でWindowsアップデート後にGRUBが吹き飛び、Arch Linuxが起動しなくなりました。この記事の手順は、その時に実際にUSBメモリからchrootして復旧した方法です。</p>
+<p>Arch Linuxを起動しようとしたら、真っ黒な画面に "GRUB loading..." のまま止まってしまった、あるいは "error: no such partition" や "grub rescue>" というプロンプトが表示された経験はありませんか？この記事では、そんな<strong>Arch Linuxが起動しない</strong>トラブルを、<strong>GRUB</strong>を<strong>修復</strong>することで解決する方法を解説します。USBメモリから<strong>chroot</strong>環境に入り、<strong>ブートローダー</strong>を再インストールする手順を、初心者でも迷わないように具体的に示します。</p>
+<h2>必要なもの</h2>
+<li>Arch LinuxのインストールUSBメモリ（またはライブUSB）</li>
+<li>起動しないPC</li>
+<li>インターネット接続（パッケージのダウンロードに必要）</li>
+<p>インストールUSBがない場合は、<a href="https://archlinux.org/download/" target="_blank" rel="noopener">Arch Linux公式サイト</a>からISOをダウンロードし、USBに書き込んでください（例: <code>dd bs=4M if=archlinux-*.iso of=/dev/sdX status=progress</code>）。</p>
+<h2>手順</h2>
+<h3>1. USBから起動する</h3>
+<p>PCにUSBメモリを挿し、BIOS/UEFIのブートメニューからUSBを選択して起動します。通常はF12、F2、Delキーなどを押すとメニューが表示されます。</p>
+<p>起動したら、"Arch Linux install medium" を選択します。</p>
+<h3>2. キーボードレイアウトの設定（日本語キーボードの場合）</h3>
+<pre><code class="language-bash">loadkeys jp106
+</code></pre>
+<h3>3. パーティションとファイルシステムの確認</h3>
+<p>まず、現在のディスク構成を確認します。</p>
+<pre><code class="language-bash">lsblk
+</code></pre>
+<p>出力例：
+<pre><code class="language-">NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+sda      8:0    0 238.5G  0 disk 
+├─sda1   8:1    0   512M  0 part /boot
+├─sda2   8:2    0   100G  0 part /
+└─sda3   8:3    0   138G  0 part /home
+</code></pre></p>
+<p>この例では、ルートパーティションは <code>/dev/sda2</code>、ブートパーティションは <code>/dev/sda1</code> です。あなたの環境に合わせて読み替えてください。</p>
+<h3>4. ルートパーティションのマウント</h3>
+<p>ルートパーティションを <code>/mnt</code> にマウントします。</p>
+<pre><code class="language-bash">mount /dev/sda2 /mnt
+</code></pre>
+<h3>5. ブートパーティションのマウント（別パーティションの場合）</h3>
+<p>ブートパーティションが独立している場合（例: <code>/dev/sda1</code>）、それを <code>/mnt/boot</code> にマウントします。</p>
+<pre><code class="language-bash">mkdir -p /mnt/boot
+mount /dev/sda1 /mnt/boot
+</code></pre>
+<p>もしブートパーティションが独立しておらず、ルートパーティション内に <code>/boot</code> ディレクトリがある場合は、この手順は不要です。</p>
+<h3>6. その他の重要なマウント</h3>
+<p>システムの状態を維持するために、以下のディレクトリをバインドマウントします。</p>
+<pre><code class="language-bash">mount --bind /dev /mnt/dev
+mount --bind /proc /mnt/proc
+mount --bind /sys /mnt/sys
+</code></pre>
+<p>UEFIシステムの場合、さらに <code>efivars</code> をマウントします。</p>
+<pre><code class="language-bash">mount --bind /sys/firmware/efi/efivars /mnt/sys/firmware/efi/efivars
+</code></pre>
+<h3>7. chrootでシステムに入る</h3>
+<pre><code class="language-bash">chroot /mnt /bin/bash
+</code></pre>
+<p>これで、通常のArch Linux環境に入った状態になります。プロンプトが変化します。</p>
+<h3>8. 必要なパッケージの確認</h3>
+<p>GRUBがインストールされているか確認します。</p>
+<pre><code class="language-bash">pacman -Q grub
+</code></pre>
+<p>もしインストールされていなければ、インストールします。</p>
+<pre><code class="language-bash">pacman -S grub
+</code></pre>
+<p>UEFIシステムの場合は、<code>efibootmgr</code> も必要です。</p>
+<pre><code class="language-bash">pacman -S efibootmgr
+</code></pre>
+<h3>9. GRUBの再インストール</h3>
+<p>#### BIOS/レガシーブートの場合</p>
+<pre><code class="language-bash">grub-install /dev/sda
+</code></pre>
+<p>#### UEFIの場合</p>
+<pre><code class="language-bash">grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+</code></pre>
+<p><code>--efi-directory</code> はEFIシステムパーティション（ESP）のマウントポイントを指定します。通常は <code>/boot</code> または <code>/efi</code> です。</p>
+<h3>10. GRUB設定ファイルの生成</h3>
+<pre><code class="language-bash">grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre>
+<h3>11. chroot環境を抜けて再起動</h3>
+<pre><code class="language-bash">exit
+umount -R /mnt
+reboot
+</code></pre>
+<p>USBメモリを抜いて、通常起動を試みます。</p>
+<h2>トラブルシューティング</h2>
+<h3>エラー: '/boot/grub/i386-pc/normal.mod' not found</h3>
+<p>GRUBのモジュールが見つからない場合、<code>grub-install</code> 時に <code>--target=i386-pc</code> を明示的に指定します。</p>
+<pre><code class="language-bash">grub-install --target=i386-pc /dev/sda
+</code></pre>
+<h3>エラー: failed to register the EFI boot entry</h3>
+<p>UEFI環境でこのエラーが出る場合、<code>efibootmgr</code> が正しく動作していない可能性があります。まず、EFI変数がマウントされているか確認します。</p>
+<pre><code class="language-bash">ls /sys/firmware/efi/efivars
+</code></pre>
+<p>空でなければ、以下のように再マウントします。</p>
+<pre><code class="language-bash">mount -t efivarfs efivarfs /sys/firmware/efi/efivars
+</code></pre>
+<p>それでもダメなら、<code>grub-install</code> に <code>--removable</code> オプションを追加して、EFIのデフォルトパスにインストールします。</p>
+<pre><code class="language-bash">grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB --removable
+</code></pre>
+<h3>起動後、grub rescue> プロンプトが表示される</h3>
+<p>これはGRUBの設定が壊れているか、パーティション構成が変わった場合に起こります。上記の手順で再インストールと設定ファイルの再生成を行えば解決します。</p>
+<p>もし <code>grub rescue></code> から抜け出せない場合は、以下のように手動で起動することも可能ですが、恒久的な解決にはなりません。</p>
+<pre><code class="language-">grub rescue&gt; set prefix=(hd0,msdos2)/boot/grub
+grub rescue&gt; insmod normal
+grub rescue&gt; normal
+</code></pre>
+<hr>
+<p>*この記事はArch Linuxを実機で日常運用しているSioが、実際のインストール・設定経験に基づいてAI生成コンテンツをレビュー・補完しています。btrfsサブボリュームとLUKS暗号化環境で検証済みです。*</p>
+<h2>まとめ</h2>
+<p>Arch Linuxが起動しない原因の多くはGRUBの破損です。USBメモリからchrootしてGRUBを再インストールする方法を覚えておけば、ほとんどのケースで復旧できます。この記事で紹介した手順は、ブートローダーの修復に特化していますが、カーネルのアップデート失敗など他の原因にも応用できます。</p>
+<p>もしこの手順で解決しない場合は、ファイルシステムの破損（<code>fsck</code>）やハードウェアの問題も疑ってみてください。Arch LinuxのフォーラムやWikiも頼りになります。</p>
+<p><strong>参考リンク</strong>
+<li><a href="https://wiki.archlinux.jp/index.php/GRUB" target="_blank" rel="noopener">ArchWiki: GRUB</a></li>
+<li><a href="https://wiki.archlinux.jp/index.php/Chroot" target="_blank" rel="noopener">ArchWiki: chroot</a></li></p>
+<p>このガイドが、あなたのArch Linux復旧の一助となれば幸いです。</p>4:["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"Arch Linuxが起動しない？GRUB修復をchrootで解決する完全ガイド"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"Arch Linuxが起動しないときのGRUB修復手順を解説。USBメモリからchrootしてブートローダーを再インストールする方法を初心者向けに詳しく紹介。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","Arch Linux",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"Arch Linux"}],["$","span","起動しない",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"起動しない"}],["$","span","GRUB",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"GRUB"}],["$","span","修復",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"修復"}],["$","span","chroot",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"chroot"}],["$","span","ブートローダー",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"ブートローダー"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$f"}}]]}],"$L10"]}]
+10:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-arch hover:underline","children":"← 記事一覧に戻る"}]}]
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+7:null
+c:[["$","title","0",{"children":"Arch Linux 日本語ガイド"}],["$","meta","1",{"name":"description","content":"Arch Linuxのインストールからデスクトップ環境構築まで、日本語で体系的に解説するガイドサイトです。"}],["$","meta","2",{"name":"keywords","content":"Arch Linux,Linux,インストール,日本語,デスクトップ環境,btrfs,LUKS"}]]

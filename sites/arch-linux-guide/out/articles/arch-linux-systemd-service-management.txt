@@ -1,0 +1,106 @@
+1:"$Sreact.fragment"
+2:I[24117,["/_next/static/chunks/00mbd8isu7b38.js"],"default"]
+3:I[79967,["/_next/static/chunks/00mbd8isu7b38.js"],"default"]
+5:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+9:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"ViewportBoundary"]
+b:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"MetadataBoundary"]
+d:I[30946,["/_next/static/chunks/00mbd8isu7b38.js"],"default",1]
+:HL["/_next/static/chunks/089_dp2m4y2c2.css","style"]
+0:{"P":null,"c":["","articles","arch-linux-systemd-service-management"],"q":"","i":false,"f":[[["",{"children":["articles",{"children":[["slug","arch-linux-systemd-service-management","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/089_dp2m4y2c2.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/00mbd8isu7b38.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"ja","children":[["$","head",null,{"children":["$","script",null,{"async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019","crossOrigin":"anonymous"}]}],["$","body",null,{"className":"min-h-screen antialiased","children":["$","div",null,{"className":"flex min-h-screen flex-col","children":[["$","header",null,{"className":"border-b border-gray-200 bg-white","children":["$","div",null,{"className":"mx-auto flex max-w-4xl items-center justify-between px-4 py-3","children":[["$","a",null,{"href":"/","className":"text-lg font-bold text-arch hover:opacity-80","children":"Arch Linux 日本語ガイド"}],["$","nav",null,{"className":"flex gap-4 text-sm text-gray-600","children":[["$","a",null,{"href":"/","className":"hover:text-arch","children":"ホーム"}],["$","a",null,{"href":"/about","className":"hover:text-arch","children":"このサイトについて"}]]}]]}]}],["$","main",null,{"className":"flex-1","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400","children":[["$","div",null,{"className":"flex justify-center gap-4 mb-2","children":[["$","a",null,{"href":"/about","className":"hover:text-gray-600","children":"このサイトについて"}],["$","a",null,{"href":"/privacy","className":"hover:text-gray-600","children":"プライバシーポリシー"}]]}],"Arch Linux 日本語ガイド — Built with OpenCode + DeepSeek API"]}]]}]}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L4",null,["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]]}],{},null,false,null]},null,false,"$@8"]},null,false,"$@8"]},null,false,null],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$6",null,{"name":"Next.Metadata","children":"$Lc"}]}]}],null]}],false]],"m":"$undefined","G":["$d",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/089_dp2m4y2c2.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"oMFWqHyx7sJoNGgtrYd0X"}
+e:[]
+8:"$We"
+f:T197f,<h2>はじめに</h2>
+<p>Arch Linuxは最小限の構成から自分好みにカスタマイズできるディストリビューションですが、システム管理の要となるのが<strong>systemd</strong>です。本記事では、systemdの基本的な概念から、サービスの起動・停止・自動起動設定、ログの確認方法までを実践的に解説します。</p>
+<hr>
+<h2>systemdとは？</h2>
+<h3>定義</h3>
+systemdはLinuxの<strong>initシステム</strong>（システム起動時に最初に実行されるプロセス）であり、サービスの管理や依存関係の解決、並列起動などを担います。Arch Linuxではデフォルトで採用されています。
+<h3>背景</h3>
+従来のSysVinitやBSDスタイルのinitは直列処理が中心で、起動が遅く依存関係の記述が煩雑でした。systemdは<strong>ユニット</strong>という概念でサービスやマウントなどを統一的に管理し、ソケットやD-Busによる<strong>アクティベーション</strong>で効率的な起動を実現します。
+<hr>
+<h2>systemdの仕組み</h2>
+<h3>ユニットとは</h3>
+systemdが管理するリソースはすべて<strong>ユニット</strong>として定義されます。代表的なユニットタイプは以下の通りです。
+<li><code>.service</code> : デーモンやサービスの定義</li>
+<li><code>.socket</code> : ソケットアクティベーション</li>
+<li><code>.target</code> : 複数ユニットのグループ（runlevel相当）</li>
+<li><code>.timer</code> : 定期実行の定義（cron代替）</li>
+<p>ユニットファイルは <code>/usr/lib/systemd/system/</code>（パッケージ提供）や <code>/etc/systemd/system/</code>（ユーザー設定）に配置されます。</p>
+<h3>systemctlの基本コマンド</h3>
+サービスの操作は <strong><code>systemctl</code></strong> コマンドで行います。
+<p>#### サービスの状態確認
+<pre><code class="language-bash">&lt;h1&gt;すべてのユニットの状態を表示&lt;/h1&gt;
+systemctl list-units --type=service</p>
+<p>&lt;h1&gt;特定のサービスの状態を表示（例: sshd）&lt;/h1&gt;
+systemctl status sshd.service
+</code></pre>
+出力例では「active (running)」「enabled」「disabled」などが確認できます。</p>
+<p>#### サービスの起動・停止・再起動
+<pre><code class="language-bash">&lt;h1&gt;起動&lt;/h1&gt;
+sudo systemctl start sshd.service</p>
+<p>&lt;h1&gt;停止&lt;/h1&gt;
+sudo systemctl stop sshd.service</p>
+<p>&lt;h1&gt;再起動&lt;/h1&gt;
+sudo systemctl restart sshd.service</p>
+<p>&lt;h1&gt;設定ファイルを再読み込み（一部のサービス）&lt;/h1&gt;
+sudo systemctl reload sshd.service
+</code></pre></p>
+<p>#### 自動起動の設定
+<pre><code class="language-bash">&lt;h1&gt;自動起動を有効化&lt;/h1&gt;
+sudo systemctl enable sshd.service</p>
+<p>&lt;h1&gt;自動起動を無効化&lt;/h1&gt;
+sudo systemctl disable sshd.service</p>
+<p>&lt;h1&gt;自動起動の有効状態を確認&lt;/h1&gt;
+systemctl is-enabled sshd.service
+</code></pre>
+<code>enable</code> は <code>/etc/systemd/system/</code> にシンボリックリンクを作成します。</p>
+<p>#### 即時起動＋自動起動の両方を設定
+<pre><code class="language-bash">sudo systemctl enable --now sshd.service
+</code></pre>
+このコマンドで有効化と即時起動を同時に行えます。</p>
+<hr>
+<h2>実用例：SSHサーバーの管理</h2>
+<h3>1. SSHサーバーのインストールと起動</h3>
+<pre><code class="language-bash">&lt;h1&gt;opensshパッケージをインストール&lt;/h1&gt;
+sudo pacman -S openssh
+<p>&lt;h1&gt;サービスを起動&lt;/h1&gt;
+sudo systemctl start sshd.service</p>
+<p>&lt;h1&gt;自動起動を有効化&lt;/h1&gt;
+sudo systemctl enable sshd.service
+</code></pre></p>
+<h3>2. 状態確認とトラブルシューティング</h3>
+<pre><code class="language-bash">&lt;h1&gt;状態確認&lt;/h1&gt;
+systemctl status sshd.service
+<p>&lt;h1&gt;ログを確認（-u でユニット指定）&lt;/h1&gt;
+journalctl -u sshd.service -e
+</code></pre>
+<code>journalctl</code> はsystemdのログ管理ツール。<code>-e</code> で最新のログを表示します。</p>
+<h3>3. 設定変更後の再読み込み</h3>
+<code>/etc/ssh/sshd_config</code> を編集したら：
+<pre><code class="language-bash">sudo systemctl reload sshd.service
+</code></pre>
+<code>restart</code> と異なり、<code>reload</code> は接続を切断せずに設定を再読み込みします。
+<hr>
+<h2>よくある誤解</h2>
+<h3>誤解1: systemctl enable だけでサービスが起動する</h3>
+<code>enable</code> は自動起動の設定のみで、即時起動はしません。起動するには <code>start</code> または <code>enable --now</code> を使います。
+<h3>誤解2: サービス名の拡張子は必須</h3>
+<code>systemctl status sshd</code> のように拡張子を省略できます。ただし <code>.service</code> 以外のユニット（<code>.socket</code> など）は指定が必要な場合があります。
+<h3>誤解3: journalctl は常に全ログを表示する</h3>
+<code>journalctl</code> はデフォルトで現在のブートのログのみ表示します。過去のログは <code>journalctl --list-boots</code> で確認し、<code>-b -1</code> などで指定します。
+<h3>誤解4: systemdは複雑すぎる</h3>
+確かに従来のinitより学習曲線はありますが、一度慣れれば統一的な管理が可能です。<code>man systemd.service</code> や <code>man systemctl</code> で詳細を確認しましょう。
+<hr>
+<hr>
+<p>*この記事はArch Linuxを実機で日常運用しているSioが、実際のインストール・設定経験に基づいてAI生成コンテンツをレビュー・補完しています。btrfsサブボリュームとLUKS暗号化環境で検証済みです。*</p>
+<h2>まとめ</h2>
+<p>Arch Linuxでsystemdを理解することは、システム管理の効率化に直結します。</p>
+<li><strong>systemctl</strong> でサービスの起動・停止・有効化</li>
+<li><strong>journalctl</strong> でログを確認</li>
+<li>自動起動は <code>enable</code> と <code>start</code> を別々に、または <code>enable --now</code> で</li>
+<p>これらの基本を押さえれば、サーバー運用やトラブルシューティングが格段に楽になります。ぜひ実際にコマンドを打ちながら試してみてください。</p>4:["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"Arch Linuxでsystemdを使いこなす！サービス管理の基本を徹底解説"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"Arch Linuxにおけるsystemdの基本を解説。systemctlやjournalctlの使い方、サービスの自動起動設定、よくある誤解まで実例付きで紹介。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","Arch Linux",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"Arch Linux"}],["$","span","systemd",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"systemd"}],["$","span","systemctl",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"systemctl"}],["$","span","サービス",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"サービス"}],["$","span","自動起動",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"自動起動"}],["$","span","journalctl",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"journalctl"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$f"}}]]}],"$L10"]}]
+10:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-arch hover:underline","children":"← 記事一覧に戻る"}]}]
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+7:null
+c:[["$","title","0",{"children":"Arch Linux 日本語ガイド"}],["$","meta","1",{"name":"description","content":"Arch Linuxのインストールからデスクトップ環境構築まで、日本語で体系的に解説するガイドサイトです。"}],["$","meta","2",{"name":"keywords","content":"Arch Linux,Linux,インストール,日本語,デスクトップ環境,btrfs,LUKS"}]]

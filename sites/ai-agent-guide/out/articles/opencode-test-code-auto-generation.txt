@@ -1,0 +1,126 @@
+1:"$Sreact.fragment"
+2:I[10332,["/_next/static/chunks/007ac~remr-yw.js"],"default"]
+3:I[41511,["/_next/static/chunks/007ac~remr-yw.js"],"default"]
+5:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+9:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"ViewportBoundary"]
+b:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"MetadataBoundary"]
+d:I[30493,["/_next/static/chunks/007ac~remr-yw.js"],"default",1]
+:HL["/_next/static/chunks/0sknqqgyc~d7j.css","style"]
+0:{"P":null,"c":["","articles","opencode-test-code-auto-generation"],"q":"","i":false,"f":[[["",{"children":["articles",{"children":[["slug","opencode-test-code-auto-generation","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0sknqqgyc~d7j.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/007ac~remr-yw.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"ja","children":[["$","head",null,{"children":["$","script",null,{"async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019","crossOrigin":"anonymous"}]}],["$","body",null,{"className":"min-h-screen antialiased","children":["$","div",null,{"className":"flex min-h-screen flex-col","children":[["$","header",null,{"className":"border-b border-gray-200 bg-white","children":["$","div",null,{"className":"mx-auto flex max-w-4xl items-center justify-between px-4 py-3","children":[["$","a",null,{"href":"/","className":"text-lg font-bold text-ai hover:opacity-80","children":"AIエージェント活用ガイド"}],["$","nav",null,{"className":"flex gap-4 text-sm text-gray-600","children":["$","a",null,{"href":"/","className":"hover:text-ai","children":"ホーム"}]}]]}]}],["$","main",null,{"className":"flex-1","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400","children":"AIエージェント活用ガイド — Built with OpenCode + DeepSeek API"}]]}]}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L4",null,["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]]}],{},null,false,null]},null,false,"$@8"]},null,false,"$@8"]},null,false,null],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$6",null,{"name":"Next.Metadata","children":"$Lc"}]}]}],null]}],false]],"m":"$undefined","G":["$d",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0sknqqgyc~d7j.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"ozMjvJqr-IrJkTdPFeVOD"}
+e:[]
+8:"$We"
+f:T1a4e,<h2>はじめに：テストコード自動生成の価値</h2>
+<p>テスト駆動開発（TDD）は品質向上に有効だが、テストコードを書く工数は無視できない。OpenCodeはLLMを活用し、自然言語の仕様から自動でテストコードを生成するツールだ。本記事では、OpenCodeを用いてJestテストコードを自動生成し、TDDサイクルを加速する方法を解説する。</p>
+<h2>OpenCodeの基本セットアップ</h2>
+<p>まずはOpenCodeを導入する。Node.js環境が必要だ。</p>
+<pre><code class="language-bash">&lt;h1&gt;グローバルインストール&lt;/h1&gt;
+npm install -g @opencode/cli
+<p>&lt;h1&gt;プロジェクト初期化&lt;/h1&gt;
+mkdir my-project &amp;&amp; cd my-project
+npm init -y
+</code></pre></p>
+<p>次に、テストフレームワークとしてJestをインストールする。</p>
+<pre><code class="language-bash">npm install --save-dev jest
+</code></pre>
+<p>OpenCodeの設定ファイル<code>.opencode.yml</code>をプロジェクトルートに作成する。</p>
+<pre><code class="language-yaml">&lt;h1&gt;.opencode.yml&lt;/h1&gt;
+testFramework: jest
+testPattern: "**/*.test.js"
+sourcePattern: "src/**/*.js"
+</code></pre>
+<h2>テストコード自動生成の基本フロー</h2>
+<p>OpenCodeは「Specification（仕様）」からテストコードを生成する。Specificationは自然言語で記述し、Markdownファイルとして管理する。</p>
+<h3>ステップ1：Specificationファイルを作成</h3>
+<p><code>specs/calculator.md</code>を作成する。</p>
+<pre><code class="language-markdown">&lt;h1&gt;Calculator&lt;/h1&gt;
+<p>&lt;h2&gt;add&lt;/h2&gt;
+&lt;li&gt;2つの数値を受け取り、その和を返す&lt;/li&gt;
+&lt;li&gt;引数が数値でない場合はエラーを投げる&lt;/li&gt;</p>
+<p>&lt;h2&gt;subtract&lt;/h2&gt;
+&lt;li&gt;2つの数値を受け取り、差を返す&lt;/li&gt;
+&lt;li&gt;引数が数値でない場合はエラーを投げる&lt;/li&gt;
+</code></pre></p>
+<h3>ステップ2：テストコードを生成</h3>
+<pre><code class="language-bash">opcode generate specs/calculator.md --output tests/calculator.test.js
+</code></pre>
+<p>生成される<code>tests/calculator.test.js</code>は以下のようになる。</p>
+<pre><code class="language-javascript">const { add, subtract } = require('../src/calculator');
+<p>describe('Calculator', () =&gt; {
+  describe('add', () =&gt; {
+    test('returns sum of two numbers', () =&gt; {
+      expect(add(1, 2)).toBe(3);
+      expect(add(-1, 1)).toBe(0);
+      expect(add(0, 0)).toBe(0);
+    });</p>
+<p>test('throws error if arguments are not numbers', () =&gt; {
+      expect(() =&gt; add('a', 1)).toThrow();
+      expect(() =&gt; add(1, null)).toThrow();
+    });
+  });</p>
+<p>describe('subtract', () =&gt; {
+    test('returns difference of two numbers', () =&gt; {
+      expect(subtract(5, 3)).toBe(2);
+      expect(subtract(0, 1)).toBe(-1);
+    });</p>
+<p>test('throws error if arguments are not numbers', () =&gt; {
+      expect(() =&gt; subtract('a', 1)).toThrow();
+      expect(() =&gt; subtract(1, undefined)).toThrow();
+    });
+  });
+});
+</code></pre></p>
+<h3>ステップ3：実装コードを作成しテストを実行</h3>
+<pre><code class="language-bash">&lt;h1&gt;実装コードのひな形を作成&lt;/h1&gt;
+mkdir src
+touch src/calculator.js
+<p>&lt;h1&gt;テストを実行（最初は失敗する）&lt;/h1&gt;
+npm test
+</code></pre></p>
+<p>実装を書いてテストを通す。</p>
+<pre><code class="language-javascript">// src/calculator.js
+function add(a, b) {
+  if (typeof a !== 'number' || typeof b !== 'number') {
+    throw new Error('Arguments must be numbers');
+  }
+  return a + b;
+}
+<p>function subtract(a, b) {
+  if (typeof a !== 'number' || typeof b !== 'number') {
+    throw new Error('Arguments must be numbers');
+  }
+  return a - b;
+}</p>
+<p>module.exports = { add, subtract };
+</code></pre></p>
+<h2>TDDワークフローへの統合</h2>
+<p>TDDのサイクル「Red-Green-Refactor」にOpenCodeを組み込む。</p>
+<li><strong>Red</strong>: Specificationを書き、テストコードを生成して実行（失敗確認）</li>
+<li><strong>Green</strong>: 実装コードを書き、テストを通す</li>
+<li><strong>Refactor</strong>: コードを改善し、テストが通ることを確認</li>
+<p>SpecificationファイルをGit管理することで、仕様の変更履歴も追跡できる。</p>
+<h2>高度な使い方：複数ファイルと依存関係</h2>
+<p>大規模プロジェクトでは、Specificationを分割して管理する。OpenCodeは<code>@import</code>ディレクティブをサポートしている。</p>
+<pre><code class="language-markdown">&lt;h1&gt;specs/user-service.md&lt;/h1&gt;
+@import specs/common/errors.md
+<p>&lt;h2&gt;createUser&lt;/h2&gt;
+&lt;li&gt;有効なメールアドレスとパスワードを受け取り、ユーザーを作成する&lt;/li&gt;
+&lt;li&gt;メールアドレスが既存の場合はエラーを投げる&lt;/li&gt;
+</code></pre></p>
+<p>生成コマンドで複数ファイルを指定できる。</p>
+<pre><code class="language-bash">opcode generate specs/ --output tests/
+</code></pre>
+<h2>品質を高めるポイント</h2>
+<li><strong>Specificationを具体的に書く</strong>: 「正常系」「異常系」を網羅し、境界値も明記する</li>
+<li><strong>生成後にレビューする</strong>: 自動生成されたテストコードは必ず人間が確認し、不要なテストや誤ったアサーションを修正する</li>
+<li><strong>モックを活用する</strong>: OpenCodeはモックの自動生成も可能。Specificationに外部依存を明記すれば、Jestのモック関数を生成してくれる</li>
+<li><strong>継続的に更新する</strong>: 仕様変更時はSpecificationを更新し、テストコードを再生成。手動修正との差分を管理する</li>
+<hr>
+<p>*この記事はOpenCodeを日常的に使用し、AIエージェントにSSH経由でNixOSをインストールさせるなどの実践経験を持つSioが監修しています。DeepSeek APIのヘビーユーザーとして、実際のコスト感や制限事項を反映しています。*</p>
+<h2>まとめ</h2>
+<p>OpenCodeを使えば、Specificationからテストコードを自動生成でき、TDDの導入障壁を下げられる。ただし、生成されたコードを盲信せず、レビューと修正を怠らないことが重要だ。Specificationを「生きたドキュメント」として育てることで、プロジェクトの品質と開発速度を両立できる。</p>
+<p>ぜひ、あなたのプロジェクトでもOpenCodeを試してみてほしい。</p>4:["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"OpenCodeでテストコードを自動生成する：TDDを加速する実践ガイド"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"OpenCodeを使ってテストコードを自動生成する方法を解説。Jestとの連携、TDDワークフローへの組み込み、品質向上のポイントを具体例で紹介。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","OpenCode",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"OpenCode"}],["$","span","テストコード",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"テストコード"}],["$","span","自動生成",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"自動生成"}],["$","span","TDD",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"TDD"}],["$","span","Jest",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"Jest"}],["$","span","品質",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"品質"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$f"}}]]}],"$L10"]}]
+10:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-ai hover:underline","children":"← 記事一覧に戻る"}]}]
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+7:null
+c:[["$","title","0",{"children":"AIエージェント活用ガイド"}],["$","meta","1",{"name":"description","content":"OpenCode/ClaudeCode/DeepSeekを使ったAIエージェント開発自動化の情報を日本語で発信。"}],["$","meta","2",{"name":"keywords","content":"OpenCode,ClaudeCode,AIエージェント,DeepSeek,開発自動化,プロンプト"}]]

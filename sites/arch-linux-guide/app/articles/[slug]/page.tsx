@@ -1,5 +1,10 @@
-import { getArticleBySlug, markdownToHtml } from "@/lib/articles"
+import { getAllArticles, getArticleBySlug, markdownToHtml } from "@/lib/articles"
 import { notFound } from "next/navigation"
+
+export function generateStaticParams() {
+  const articles = getAllArticles()
+  return articles.map((a) => ({ slug: a.slug }))
+}
 
 export default async function ArticlePage({
   params,
@@ -23,10 +28,7 @@ export default async function ArticlePage({
           <p className="mt-2 text-gray-500">{article.metaDescription}</p>
           <div className="mt-4 flex flex-wrap items-center gap-3">
             {article.keywords.map((k) => (
-              <span
-                key={k}
-                className="rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600"
-              >
+              <span key={k} className="rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600">
                 {k}
               </span>
             ))}

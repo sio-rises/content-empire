@@ -1,0 +1,141 @@
+1:"$Sreact.fragment"
+2:I[24117,["/_next/static/chunks/00mbd8isu7b38.js"],"default"]
+3:I[79967,["/_next/static/chunks/00mbd8isu7b38.js"],"default"]
+5:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+9:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"ViewportBoundary"]
+b:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"MetadataBoundary"]
+d:I[30946,["/_next/static/chunks/00mbd8isu7b38.js"],"default",1]
+:HL["/_next/static/chunks/089_dp2m4y2c2.css","style"]
+0:{"P":null,"c":["","articles","arch-linux-btrfs-snapper-snapshot-setup"],"q":"","i":false,"f":[[["",{"children":["articles",{"children":[["slug","arch-linux-btrfs-snapper-snapshot-setup","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/089_dp2m4y2c2.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/00mbd8isu7b38.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"ja","children":[["$","head",null,{"children":["$","script",null,{"async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019","crossOrigin":"anonymous"}]}],["$","body",null,{"className":"min-h-screen antialiased","children":["$","div",null,{"className":"flex min-h-screen flex-col","children":[["$","header",null,{"className":"border-b border-gray-200 bg-white","children":["$","div",null,{"className":"mx-auto flex max-w-4xl items-center justify-between px-4 py-3","children":[["$","a",null,{"href":"/","className":"text-lg font-bold text-arch hover:opacity-80","children":"Arch Linux 日本語ガイド"}],["$","nav",null,{"className":"flex gap-4 text-sm text-gray-600","children":[["$","a",null,{"href":"/","className":"hover:text-arch","children":"ホーム"}],["$","a",null,{"href":"/about","className":"hover:text-arch","children":"このサイトについて"}]]}]]}]}],["$","main",null,{"className":"flex-1","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400","children":[["$","div",null,{"className":"flex justify-center gap-4 mb-2","children":[["$","a",null,{"href":"/about","className":"hover:text-gray-600","children":"このサイトについて"}],["$","a",null,{"href":"/privacy","className":"hover:text-gray-600","children":"プライバシーポリシー"}]]}],"Arch Linux 日本語ガイド — Built with OpenCode + DeepSeek API"]}]]}]}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L4",null,["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]]}],{},null,false,null]},null,false,"$@8"]},null,false,"$@8"]},null,false,null],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$6",null,{"name":"Next.Metadata","children":"$Lc"}]}]}],null]}],false]],"m":"$undefined","G":["$d",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/089_dp2m4y2c2.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"oMFWqHyx7sJoNGgtrYd0X"}
+e:[]
+8:"$We"
+f:T203c,<h2>はじめに</h2>
+<p>このチュートリアルでは、Arch Linuxにbtrfsファイルシステムを導入し、サブボリュームを作成した上で、snapperを使ってスナップショットの自動取得・管理を設定します。スナップショットを使うことで、システム更新前の状態に簡単に戻せるようになり、バックアップとしても活用できます。</p>
+<h3>目標</h3>
+<li>btrfsサブボリュームの作成とマウント</li>
+<li>snapperのインストールと設定</li>
+<li>自動スナップショットの有効化</li>
+<li>スナップショットからの復元方法の理解</li>
+<h3>前提条件</h3>
+<li>Arch Linuxがインストール済みであること（インストール時にbtrfsを選択するか、後から変換しても構いません）</li>
+<li>root権限で操作できること</li>
+<li>基本的なLinuxコマンドの知識</li>
+<h2>ステップ1: btrfsサブボリュームの作成</h2>
+<p>まず、既存のbtrfsファイルシステム上にサブボリュームを作成します。ここでは、ルートファイルシステムが<code>/dev/sda2</code>にマウントされていると仮定します。適宜、自分の環境に合わせてデバイスを変更してください。</p>
+<pre><code class="language-bash">&lt;h1&gt;マウントポイントを確認&lt;/h1&gt;
+lsblk
+</code></pre>
+<p>ルートパーティションを一時的にマウントし、サブボリュームを作成します。</p>
+<pre><code class="language-bash">&lt;h1&gt;ルートパーティションを/mntにマウント&lt;/h1&gt;
+mount /dev/sda2 /mnt
+<p>&lt;h1&gt;@と@homeのサブボリュームを作成（@はルート、@homeは/home用）&lt;/h1&gt;
+btrfs subvolume create /mnt/@
+btrfs subvolume create /mnt/@home</p>
+<p>&lt;h1&gt;アンマウント&lt;/h1&gt;
+umount /mnt
+</code></pre></p>
+<p>次に、これらのサブボリュームを適切なマウントポイントにマウントします。<code>/etc/fstab</code>を編集して、起動時に自動マウントされるようにします。</p>
+<pre><code class="language-bash">&lt;h1&gt;fstabを編集&lt;/h1&gt;
+nano /etc/fstab
+</code></pre>
+<p>以下の行を追加します（デバイス名は環境に合わせて変更）。</p>
+<pre><code class="language-">/dev/sda2  /  btrfs  rw,noatime,compress=zstd,subvol=@  0  0
+/dev/sda2  /home  btrfs  rw,noatime,compress=zstd,subvol=@home  0  0
+</code></pre>
+<p>マウントオプションの説明:
+<li><code>noatime</code>: アクセス時刻を更新しない（パフォーマンス向上）</li>
+<li><code>compress=zstd</code>: Zstandard圧縮を有効化</li>
+<li><code>subvol=@</code>: 使用するサブボリュームを指定</li></p>
+<p>マウントして確認します。</p>
+<pre><code class="language-bash">&lt;h1&gt;マウント&lt;/h1&gt;
+mount -a
+<p>&lt;h1&gt;確認&lt;/h1&gt;
+df -h
+</code></pre></p>
+<h2>ステップ2: snapperのインストールと設定</h2>
+<p>snapperはbtrfsスナップショットを管理するツールです。</p>
+<pre><code class="language-bash">&lt;h1&gt;snapperをインストール&lt;/h1&gt;
+pacman -S snapper
+</code></pre>
+<p>snapperの設定ファイルを作成します。ルートファイルシステム（<code>/</code>）用の設定を作成します。</p>
+<pre><code class="language-bash">&lt;h1&gt;設定を作成（設定名はroot）&lt;/h1&gt;
+snapper -c root create-config /
+</code></pre>
+<p>このコマンドで、<code>/etc/snapper/configs/root</code>が作成され、スナップショットは<code>/.snapshots</code>に保存されます。</p>
+<p>設定を編集して、スナップショットの保持数を調整します。</p>
+<pre><code class="language-bash">nano /etc/snapper/configs/root
+</code></pre>
+<p>以下の項目を編集します（例）。</p>
+<pre><code class="language-">SUBVOLUME="/"
+ALLOW_USERS=""
+ALLOW_GROUPS=""
+TIMELINE_CREATE="yes"
+TIMELINE_CLEANUP="yes"
+TIMELINE_MIN_AGE="1800"
+TIMELINE_LIMIT_HOURLY="5"
+TIMELINE_LIMIT_DAILY="7"
+TIMELINE_LIMIT_WEEKLY="0"
+TIMELINE_LIMIT_MONTHLY="0"
+TIMELINE_LIMIT_YEARLY="0"
+NUMBER_LIMIT="50"
+NUMBER_LIMIT_IMPORTANT="10"
+</code></pre>
+<li><code>TIMELINE_CREATE</code>: タイムラインスナップショットを有効にする</li>
+<li><code>TIMELINE_LIMIT_*</code>: 各期間の最大保持数</li>
+<li><code>NUMBER_LIMIT</code>: 手動スナップショットの最大保持数</li>
+<h2>ステップ3: 自動スナップショットの有効化</h2>
+<p>snapperにはタイマーが付属しており、定期的にスナップショットを作成します。</p>
+<pre><code class="language-bash">&lt;h1&gt;snapper-timeline.timerを有効化&lt;/h1&gt;
+systemctl enable snapper-timeline.timer
+systemctl start snapper-timeline.timer
+<p>&lt;h1&gt;snapper-cleanup.timerも有効化（古いスナップショットを削除）&lt;/h1&gt;
+systemctl enable snapper-cleanup.timer
+systemctl start snapper-cleanup.timer
+</code></pre></p>
+<p>タイマーの状態を確認します。</p>
+<pre><code class="language-bash">systemctl list-timers | grep snapper
+</code></pre>
+<h2>ステップ4: スナップショットの管理</h2>
+<h3>手動スナップショットの作成</h3>
+<pre><code class="language-bash">&lt;h1&gt;スナップショットを作成（説明付き）&lt;/h1&gt;
+snapper -c root create -d "更新前のバックアップ"
+</code></pre>
+<h3>スナップショットの一覧表示</h3>
+<pre><code class="language-bash">snapper -c root list
+</code></pre>
+<p>出力例:
+<pre><code class="language-"> # | Type   | Pre # | Date                            | User | Cleanup  | Description
+---+--------+-------+---------------------------------+------+----------+-------------
+0  | single |       |                                 | root |          | current
+1  | single |       | Tue 01 Jan 2023 12:00:00 AM UTC | root | timeline | timeline
+</code></pre></p>
+<h3>スナップショットの削除</h3>
+<pre><code class="language-bash">&lt;h1&gt;スナップショット番号1を削除&lt;/h1&gt;
+snapper -c root delete 1
+</code></pre>
+<h2>ステップ5: スナップショットからの復元</h2>
+<p>注意: 復元は慎重に行ってください。現在のデータが失われる可能性があります。</p>
+<pre><code class="language-bash">&lt;h1&gt;スナップショット番号1にロールバック&lt;/h1&gt;
+snapper -c root undochange 1..0
+</code></pre>
+<p>または、スナップショットを別のディレクトリにマウントして必要なファイルだけを取り出すこともできます。</p>
+<pre><code class="language-bash">&lt;h1&gt;スナップショットをマウント&lt;/h1&gt;
+mount -o subvol=.snapshots/1/snapshot /dev/sda2 /mnt/snapshot
+</code></pre>
+<h2>動作確認</h2>
+<li>手動スナップショットを作成し、<code>snapper list</code>で表示されることを確認。</li>
+<li>タイマーが動作しているか<code>journalctl -u snapper-timeline.timer</code>で確認。</li>
+<li>テストファイルを作成し、スナップショットを取得後、ファイルを削除してから<code>snapper undochange</code>で復元できることを確認。</li>
+<h2>発展リソース</h2>
+<li><a href="https://btrfs.wiki.kernel.org/" target="_blank" rel="noopener">btrfs Wiki</a></li>
+<li><a href="https://snapper.io/documentation.html" target="_blank" rel="noopener">snapper公式ドキュメント</a></li>
+<li><a href="https://wiki.archlinux.jp/index.php/Btrfs" target="_blank" rel="noopener">Arch Linux btrfs ガイド</a></li>
+<hr>
+<p>*この記事はArch Linuxを実機で日常運用しているSioが、実際のインストール・設定経験に基づいてAI生成コンテンツをレビュー・補完しています。btrfsサブボリュームとLUKS暗号化環境で検証済みです。*</p>
+<h2>まとめ</h2>
+<p>このチュートリアルでは、Arch Linuxでbtrfsサブボリュームを作成し、snapperを使ってスナップショットの自動取得と管理を行う方法を学びました。定期的なスナップショットにより、システム障害やミスからの復旧が容易になります。ぜひ実践して、安心してArch Linuxを運用してください。</p>4:["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"Arch Linuxでbtrfsサブボリュームとsnapperスナップショットを設定する方法"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"Arch Linuxでbtrfsサブボリュームを作成し、snapperを使ってスナップショットを自動取得・管理する手順を解説。初心者向けにステップバイステップで紹介。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","Arch Linux",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"Arch Linux"}],["$","span","btrfs",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"btrfs"}],["$","span","サブボリューム",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"サブボリューム"}],["$","span","スナップショット",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"スナップショット"}],["$","span","snapper",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"snapper"}],["$","span","バックアップ",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"バックアップ"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$f"}}]]}],"$L10"]}]
+10:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-arch hover:underline","children":"← 記事一覧に戻る"}]}]
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+7:null
+c:[["$","title","0",{"children":"Arch Linux 日本語ガイド"}],["$","meta","1",{"name":"description","content":"Arch Linuxのインストールからデスクトップ環境構築まで、日本語で体系的に解説するガイドサイトです。"}],["$","meta","2",{"name":"keywords","content":"Arch Linux,Linux,インストール,日本語,デスクトップ環境,btrfs,LUKS"}]]

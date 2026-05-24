@@ -1,0 +1,16 @@
+{
+  "title": "シェルスクリプト入門：初心者でもわかる自動化の基本と実践テクニック",
+  "slug": "shell-script-beginners-guide",
+  "metaDescription": "シェルスクリプトの基本を学び、bashの変数やcronを使った自動化をマスター。初心者向けに具体例を交えて解説します。",
+  "content": "## シェルスクリプトとは？\n\nシェルスクリプトは、LinuxやUnix系OSで動作するコマンドを自動実行するためのプログラムです。bash（Bourne Again SHell）が最も一般的で、ファイル操作、システム管理、バッチ処理など様々な自動化に利用されます。\n\n### シェルスクリプトのメリット\n- **繰り返し作業の自動化**：毎回手動で打つコマンドをスクリプト化\n- **スケジュール実行**：cronと組み合わせて定期的に実行\n- **条件分岐やループ**：複雑な処理もシンプルに記述\n\n## 環境準備\n\n### 必要なもの\n- LinuxまたはmacOS（WindowsはWSLやGit Bash推奨）\n- テキストエディタ（Vim, Nano, VS Codeなど）\n- ターミナル\n\n### シェルの確認\n```bash\necho $SHELL\n```\n通常は `/bin/bash` です。\n\n## 最初のシェルスクリプト\n\n### ファイル作成と実行\n```bash\n# ファイル作成\ntouch hello.sh\n\n# エディタで開く\nnano hello.sh\n```\n\n次のコードを記述：\n```bash\n#!/bin/bash\n# 最初のシェルスクリプト\necho \"Hello, World!\"\n```\n\n### 実行権限を付与\n```bash\nchmod +x hello.sh\n```\n\n### 実行\n```bash\n./hello.sh\n# 出力: Hello, World!\n```\n\n**解説**：\n- `#!/bin/bash`（シバン）：スクリプトを実行するインタプリタを指定\n- `#`：コメント行\n- `echo`：文字列を出力\n\n## 変数とデータ操作\n\n### 変数の定義と使用\n```bash\n#!/bin/bash\nname=\"Taro\"\necho \"Hello, $name\"\n```\n\n- 変数名は英数字とアンダースコア、先頭は数字不可\n- 代入時に`=`の前後にスペースを入れない\n- 参照時に`$`を付ける\n\n### ユーザー入力の取得\n```bash\n#!/bin/bash\necho \"あなたの名前は？\"\nread user_name\necho \"こんにちは、$user_name さん！\"\n```\n\n### コマンド置換\n```bash\n#!/bin/bash\ncurrent_date=$(date)\necho \"現在日時: $current_date\"\n```\n\n## 条件分岐（if文）\n\n### 基本構文\n```bash\n#!/bin/bash\nif [ 条件 ]; then\n    処理\nelif [ 条件 ]; then\n    処理\nelse\n    処理\nfi\n```\n\n### 数値比較\n```bash\n#!/bin/bash\nnum=10\nif [ $num -gt 5 ]; then\n    echo \"$num は5より大きい\"\nfi\n```\n\n主な比較演算子：\n- `-eq`：等しい\n- `-ne`：等しくない\n- `-gt`：より大きい\n- `-lt`：より小さい\n- `-ge`：以上\n- `-le`：以下\n\n### 文字列比較\n```bash\n#!/bin/bash\nstr=\"hello\"\nif [ \"$str\" = \"hello\" ]; then\n    echo \"一致\"\nfi\n```\n\n### ファイル判定\n```bash\n#!/bin/bash\nif [ -f \"/etc/passwd\" ]; then\n    echo \"ファイルが存在します\"\nfi\n```\n\n## ループ処理\n\n### forループ\n```bash\n#!/bin/bash\nfor i in 1 2 3 4 5; do\n    echo \"Number: $i\"\ndone\n```\n\n### whileループ\n```bash\n#!/bin/bash\ncount=1\nwhile [ $count -le 5 ]; do\n    echo \"Count: $count\"\n    ((count++))\ndone\n```\n\n## 自動化の実践例\n\n### バックアップスクリプト\n```bash\n#!/bin/bash\n# バックアップ先ディレクトリ\nbackup_dir=\"/backup\"\nsource_dir=\"/home/user/documents\"\n\n# バックアップファイル名（日付付き）\nfilename=\"backup_$(date +%Y%m%d_%H%M%S).tar.gz\"\n\n# バックアップ実行\ntar -czf \"$backup_dir/$filename\" \"$source_dir\"\n\necho \"バックアップ完了: $filename\"\n```\n\n### cronで定期実行\n1. スクリプトに実行権限を付与\n2. `crontab -e` で編集\n3. 例：毎日午前3時に実行\n```\n0 3 * * * /home/user/backup.sh\n```\n\n### ログローテーション\n```bash\n#!/bin/bash\nlog_dir=\"/var/log/myapp\"\nmax_days=7\n\nfind \"$log_dir\" -name \"*.log\" -type f -mtime +$max_days -delete\necho \"$max_days 日以上前のログを削除しました\"\n```\n\n## トラブルシューティング\n\n### よくあるエラー\n- **Permission denied**：実行権限がない→ `chmod +x`\n- **command not found**：パスが通っていない→ 絶対パスか `./` を付ける\n- **syntax error**：スペルミスや `fi` 忘れ\n\n### デバッグ方法\n```bash\nbash -x script.sh\n```\n各行の実行内容が表示される。\n\n## まとめ\n\nシェルスクリプトは、日常の繰り返し作業を自動化する強力なツールです。この記事で紹介した変数、条件分岐、ループを組み合わせれば、複雑な処理もシンプルに実装できます。まずは簡単なスクリプトから試し、徐々に自動化の範囲を広げてみてください。\n\n### 次のステップ\n- 関数の作成\n- 配列の活用\n- 正規表現を使った文字列処理\n- sedやawkとの連携",
+  "keywords": [
+    "シェルスクリプト",
+    "入門",
+    "自動化",
+    "bash",
+    "cron",
+    "変数"
+  ],
+  "template": "tutorial",
+  "generatedAt": "2026-05-24T16:58:12.184Z"
+}

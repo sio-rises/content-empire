@@ -1,0 +1,129 @@
+1:"$Sreact.fragment"
+2:I[24117,["/_next/static/chunks/00mbd8isu7b38.js"],"default"]
+3:I[79967,["/_next/static/chunks/00mbd8isu7b38.js"],"default"]
+5:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+9:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"ViewportBoundary"]
+b:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"MetadataBoundary"]
+d:I[30946,["/_next/static/chunks/00mbd8isu7b38.js"],"default",1]
+:HL["/_next/static/chunks/089_dp2m4y2c2.css","style"]
+0:{"P":null,"c":["","articles","arch-linux-networkmanager-setup"],"q":"","i":false,"f":[[["",{"children":["articles",{"children":[["slug","arch-linux-networkmanager-setup","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/089_dp2m4y2c2.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/00mbd8isu7b38.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"ja","children":[["$","head",null,{"children":["$","script",null,{"async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019","crossOrigin":"anonymous"}]}],["$","body",null,{"className":"min-h-screen antialiased","children":["$","div",null,{"className":"flex min-h-screen flex-col","children":[["$","header",null,{"className":"border-b border-gray-200 bg-white","children":["$","div",null,{"className":"mx-auto flex max-w-4xl items-center justify-between px-4 py-3","children":[["$","a",null,{"href":"/","className":"text-lg font-bold text-arch hover:opacity-80","children":"Arch Linux 日本語ガイド"}],["$","nav",null,{"className":"flex gap-4 text-sm text-gray-600","children":[["$","a",null,{"href":"/","className":"hover:text-arch","children":"ホーム"}],["$","a",null,{"href":"/about","className":"hover:text-arch","children":"このサイトについて"}]]}]]}]}],["$","main",null,{"className":"flex-1","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400","children":[["$","div",null,{"className":"flex justify-center gap-4 mb-2","children":[["$","a",null,{"href":"/about","className":"hover:text-gray-600","children":"このサイトについて"}],["$","a",null,{"href":"/privacy","className":"hover:text-gray-600","children":"プライバシーポリシー"}]]}],"Arch Linux 日本語ガイド — Built with OpenCode + DeepSeek API"]}]]}]}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L4",null,["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]]}],{},null,false,null]},null,false,"$@8"]},null,false,"$@8"]},null,false,null],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$6",null,{"name":"Next.Metadata","children":"$Lc"}]}]}],null]}],false]],"m":"$undefined","G":["$d",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/089_dp2m4y2c2.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"oMFWqHyx7sJoNGgtrYd0X"}
+e:[]
+8:"$We"
+f:T24e8,<h2>はじめに</h2>
+<p>Arch Linuxでネットワークを管理するには、<code>systemd-networkd</code>や<code>netctl</code>など複数の選択肢がありますが、初心者から上級者まで幅広く使われているのが<strong>NetworkManager</strong>です。NetworkManagerは、有線・無線・VPNなどを統一的に管理し、コマンドラインの<code>nmcli</code>やGUIツールから簡単に設定できます。</p>
+<p>この記事では、Arch LinuxにNetworkManagerをインストールし、<code>nmcli</code>を使った基本的なネットワーク設定、さらにGUIツールの導入方法をステップバイステップで解説します。トラブルシューティングもまとめているので、つまずいたときの参考にしてください。</p>
+<h2>1. NetworkManagerのインストールと基本設定</h2>
+<h3>1.1 インストール</h3>
+<p>まず、NetworkManagerと必要な依存パッケージをインストールします。ターミナルを開いて以下を実行してください。</p>
+<pre><code class="language-bash">sudo pacman -S networkmanager
+</code></pre>
+<p>無線接続を使う場合は、<code>wpa_supplicant</code>も一緒にインストールされます。追加で無線ファームウェアが必要な場合があります（例：<code>linux-firmware</code>）。</p>
+<h3>1.2 サービスの有効化と起動</h3>
+<p>インストール後、NetworkManagerサービスを有効にして起動します。</p>
+<pre><code class="language-bash">sudo systemctl enable NetworkManager
+sudo systemctl start NetworkManager
+</code></pre>
+<p>これで、NetworkManagerがシステム起動時に自動起動し、現在も動作している状態になります。</p>
+<h3>1.3 既存のネットワーク管理ツールとの競合を避ける</h3>
+<p>Arch Linuxでは、初期状態で<code>systemd-networkd</code>や<code>netctl</code>が有効になっている場合があります。これらが競合する可能性があるので、無効化しておきましょう。</p>
+<pre><code class="language-bash">sudo systemctl disable systemd-networkd
+sudo systemctl stop systemd-networkd
+sudo systemctl disable netctl
+sudo systemctl stop netctl
+</code></pre>
+<p>ただし、<code>systemd-resolved</code>は併用可能な場合もあります。必要に応じて設定を調整してください。</p>
+<h2>2. nmcliを使ったネットワーク設定</h2>
+<p><code>nmcli</code>はNetworkManagerのコマンドラインツールです。リモートサーバーやターミナル環境で重宝します。</p>
+<h3>2.1 デバイスの確認</h3>
+<p>まず、利用可能なネットワークデバイス（インターフェース）を確認します。</p>
+<pre><code class="language-bash">nmcli device status
+</code></pre>
+<p>出力例：
+<pre><code class="language-">DEVICE  TYPE      STATE         CONNECTION
+eth0    ethernet  connected     Wired connection 1
+wlan0   wifi      disconnected  --
+</code></pre></p>
+<h3>2.2 Wi-Fiに接続する</h3>
+<p>Wi-Fiに接続するには、まずアクセスポイントをスキャンします。</p>
+<pre><code class="language-bash">nmcli device wifi list
+</code></pre>
+<p>接続したいSSIDがあることを確認したら、以下のコマンドで接続します。</p>
+<pre><code class="language-bash">nmcli device wifi connect "SSID名" password "パスワード"
+</code></pre>
+<p>成功すると、接続プロファイルが自動的に作成され、次回以降は自動接続されます。</p>
+<h3>2.3 有線接続の設定</h3>
+<p>有線接続は通常、ケーブルを挿すだけで自動的に接続されます。手動で設定する場合は、次のように接続プロファイルを作成します。</p>
+<pre><code class="language-bash">nmcli connection add type ethernet con-name "MyWired" ifname eth0 ipv4.method manual ipv4.addresses 192.168.1.100/24 ipv4.gateway 192.168.1.1 ipv4.dns 8.8.8.8
+</code></pre>
+<p><code>con-name</code>はプロファイル名、<code>ifname</code>はデバイス名です。DHCPを使う場合は<code>ipv4.method auto</code>とします。</p>
+<h3>2.4 接続の管理</h3>
+<p>接続プロファイル一覧を表示：</p>
+<pre><code class="language-bash">nmcli connection show
+</code></pre>
+<p>特定のプロファイルをアクティブにする：</p>
+<pre><code class="language-bash">nmcli connection up "プロファイル名"
+</code></pre>
+<p>切断する：</p>
+<pre><code class="language-bash">nmcli connection down "プロファイル名"
+</code></pre>
+<p>プロファイルを削除する：</p>
+<pre><code class="language-bash">nmcli connection delete "プロファイル名"
+</code></pre>
+<h2>3. GUIツールの導入</h2>
+<p>デスクトップ環境を使っているなら、GUIツールをインストールすると便利です。</p>
+<h3>3.1 nm-connection-editor (GTK)</h3>
+<p>GNOMEなどのGTKベース環境で使える設定エディタです。</p>
+<pre><code class="language-bash">sudo pacman -S network-manager-applet
+</code></pre>
+<p>インストール後、アプリケーションメニューから「ネットワーク設定」または<code>nm-connection-editor</code>コマンドで起動できます。</p>
+<h3>3.2 plasma-nm (KDE)</h3>
+<p>KDE Plasma用のアプレットです。</p>
+<pre><code class="language-bash">sudo pacman -S plasma-nm
+</code></pre>
+<p>システムトレイからネットワーク設定が可能になります。</p>
+<h3>3.3 その他のフロントエンド</h3>
+<li><code>nmcli</code>の簡易的なTUI（テキストユーザーインターフェース）として<code>nmtui</code>も利用できます。</li>
+<pre><code class="language-bash">sudo pacman -S nmtui
+</code></pre>
+<p><code>nmtui</code>を実行すると、CUIベースのメニューが表示され、接続設定やアクティベートが行えます。</p>
+<h2>4. トラブルシューティング</h2>
+<h3>4.1 NetworkManagerが起動しない</h3>
+<p>サービスの状態を確認します。</p>
+<pre><code class="language-bash">sudo systemctl status NetworkManager
+</code></pre>
+<p>エラーがあれば、ジャーナルを確認。</p>
+<pre><code class="language-bash">journalctl -u NetworkManager -n 50 --no-pager
+</code></pre>
+<p>よくある原因は、他のネットワークサービスとの競合です。<code>systemd-networkd</code>や<code>netctl</code>が有効化されていないか確認してください。</p>
+<h3>4.2 Wi-Fiが認識されない</h3>
+<p>無線デバイスがブロックされていないか確認。</p>
+<pre><code class="language-bash">rfkill list
+</code></pre>
+<p>ソフトブロックされている場合は、<code>rfkill unblock wifi</code>で解除。</p>
+<p>また、無線ファームウェアが不足している可能性があります。<code>dmesg | grep firmware</code>でエラーがないか確認し、必要なら<code>linux-firmware</code>をインストール。</p>
+<h3>4.3 DHCPでIPアドレスが取得できない</h3>
+<p>有線接続でDHCPがうまくいかない場合、手動でIPを設定してみてください。</p>
+<pre><code class="language-bash">nmcli connection modify "プロファイル名" ipv4.method manual ipv4.addresses 192.168.1.100/24 ipv4.gateway 192.168.1.1 ipv4.dns 8.8.8.8
+nmcli connection up "プロファイル名"
+</code></pre>
+<p>ルーターのDHCPサーバーが正しく動作しているかも確認しましょう。</p>
+<h3>4.4 DNSが解決しない</h3>
+<p><code>/etc/resolv.conf</code>がNetworkManagerによって管理されているか確認。</p>
+<pre><code class="language-bash">ls -l /etc/resolv.conf
+</code></pre>
+<p>シンボリックリンクが<code>/run/NetworkManager/resolv.conf</code>などを指していればOK。もし手動で編集した場合は、<code>/etc/NetworkManager/NetworkManager.conf</code>に<code>dns=default</code>（または<code>dns=systemd-resolved</code>）と設定して再起動。</p>
+<hr>
+<p>*この記事はArch Linuxを実機で日常運用しているSioが、実際のインストール・設定経験に基づいてAI生成コンテンツをレビュー・補完しています。btrfsサブボリュームとLUKS暗号化環境で検証済みです。*</p>
+<h2>まとめ</h2>
+<p>この記事では、Arch LinuxにNetworkManagerをインストールし、<code>nmcli</code>を使った基本的なネットワーク設定からGUIツールの導入までを解説しました。</p>
+<li><strong>インストールとサービス起動</strong>：<code>pacman -S networkmanager</code>、<code>systemctl enable/start NetworkManager</code></li>
+<li><strong>nmcliの基本操作</strong>：<code>device status</code>、<code>device wifi connect</code>、<code>connection add/modify</code></li>
+<li><strong>GUIツール</strong>：<code>network-manager-applet</code>（GTK）、<code>plasma-nm</code>（KDE）、<code>nmtui</code>（TUI）</li>
+<li><strong>トラブルシューティング</strong>：競合サービスの無効化、rfkill、ファームウェア確認</li>
+<p>NetworkManagerは非常に柔軟で、コマンドラインでもGUIでも快適にネットワークを管理できます。ぜひ活用してみてください。</p>
+<p>より詳細な設定については、Arch Wikiの<a href="https://wiki.archlinux.org/title/NetworkManager" target="_blank" rel="noopener">NetworkManager</a>ページを参照することをおすすめします。</p>4:["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"Arch LinuxでNetworkManagerを使いこなす：nmcliとGUIツールの設定ガイド"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"Arch LinuxでのNetworkManagerのインストールからnmcliを使ったコマンドライン設定、GUIツールの導入までを解説。初心者でも安心のトラブルシューティング付き。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","Arch Linux",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"Arch Linux"}],["$","span","NetworkManager",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"NetworkManager"}],["$","span","nmcli",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"nmcli"}],["$","span","ネットワーク",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"ネットワーク"}],["$","span","GUI",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"GUI"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$f"}}]]}],"$L10"]}]
+10:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-arch hover:underline","children":"← 記事一覧に戻る"}]}]
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+7:null
+c:[["$","title","0",{"children":"Arch Linux 日本語ガイド"}],["$","meta","1",{"name":"description","content":"Arch Linuxのインストールからデスクトップ環境構築まで、日本語で体系的に解説するガイドサイトです。"}],["$","meta","2",{"name":"keywords","content":"Arch Linux,Linux,インストール,日本語,デスクトップ環境,btrfs,LUKS"}]]

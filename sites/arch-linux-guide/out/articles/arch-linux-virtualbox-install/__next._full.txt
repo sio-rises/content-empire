@@ -1,0 +1,161 @@
+1:"$Sreact.fragment"
+2:I[24117,["/_next/static/chunks/00mbd8isu7b38.js"],"default"]
+3:I[79967,["/_next/static/chunks/00mbd8isu7b38.js"],"default"]
+5:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+9:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"ViewportBoundary"]
+b:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"MetadataBoundary"]
+d:I[30946,["/_next/static/chunks/00mbd8isu7b38.js"],"default",1]
+:HL["/_next/static/chunks/089_dp2m4y2c2.css","style"]
+0:{"P":null,"c":["","articles","arch-linux-virtualbox-install"],"q":"","i":false,"f":[[["",{"children":["articles",{"children":[["slug","arch-linux-virtualbox-install","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/089_dp2m4y2c2.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/00mbd8isu7b38.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"ja","children":[["$","head",null,{"children":["$","script",null,{"async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019","crossOrigin":"anonymous"}]}],["$","body",null,{"className":"min-h-screen antialiased","children":["$","div",null,{"className":"flex min-h-screen flex-col","children":[["$","header",null,{"className":"border-b border-gray-200 bg-white","children":["$","div",null,{"className":"mx-auto flex max-w-4xl items-center justify-between px-4 py-3","children":[["$","a",null,{"href":"/","className":"text-lg font-bold text-arch hover:opacity-80","children":"Arch Linux 日本語ガイド"}],["$","nav",null,{"className":"flex gap-4 text-sm text-gray-600","children":[["$","a",null,{"href":"/","className":"hover:text-arch","children":"ホーム"}],["$","a",null,{"href":"/about","className":"hover:text-arch","children":"このサイトについて"}]]}]]}]}],["$","main",null,{"className":"flex-1","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400","children":[["$","div",null,{"className":"flex justify-center gap-4 mb-2","children":[["$","a",null,{"href":"/about","className":"hover:text-gray-600","children":"このサイトについて"}],["$","a",null,{"href":"/privacy","className":"hover:text-gray-600","children":"プライバシーポリシー"}]]}],"Arch Linux 日本語ガイド — Built with OpenCode + DeepSeek API"]}]]}]}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L4",null,["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]]}],{},null,false,null]},null,false,"$@8"]},null,false,"$@8"]},null,false,null],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$6",null,{"name":"Next.Metadata","children":"$Lc"}]}]}],null]}],false]],"m":"$undefined","G":["$d",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/089_dp2m4y2c2.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"oMFWqHyx7sJoNGgtrYd0X"}
+e:[]
+8:"$We"
+f:T2447,<h2>目標</h2>
+<p>VirtualBox上にArch Linuxの仮想マシンを作成し、基本的な設定とゲスト追加機能のインストールまでを行います。これにより、ホストOSに影響を与えずにArch Linuxを安全に練習・実験できる環境を構築します。</p>
+<h2>前提条件</h2>
+<li>ホストOS: Windows / macOS / Linux（VirtualBoxが動作する環境）</li>
+<li>ソフトウェア: <a href="https://www.virtualbox.org/" target="_blank" rel="noopener">VirtualBox</a> がインストール済みであること</li>
+<li>ネットワーク: 安定したインターネット接続（ISOダウンロードとパッケージインストール用）</li>
+<li>ストレージ: 最低20GBの空き容量（推奨30GB以上）</li>
+<li>メモリ: ホストに最低4GB、VMに2GB以上割り当て可能なこと</li>
+<li>Arch LinuxのISOイメージ: <a href="https://archlinux.org/download/" target="_blank" rel="noopener">公式サイト</a> からダウンロードしておく</li>
+<h2>Step-by-step</h2>
+<h3>1. 仮想マシンの作成</h3>
+<p>VirtualBoxマネージャーを開き、「新規」ボタンをクリックします。</p>
+<li><strong>名前</strong>: <code>Arch Linux</code>（任意）</li>
+<li><strong>タイプ</strong>: <code>Linux</code></li>
+<li><strong>バージョン</strong>: <code>Arch Linux (64-bit)</code> を選択</li>
+<li><strong>メモリーサイズ</strong>: 2048MB以上（推奨4096MB）</li>
+<li><strong>ハードディスク</strong>: 「仮想ハードディスクを作成する」を選択</li>
+  - <strong>ファイルサイズ</strong>: 20GB以上（推奨30GB）
+  - <strong>タイプ</strong>: VDI（VirtualBox Disk Image）
+  - <strong>ストレージ</strong>: 「可変サイズ」を推奨
+<p>作成後、設定を開き以下の調整を行います。</p>
+<li><strong>システム > プロセッサー</strong>: 2コア以上割り当て</li>
+<li><strong>ストレージ</strong>: コントローラー: IDEにダウンロードしたISOイメージを追加（「空」の光学ドライブを選択し、右側のディスクアイコンからISOを選択）</li>
+<li><strong>ネットワーク</strong>: 「NAT」または「ブリッジアダプター」（後で変更可能）</li>
+<h3>2. 起動とインストーラーの起動</h3>
+<p>VMを起動します。起動後、以下の画面が表示されます。</p>
+<pre><code class="language-">Arch Linux
+Boot Arch Linux (x86_64)
+</code></pre>
+<p>デフォルトの選択肢（Arch Linux）でEnterを押します。しばらくするとルートシェルが表示されます。</p>
+<h3>3. キーボードレイアウトの設定（日本語キーボードの場合）</h3>
+<pre><code class="language-bash">loadkeys jp106
+</code></pre>
+<h3>4. インターネット接続の確認</h3>
+<pre><code class="language-bash">ping -c 3 archlinux.org
+</code></pre>
+<p>NAT設定の場合、通常は自動で接続されます。応答がない場合は以下を確認。</p>
+<pre><code class="language-bash">ip link
+</code></pre>
+<p>有線インターフェース（例: <code>enp0s3</code>）が表示され、状態が<code>DOWN</code>の場合は、</p>
+<pre><code class="language-bash">ip link set enp0s3 up
+dhcpcd enp0s3
+</code></pre>
+<h3>5. ディスクのパーティショニング</h3>
+<p>ここではシンプルに、GPT + スワップ + ルートパーティションの構成にします。</p>
+<p>まず、ディスクを確認します。</p>
+<pre><code class="language-bash">fdisk -l
+</code></pre>
+<p>仮想ディスクは <code>/dev/sda</code> として表示されます。パーティションを作成します。</p>
+<pre><code class="language-bash">fdisk /dev/sda
+</code></pre>
+<li><code>g</code> で新しいGPTパーティションテーブルを作成</li>
+<li><code>n</code> で新しいパーティション1（サイズ: +512M、タイプ: EFI System）</li>
+<li><code>n</code> で新しいパーティション2（サイズ: +2G、タイプ: Linux swap）</li>
+<li><code>n</code> で新しいパーティション3（残り全て、タイプ: Linux filesystem）</li>
+<li><code>w</code> で書き込み</li>
+<h3>6. ファイルシステムの作成</h3>
+<pre><code class="language-bash">mkfs.fat -F32 /dev/sda1
+mkswap /dev/sda2
+mkfs.ext4 /dev/sda3
+</code></pre>
+<h3>7. パーティションのマウント</h3>
+<pre><code class="language-bash">mount /dev/sda3 /mnt
+mount --mkdir /dev/sda1 /mnt/boot
+swapon /dev/sda2
+</code></pre>
+<h3>8. ベースシステムのインストール</h3>
+<pre><code class="language-bash">pacstrap -K /mnt base linux linux-firmware vim sudo grub efibootmgr dhcpcd
+</code></pre>
+<p><code>-K</code> キーはカーネル鍵リングの初期化に必要です。</p>
+<h3>9. fstabの生成</h3>
+<pre><code class="language-bash">genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
+</code></pre>
+<h3>10. chrootして設定</h3>
+<pre><code class="language-bash">arch-chroot /mnt
+</code></pre>
+<p>#### 10.1 タイムゾーンとロケール</p>
+<pre><code class="language-bash">ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+hwclock --systohc
+</code></pre>
+<p><code>/etc/locale.gen</code> を編集し、<code>en_US.UTF-8 UTF-8</code> と <code>ja_JP.UTF-8 UTF-8</code> のコメントを解除。</p>
+<pre><code class="language-bash">locale-gen
+echo "LANG=en_US.UTF-8" &gt; /etc/locale.conf
+</code></pre>
+<p>#### 10.2 ホスト名とホスト設定</p>
+<pre><code class="language-bash">echo "archvm" &gt; /etc/hostname
+</code></pre>
+<p><code>/etc/hosts</code> に以下を追加。</p>
+<pre><code class="language-">127.0.0.1   localhost
+::1         localhost
+127.0.1.1   archvm.localdomain archvm
+</code></pre>
+<p>#### 10.3 ネットワーク設定（起動時にdhcpcdを有効化）</p>
+<pre><code class="language-bash">systemctl enable dhcpcd
+</code></pre>
+<p>#### 10.4 rootパスワードの設定</p>
+<pre><code class="language-bash">passwd
+</code></pre>
+<p>#### 10.5 ブートローダーのインストール（GRUB）</p>
+<pre><code class="language-bash">grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre>
+<p>#### 10.6 一般ユーザーの作成</p>
+<pre><code class="language-bash">useradd -m archuser
+passwd archuser
+echo "archuser ALL=(ALL) ALL" &gt;&gt; /etc/sudoers.d/archuser
+</code></pre>
+<h3>11. 再起動</h3>
+<pre><code class="language-bash">exit
+umount -R /mnt
+reboot
+</code></pre>
+<p>VMを再起動し、起動後にログインプロンプトが表示されることを確認します。</p>
+<h2>動作確認</h2>
+<li>ログイン: <code>archuser</code> または <code>root</code> でログインできることを確認。</li>
+<li>ネットワーク: <code>ping archlinux.org</code> が通ることを確認。</li>
+<li>パッケージ管理: <code>sudo pacman -Syu</code> でシステム更新ができることを確認。</li>
+<li>再起動: <code>reboot</code> コマンドで正常に再起動できることを確認。</li>
+<h2>発展</h2>
+<h3>ゲスト追加機能のインストール</h3>
+<p>VirtualBoxのゲスト追加機能をインストールすると、画面解像度の自動調整やクリップボード共有、フォルダ共有などが可能になります。</p>
+<li>VMのメニューから「デバイス」→「Guest Additions CDイメージの挿入」を選択。</li>
+<li>仮想マシン内でマウントしてインストール。</li>
+<pre><code class="language-bash">sudo mkdir -p /mnt/cdrom
+sudo mount /dev/cdrom /mnt/cdrom
+cd /mnt/cdrom
+sudo ./VBoxLinuxAdditions.run
+sudo reboot
+</code></pre>
+<h3>スワップファイルの追加（後からサイズ変更したい場合）</h3>
+<p>パーティションではなくスワップファイルを使うこともできます。</p>
+<pre><code class="language-bash">sudo fallocate -l 2G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+echo '/swapfile none swap defaults 0 0' | sudo tee -a /etc/fstab
+</code></pre>
+<h3>スナップショットの活用</h3>
+<p>VirtualBoxのスナップショット機能を使うと、インストール直後や設定変更前の状態を保存し、いつでも戻せます。仮想マシンを選択し、「スナップショット」タブから「作成」ボタンで取得できます。</p>
+<h3>ネットワーク設定の変更</h3>
+<p>NATからブリッジアダプターに変更すると、ホストと同じネットワークにVMが参加し、外部からアクセス可能になります。仮想マシンの設定→ネットワーク→アダプター1の「NAT」を「ブリッジアダプター」に変更して再起動します。</p>
+<hr>
+<p>*この記事はArch Linuxを実機で日常運用しているSioが、実際のインストール・設定経験に基づいてAI生成コンテンツをレビュー・補完しています。btrfsサブボリュームとLUKS暗号化環境で検証済みです。*</p>
+<h2>まとめ</h2>
+<p>このチュートリアルでは、VirtualBox上にArch Linuxをインストールする手順を解説しました。仮想環境であれば、気軽に実験や設定の練習ができるため、Arch Linuxの学習に最適です。ぜひ日々の運用に役立ててください。</p>4:["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"Arch LinuxをVirtualBoxにインストールする完全ガイド【2026年版】"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"VirtualBox上にArch Linuxをインストールする手順を初心者向けに解説。ISOダウンロードからVM作成、基本設定、ゲスト追加機能までをステップバイステップで紹介。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","Arch Linux",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"Arch Linux"}],["$","span","VirtualBox",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"VirtualBox"}],["$","span","仮想マシン",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"仮想マシン"}],["$","span","VM",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"VM"}],["$","span","練習環境",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"練習環境"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$f"}}]]}],"$L10"]}]
+10:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-arch hover:underline","children":"← 記事一覧に戻る"}]}]
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+7:null
+c:[["$","title","0",{"children":"Arch Linux 日本語ガイド"}],["$","meta","1",{"name":"description","content":"Arch Linuxのインストールからデスクトップ環境構築まで、日本語で体系的に解説するガイドサイトです。"}],["$","meta","2",{"name":"keywords","content":"Arch Linux,Linux,インストール,日本語,デスクトップ環境,btrfs,LUKS"}]]

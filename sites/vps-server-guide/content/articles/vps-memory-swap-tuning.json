@@ -1,0 +1,16 @@
+{
+  "title": "VPSのメモリ不足を解消！swapチューニングでOOMを防ぐ負荷対策ガイド",
+  "slug": "vps-memory-swap-tuning",
+  "metaDescription": "VPSのメモリ不足によるOOMや負荷を防ぐためのswapチューニング方法を解説。適切なサイズ設定やswappiness調整で安定稼働を実現します。",
+  "content": "## VPSのメモリ不足とOOMのリスク\n\nVPS（Virtual Private Server）は、限られたリソースを共有する環境であるため、メモリ不足が発生しやすいです。特にメモリが枯渇すると、OOM Killer（Out Of Memory Killer）が起動し、重要なプロセスが強制終了されるリスクがあります。この記事では、swapを適切にチューニングしてメモリ不足を緩和し、負荷対策を行う方法を解説します。\n\n## まずは現在のメモリとswap状況を確認\n\n以下のコマンドで現在のメモリ使用量とswapの状態を確認します。\n\n```bash\nfree -h\n```\n\n出力例：\n```\n              total        used        free      shared  buff/cache   available\nMem:           1.9G        1.2G        200M         50M        500M        500M\nSwap:          2.0G        100M        1.9G\n```\n\nここでSwapのtotalが0だったり、usedが高い場合はチューニングが必要です。\n\n## swapのサイズを適切に設定する\n\n### 適切なswapサイズの目安\n\n従来は「RAMの2倍」と言われていましたが、現在のVPSではRAM容量が大きいため、以下の基準が推奨されます。\n\n- RAM 2GB未満：RAMの2倍\n- RAM 2GB〜8GB：RAMと同程度\n- RAM 8GB以上：RAMの半分〜4GB程度\n\nただし、実際の使用状況に応じて調整してください。例えば、メモリを多く消費するアプリケーション（データベース、Javaアプリなど）を動かす場合は、多めに設定すると安全です。\n\n### swapファイルの作成手順\n\nswap領域はパーティションでもファイルでも構いませんが、VPSではファイルが簡単です。以下は4GBのswapファイルを作成する例です。\n\n```bash\n# 1. スワップファイルを作成（例：/swapfile）\nsudo dd if=/dev/zero of=/swapfile bs=1M count=4096 status=progress\n# 2. パーミッションを設定（rootのみ読み書き可）\nsudo chmod 600 /swapfile\n# 3. スワップ領域としてフォーマット\nsudo mkswap /swapfile\n# 4. スワップを有効化\nsudo swapon /swapfile\n# 5. 自動マウント設定（/etc/fstabに追記）\necho '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab\n```\n\n`count`の値はMB単位で指定します。例えば2GBなら2048、8GBなら8192です。\n\n## swappinessパラメータのチューニング\n\nswappinessはカーネルがどれだけ積極的にswapを使うかを制御する値（0〜100）です。デフォルトは60で、数値が大きいほどswapを使いやすくなります。\n\n### 適切なswappinessの値\n\n- **メモリに余裕がある場合**：10〜30に設定。スワップを最小限に抑え、パフォーマンスを優先。\n- **メモリが逼迫しやすい場合**：60〜80に設定。積極的にスワップしてOOMを回避。\n- **SSD搭載VPSの場合**：60程度でも良いが、スワップ頻度が高いとSSDの寿命に影響するため、30前後が推奨。\n\n### swappinessの変更方法\n\n一時的に変更：\n```bash\nsudo sysctl vm.swappiness=30\n```\n\n永続的に変更：\n```bash\necho 'vm.swappiness=30' | sudo tee -a /etc/sysctl.conf\nsudo sysctl -p\n```\n\n## OOM Killerを回避するその他の対策\n\n### メモリ使用量の監視とプロセス管理\n\n`htop`や`top`でメモリを多く使うプロセスを定期的に確認し、不要なサービスを停止します。\n\n```bash\nsudo apt install htop -y\nhtop\n```\n\n### アプリケーションのメモリ制限\n\n- **Apache/NGINX**: ワーカープロセス数の調整\n- **MySQL/MariaDB**: `innodb_buffer_pool_size`を適切に設定\n- **PHP-FPM**: `pm.max_children`をメモリに合わせて調整\n\n### スワップの優先度を上げる（複数swapがある場合）\n\n複数のswapデバイスを使う場合、`swapon -p`で優先度を設定できます。\n\n\n\n---\n\n*この記事は実際のVPS環境での構築経験に基づいています。料金・スペックは執筆時点のものであり、最新情報は各事業者の公式サイトでご確認ください。*\n\n## まとめ\n\nVPSのメモリ不足対策として、swapのサイズとswappinessのチューニングは効果的です。特にOOM Killerによる強制終了を防ぐには、適切なswapサイズの確保とswappinessの調整が重要です。また、アプリケーション自体のメモリ使用量を最適化することで、より安定した運用が可能になります。\n\n定期的にメモリ使用状況を監視し、必要に応じて設定を見直しましょう。",
+  "keywords": [
+    "VPS",
+    "負荷対策",
+    "メモリ",
+    "swap",
+    "チューニング",
+    "OOM"
+  ],
+  "template": "howto",
+  "generatedAt": "2026-05-24T16:51:21.033Z"
+}

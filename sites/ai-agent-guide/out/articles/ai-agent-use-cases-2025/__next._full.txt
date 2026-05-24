@@ -1,0 +1,77 @@
+1:"$Sreact.fragment"
+2:I[10332,["/_next/static/chunks/007ac~remr-yw.js"],"default"]
+3:I[41511,["/_next/static/chunks/007ac~remr-yw.js"],"default"]
+5:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+9:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"ViewportBoundary"]
+b:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"MetadataBoundary"]
+d:I[30493,["/_next/static/chunks/007ac~remr-yw.js"],"default",1]
+:HL["/_next/static/chunks/0sknqqgyc~d7j.css","style"]
+0:{"P":null,"c":["","articles","ai-agent-use-cases-2025"],"q":"","i":false,"f":[[["",{"children":["articles",{"children":[["slug","ai-agent-use-cases-2025","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0sknqqgyc~d7j.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/007ac~remr-yw.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"ja","children":[["$","head",null,{"children":["$","script",null,{"async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019","crossOrigin":"anonymous"}]}],["$","body",null,{"className":"min-h-screen antialiased","children":["$","div",null,{"className":"flex min-h-screen flex-col","children":[["$","header",null,{"className":"border-b border-gray-200 bg-white","children":["$","div",null,{"className":"mx-auto flex max-w-4xl items-center justify-between px-4 py-3","children":[["$","a",null,{"href":"/","className":"text-lg font-bold text-ai hover:opacity-80","children":"AIエージェント活用ガイド"}],["$","nav",null,{"className":"flex gap-4 text-sm text-gray-600","children":["$","a",null,{"href":"/","className":"hover:text-ai","children":"ホーム"}]}]]}]}],["$","main",null,{"className":"flex-1","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400","children":"AIエージェント活用ガイド — Built with OpenCode + DeepSeek API"}]]}]}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L4",null,["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]]}],{},null,false,null]},null,false,"$@8"]},null,false,"$@8"]},null,false,null],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$6",null,{"name":"Next.Metadata","children":"$Lc"}]}]}],null]}],false]],"m":"$undefined","G":["$d",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0sknqqgyc~d7j.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"ozMjvJqr-IrJkTdPFeVOD"}
+e:[]
+8:"$We"
+f:T1b1f,<h2>AIエージェントとは？</h2>
+<p>AIエージェントは、与えられた目標を達成するために自律的に行動するソフトウェアです。従来のチャットボットとは異なり、複数のツールを連携させ、計画を立て、実行し、結果を学習します。2026年現在、大規模言語モデル（LLM）の進化とエージェントフレームワークの成熟により、実用的な活用が急速に広がっています。</p>
+<h2>2026年注目のAIエージェント活用事例</h2>
+<h3>1. カスタマーサポートの完全自動化</h3>
+<p>従来はFAQ応答が中心でしたが、2026年ではAIエージェントが注文状況の確認、返品手続き、技術サポートまでを一貫して処理します。例えば、LangGraphを用いたエージェントは顧客の問い合わせ内容を解析し、必要に応じて在庫システムや配送APIにアクセス。人間のオペレーターにエスカレーションするケースは全体の5%未満に低減しました。</p>
+<p><strong>開発ポイント</strong>: ReActパターンを採用し、思考→行動→観測のループを実装。エージェントが「顧客の不満度」を推論し、優先度を動的に変更できるようにする。</p>
+<h3>2. ソフトウェア開発の自律支援</h3>
+<p>GitHub Copilotを超えて、AIエージェントが要件定義からテストコード生成、デプロイまでを自律的に実行する事例が増えています。AutoGPTをベースにした開発エージェントは、Jiraのチケットを読み取り、コードを書き、プルリクエストを作成。開発者はレビューに集中できます。</p>
+<p><strong>実装例</strong>: CrewAIで「設計エージェント」「実装エージェント」「テストエージェント」のチームを構築。各エージェントが役割を分担し、コードレビューを自動化。</p>
+<h3>3. マーケティング施策の最適化</h3>
+<p>AIエージェントが複数の広告プラットフォーム（Google Ads、Meta、TikTok）のデータを横断分析し、予算配分をリアルタイムで最適化。さらに、A/Bテストの設計と実行、結果の分析までを自律的に行います。</p>
+<p><strong>技術詳細</strong>: LangChainのツール機能を活用し、各プラットフォームのAPIをエージェントに接続。エージェントは「週次のキャンペーンパフォーマンスレポート」を自然言語で生成し、関係者にメール送信。</p>
+<h3>4. エンタープライズ向け内部業務の効率化</h3>
+<p>大企業では、複数の社内システム（SAP、Salesforce、Slack）を横断するAIエージェントが導入されています。例えば、経費精算エージェントは領収書画像を読み取り、自動で勘定科目を割り振り、承認フローを起動。エラーの発生率が従来比80%削減。</p>
+<p><strong>開発のコツ</strong>: エージェントに「失敗した場合のフォールバック」を明示的に実装。例えば、OCRの信頼度が低い場合は人間に確認を依頼する。</p>
+<h2>AIエージェント開発の基礎</h2>
+<h3>フレームワーク選定</h3>
+<li><strong>LangGraph</strong>: 複雑なワークフローをステートマシンで記述可能。状態管理が容易で、エラーハンドリングに優れる。</li>
+<li><strong>CrewAI</strong>: 複数エージェントの協調動作に特化。役割ベースの設計が直感的。</li>
+<li><strong>AutoGPT</strong>: 長期的な目標達成に強いが、安定性に課題。実験的なプロジェクト向け。</li>
+<h3>典型的な実装パターン</h3>
+<pre><code class="language-python">&lt;h1&gt;LangGraphを用いたシンプルなエージェント&lt;/h1&gt;
+from langgraph.graph import StateGraph, END
+from typing import TypedDict, List
+<p>class AgentState(TypedDict):
+    messages: List[str]
+    next_step: str</p>
+<p>&lt;h1&gt;ノード関数の定義&lt;/h1&gt;
+def decide_action(state: AgentState):
+    # LLMで次のアクションを決定
+    return {"next_step": "search_database"}</p>
+<p>def search_database(state: AgentState):
+    # データベース検索
+    return {"messages": state["messages"] + ["検索結果"]}</p>
+<p>&lt;h1&gt;グラフの構築&lt;/h1&gt;
+builder = StateGraph(AgentState)
+builder.add_node("decide", decide_action)
+builder.add_node("search", search_database)
+builder.set_entry_point("decide")
+builder.add_conditional_edges("decide", lambda s: s["next_step"], {"search": "search"})
+builder.add_edge("search", END)
+graph = builder.compile()
+</code></pre></p>
+<h3>注意点</h3>
+<li><strong>エージェントの暴走防止</strong>: 最大ステップ数やタイムアウトを設定。</li>
+<li><strong>セキュリティ</strong>: エージェントに与えるツールの権限は最小限に。</li>
+<li><strong>コスト管理</strong>: トークン消費量を監視し、不要なAPI呼び出しを抑制。</li>
+<h2>2026年におけるAIエージェントの課題と展望</h2>
+<h3>課題</h3>
+<li><strong>信頼性</strong>: エージェントの判断が100%正しいとは限らない。特に金融や医療では人間の監視が必須。</li>
+<li><strong>説明可能性</strong>: エージェントがなぜその行動を取ったのかを説明する仕組みが必要。</li>
+<li><strong>スケーラビリティ</strong>: 複数エージェントが協調する際の通信オーバーヘッド。</li>
+<h3>今後の展望</h3>
+<li><strong>マルチモーダルエージェント</strong>: 画像、音声、テキストを同時に処理するエージェントが一般化。</li>
+<li><strong>エージェント間経済</strong>: エージェント同士がサービスを売買する「エージェント経済」が萌芽。</li>
+<li><strong>規制対応</strong>: EUのAI Actなどに対応したコンプライアンス機能の組み込み。</li>
+<hr>
+<p>*この記事はOpenCodeを日常的に使用し、AIエージェントにSSH経由でNixOSをインストールさせるなどの実践経験を持つSioが監修しています。DeepSeek APIのヘビーユーザーとして、実際のコスト感や制限事項を反映しています。*</p>
+<h2>まとめ</h2>
+<p>2026年、AIエージェントは単なる実験段階を脱し、実際の業務効率化に大きく貢献しています。導入を検討する際は、まずは小さなユースケースから始め、徐々に範囲を拡大することをおすすめします。適切なフレームワークと設計パターンを選べば、開発コストを抑えつつ高い効果を得られるでしょう。</p>
+<p>AIエージェントの可能性はまだ始まったばかりです。ぜひ自社の業務に合わせたカスタマイズを試みてください。</p>4:["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"AIエージェントの活用事例2026年最新：業務効率化を実現する開発最前線"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"2026年最新のAIエージェント活用事例を解説。業務効率化を実現する開発手法や具体的な導入事例を紹介。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","AIエージェント",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"AIエージェント"}],["$","span","活用事例",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"活用事例"}],["$","span","2025",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"2025"}],["$","span","最新",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"最新"}],["$","span","開発",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"開発"}],["$","span","業務効率化",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"業務効率化"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$f"}}]]}],"$L10"]}]
+10:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-ai hover:underline","children":"← 記事一覧に戻る"}]}]
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+7:null
+c:[["$","title","0",{"children":"AIエージェント活用ガイド"}],["$","meta","1",{"name":"description","content":"OpenCode/ClaudeCode/DeepSeekを使ったAIエージェント開発自動化の情報を日本語で発信。"}],["$","meta","2",{"name":"keywords","content":"OpenCode,ClaudeCode,AIエージェント,DeepSeek,開発自動化,プロンプト"}]]

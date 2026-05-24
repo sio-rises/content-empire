@@ -1,0 +1,16 @@
+{
+  "title": "Arch Linuxのディスク容量を確認・掃除する完全ガイド",
+  "slug": "arch-linux-disk-space-cleanup",
+  "metaDescription": "Arch Linuxでディスク容量を確認し、pacmanキャッシュをpaccacheで掃除する方法を解説。duコマンドの使い方やトラブルシューティングも網羅。",
+  "content": "## はじめに\n\nArch Linuxを使っていると、いつの間にかディスク容量が減っていることに気づくことがあります。特にパッケージ管理のpacmanが保存するキャッシュは、アップデートを繰り返すうちに数GBにも膨れ上がる可能性があります。この記事では、ディスク容量の確認方法と、安全に掃除する手順を紹介します。\n\n## ディスク容量の確認\n\nまず、現在のディスク使用状況を把握しましょう。\n\n### `df` コマンドで全体を確認\n\n```bash\ndf -h\n```\n\n- `-h` は人間が読みやすい形式（GB, MB）で表示します。\n- 出力例:\n  ```\n  Filesystem      Size  Used Avail Use% Mounted on\n  /dev/sda1        50G   30G   20G  60% /\n  ```\n- `/` のマウントポイントの使用率が高い場合、掃除が必要です。\n\n### `du` コマンドでディレクトリごとに確認\n\n```bash\ndu -sh /var/cache/pacman/pkg\n```\n\n- `-s` は合計サイズのみ表示、`-h` は人間が読みやすい形式。\n- このコマンドでpacmanキャッシュのサイズがわかります。\n\n他の大きなディレクトリを探すには:\n\n```bash\ndu -sh /var/* | sort -rh | head -10\n```\n\n- パイプで `sort -rh` に渡すことで、サイズの大きい順に並べ替え。\n\n## pacmanキャッシュの掃除\n\n### pacmanキャッシュとは\n\n`/var/cache/pacman/pkg/` には、インストール・アップデートしたパッケージのアーカイブ（.pkg.tar.zst）が保存されています。デフォルトでは過去のバージョンも保持するため、不要なものを削除することで容量を解放できます。\n\n### `paccache` で安全に削除\n\n`paccache` はpacmanのキャッシュ管理ツールです。インストールされていない場合:\n\n```bash\nsudo pacman -S pacman-contrib\n```\n\n基本的な使い方:\n\n```bash\nsudo paccache -r\n```\n\n- `-r` は削除（remove）オプション。デフォルトでは最新3バージョン以外のキャッシュを削除します。\n\nもっと積極的に削除したい場合（最新1バージョンのみ保持）:\n\n```bash\nsudo paccache -rk 1\n```\n\n- `-k` で保持するバージョン数を指定。\n\n削除前に何が削除されるか確認するには:\n\n```bash\nsudo paccache -d\n```\n\n- `-d` はドライラン（削除は実行しない）。\n\n### 未使用パッケージのキャッシュも削除\n\nインストールされていないパッケージのキャッシュを削除:\n\n```bash\nsudo paccache -ruk 0\n```\n\n- `-u` は未インストール（uninstalled）パッケージのみ対象。\n- `-k 0` でゼロバージョン保持＝全て削除。\n\n### キャッシュを全削除（注意）\n\n```bash\nsudo rm -rf /var/cache/pacman/pkg/*\n```\n\n- ただし、ダウングレードが必要になった場合に困るので、`paccache` を使うことを推奨します。\n\n## その他の掃除場所\n\n### ジャーナルログ\n\n```bash\nsudo journalctl --vacuum-size=100M\n```\n\n- ログを100MBまでに制限。\n\n### 不要なパッケージの削除\n\n```bash\nsudo pacman -Rns $(pacman -Qdtq)\n```\n\n- `-Qdtq` で孤立した依存関係を一覧表示。`-Rns` で設定ファイルも含め削除。\n\n## トラブルシューティング\n\n### 問題1: `paccache` が存在しない\n\n```bash\nsudo pacman -S pacman-contrib\n```\n\n### 問題2: 削除後も容量が増えない\n\n- 削除したファイルがまだプロセスによって使用されている可能性があります。再起動後に確認。\n- `du` で再確認。\n\n### 問題3: `du` の結果と `df` の空き容量が一致しない\n\n- 削除してもプロセスがファイルを掴んでいると解放されません。`lsof | grep deleted` で確認。\n\n\n\n---\n\n*この記事はArch Linuxを実機で日常運用しているSioが、実際のインストール・設定経験に基づいてAI生成コンテンツをレビュー・補完しています。btrfsサブボリュームとLUKS暗号化環境で検証済みです。*\n\n## まとめ\n\nArch Linuxのディスク容量管理は、定期的なキャッシュ掃除が重要です。`paccache` を使えば安全に不要なキャッシュを削除できます。また、`du` と `df` を組み合わせて使用状況を把握し、必要に応じてログや孤立パッケージも掃除しましょう。\n\n定期的なメンテナンスで、快適なArch Linuxライフを送ってください。",
+  "keywords": [
+    "Arch Linux",
+    "ディスク容量",
+    "pacmanキャッシュ",
+    "掃除",
+    "paccache",
+    "du"
+  ],
+  "template": "howto",
+  "generatedAt": "2026-05-24T15:59:46.605Z"
+}

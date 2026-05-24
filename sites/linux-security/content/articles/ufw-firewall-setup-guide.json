@@ -1,0 +1,16 @@
+{
+  "title": "UFWファイアウォール設定ガイド：Linux初心者でも簡単に使える方法",
+  "slug": "ufw-firewall-setup-guide",
+  "metaDescription": "Linux初心者向けにUFW（Uncomplicated Firewall）の基本的な設定方法を解説。インストールからルール追加、有効化までをステップバイステップで紹介。",
+  "content": "## UFWとは？\n\nUFW（Uncomplicated Firewall）は、Linuxでファイアウォールを簡単に設定するためのツールです。複雑なiptablesコマンドをラップしており、初心者でも直感的に使えます。Ubuntuをはじめ多くのディストリビューションで標準採用されています。\n\n## UFWのインストール\n\n多くのLinuxディストリビューションではデフォルトでインストールされていますが、ない場合は以下のコマンドでインストールできます。\n\n```bash\n# Ubuntu/Debian系\nsudo apt update\nsudo apt install ufw\n\n# CentOS/RHEL/Fedora\nsudo dnf install ufw\n```\n\n## UFWの基本設定\n\n### 1. ステータスの確認\nまず現在の状態を確認します。\n\n```bash\nsudo ufw status verbose\n```\n\n初期状態では「inactive」と表示されます。\n\n### 2. デフォルトポリシーの設定\nセキュリティの基本は「拒否をデフォルト」にすることです。\n\n```bash\nsudo ufw default deny incoming\nsudo ufw default allow outgoing\n```\n\nこれで、受信はすべて拒否、送信はすべて許可されます。\n\n### 3. SSHの許可（重要）\nリモート接続している場合、SSHを許可しないとロックアウトされます。\n\n```bash\nsudo ufw allow ssh\n```\n\nまたはポート番号を指定：\n\n```bash\nsudo ufw allow 22/tcp\n```\n\n### 4. その他のサービスの許可\n必要に応じてWebサーバーやメールサーバーなどを許可します。\n\n```bash\n# HTTP (80番ポート)\nsudo ufw allow http\n# または sudo ufw allow 80/tcp\n\n# HTTPS (443番ポート)\nsudo ufw allow https\n# または sudo ufw allow 443/tcp\n```\n\n### 5. UFWの有効化\n設定が完了したらUFWを有効にします。\n\n```bash\nsudo ufw enable\n```\n\n確認メッセージが表示されるので「y」で進みます。\n\n### 6. ルールの確認と削除\n現在のルール一覧を表示：\n\n```bash\nsudo ufw status numbered\n```\n\n特定のルールを削除：\n\n```bash\nsudo ufw delete <番号>\n```\n\n例：3番のルールを削除\n\n```bash\nsudo ufw delete 3\n```\n\n## 応用的な設定\n\n### 特定のIPアドレスからのみ許可\n\n```bash\nsudo ufw allow from 192.168.1.100 to any port 22\n```\n\n### 特定のサブネットからの許可\n\n```bash\nsudo ufw allow from 192.168.1.0/24 to any port 22\n```\n\n### レート制限（ブルートフォース対策）\n\n```bash\nsudo ufw limit ssh\n```\n\nこれにより、同じIPから6回以上接続試行があると拒否されます。\n\n### ログの有効化\n\n```bash\nsudo ufw logging on\n```\n\n## よくあるトラブルと注意点\n\n- **SSHを許可せずに有効化するとロックアウト**：必ず先にSSHを許可してください。\n- **設定のリセット**：`sudo ufw reset` で初期状態に戻せます。\n- **iptablesとの併用**：UFWはiptablesのフロントエンドです。既存のiptablesルールと競合する可能性があるので注意。\n\n\n\n---\n\n*この記事はArch Linux/btrfs/LUKs環境で実際に検証した内容を基にしています。セキュリティ設定は環境によって異なるため、本番環境への適用前に必ずテスト環境で検証してください。*\n\n## まとめ\n\nUFWを使えば、Linux初心者でも簡単にファイアウォールを設定できます。基本的な流れは：\n\n1. インストール\n2. デフォルトポリシーを拒否に設定\n3. 必要なサービス（特にSSH）を許可\n4. UFWを有効化\n\nセキュリティを高めるために、不要なポートは開けず、必要最小限のルールだけを追加しましょう。UFWはシンプルですが強力なツールです。ぜひ活用してください。",
+  "keywords": [
+    "ufw",
+    "ファイアウォール",
+    "設定",
+    "Linux",
+    "初心者",
+    "iptables"
+  ],
+  "template": "howto",
+  "generatedAt": "2026-05-24T16:44:55.157Z"
+}

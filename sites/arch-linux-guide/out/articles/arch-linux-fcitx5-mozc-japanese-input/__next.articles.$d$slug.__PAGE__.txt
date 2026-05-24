@@ -1,0 +1,54 @@
+1:"$Sreact.fragment"
+5:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+2:T18b1,<h2>はじめに</h2>
+<p>この記事では、Arch Linuxにfcitx5とmozcを導入し、快適な日本語入力環境を構築する方法を解説します。対象読者はArch Linuxをインストールしたばかりの初心者から、日本語入力に困っている中級者まで。前提知識として、ターミナル操作とパッケージマネージャー（pacman）の基本を理解していることを想定しています。</p>
+<h2>手順</h2>
+<h3>1. 必要なパッケージをインストールする</h3>
+<p>まず、fcitx5本体、mozcエンジン、および設定ツールをインストールします。ターミナルを開いて以下のコマンドを実行してください。</p>
+<pre><code class="language-bash">sudo pacman -S fcitx5 fcitx5-mozc fcitx5-configtool
+</code></pre>
+<li><code>fcitx5</code>: インプットメソッドフレームワーク</li>
+<li><code>fcitx5-mozc</code>: Google日本語入力ベースのエンジン</li>
+<li><code>fcitx5-configtool</code>: GUI設定ツール</li>
+<h3>2. 環境変数を設定する</h3>
+<p>日本語入力を使うためには、環境変数<code>GTK_IM_MODULE</code>、<code>QT_IM_MODULE</code>、<code>XMODIFIERS</code>を設定する必要があります。使用しているシェルに応じて、以下の内容を<code>.bashrc</code>（bashの場合）または<code>.zshrc</code>（zshの場合）に追記します。</p>
+<pre><code class="language-bash">export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+</code></pre>
+<p>設定を反映させるため、ターミナルを再起動するか、<code>source ~/.bashrc</code>を実行します。</p>
+<h3>3. fcitx5を自動起動するように設定する</h3>
+<p>ログイン時にfcitx5が自動で起動するように、デスクトップ環境の自動起動設定に追加します。多くのArch Linuxユーザーが使用するデスクトップ環境（Xfce、KDE、GNOMEなど）では、以下の方法で設定できます。</p>
+<p><strong>Xfceの場合:</strong> 「設定」→「セッションと起動」→「自動起動アプリケーション」タブで「追加」をクリックし、コマンドに<code>fcitx5</code>と入力します。</p>
+<p><strong>KDE Plasmaの場合:</strong> 「システム設定」→「起動と終了」→「自動起動」で「追加」→「アプリケーションを追加」を選び、コマンドに<code>fcitx5</code>を指定します。</p>
+<p><strong>GNOMEの場合:</strong> GNOME Tweaks（<code>gnome-tweaks</code>パッケージが必要）をインストールし、「起動アプリケーション」に<code>fcitx5</code>を追加します。</p>
+<p>手動で起動したい場合は、ターミナルで<code>fcitx5</code>と入力してください。</p>
+<h3>4. fcitx5の設定を開き、mozcを追加する</h3>
+<p>fcitx5の設定ツールを起動します。ターミナルで以下を実行するか、アプリケーションメニューから「Fcitx5 Configuration」を開きます。</p>
+<pre><code class="language-bash">fcitx5-configtool
+</code></pre>
+<p>設定画面が開いたら、「入力メソッド」タブで「＋」ボタンをクリックし、「Mozc」を選択して追加します。デフォルトで「キーボード - 英語（US）」が設定されているので、必要に応じてMozcを上に移動させて優先順位を変更してください。</p>
+<h3>5. フォントをインストールする（日本語表示対応）</h3>
+<p>日本語入力だけでは文字が正しく表示されない場合があるため、日本語フォントをインストールします。代表的なフォントとして、Noto Sans CJKをインストールします。</p>
+<pre><code class="language-bash">sudo pacman -S noto-fonts-cjk
+</code></pre>
+<p>他のフォント（例: <code>otf-ipafont</code>、<code>ttf-hanazono</code>）も必要に応じてインストールしてください。</p>
+<h3>6. 再起動またはログインし直して動作確認する</h3>
+<p>設定を反映させるため、一度ログアウトして再ログインするか、システムを再起動します。その後、任意のテキストエディタ（例: Gedit、Kate）を開き、<code>Ctrl + Space</code>（デフォルトの切り替えキー）で日本語入力が有効になるか確認してください。Mozcの変換候補が表示されれば成功です。</p>
+<h2>トラブルシューティング</h2>
+<h3>fcitx5が起動しない</h3>
+<p><code>systemctl --user status fcitx5</code> で状態を確認します。エラーがあれば、<code>fcitx5-diagnose</code> コマンドで診断情報を取得できます。</p>
+<h3>日本語入力が切り替わらない</h3>
+<p>環境変数が正しく設定されているか確認してください。<code>echo $GTK_IM_MODULE</code> などで値が <code>fcitx</code> になっているかチェックします。また、<code>fcitx5-configtool</code> でMozcが有効になっているか確認します。</p>
+<h3>変換候補が出ない</h3>
+<p>Mozcの設定で「変換モード」が「一般」になっているか確認します。<code>fcitx5-configtool</code> でMozcの歯車アイコンをクリックし、設定画面を開きます。</p>
+<h3>フォントが文字化けする</h3>
+<p><code>fcitx5</code> のフォント設定を変更します。<code>fcitx5-configtool</code> の「外観」タブでフォントを「Noto Sans CJK JP」などに変更します。</p>
+<hr>
+<p>*この記事はArch Linuxを実機で日常運用しているSioが、実際のインストール・設定経験に基づいてAI生成コンテンツをレビュー・補完しています。btrfsサブボリュームとLUKS暗号化環境で検証済みです。*</p>
+<h2>まとめ</h2>
+<p>このガイドでは、Arch Linuxにfcitx5とmozcをインストールし、日本語入力環境をセットアップする方法を紹介しました。設定後は、<code>Ctrl + Space</code>で日本語入力が可能になります。さらにカスタマイズしたい場合は、<code>~/.config/fcitx5/config</code> を直接編集することで、キーバインドやスキンの変更も可能です。快適な日本語入力ライフをお楽しみください。</p>0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"Arch Linuxでfcitx5とmozcを使った日本語入力設定ガイド"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"Arch Linuxにfcitx5とmozcをインストールし、日本語入力を有効にする手順を解説。フォント設定やトラブルシューティングもカバー。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","Arch Linux",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"Arch Linux"}],["$","span","fcitx5",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"fcitx5"}],["$","span","mozc",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"mozc"}],["$","span","日本語入力",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"日本語入力"}],["$","span","フォント",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"フォント"}],["$","span","日本語化",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"日本語化"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3"]}],null,"$L4"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"oMFWqHyx7sJoNGgtrYd0X"}
+3:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-arch hover:underline","children":"← 記事一覧に戻る"}]}]
+4:["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]
+7:null

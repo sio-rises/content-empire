@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://arch-linux-guide.pages.dev/sitemap.xml

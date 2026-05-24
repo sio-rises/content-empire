@@ -1,0 +1,162 @@
+<!DOCTYPE html><html lang="ja"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/chunks/089_dp2m4y2c2.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/0mbqojl1yngq4.js"/><script src="/_next/static/chunks/0ahb-.-p1rwdt.js" async=""></script><script src="/_next/static/chunks/0f.6xi~1w92_w.js" async=""></script><script src="/_next/static/chunks/turbopack-0lca5i1ci6l_2.js" async=""></script><script src="/_next/static/chunks/00mbd8isu7b38.js" async=""></script><script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019" crossorigin="anonymous"></script><title>Arch Linux 日本語ガイド</title><meta name="description" content="Arch Linuxのインストールからデスクトップ環境構築まで、日本語で体系的に解説するガイドサイトです。"/><meta name="keywords" content="Arch Linux,Linux,インストール,日本語,デスクトップ環境,btrfs,LUKS"/><script src="/_next/static/chunks/03~yq9q893hmn.js" noModule=""></script></head><body class="min-h-screen antialiased"><div hidden=""><!--$--><!--/$--></div><div class="flex min-h-screen flex-col"><header class="border-b border-gray-200 bg-white"><div class="mx-auto flex max-w-4xl items-center justify-between px-4 py-3"><a href="/" class="text-lg font-bold text-arch hover:opacity-80">Arch Linux 日本語ガイド</a><nav class="flex gap-4 text-sm text-gray-600"><a href="/" class="hover:text-arch">ホーム</a><a href="/about" class="hover:text-arch">このサイトについて</a></nav></div></header><main class="flex-1"><div class="mx-auto max-w-4xl px-4 py-8"><article><header class="mb-8"><h1 class="text-3xl font-bold tracking-tight text-gray-900">Arch Linuxで最強のターミナル環境を構築：zsh + Starship + Kitty/Ghostty</h1><p class="mt-2 text-gray-500">Arch Linuxでターミナル環境をカスタマイズする方法を解説。シェルはzsh、プロンプトはStarship、ターミナルエミュレータはKittyまたはGhosttyを使い、美しく高速な環境を構築します。</p><div class="mt-4 flex flex-wrap items-center gap-3"><span class="rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600">Arch Linux</span><span class="rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600">ターミナル</span><span class="rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600">zsh</span><span class="rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600">starship</span><span class="rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600">kitty</span><span class="rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600">ghostty</span><span class="rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600">カスタマイズ</span><span class="text-xs text-gray-400">2026/5/25</span></div></header><div class="prose max-w-none"><h2>目標</h2>
+<p>このチュートリアルでは、Arch Linux上で以下のターミナル環境を構築します。</p>
+<li><strong>シェル</strong>: zsh（Z Shell）</li>
+<li><strong>プロンプト</strong>: Starship（高速でカスタマイズ可能なプロンプト）</li>
+<li><strong>ターミナルエミュレータ</strong>: Kitty または Ghostty（GPUアクセラレーション対応、高速）</li>
+<p>最終的に、美しく情報量が多く、かつ高速なターミナル環境を手に入れます。</p>
+<h2>前提条件</h2>
+<li>Arch Linuxがインストールされ、インターネットに接続されていること</li>
+<li>パッケージマネージャ（pacman）とAURヘルパー（yay または paru）が使えること</li>
+<li>基本的なターミナル操作に慣れていること</li>
+<h2>Step-by-step</h2>
+<h3>1. 必要なパッケージのインストール</h3>
+<p>まず、zsh、Starship、Kitty、Ghosttyをインストールします。KittyとGhosttyはどちらか一方でも両方でも構いません。</p>
+<pre><code class="language-bash">sudo pacman -S zsh starship kitty ghostty
+</code></pre>
+<p>GhosttyはAURからもインストールできます（最新版が必要な場合）。</p>
+<pre><code class="language-bash">yay -S ghostty
+</code></pre>
+<h3>2. デフォルトシェルをzshに変更</h3>
+<p>現在のシェルを確認し、zshに変更します。</p>
+<pre><code class="language-bash">echo $SHELL          # 現在のシェルを表示
+chsh -s /usr/bin/zsh # デフォルトシェルをzshに変更
+</code></pre>
+<p>変更後、一度ログアウトして再ログインするか、新しいターミナルを開いて反映させます。</p>
+<h3>3. zshの設定（.zshrc）</h3>
+<p>ホームディレクトリに <code>.zshrc</code> ファイルを作成し、基本的な設定を追加します。</p>
+<pre><code class="language-bash">nano ~/.zshrc
+</code></pre>
+<p>以下を記述します。</p>
+<pre><code class="language-zsh">&lt;h1&gt;Starshipの初期化&lt;/h1&gt;
+eval "$(starship init zsh)"
+<p>&lt;h1&gt;プラグインマネージャ（zinitなど）を使う場合はここに追加&lt;/h1&gt;
+&lt;h1&gt;例: zinit light zsh-users/zsh-autosuggestions&lt;/h1&gt;</p>
+<p>&lt;h1&gt;エイリアス&lt;/h1&gt;
+alias ll='ls -lah'
+alias la='ls -A'
+alias l='ls -CF'</p>
+<p>&lt;h1&gt;履歴設定&lt;/h1&gt;
+export HISTFILE=~/.zsh_history
+export HISTSIZE=100000
+export SAVEHIST=100000
+setopt SHARE_HISTORY</p>
+<p>&lt;h1&gt;補完機能&lt;/h1&gt;
+zstyle ':completion:*' menu select
+autoload -Uz compinit
+compinit
+</code></pre></p>
+<p>保存後、設定を読み込みます。</p>
+<pre><code class="language-bash">source ~/.zshrc
+</code></pre>
+<h3>4. Starshipの設定</h3>
+<p>Starshipの設定ファイルを作成します。</p>
+<pre><code class="language-bash">mkdir -p ~/.config &amp;&amp; touch ~/.config/starship.toml
+</code></pre>
+<p><code>~/.config/starship.toml</code> を編集して好みのプロンプトにカスタマイズします。以下はシンプルな例です。</p>
+<pre><code class="language-toml">&lt;h1&gt;プロンプトのフォーマット&lt;/h1&gt;
+format = """
+[](#9A348E)
+$os$
+$username$
+[](#DA627D)
+$directory$
+[](#FCA17D)
+$git_branch$
+$git_status$
+$c$
+$rust$
+$golang$
+$node$
+$elixir$
+$python$
+[](#86BBD8)
+$time$
+[](#06969A)
+$line_break$
+$character"""
+<p>&lt;h1&gt;シンボルを変更&lt;/h1&gt;
+[character]
+success_symbol = "[" # 通常のプロンプト記号
+error_symbol = "[❌]" # エラー時</p>
+<p>&lt;h1&gt;ディレクトリの表示&lt;/h1&gt;
+[directory]
+truncation_length = 3
+truncate_to_repo = true</p>
+<p>&lt;h1&gt;Git情報&lt;/h1&gt;
+[git_branch]
+symbol = "🌱 "
+style = "bg:#9A348E"
+format = '<a href="$style" target="_blank" rel="noopener">$symbol$branch</a>'</p>
+<p>[git_status]
+conflicted = "🏳"
+ahead = "🏎💨"
+behind = "😰"
+diverged = "🔱"
+untracked = "🤷"
+stashed = "📦"
+modified = "📝"
+staged = '<a href="green" target="_blank" rel="noopener">++($count)</a>'
+renamed = "👅"
+deleted = "🗑"
+</code></pre></p>
+<p>設定後、新しいターミナルを開くか <code>source ~/.zshrc</code> で反映します。</p>
+<h3>5. Kittyの設定</h3>
+<p>Kittyの設定ファイルを作成します。</p>
+<pre><code class="language-bash">mkdir -p ~/.config/kitty &amp;&amp; nano ~/.config/kitty/kitty.conf
+</code></pre>
+<p>以下は設定例です。</p>
+<pre><code class="language-">&lt;h1&gt;フォント設定&lt;/h1&gt;
+font_family      Fira Code
+bold_font         Fira Code Bold
+italic_font       Fira Code Italic
+bold_italic_font Fira Code Bold Italic
+font_size 12.0
+<p>&lt;h1&gt;カラースキーム（Tokyo Night）&lt;/h1&gt;
+include /path/to/tokyo-night.conf</p>
+<p>&lt;h1&gt;キーバインド&lt;/h1&gt;
+map ctrl+shift+c copy_to_clipboard
+map ctrl+shift+v paste_from_clipboard
+map ctrl+shift+up scroll_line_up
+map ctrl+shift+down scroll_line_down</p>
+<p>&lt;h1&gt;透明度&lt;/h1&gt;
+background_opacity 0.9</p>
+<p>&lt;h1&gt;その他&lt;/h1&gt;
+enable_audio_bell no
+</code></pre></p>
+<p>カラースキームは自分で用意するか、<a href="https://github.com/dexpota/kitty-themes" target="_blank" rel="noopener">kitty-themes</a>からダウンロードして <code>include</code> で指定します。</p>
+<h3>6. Ghosttyの設定</h3>
+<p>Ghosttyの設定ファイルは <code>~/.config/ghostty/config</code> です。</p>
+<pre><code class="language-bash">mkdir -p ~/.config/ghostty &amp;&amp; nano ~/.config/ghostty/config
+</code></pre>
+<p>設定例：</p>
+<pre><code class="language-">&lt;h1&gt;フォント&lt;/h1&gt;
+font-family = Fira Code
+font-size = 12
+<p>&lt;h1&gt;カラースキーム（Tokyo Night）&lt;/h1&gt;
+theme = tokyo-night</p>
+<p>&lt;h1&gt;透明度&lt;/h1&gt;
+background-opacity = 0.9</p>
+<p>&lt;h1&gt;キーバインド&lt;/h1&gt;
+keybind = ctrl+shift+c:copy_to_clipboard
+keybind = ctrl+shift+v:paste_from_clipboard
+keybind = ctrl+shift+up:scroll_line_up
+keybind = ctrl+shift+down:scroll_line_down</p>
+<p>&lt;h1&gt;その他&lt;/h1&gt;
+bell = false
+</code></pre></p>
+<p>Ghosttyは起動時に自動で設定を読み込みます。</p>
+<h2>動作確認</h2>
+<li>ターミナルエミュレータ（KittyまたはGhostty）を起動します。</li>
+<li>プロンプトがStarshipの設定通りに表示されることを確認します。</li>
+<li><code>echo $SHELL</code> で <code>/usr/bin/zsh</code> が表示されることを確認します。</li>
+<li><code>ls</code> や <code>cd</code> などのコマンドが正常に動作するか確認します。</li>
+<li>Gitリポジトリ内でブランチ情報が表示されるか確認します。</li>
+<hr>
+<p>*この記事はArch Linuxを実機で日常運用しているSioが、実際のインストール・設定経験に基づいてAI生成コンテンツをレビュー・補完しています。btrfsサブボリュームとLUKS暗号化環境で検証済みです。*</p>
+<h2>発展</h2>
+<li><strong>プラグインの追加</strong>: zshのプラグインマネージャ（zinit, oh-my-zsh, zplugなど）を使って、シンタックスハイライトや自動補完を追加できます。</li>
+<li><strong>テーマの変更</strong>: Starshipの設定をさらにカスタマイズして、独自のプロンプトを作成できます。</li>
+<li><strong>フォントの変更</strong>: Nerd Fontsをインストールして、アイコンを表示できるようにします。</li>
+<li><strong>tmuxとの連携</strong>: ターミナルマルチプレクサtmuxを導入し、セッション管理を強化します。</li>
+<li><strong>エイリアスと関数</strong>: よく使うコマンドをエイリアスやシェル関数で効率化します。</li>
+<p>このチュートリアルで構築した環境は、見た目が美しく、高速で、かつ拡張性が高いため、日々の開発作業が快適になります。ぜひ自分好みにカスタマイズしてみてください。</p></div></article><div class="mt-12 border-t border-gray-200 pt-6"><a href="/" class="text-sm text-arch hover:underline">← 記事一覧に戻る</a></div></div><!--$--><!--/$--></main><footer class="border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400"><div class="flex justify-center gap-4 mb-2"><a href="/about" class="hover:text-gray-600">このサイトについて</a><a href="/privacy" class="hover:text-gray-600">プライバシーポリシー</a></div>Arch Linux 日本語ガイド — Built with OpenCode + DeepSeek API</footer></div><script src="/_next/static/chunks/0mbqojl1yngq4.js" id="_R_" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[24117,[\"/_next/static/chunks/00mbd8isu7b38.js\"],\"default\"]\n3:I[79967,[\"/_next/static/chunks/00mbd8isu7b38.js\"],\"default\"]\n5:I[79323,[\"/_next/static/chunks/00mbd8isu7b38.js\"],\"OutletBoundary\"]\n6:\"$Sreact.suspense\"\n9:I[79323,[\"/_next/static/chunks/00mbd8isu7b38.js\"],\"ViewportBoundary\"]\nb:I[79323,[\"/_next/static/chunks/00mbd8isu7b38.js\"],\"MetadataBoundary\"]\nd:I[30946,[\"/_next/static/chunks/00mbd8isu7b38.js\"],\"default\",1]\n:HL[\"/_next/static/chunks/089_dp2m4y2c2.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"c\":[\"\",\"articles\",\"arch-linux-terminal-setup-zsh-starship-kitty-ghostty\"],\"q\":\"\",\"i\":false,\"f\":[[[\"\",{\"children\":[\"articles\",{\"children\":[[\"slug\",\"arch-linux-terminal-setup-zsh-starship-kitty-ghostty\",\"d\",null],{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",16],[[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/chunks/089_dp2m4y2c2.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-0\",{\"src\":\"/_next/static/chunks/00mbd8isu7b38.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"ja\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"script\",null,{\"async\":true,\"src\":\"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019\",\"crossOrigin\":\"anonymous\"}]}],[\"$\",\"body\",null,{\"className\":\"min-h-screen antialiased\",\"children\":[\"$\",\"div\",null,{\"className\":\"flex min-h-screen flex-col\",\"children\":[[\"$\",\"header\",null,{\"className\":\"border-b border-gray-200 bg-white\",\"children\":[\"$\",\"div\",null,{\"className\":\"mx-auto flex max-w-4xl items-center justify-between px-4 py-3\",\"children\":[[\"$\",\"a\",null,{\"href\":\"/\",\"className\":\"text-lg font-bold text-arch hover:opacity-80\",\"children\":\"Arch Linux 日本語ガイド\"}],[\"$\",\"nav\",null,{\"className\":\"flex gap-4 text-sm text-gray-600\",\"children\":[[\"$\",\"a\",null,{\"href\":\"/\",\"className\":\"hover:text-arch\",\"children\":\"ホーム\"}],[\"$\",\"a\",null,{\"href\":\"/about\",\"className\":\"hover:text-arch\",\"children\":\"このサイトについて\"}]]}]]}]}],[\"$\",\"main\",null,{\"className\":\"flex-1\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}],[\"$\",\"footer\",null,{\"className\":\"border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400\",\"children\":[[\"$\",\"div\",null,{\"className\":\"flex justify-center gap-4 mb-2\",\"children\":[[\"$\",\"a\",null,{\"href\":\"/about\",\"className\":\"hover:text-gray-600\",\"children\":\"このサイトについて\"}],[\"$\",\"a\",null,{\"href\":\"/privacy\",\"className\":\"hover:text-gray-600\",\"children\":\"プライバシーポリシー\"}]]}],\"Arch Linux 日本語ガイド — Built with OpenCode + DeepSeek API\"]}]]}]}]]}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[\"$L4\",null,[\"$\",\"$L5\",null,{\"children\":[\"$\",\"$6\",null,{\"name\":\"Next.MetadataOutlet\",\"children\":\"$@7\"}]}]]}],{},null,false,null]},null,false,\"$@8\"]},null,false,\"$@8\"]},null,false,null],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$L9\",null,{\"children\":\"$La\"}],[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$Lb\",null,{\"children\":[\"$\",\"$6\",null,{\"name\":\"Next.Metadata\",\"children\":\"$Lc\"}]}]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$d\",[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/chunks/089_dp2m4y2c2.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]]],\"S\":true,\"h\":null,\"s\":\"$undefined\",\"l\":\"$undefined\",\"p\":\"$undefined\",\"d\":\"$undefined\",\"b\":\"oMFWqHyx7sJoNGgtrYd0X\"}\n"])</script><script>self.__next_f.push([1,"e:[]\n8:\"$We\"\n"])</script><script>self.__next_f.push([1,"f:T1f37,"])</script><script>self.__next_f.push([1,"\u003ch2\u003e目標\u003c/h2\u003e\n\u003cp\u003eこのチュートリアルでは、Arch Linux上で以下のターミナル環境を構築します。\u003c/p\u003e\n\u003cli\u003e\u003cstrong\u003eシェル\u003c/strong\u003e: zsh（Z Shell）\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eプロンプト\u003c/strong\u003e: Starship（高速でカスタマイズ可能なプロンプト）\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eターミナルエミュレータ\u003c/strong\u003e: Kitty または Ghostty（GPUアクセラレーション対応、高速）\u003c/li\u003e\n\u003cp\u003e最終的に、美しく情報量が多く、かつ高速なターミナル環境を手に入れます。\u003c/p\u003e\n\u003ch2\u003e前提条件\u003c/h2\u003e\n\u003cli\u003eArch Linuxがインストールされ、インターネットに接続されていること\u003c/li\u003e\n\u003cli\u003eパッケージマネージャ（pacman）とAURヘルパー（yay または paru）が使えること\u003c/li\u003e\n\u003cli\u003e基本的なターミナル操作に慣れていること\u003c/li\u003e\n\u003ch2\u003eStep-by-step\u003c/h2\u003e\n\u003ch3\u003e1. 必要なパッケージのインストール\u003c/h3\u003e\n\u003cp\u003eまず、zsh、Starship、Kitty、Ghosttyをインストールします。KittyとGhosttyはどちらか一方でも両方でも構いません。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003esudo pacman -S zsh starship kitty ghostty\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eGhosttyはAURからもインストールできます（最新版が必要な場合）。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003eyay -S ghostty\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e2. デフォルトシェルをzshに変更\u003c/h3\u003e\n\u003cp\u003e現在のシェルを確認し、zshに変更します。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003eecho $SHELL          # 現在のシェルを表示\nchsh -s /usr/bin/zsh # デフォルトシェルをzshに変更\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e変更後、一度ログアウトして再ログインするか、新しいターミナルを開いて反映させます。\u003c/p\u003e\n\u003ch3\u003e3. zshの設定（.zshrc）\u003c/h3\u003e\n\u003cp\u003eホームディレクトリに \u003ccode\u003e.zshrc\u003c/code\u003e ファイルを作成し、基本的な設定を追加します。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003enano ~/.zshrc\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e以下を記述します。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-zsh\"\u003e\u0026lt;h1\u0026gt;Starshipの初期化\u0026lt;/h1\u0026gt;\neval \"$(starship init zsh)\"\n\u003cp\u003e\u0026lt;h1\u0026gt;プラグインマネージャ（zinitなど）を使う場合はここに追加\u0026lt;/h1\u0026gt;\n\u0026lt;h1\u0026gt;例: zinit light zsh-users/zsh-autosuggestions\u0026lt;/h1\u0026gt;\u003c/p\u003e\n\u003cp\u003e\u0026lt;h1\u0026gt;エイリアス\u0026lt;/h1\u0026gt;\nalias ll='ls -lah'\nalias la='ls -A'\nalias l='ls -CF'\u003c/p\u003e\n\u003cp\u003e\u0026lt;h1\u0026gt;履歴設定\u0026lt;/h1\u0026gt;\nexport HISTFILE=~/.zsh_history\nexport HISTSIZE=100000\nexport SAVEHIST=100000\nsetopt SHARE_HISTORY\u003c/p\u003e\n\u003cp\u003e\u0026lt;h1\u0026gt;補完機能\u0026lt;/h1\u0026gt;\nzstyle ':completion:*' menu select\nautoload -Uz compinit\ncompinit\n\u003c/code\u003e\u003c/pre\u003e\u003c/p\u003e\n\u003cp\u003e保存後、設定を読み込みます。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003esource ~/.zshrc\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e4. Starshipの設定\u003c/h3\u003e\n\u003cp\u003eStarshipの設定ファイルを作成します。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003emkdir -p ~/.config \u0026amp;\u0026amp; touch ~/.config/starship.toml\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e\u003ccode\u003e~/.config/starship.toml\u003c/code\u003e を編集して好みのプロンプトにカスタマイズします。以下はシンプルな例です。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-toml\"\u003e\u0026lt;h1\u0026gt;プロンプトのフォーマット\u0026lt;/h1\u0026gt;\nformat = \"\"\"\n[](#9A348E)\n$os$\n$username$\n[](#DA627D)\n$directory$\n[](#FCA17D)\n$git_branch$\n$git_status$\n$c$\n$rust$\n$golang$\n$node$\n$elixir$\n$python$\n[](#86BBD8)\n$time$\n[](#06969A)\n$line_break$\n$character\"\"\"\n\u003cp\u003e\u0026lt;h1\u0026gt;シンボルを変更\u0026lt;/h1\u0026gt;\n[character]\nsuccess_symbol = \"[\" # 通常のプロンプト記号\nerror_symbol = \"[❌]\" # エラー時\u003c/p\u003e\n\u003cp\u003e\u0026lt;h1\u0026gt;ディレクトリの表示\u0026lt;/h1\u0026gt;\n[directory]\ntruncation_length = 3\ntruncate_to_repo = true\u003c/p\u003e\n\u003cp\u003e\u0026lt;h1\u0026gt;Git情報\u0026lt;/h1\u0026gt;\n[git_branch]\nsymbol = \"🌱 \"\nstyle = \"bg:#9A348E\"\nformat = '\u003ca href=\"$style\" target=\"_blank\" rel=\"noopener\"\u003e$symbol$branch\u003c/a\u003e'\u003c/p\u003e\n\u003cp\u003e[git_status]\nconflicted = \"🏳\"\nahead = \"🏎💨\"\nbehind = \"😰\"\ndiverged = \"🔱\"\nuntracked = \"🤷\"\nstashed = \"📦\"\nmodified = \"📝\"\nstaged = '\u003ca href=\"green\" target=\"_blank\" rel=\"noopener\"\u003e++($count)\u003c/a\u003e'\nrenamed = \"👅\"\ndeleted = \"🗑\"\n\u003c/code\u003e\u003c/pre\u003e\u003c/p\u003e\n\u003cp\u003e設定後、新しいターミナルを開くか \u003ccode\u003esource ~/.zshrc\u003c/code\u003e で反映します。\u003c/p\u003e\n\u003ch3\u003e5. Kittyの設定\u003c/h3\u003e\n\u003cp\u003eKittyの設定ファイルを作成します。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003emkdir -p ~/.config/kitty \u0026amp;\u0026amp; nano ~/.config/kitty/kitty.conf\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e以下は設定例です。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-\"\u003e\u0026lt;h1\u0026gt;フォント設定\u0026lt;/h1\u0026gt;\nfont_family      Fira Code\nbold_font         Fira Code Bold\nitalic_font       Fira Code Italic\nbold_italic_font Fira Code Bold Italic\nfont_size 12.0\n\u003cp\u003e\u0026lt;h1\u0026gt;カラースキーム（Tokyo Night）\u0026lt;/h1\u0026gt;\ninclude /path/to/tokyo-night.conf\u003c/p\u003e\n\u003cp\u003e\u0026lt;h1\u0026gt;キーバインド\u0026lt;/h1\u0026gt;\nmap ctrl+shift+c copy_to_clipboard\nmap ctrl+shift+v paste_from_clipboard\nmap ctrl+shift+up scroll_line_up\nmap ctrl+shift+down scroll_line_down\u003c/p\u003e\n\u003cp\u003e\u0026lt;h1\u0026gt;透明度\u0026lt;/h1\u0026gt;\nbackground_opacity 0.9\u003c/p\u003e\n\u003cp\u003e\u0026lt;h1\u0026gt;その他\u0026lt;/h1\u0026gt;\nenable_audio_bell no\n\u003c/code\u003e\u003c/pre\u003e\u003c/p\u003e\n\u003cp\u003eカラースキームは自分で用意するか、\u003ca href=\"https://github.com/dexpota/kitty-themes\" target=\"_blank\" rel=\"noopener\"\u003ekitty-themes\u003c/a\u003eからダウンロードして \u003ccode\u003einclude\u003c/code\u003e で指定します。\u003c/p\u003e\n\u003ch3\u003e6. Ghosttyの設定\u003c/h3\u003e\n\u003cp\u003eGhosttyの設定ファイルは \u003ccode\u003e~/.config/ghostty/config\u003c/code\u003e です。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003emkdir -p ~/.config/ghostty \u0026amp;\u0026amp; nano ~/.config/ghostty/config\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e設定例：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-\"\u003e\u0026lt;h1\u0026gt;フォント\u0026lt;/h1\u0026gt;\nfont-family = Fira Code\nfont-size = 12\n\u003cp\u003e\u0026lt;h1\u0026gt;カラースキーム（Tokyo Night）\u0026lt;/h1\u0026gt;\ntheme = tokyo-night\u003c/p\u003e\n\u003cp\u003e\u0026lt;h1\u0026gt;透明度\u0026lt;/h1\u0026gt;\nbackground-opacity = 0.9\u003c/p\u003e\n\u003cp\u003e\u0026lt;h1\u0026gt;キーバインド\u0026lt;/h1\u0026gt;\nkeybind = ctrl+shift+c:copy_to_clipboard\nkeybind = ctrl+shift+v:paste_from_clipboard\nkeybind = ctrl+shift+up:scroll_line_up\nkeybind = ctrl+shift+down:scroll_line_down\u003c/p\u003e\n\u003cp\u003e\u0026lt;h1\u0026gt;その他\u0026lt;/h1\u0026gt;\nbell = false\n\u003c/code\u003e\u003c/pre\u003e\u003c/p\u003e\n\u003cp\u003eGhosttyは起動時に自動で設定を読み込みます。\u003c/p\u003e\n\u003ch2\u003e動作確認\u003c/h2\u003e\n\u003cli\u003eターミナルエミュレータ（KittyまたはGhostty）を起動します。\u003c/li\u003e\n\u003cli\u003eプロンプトがStarshipの設定通りに表示されることを確認します。\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003eecho $SHELL\u003c/code\u003e で \u003ccode\u003e/usr/bin/zsh\u003c/code\u003e が表示されることを確認します。\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003els\u003c/code\u003e や \u003ccode\u003ecd\u003c/code\u003e などのコマンドが正常に動作するか確認します。\u003c/li\u003e\n\u003cli\u003eGitリポジトリ内でブランチ情報が表示されるか確認します。\u003c/li\u003e\n\u003chr\u003e\n\u003cp\u003e*この記事はArch Linuxを実機で日常運用しているSioが、実際のインストール・設定経験に基づいてAI生成コンテンツをレビュー・補完しています。btrfsサブボリュームとLUKS暗号化環境で検証済みです。*\u003c/p\u003e\n\u003ch2\u003e発展\u003c/h2\u003e\n\u003cli\u003e\u003cstrong\u003eプラグインの追加\u003c/strong\u003e: zshのプラグインマネージャ（zinit, oh-my-zsh, zplugなど）を使って、シンタックスハイライトや自動補完を追加できます。\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eテーマの変更\u003c/strong\u003e: Starshipの設定をさらにカスタマイズして、独自のプロンプトを作成できます。\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eフォントの変更\u003c/strong\u003e: Nerd Fontsをインストールして、アイコンを表示できるようにします。\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003etmuxとの連携\u003c/strong\u003e: ターミナルマルチプレクサtmuxを導入し、セッション管理を強化します。\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eエイリアスと関数\u003c/strong\u003e: よく使うコマンドをエイリアスやシェル関数で効率化します。\u003c/li\u003e\n\u003cp\u003eこのチュートリアルで構築した環境は、見た目が美しく、高速で、かつ拡張性が高いため、日々の開発作業が快適になります。ぜひ自分好みにカスタマイズしてみてください。\u003c/p\u003e"])</script><script>self.__next_f.push([1,"4:[\"$\",\"div\",null,{\"className\":\"mx-auto max-w-4xl px-4 py-8\",\"children\":[[\"$\",\"article\",null,{\"children\":[[\"$\",\"header\",null,{\"className\":\"mb-8\",\"children\":[[\"$\",\"h1\",null,{\"className\":\"text-3xl font-bold tracking-tight text-gray-900\",\"children\":\"Arch Linuxで最強のターミナル環境を構築：zsh + Starship + Kitty/Ghostty\"}],[\"$\",\"p\",null,{\"className\":\"mt-2 text-gray-500\",\"children\":\"Arch Linuxでターミナル環境をカスタマイズする方法を解説。シェルはzsh、プロンプトはStarship、ターミナルエミュレータはKittyまたはGhosttyを使い、美しく高速な環境を構築します。\"}],[\"$\",\"div\",null,{\"className\":\"mt-4 flex flex-wrap items-center gap-3\",\"children\":[[[\"$\",\"span\",\"Arch Linux\",{\"className\":\"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600\",\"children\":\"Arch Linux\"}],[\"$\",\"span\",\"ターミナル\",{\"className\":\"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600\",\"children\":\"ターミナル\"}],[\"$\",\"span\",\"zsh\",{\"className\":\"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600\",\"children\":\"zsh\"}],[\"$\",\"span\",\"starship\",{\"className\":\"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600\",\"children\":\"starship\"}],[\"$\",\"span\",\"kitty\",{\"className\":\"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600\",\"children\":\"kitty\"}],[\"$\",\"span\",\"ghostty\",{\"className\":\"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600\",\"children\":\"ghostty\"}],[\"$\",\"span\",\"カスタマイズ\",{\"className\":\"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600\",\"children\":\"カスタマイズ\"}]],[\"$\",\"span\",null,{\"className\":\"text-xs text-gray-400\",\"children\":\"2026/5/25\"}]]}]]}],[\"$\",\"div\",null,{\"className\":\"prose max-w-none\",\"dangerouslySetInnerHTML\":{\"__html\":\"$f\"}}]]}],\"$L10\"]}]\n"])</script><script>self.__next_f.push([1,"10:[\"$\",\"div\",null,{\"className\":\"mt-12 border-t border-gray-200 pt-6\",\"children\":[\"$\",\"a\",null,{\"href\":\"/\",\"className\":\"text-sm text-arch hover:underline\",\"children\":\"← 記事一覧に戻る\"}]}]\n"])</script><script>self.__next_f.push([1,"a:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n"])</script><script>self.__next_f.push([1,"7:null\nc:[[\"$\",\"title\",\"0\",{\"children\":\"Arch Linux 日本語ガイド\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"Arch Linuxのインストールからデスクトップ環境構築まで、日本語で体系的に解説するガイドサイトです。\"}],[\"$\",\"meta\",\"2\",{\"name\":\"keywords\",\"content\":\"Arch Linux,Linux,インストール,日本語,デスクトップ環境,btrfs,LUKS\"}]]\n"])</script></body></html>

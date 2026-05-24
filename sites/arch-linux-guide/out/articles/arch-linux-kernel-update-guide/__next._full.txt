@@ -1,0 +1,69 @@
+1:"$Sreact.fragment"
+2:I[24117,["/_next/static/chunks/00mbd8isu7b38.js"],"default"]
+3:I[79967,["/_next/static/chunks/00mbd8isu7b38.js"],"default"]
+5:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+9:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"ViewportBoundary"]
+b:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"MetadataBoundary"]
+d:I[30946,["/_next/static/chunks/00mbd8isu7b38.js"],"default",1]
+:HL["/_next/static/chunks/089_dp2m4y2c2.css","style"]
+0:{"P":null,"c":["","articles","arch-linux-kernel-update-guide"],"q":"","i":false,"f":[[["",{"children":["articles",{"children":[["slug","arch-linux-kernel-update-guide","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/089_dp2m4y2c2.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/00mbd8isu7b38.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"ja","children":[["$","head",null,{"children":["$","script",null,{"async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019","crossOrigin":"anonymous"}]}],["$","body",null,{"className":"min-h-screen antialiased","children":["$","div",null,{"className":"flex min-h-screen flex-col","children":[["$","header",null,{"className":"border-b border-gray-200 bg-white","children":["$","div",null,{"className":"mx-auto flex max-w-4xl items-center justify-between px-4 py-3","children":[["$","a",null,{"href":"/","className":"text-lg font-bold text-arch hover:opacity-80","children":"Arch Linux 日本語ガイド"}],["$","nav",null,{"className":"flex gap-4 text-sm text-gray-600","children":[["$","a",null,{"href":"/","className":"hover:text-arch","children":"ホーム"}],["$","a",null,{"href":"/about","className":"hover:text-arch","children":"このサイトについて"}]]}]]}]}],["$","main",null,{"className":"flex-1","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400","children":[["$","div",null,{"className":"flex justify-center gap-4 mb-2","children":[["$","a",null,{"href":"/about","className":"hover:text-gray-600","children":"このサイトについて"}],["$","a",null,{"href":"/privacy","className":"hover:text-gray-600","children":"プライバシーポリシー"}]]}],"Arch Linux 日本語ガイド — Built with OpenCode + DeepSeek API"]}]]}]}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L4",null,["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]]}],{},null,false,null]},null,false,"$@8"]},null,false,"$@8"]},null,false,null],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$6",null,{"name":"Next.Metadata","children":"$Lc"}]}]}],null]}],false]],"m":"$undefined","G":["$d",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/089_dp2m4y2c2.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"oMFWqHyx7sJoNGgtrYd0X"}
+e:[]
+8:"$We"
+f:T1c4b,<h2>はじめに：Arch Linuxのカーネルアップデートとは</h2>
+<p>Arch Linuxはローリングリリースモデルを採用しており、カーネルを含む全てのパッケージが頻繁にアップデートされます。カーネルアップデートはシステムの安定性やセキュリティに直結するため、その仕組みを理解することはArchユーザーにとって重要です。本記事では、カーネルアップデートの定義、背景、仕組み、実用例、よくある誤解を解説します。</p>
+<h2>定義：カーネルアップデートと関連用語</h2>
+<li><strong>カーネル（Kernel）</strong>：OSの中核で、ハードウェアとソフトウェアの橋渡しを行います。Arch Linuxではデフォルトで<code>linux</code>パッケージ（最新安定版）がインストールされます。</li>
+<li><strong>linux-lts</strong>：Long Term Support（長期サポート）版のカーネル。安定性重視で、最新機能よりも長期間のサポートを提供します。</li>
+<li><strong>mkinitcpio</strong>：Arch Linuxでinitramfs（初期RAMファイルシステム）を生成するツール。カーネルが起動時に必要なドライバやモジュールをロードするために使用します。</li>
+<li><strong>fallback</strong>：<code>mkinitcpio</code>が生成する予備のinitramfsイメージ。デフォルトのinitramfsで起動できない場合に使用します。</li>
+<h2>背景：なぜカーネルアップデートが重要なのか</h2>
+<p>Arch Linuxのローリングリリースでは、カーネルは頻繁に更新されます。これにより、最新のハードウェアサポート、セキュリティパッチ、バグ修正が迅速に提供されます。しかし、アップデート後にシステムが起動しなくなるリスクもあるため、<code>linux-lts</code>のような安定版カーネルを併用するユーザーも多いです。また、<code>mkinitcpio</code>はカーネルアップデート時に自動的に実行され、新しいカーネルに対応したinitramfsを生成します。</p>
+<h2>仕組み：カーネルアップデートの流れとmkinitcpioの役割</h2>
+<h3>1. パッケージのアップデート</h3>
+<code>pacman -Syu</code>を実行すると、<code>linux</code>パッケージが更新されます。このとき、<code>mkinitcpio</code>がフックとして自動的に起動し、新しいカーネル用のinitramfsを生成します。
+<h3>2. mkinitcpioの動作</h3>
+<code>mkinitcpio</code>は<code>/etc/mkinitcpio.conf</code>の設定に基づいて、カーネルモジュールやフック（例：<code>udev</code>、<code>systemd</code>、<code>keyboard</code>など）を含むinitramfsを作成します。生成されるファイルは<code>/boot/initramfs-linux.img</code>（デフォルト）と<code>/boot/initramfs-linux-fallback.img</code>（フォールバック）です。
+<h3>3. fallbackイメージの役割</h3>
+<code>fallback</code>イメージは、デフォルトのinitramfsに含まれない汎用的なモジュールを含む安全策です。例えば、ストレージドライバがデフォルトで不足している場合でも、fallbackイメージを使えば起動できる可能性があります。ブートローダー（GRUBなど）で起動時に選択可能です。
+<h3>4. linux-ltsカーネルの併用</h3>
+<code>linux-lts</code>パッケージをインストールすると、<code>/boot/vmlinuz-linux-lts</code>と<code>/boot/initramfs-linux-lts.img</code>が生成されます。ブートローダーでデフォルトカーネルとLTSカーネルを切り替えられます。
+<h2>実用例：カーネルアップデートの実際の手順</h2>
+<h3>例1：通常のカーネルアップデート</h3>
+<pre><code class="language-bash">&lt;h1&gt;システム全体をアップデート&lt;/h1&gt;
+sudo pacman -Syu
+</code></pre>
+これにより、<code>linux</code>パッケージが更新され、<code>mkinitcpio</code>が自動的に新しいinitramfsを生成します。再起動後、新しいカーネルで起動します。
+<h3>例2：linux-ltsカーネルのインストールと設定</h3>
+<pre><code class="language-bash">&lt;h1&gt;linux-ltsパッケージをインストール&lt;/h1&gt;
+sudo pacman -S linux-lts
+<p>&lt;h1&gt;ブートローダーの設定（GRUBの場合）&lt;/h1&gt;
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre>
+再起動時にGRUBメニューで「Advanced options for Arch Linux」からLTSカーネルを選択できます。</p>
+<h3>例3：手動でmkinitcpioを再実行</h3>
+<pre><code class="language-bash">&lt;h1&gt;すべてのカーネルに対してinitramfsを再生成&lt;/h1&gt;
+sudo mkinitcpio -P
+<p>&lt;h1&gt;特定のカーネルのみ再生成（例：linux）&lt;/h1&gt;
+sudo mkinitcpio -p linux
+</code></pre>
+<code>-P</code>オプションは<code>/etc/mkinitcpio.d/</code>に定義されたすべてのカーネルプリセットを処理します。</p>
+<h3>例4：fallbackイメージを使用した起動</h3>
+システムが起動しない場合、ブートローダーで<code>initramfs-linux-fallback.img</code>を選択して起動します。その後、問題を診断します。
+<h2>よくある誤解</h2>
+<h3>誤解1：「カーネルアップデート後は必ずmkinitcpioを手動で実行しなければならない」</h3>
+実際には、<code>pacman</code>のフックにより自動実行されます。ただし、<code>/etc/mkinitcpio.conf</code>を変更した場合や、特定の状況では手動実行が必要です。
+<h3>誤解2：「linux-ltsは古くて使えない」</h3>
+<code>linux-lts</code>は最新の安定版ではありませんが、長期サポートによりセキュリティパッチが提供され続けます。最新機能が必要ないサーバーなどで推奨されます。
+<h3>誤解3：「fallbackイメージは常に必要」</h3>
+<code>fallback</code>イメージは予備であり、通常は不要です。ただし、カスタムカーネルや特殊なハードウェア構成では役立つことがあります。
+<h3>誤解4：「pacman -Syuだけで全てが完了する」</h3>
+カーネルアップデート後は再起動が必要です。また、ブートローダーの設定が自動更新されない場合があるため、必要に応じて<code>grub-mkconfig</code>などを実行します。
+<hr>
+<p>*この記事はArch Linuxを実機で日常運用しているSioが、実際のインストール・設定経験に基づいてAI生成コンテンツをレビュー・補完しています。btrfsサブボリュームとLUKS暗号化環境で検証済みです。*</p>
+<h2>まとめ</h2>
+<p>Arch Linuxのカーネルアップデートは、<code>pacman</code>、<code>mkinitcpio</code>、ブートローダーの連携によってスムーズに行われます。<code>linux-lts</code>と<code>fallback</code>イメージを理解しておくことで、アップデート後のトラブルに備えられます。定期的なアップデートと再起動を心がけ、安定したシステム運用を目指しましょう。</p>4:["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"Arch Linuxのカーネルアップデート完全ガイド：linux-ltsとmkinitcpioの仕組み"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"Arch Linuxにおけるカーネルアップデートの仕組みを解説。linux-ltsカーネルの役割、mkinitcpioによるinitramfs生成、fallbackイメージの意味、アップデート手順と注意点を網羅。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","Arch Linux",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"Arch Linux"}],["$","span","カーネル",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"カーネル"}],["$","span","linux-lts",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"linux-lts"}],["$","span","アップデート",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"アップデート"}],["$","span","mkinitcpio",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"mkinitcpio"}],["$","span","fallback",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"fallback"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$f"}}]]}],"$L10"]}]
+10:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-arch hover:underline","children":"← 記事一覧に戻る"}]}]
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+7:null
+c:[["$","title","0",{"children":"Arch Linux 日本語ガイド"}],["$","meta","1",{"name":"description","content":"Arch Linuxのインストールからデスクトップ環境構築まで、日本語で体系的に解説するガイドサイトです。"}],["$","meta","2",{"name":"keywords","content":"Arch Linux,Linux,インストール,日本語,デスクトップ環境,btrfs,LUKS"}]]

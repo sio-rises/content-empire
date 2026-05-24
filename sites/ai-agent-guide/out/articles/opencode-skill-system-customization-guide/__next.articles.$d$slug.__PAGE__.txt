@@ -1,0 +1,172 @@
+1:"$Sreact.fragment"
+5:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+2:T1e34,<h1>OpenCodeのスキルシステム完全ガイド：カスタマイズ・拡張・MCP連携</h1>
+<p>OpenCodeは、AIエージェントやLLMを活用した開発を効率化するためのオープンソースフレームワークです。その中核機能の一つが「スキルシステム」であり、エージェントの行動をモジュール化・カスタマイズできます。本記事では、スキルシステムの基本から高度なカスタマイズ、プラグイン開発、MCP（Model Context Protocol）との連携までを具体的なコード例とともに解説します。</p>
+<h2>スキルシステムの基本</h2>
+<p>OpenCodeのスキルは、エージェントが実行できる特定のタスクやアクションを定義した単位です。スキルは以下の要素で構成されます：</p>
+<li><strong>トリガー</strong>: スキルが起動する条件（例：ユーザーの発言パターン、ファイル変更など）</li>
+<li><strong>アクション</strong>: 実行する処理（例：コード生成、API呼び出し、ファイル操作）</li>
+<li><strong>コンテキスト</strong>: 実行に必要な情報（例：現在のファイル、プロジェクト構造）</li>
+<p>デフォルトで提供されるスキルには、コード補完、リファクタリング、テスト生成などがあります。</p>
+<h2>スキルのカスタマイズ方法</h2>
+<h3>1. 既存スキルの設定変更</h3>
+<p>設定ファイル（例：<code>opencode.config.json</code>）で各スキルのパラメータを変更できます。</p>
+<pre><code class="language-json">{
+  "skills": {
+    "code-completion": {
+      "enabled": true,
+      "maxTokens": 256,
+      "model": "gpt-4"
+    },
+    "refactor": {
+      "enabled": true,
+      "language": "typescript"
+    }
+  }
+}
+</code></pre>
+<h3>2. カスタムスキルの作成</h3>
+<p>スキルはTypeScript/JavaScriptで記述します。以下は、指定されたURLからドキュメントを取得して要約するカスタムスキルの例です。</p>
+<pre><code class="language-typescript">// skills/fetch-doc.ts
+import { Skill, SkillContext } from 'opencode';
+<p>export default class FetchDocSkill implements Skill {
+  name = 'fetch-doc';
+  description = '指定されたURLのドキュメントを取得して要約します';</p>
+<p>async execute(context: SkillContext) {
+    const url = context.parameters.url;
+    const response = await fetch(url);
+    const text = await response.text();
+    
+    // LLMを呼び出して要約（OpenCodeの組み込み関数を利用）
+    const summary = await context.llm.complete({
+      prompt: <code>以下のテキストを要約してください：\n${text}</code>,
+      maxTokens: 200
+    });
+    
+    return summary;
+  }
+}
+</code></pre></p>
+<p>スキルを有効にするには、設定ファイルに追加します。</p>
+<pre><code class="language-json">{
+  "skills": {
+    "fetch-doc": {
+      "enabled": true,
+      "source": "./skills/fetch-doc.ts"
+    }
+  }
+}
+</code></pre>
+<h2>プラグインによる拡張</h2>
+<p>プラグインは複数のスキルや設定をパッケージ化したものです。プラグインの基本的な構造は以下の通りです。</p>
+<pre><code class="language-">my-plugin/
+├── package.json
+├── skills/
+│   ├── skill1.ts
+│   └── skill2.ts
+├── config/
+│   └── default.json
+└── index.ts
+</code></pre>
+<p>プラグインのエントリポイント（<code>index.ts</code>）では、スキルや設定をエクスポートします。</p>
+<pre><code class="language-typescript">// index.ts
+import { Plugin } from 'opencode';
+import Skill1 from './skills/skill1';
+import Skill2 from './skills/skill2';
+<p>export default class MyPlugin implements Plugin {
+  name = 'my-plugin';
+  skills = [new Skill1(), new Skill2()];
+  
+  async activate() {
+    console.log('MyPlugin activated');
+  }
+}
+</code></pre></p>
+<p>プラグインはnpmパッケージとして公開でき、<code>opencode install my-plugin</code>でインストール可能です。</p>
+<h2>MCP（Model Context Protocol）との連携</h2>
+<p>MCPは、AIモデルとツール間の標準化された通信プロトコルです。OpenCodeはMCPをサポートしており、スキルからMCPサーバー経由で外部ツールを呼び出せます。</p>
+<h3>MCPサーバーの設定</h3>
+<p>まず、MCPサーバーを設定します。例えば、GitHub APIを操作するサーバーを追加する場合：</p>
+<pre><code class="language-json">{
+  "mcpServers": {
+    "github": {
+      "command": "node",
+      "args": ["mcp-github-server/index.js"],
+      "env": {
+        "GITHUB_TOKEN": "your_token"
+      }
+    }
+  }
+}
+</code></pre>
+<h3>スキルからMCPツールを利用</h3>
+<p>スキル内でMCPクライアントを使ってツールを呼び出します。</p>
+<pre><code class="language-typescript">// skills/create-issue.ts
+import { Skill, SkillContext } from 'opencode';
+<p>export default class CreateIssueSkill implements Skill {
+  name = 'create-issue';
+  description = 'GitHubにIssueを作成します';</p>
+<p>async execute(context: SkillContext) {
+    const { title, body } = context.parameters;
+    
+    // MCPクライアントを取得
+    const mcpClient = context.getMcpClient('github');
+    
+    const result = await mcpClient.callTool('create_issue', {
+      title,
+      body
+    });
+    
+    return <code>Issue created: ${result.html_url}</code>;
+  }
+}
+</code></pre></p>
+<p>これにより、スキルが外部サービスとシームレスに連携できます。</p>
+<h2>実践的な活用例</h2>
+<h3>例1：プロジェクト固有のコード規約を適用するスキル</h3>
+<pre><code class="language-typescript">// skills/enforce-convention.ts
+import { Skill, SkillContext } from 'opencode';
+<p>export default class EnforceConventionSkill implements Skill {
+  name = 'enforce-convention';
+  
+  async execute(context: SkillContext) {
+    const fileContent = context.files.current?.content;
+    if (!fileContent) return;
+    
+    // 規約に違反する箇所をチェック
+    const violations = [];
+    if (fileContent.includes('var ')) {
+      violations.push('varの代わりにconst/letを使用してください');
+    }
+    // その他のチェック...
+    
+    if (violations.length &gt; 0) {
+      return <code>規約違反があります：\n${violations.join('\n')}</code>;
+    }
+    return '規約に従っています';
+  }
+}
+</code></pre></p>
+<h3>例2：複数スキルを組み合わせたワークフロー</h3>
+<p>スキルはチェーンで実行できます。設定で順序を指定可能です。</p>
+<pre><code class="language-json">{
+  "workflows": {
+    "code-review": {
+      "steps": [
+        "fetch-doc",
+        "enforce-convention",
+        "generate-tests"
+      ]
+    }
+  }
+}
+</code></pre>
+<hr>
+<p>*この記事はOpenCodeを日常的に使用し、AIエージェントにSSH経由でNixOSをインストールさせるなどの実践経験を持つSioが監修しています。DeepSeek APIのヘビーユーザーとして、実際のコスト感や制限事項を反映しています。*</p>
+<h2>まとめ</h2>
+<p>OpenCodeのスキルシステムは、柔軟なカスタマイズと拡張が可能です。プラグインによるパッケージ化やMCP連携により、外部ツールとの統合も容易です。本記事で紹介した手法を活用して、自身の開発ワークフローに最適なAIエージェントを構築してください。</p>
+<p>さらに詳しい情報は<a href="https://opencode.ai/docs" target="_blank" rel="noopener">公式ドキュメント</a>を参照してください。</p>0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"OpenCodeのスキルシステム完全ガイド：カスタマイズ・拡張・MCP連携"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"OpenCodeのスキルシステムの基本からカスタマイズ、プラグイン開発、MCP連携までを解説。実践的なコード例とともに、AIエージェント開発の効率を上げる方法を紹介します。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","OpenCode",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"OpenCode"}],["$","span","スキル",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"スキル"}],["$","span","カスタマイズ",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"カスタマイズ"}],["$","span","拡張",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"拡張"}],["$","span","MCP",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"MCP"}],["$","span","プラグイン",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"プラグイン"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3"]}],null,"$L4"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"ozMjvJqr-IrJkTdPFeVOD"}
+3:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-ai hover:underline","children":"← 記事一覧に戻る"}]}]
+4:["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]
+7:null

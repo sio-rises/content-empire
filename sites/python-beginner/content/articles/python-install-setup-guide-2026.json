@@ -1,0 +1,16 @@
+{
+  "title": "Python入門2026：インストールから環境構築・pip・venv完全ガイド",
+  "slug": "python-install-setup-guide-2026",
+  "metaDescription": "2026年版Python入門ガイド。Windows/Mac/LinuxでのPythonインストール方法、venvによる仮想環境構築、pipの使い方を解説。初心者でも安心の環境構築手順。",
+  "content": "## はじめに\n\nPythonは2026年現在も最も人気のあるプログラミング言語の一つです。AI・データ分析・Web開発など幅広い分野で使われています。この記事では、Pythonをこれから始める方向けに、インストールから仮想環境（venv）・パッケージ管理（pip）までを解説します。\n\n## Pythonのインストール\n\n### Windows\n1. [Python公式サイト](https://www.python.org/downloads/)にアクセスし、最新の安定版（例：Python 3.12.3）をダウンロードします。\n2. インストーラを実行し、「Add Python to PATH」にチェックを入れて「Install Now」をクリック。\n3. インストール完了後、コマンドプロンプトで `python --version` と入力し、バージョンが表示されれば成功です。\n\n### macOS\n1. Homebrewをインストールしている場合：`brew install python@3.12`\n2. 公式サイトからダウンロードする場合は、macOS用インストーラ（.pkg）を実行。\n3. ターミナルで `python3 --version` を確認。\n\n### Linux（Ubuntu/Debian）\n```bash\nsudo apt update\nsudo apt install python3 python3-pip python3-venv -y\n```\nバージョン確認：`python3 --version`\n\n## 仮想環境の作成（venv）\n\nプロジェクトごとに依存パッケージを分離するために仮想環境を使います。Python 3.3以降に標準搭載のvenvを使用します。\n\n### 仮想環境の作成\n```bash\n# プロジェクトディレクトリに移動\ncd myproject\n\n# 仮想環境を作成（myenvは環境名、任意）\npython -m venv myenv\n```\n\n### 仮想環境の有効化\n- Windows（コマンドプロンプト）: `myenv\\Scripts\\activate`\n- Windows（PowerShell）: `myenv\\Scripts\\Activate.ps1`\n- macOS/Linux: `source myenv/bin/activate`\n\n有効化すると、ターミナルの先頭に `(myenv)` と表示されます。\n\n### 仮想環境の無効化\n```bash\ndeactivate\n```\n\n## pipの使い方\n\npipはPythonのパッケージ管理ツールです。仮想環境内で使用することで、プロジェクトごとに必要なパッケージを管理できます。\n\n### 基本的なコマンド\n```bash\n# パッケージのインストール\npip install パッケージ名\n\n# 特定のバージョンを指定\npip install パッケージ名==1.0.0\n\n# パッケージのアンインストール\npip uninstall パッケージ名\n\n# インストール済みパッケージ一覧\npip list\n\n# requirements.txtから一括インストール\npip install -r requirements.txt\n```\n\n### requirements.txtの作成\n```bash\npip freeze > requirements.txt\n```\nこのファイルを共有することで、他の開発者も同じ環境を再現できます。\n\n## 環境構築のベストプラクティス\n\n1. **プロジェクトごとに仮想環境を作成**：システム全体のPython環境を汚さない。\n2. **requirements.txtを管理**：`pip freeze` で出力し、バージョン固定。\n3. **Pythonのバージョン管理**：複数バージョンが必要な場合はpyenvを検討。\n4. **エディタの設定**：VS CodeならPython拡張機能をインストールし、インタプリタを仮想環境内のものに設定。\n\n## よくあるトラブルと解決法\n\n### pipコマンドが見つからない\n- Windows: Pythonインストール時にPATH追加を忘れた。再インストールするか、手動でPATHを通す。\n- macOS/Linux: `pip3` を使うか、`python3 -m pip` と実行。\n\n### 仮想環境が有効化できない\n- Windows PowerShellでスクリプト実行ポリシーエラー：管理者PowerShellで `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser` を実行。\n- macOS/Linux: `source` の代わりに `. myenv/bin/activate` でも可。\n\n### インストールに失敗する\n- ネットワーク問題：プロキシ設定を確認。\n- 権限問題：仮想環境内で実行しているか確認。\n\n## まとめ\n\nPythonのインストールから仮想環境・pipの基本を解説しました。この知識があれば、2026年のPython開発をスムーズに始められます。最初は環境構築が面倒に感じるかもしれませんが、一度慣れれば簡単です。ぜひ実際に手を動かして試してみてください。\n\n### 参考リンク\n- [Python公式ドキュメント](https://docs.python.org/ja/3/)\n- [Pythonパッケージインデックス(PyPI)](https://pypi.org/)",
+  "keywords": [
+    "Python",
+    "入門",
+    "インストール",
+    "環境構築",
+    "pip",
+    "venv"
+  ],
+  "template": "tutorial",
+  "generatedAt": "2026-05-24T17:04:35.357Z"
+}

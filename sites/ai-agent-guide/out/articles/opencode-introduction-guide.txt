@@ -1,0 +1,74 @@
+1:"$Sreact.fragment"
+2:I[10332,["/_next/static/chunks/007ac~remr-yw.js"],"default"]
+3:I[41511,["/_next/static/chunks/007ac~remr-yw.js"],"default"]
+5:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+9:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"ViewportBoundary"]
+b:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"MetadataBoundary"]
+d:I[30493,["/_next/static/chunks/007ac~remr-yw.js"],"default",1]
+:HL["/_next/static/chunks/0sknqqgyc~d7j.css","style"]
+0:{"P":null,"c":["","articles","opencode-introduction-guide"],"q":"","i":false,"f":[[["",{"children":["articles",{"children":[["slug","opencode-introduction-guide","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0sknqqgyc~d7j.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/007ac~remr-yw.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"ja","children":[["$","head",null,{"children":["$","script",null,{"async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019","crossOrigin":"anonymous"}]}],["$","body",null,{"className":"min-h-screen antialiased","children":["$","div",null,{"className":"flex min-h-screen flex-col","children":[["$","header",null,{"className":"border-b border-gray-200 bg-white","children":["$","div",null,{"className":"mx-auto flex max-w-4xl items-center justify-between px-4 py-3","children":[["$","a",null,{"href":"/","className":"text-lg font-bold text-ai hover:opacity-80","children":"AIエージェント活用ガイド"}],["$","nav",null,{"className":"flex gap-4 text-sm text-gray-600","children":["$","a",null,{"href":"/","className":"hover:text-ai","children":"ホーム"}]}]]}]}],["$","main",null,{"className":"flex-1","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400","children":"AIエージェント活用ガイド — Built with OpenCode + DeepSeek API"}]]}]}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L4",null,["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]]}],{},null,false,null]},null,false,"$@8"]},null,false,"$@8"]},null,false,null],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$6",null,{"name":"Next.Metadata","children":"$Lc"}]}]}],null]}],false]],"m":"$undefined","G":["$d",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0sknqqgyc~d7j.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"ozMjvJqr-IrJkTdPFeVOD"}
+e:[]
+8:"$We"
+f:T152c,<h2>OpenCodeとは</h2>
+<p>OpenCodeは、ターミナル上で動作するAIエージェントベースのコーディング支援CLIツールです。コードの生成、リファクタリング、説明、テスト作成などを、自然言語の指示で実行できます。内部では大規模言語モデル（LLM）を利用し、ファイルシステムの読み書き、コマンド実行、Git操作などをエージェントが自律的に行います。</p>
+<p>従来のコード補完ツールと異なり、OpenCodeは複数ファイルにまたがるタスクや、シェルコマンドを組み合わせた複雑な作業も指示一つで完了できます。</p>
+<h2>主な機能</h2>
+<li><strong>コード生成</strong>：自然言語の指示からコードを生成し、ファイルに保存</li>
+<li><strong>コード編集</strong>：既存のコードを読み取り、修正やリファクタリングを実行</li>
+<li><strong>コード説明</strong>：選択したコードの動作を解説</li>
+<li><strong>テスト作成</strong>：既存コードに対するテストコードを自動生成</li>
+<li><strong>Git操作</strong>：コミットメッセージの生成、差分の説明など</li>
+<li><strong>シェルコマンド実行</strong>：必要なコマンドを自動で実行（ユーザー確認あり）</li>
+<h2>インストール</h2>
+<p>OpenCodeはNode.js（バージョン18以上）が必要です。以下のコマンドでインストールします。</p>
+<pre><code class="language-bash">npm install -g @opencode/cli
+</code></pre>
+<p>インストール後、OpenAIのAPIキーが必要です。環境変数に設定するか、初回実行時のプロンプトで入力します。</p>
+<pre><code class="language-bash">export OPENAI_API_KEY="sk-..."
+</code></pre>
+<p>または、<code>.env</code>ファイルを作成して記述しても構いません。</p>
+<h2>基本的な使い方</h2>
+<h3>1. 対話モードで起動</h3>
+<p>プロジェクトのルートディレクトリで以下のコマンドを実行します。</p>
+<pre><code class="language-bash">opencode
+</code></pre>
+<p>対話モードが起動し、プロンプトが表示されます。ここに自然言語で指示を入力します。</p>
+<h3>2. コード生成の例</h3>
+<p>「Pythonでフィボナッチ数列を計算する関数を書いて」と入力すると、エージェントがコードを生成し、ファイルに保存するか提案します。</p>
+<pre><code class="language-">&gt; Pythonでフィボナッチ数列を計算する関数を書いて
+</code></pre>
+<p>エージェントは<code>fibonacci.py</code>を作成し、中身を表示します。</p>
+<h3>3. コード編集の例</h3>
+<p>既存のファイルに対して、「この関数にエラーハンドリングを追加して」と指示すると、該当箇所を読み取り修正します。</p>
+<pre><code class="language-">&gt; src/utils.py の fetch_data 関数にエラーハンドリングを追加して
+</code></pre>
+<h3>4. 複数ファイルにまたがるタスク</h3>
+<p>「新しいAPIエンドポイントを追加して、それに対応するテストも書いて」といった複雑な指示も可能です。</p>
+<h2>設定ファイル</h2>
+<p>プロジェクトルートに<code>opencode.config.json</code>を作成することで、詳細な設定が可能です。</p>
+<pre><code class="language-json">{
+  "model": "gpt-4",
+  "include": ["src/<strong>/*.py", "tests/</strong>/*.py"],
+  "exclude": ["node_modules", "__pycache__"],
+  "autoConfirm": false
+}
+</code></pre>
+<li><code>model</code>: 使用するLLM（デフォルトはgpt-4）</li>
+<li><code>include</code>: エージェントがアクセスできるファイルのパターン</li>
+<li><code>exclude</code>: 除外するファイルパターン</li>
+<li><code>autoConfirm</code>: 自動確認モード（危険な操作も自動実行）</li>
+<h2>注意点とベストプラクティス</h2>
+<li><strong>コードレビューを忘れずに</strong>：AIが生成したコードは必ず人間が確認しましょう。特にセキュリティやロジックの正確性をチェックしてください。</li>
+<li><strong>機密情報を入力しない</strong>：APIキーやパスワードを会話に含めないでください。</li>
+<li><strong>段階的に指示する</strong>：複雑なタスクは小さなステップに分割すると成功率が上がります。</li>
+<li><strong>コンテキストを適切に与える</strong>：関連するファイルやコードの構造を事前に説明すると良い結果が得られます。</li>
+<hr>
+<p>*この記事はOpenCodeを日常的に使用し、AIエージェントにSSH経由でNixOSをインストールさせるなどの実践経験を持つSioが監修しています。DeepSeek APIのヘビーユーザーとして、実際のコスト感や制限事項を反映しています。*</p>
+<h2>まとめ</h2>
+<p>OpenCodeは、AIエージェントを活用してコーディング作業を効率化する強力なCLIツールです。インストールも簡単で、自然言語で指示を出すだけで様々なタスクを実行できます。ぜひ日々の開発に取り入れてみてください。</p>
+<p>公式ドキュメントやGitHubリポジトリも参考にすると、さらに深い使い方がわかります。</p>4:["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"OpenCode入門：AIエージェントを使ったコーディングCLIツールの使い方"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"OpenCodeはAIエージェントを活用したCLIコーディングツールです。本記事ではインストールから基本的な使い方までを解説します。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","OpenCode",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"OpenCode"}],["$","span","使い方",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"使い方"}],["$","span","AIエージェント",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"AIエージェント"}],["$","span","コーディング",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"コーディング"}],["$","span","CLIツール",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"CLIツール"}],["$","span","入門",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"入門"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$f"}}]]}],"$L10"]}]
+10:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-ai hover:underline","children":"← 記事一覧に戻る"}]}]
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+7:null
+c:[["$","title","0",{"children":"AIエージェント活用ガイド"}],["$","meta","1",{"name":"description","content":"OpenCode/ClaudeCode/DeepSeekを使ったAIエージェント開発自動化の情報を日本語で発信。"}],["$","meta","2",{"name":"keywords","content":"OpenCode,ClaudeCode,AIエージェント,DeepSeek,開発自動化,プロンプト"}]]

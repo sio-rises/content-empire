@@ -1,0 +1,16 @@
+{
+  "title": "iptablesとnftablesの比較と移行ガイド：Linuxファイアウォールの選択",
+  "slug": "iptables-nftables-comparison-migration-guide",
+  "metaDescription": "Linuxファイアウォールのiptablesとnftablesを比較。機能、パフォーマンス、設定の違いを解説し、移行手順も紹介。",
+  "content": "## iptablesとnftablesの比較と移行ガイド\n\nLinuxのファイアウォールといえば、長らくiptablesが標準でした。しかし、近年では後継のnftablesへの移行が進んでいます。本記事では、iptablesとnftablesの違いを比較し、移行のメリットと具体的な手順を解説します。\n\n### iptablesとは\n\niptablesは、LinuxカーネルのNetfilterフレームワークを操作する伝統的なファイアウォールツールです。パケットフィルタリング、NAT、パケット変更などをルールベースで設定します。多くのディストリビューションで長年使用されてきました。\n\n### nftablesとは\n\nnftablesは、iptablesの後継として開発された新しいパケットフィルタリングフレームワークです。よりシンプルでパフォーマンスに優れ、統一されたインターフェースを提供します。カーネル3.13以降で利用可能で、多くの最新ディストリビューションで標準となっています。\n\n## 主な違い\n\n| 項目 | iptables | nftables |\n|------|----------|----------|\n| 設定構文 | 複数のツール（iptables, ip6tables, arptables, ebtables） | 単一のnftコマンド |\n| ルールセット | 線形チェーン | 辞書式（ハッシュテーブル） |\n| パフォーマンス | ルール数が多いと低下 | 大規模ルールセットでも高速 |\n| プロトコル対応 | IPv4/IPv6で別々 | 統合（1つのルールで両方対応） |\n| デバッグ | ログ出力が複雑 | トレース機能が充実 |\n| 設定ファイル | /etc/sysconfig/iptablesなど | /etc/nftables.conf |\n\n### パフォーマンスの違い\n\nnftablesは内部で辞書式のルックアップを使用するため、ルール数が増えてもパフォーマンスが維持されます。iptablesは線形探索のため、ルールが1000を超えると顕著な遅延が発生することがあります。\n\n### 構文の違い\n\niptablesの例：\n```bash\niptables -A INPUT -p tcp --dport 22 -j ACCEPT\n```\nnftablesの例：\n```bash\nnft add rule inet filter input tcp dport 22 accept\n```\nnftablesではアドレスファミリ（inet）を指定し、IPv4/IPv6を統合できます。\n\n## 移行のメリット\n\n- パフォーマンス向上：大規模ルールセットで効果的\n- 設定の簡素化：1つのツールで全プロトコル対応\n- 保守性向上：ルールのセット単位での管理が容易\n- 新しい機能：セット、マップ、フローオフロードなど\n\n## 移行手順\n\n### 1. 現在のiptablesルールの確認\n```bash\nsudo iptables-save > /tmp/iptables-rules.txt\n```\n\n### 2. nftablesのインストール\nDebian/Ubuntu:\n```bash\nsudo apt install nftables\n```\nRHEL/CentOS 8以降:\n```bash\nsudo dnf install nftables\n```\n\n### 3. ルールの変換\niptables-translateツールを使用:\n```bash\niptables-translate -A INPUT -p tcp --dport 22 -j ACCEPT\n```\n出力例：`nft add rule inet filter INPUT tcp dport 22 accept`\n\n一括変換にはiptables-restore-translate:\n```bash\nsudo iptables-restore-translate -f /tmp/iptables-rules.txt > /etc/nftables.conf\n```\n\n### 4. nftablesの有効化とiptablesの無効化\n```bash\nsudo systemctl enable nftables\nsudo systemctl start nftables\nsudo systemctl disable iptables\nsudo systemctl stop iptables\n```\n\n### 5. 動作確認\n```bash\nsudo nft list ruleset\n```\n\n## 注意点\n\n- 移行後は既存のiptablesルールが無効になるため、テスト環境で十分に検証してください。\n- 一部のiptables拡張（例えば、conntrackの特定の機能）はnftablesで同等の機能がない場合があります。\n- 移行ツールは完全ではないため、手動で調整が必要な場合があります。\n\n\n\n---\n\n*この記事はArch Linux/btrfs/LUKs環境で実際に検証した内容を基にしています。セキュリティ設定は環境によって異なるため、本番環境への適用前に必ずテスト環境で検証してください。*\n\n## まとめ\n\nnftablesはiptablesの後継として、パフォーマンス、柔軟性、保守性で優れています。特に新しいシステムでは積極的に採用すべきです。移行は計画的に行えば比較的スムーズですが、複雑なルールセットの場合は十分なテストが重要です。\n\nこの機会に、あなたのLinuxファイアウォールをnftablesに移行してみてはいかがでしょうか。",
+  "keywords": [
+    "iptables",
+    "nftables",
+    "比較",
+    "Linux",
+    "ファイアウォール",
+    "移行"
+  ],
+  "template": "comparison",
+  "generatedAt": "2026-05-24T16:47:30.253Z"
+}

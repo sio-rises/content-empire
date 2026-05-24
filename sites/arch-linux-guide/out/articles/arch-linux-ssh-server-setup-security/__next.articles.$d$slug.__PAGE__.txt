@@ -1,0 +1,109 @@
+1:"$Sreact.fragment"
+5:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+2:T1c71,<h2>はじめに</h2>
+<p>このチュートリアルでは、Arch LinuxにOpenSSHサーバーを導入し、安全にリモート接続できるようにするための設定を解説します。最終的には、パスワード認証を無効化し、鍵認証のみでログインできるセキュアな環境を構築します。</p>
+<h2>目標</h2>
+<li>Arch LinuxにOpenSSHサーバー（sshd）をインストール・起動する</li>
+<li>公開鍵認証を設定し、パスワード認証を無効化する</li>
+<li>SSHのポート番号を変更するなど、基本的なセキュリティ対策を施す</li>
+<li>ファイアウォールでSSH接続を許可する</li>
+<h2>前提条件</h2>
+<li>Arch Linuxがインストールされ、インターネットに接続されていること</li>
+<li>root権限、またはsudoを使用できる一般ユーザーがあること</li>
+<li>基本的なターミナル操作ができること</li>
+<h2>Step-by-step</h2>
+<h3>1. OpenSSHのインストール</h3>
+<p>まず、OpenSSHサーバーとクライアントをインストールします。</p>
+<pre><code class="language-bash">sudo pacman -S openssh
+</code></pre>
+<h3>2. SSHサーバーの起動と自動起動設定</h3>
+<p>インストール後、sshdサービスを起動し、システム起動時に自動で立ち上がるようにします。</p>
+<pre><code class="language-bash">sudo systemctl start sshd
+sudo systemctl enable sshd
+</code></pre>
+<h3>3. ファイアウォールの設定（必要な場合）</h3>
+<p>ファイアウォールを使用している場合は、SSHポート（デフォルト22）を許可します。以下は<code>iptables</code>と<code>firewalld</code>の例です。</p>
+<p><strong>iptablesの場合</strong></p>
+<pre><code class="language-bash">sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+sudo iptables-save &gt; /etc/iptables/iptables.rules
+</code></pre>
+<p><strong>firewalldの場合</strong></p>
+<pre><code class="language-bash">sudo firewall-cmd --add-service=ssh --permanent
+sudo firewall-cmd --reload
+</code></pre>
+<h3>4. SSH鍵ペアの生成（クライアント側）</h3>
+<p>リモートから接続するクライアントマシンで、SSH鍵ペアを生成します。すでに鍵がある場合はスキップしてください。</p>
+<pre><code class="language-bash">ssh-keygen -t ed25519 -a 100
+</code></pre>
+<p>推奨されるオプション:
+<li><code>-t ed25519</code>: より安全で高速なEd25519鍵を使用</li>
+<li><code>-a 100</code>: KDFラウンド数を増やしてブルートフォース耐性を向上</li></p>
+<p>公開鍵は<code>~/.ssh/id_ed25519.pub</code>に保存されます。</p>
+<h3>5. 公開鍵をサーバーに転送</h3>
+<p>生成した公開鍵をサーバーの<code>~/.ssh/authorized_keys</code>に追加します。<code>ssh-copy-id</code>を使うと便利です。</p>
+<pre><code class="language-bash">ssh-copy-id -i ~/.ssh/id_ed25519.pub ユーザー名@サーバーIP
+</code></pre>
+<p>手動で行う場合は、サーバー上で以下のコマンドを実行します。</p>
+<pre><code class="language-bash">mkdir -p ~/.ssh
+chmod 700 ~/.ssh
+echo "公開鍵の内容" &gt;&gt; ~/.ssh/authorized_keys
+chmod 600 ~/.ssh/authorized_keys
+</code></pre>
+<h3>6. SSHサーバーの設定変更</h3>
+<p>サーバーの設定ファイル<code>/etc/ssh/sshd_config</code>を編集してセキュリティを強化します。</p>
+<pre><code class="language-bash">sudo nano /etc/ssh/sshd_config
+</code></pre>
+<p>以下の設定を追加・変更します。</p>
+<pre><code class="language-">&lt;h1&gt;ポート番号を変更（例: 2222）&lt;/h1&gt;
+Port 2222
+<p>&lt;h1&gt;rootログインを禁止&lt;/h1&gt;
+PermitRootLogin no</p>
+<p>&lt;h1&gt;パスワード認証を無効化（鍵認証のみ）&lt;/h1&gt;
+PasswordAuthentication no</p>
+<p>&lt;h1&gt;公開鍵認証を有効化（デフォルトで有効）&lt;/h1&gt;
+PubkeyAuthentication yes</p>
+<p>&lt;h1&gt;空パスワードを禁止&lt;/h1&gt;
+PermitEmptyPasswords no</p>
+<p>&lt;h1&gt;接続を許可するユーザーを制限（例: youruser）&lt;/h1&gt;
+AllowUsers youruser
+</code></pre></p>
+<p>設定を変更したら、ファイルを保存して閉じます。</p>
+<h3>7. 設定の反映</h3>
+<p>設定を反映させるため、sshdサービスを再起動します。</p>
+<pre><code class="language-bash">sudo systemctl restart sshd
+</code></pre>
+<h3>8. ファイアウォールのポート変更</h3>
+<p>ポート番号を変更した場合は、ファイアウォールのルールも更新します。</p>
+<p><strong>iptablesの場合</strong></p>
+<pre><code class="language-bash">sudo iptables -R INPUT 1 -p tcp --dport 2222 -j ACCEPT
+sudo iptables-save &gt; /etc/iptables/iptables.rules
+</code></pre>
+<p><strong>firewalldの場合</strong></p>
+<pre><code class="language-bash">sudo firewall-cmd --remove-service=ssh --permanent
+sudo firewall-cmd --add-port=2222/tcp --permanent
+sudo firewall-cmd --reload
+</code></pre>
+<h3>9. 接続テスト</h3>
+<p>新しい設定で接続できるかテストします。クライアントから以下のコマンドを実行します（ポートを変更した場合は-pオプション）。</p>
+<pre><code class="language-bash">ssh -p 2222 ユーザー名@サーバーIP
+</code></pre>
+<p>鍵認証が正しく設定されていれば、パスワードなしでログインできるはずです。</p>
+<h2>動作確認</h2>
+<li>鍵認証でログインできること</li>
+<li>パスワード認証が拒否されること（誤った鍵で試すとよい）</li>
+<li>rootログインが拒否されること</li>
+<li>ポート番号が変更されていること（ポートスキャンなどで確認）</li>
+<h2>発展</h2>
+<li><strong>Fail2banの導入</strong>: 不正アクセスを自動でブロックするFail2banをインストールし、sshdのログを監視する設定を行う。</li>
+<li><strong>2要素認証</strong>: Google Authenticatorなどを使用して、SSHに2要素認証を追加する。</li>
+<li><strong>SSHエージェント転送の制限</strong>: <code>ForwardAgent no</code> を設定して、エージェント転送を無効化または制限する。</li>
+<li><strong>接続元IPの制限</strong>: <code>AllowUsers</code> や <code>Match Address</code> を使って特定のIPからのみ接続を許可する。</li>
+<li><strong>ログ監視</strong>: <code>journalctl -u sshd</code> でログを確認し、不審なアクセスを監視する。</li>
+<hr>
+<p>*この記事はArch Linuxを実機で日常運用しているSioが、実際のインストール・設定経験に基づいてAI生成コンテンツをレビュー・補完しています。btrfsサブボリュームとLUKS暗号化環境で検証済みです。*</p>
+<h2>まとめ</h2>
+<p>このチュートリアルでは、Arch LinuxにOpenSSHサーバーをインストールし、鍵認証による安全なリモート接続を設定する方法を学びました。ポート変更やrootログイン禁止などの基本的なセキュリティ対策を施すことで、不正アクセスのリスクを大幅に低減できます。さらに発展的な設定を加えることで、より強固なセキュリティを実現できます。</p>0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"Arch LinuxでSSHサーバーを設定・セキュリティ強化する完全ガイド"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"Arch LinuxにOpenSSHサーバーをインストールし、鍵認証やポート変更などのセキュリティ設定を施す方法をステップバイステップで解説。初心者でも安全にSSH接続できるようになります。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","Arch Linux",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"Arch Linux"}],["$","span","SSH",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"SSH"}],["$","span","openssh",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"openssh"}],["$","span","サーバー",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"サーバー"}],["$","span","鍵認証",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"鍵認証"}],["$","span","セキュリティ",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"セキュリティ"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3"]}],null,"$L4"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"oMFWqHyx7sJoNGgtrYd0X"}
+3:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-arch hover:underline","children":"← 記事一覧に戻る"}]}]
+4:["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]
+7:null

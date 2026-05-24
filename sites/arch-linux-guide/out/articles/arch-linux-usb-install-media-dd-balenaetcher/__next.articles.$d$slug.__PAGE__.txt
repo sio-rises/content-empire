@@ -1,0 +1,85 @@
+1:"$Sreact.fragment"
+5:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+2:T1963,<h2>はじめに</h2>
+<p>Arch Linuxをインストールするには、まずUSBメモリなどのインストールメディアを作成する必要があります。この記事では、<strong>ddコマンド</strong>と<strong>balenaEtcher</strong>という2つの方法で、Arch LinuxのISOイメージをUSBに書き込む手順を詳しく解説します。どちらの方法も確実ですが、初心者にはbalenaEtcher、中級者以上にはddコマンドがおすすめです。</p>
+<h2>準備するもの</h2>
+<li><strong>Arch LinuxのISOイメージ</strong>: <a href="https://archlinux.org/download/" target="_blank" rel="noopener">公式サイト</a>から最新版をダウンロード</li>
+<li><strong>USBメモリ</strong>: 2GB以上（推奨4GB以上）</li>
+<li><strong>書き込みツール</strong>: dd（標準搭載）またはbalenaEtcher（<a href="https://www.balena.io/etcher/" target="_blank" rel="noopener">公式サイト</a>からダウンロード）</li>
+<h2>方法1: ddコマンドで書き込む</h2>
+<p>ddはLinux標準のコマンドで、低レベルな書き込みが可能です。ただし、誤ったデバイスを指定するとデータが消えるため注意が必要です。</p>
+<h3>手順</h3>
+<li><strong>USBメモリを接続し、デバイス名を確認</strong></li>
+<pre><code class="language-bash">   lsblk
+   </code></pre>
+<p>出力例:
+   <pre><code class="language-">   NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+   sda      8:0    0 238.5G  0 disk
+   └─sda1   8:1    0 238.5G  0 part /
+   sdb      8:16   1   7.5G  0 disk
+   └─sdb1   8:17   1   7.5G  0 part /run/media/user/USB
+   </code></pre></p>
+<p>この例では<code>sdb</code>がUSBメモリです。サイズやラベルで判断しましょう。</p>
+<li><strong>USBメモリがマウントされていればアンマウント</strong></li>
+<pre><code class="language-bash">   umount /dev/sdb1
+   </code></pre>
+<p>パーティションが複数ある場合は全てアンマウントします。</p>
+<li><strong>ddコマンドでISOを書き込む</strong></li>
+<pre><code class="language-bash">   sudo dd bs=4M if=/path/to/archlinux-xxxx.xx.xx-x86_64.iso of=/dev/sdb status=progress oflag=sync
+   </code></pre>
+<p>- <code>bs=4M</code>: 一度に書き込むブロックサイズ。デフォルトは512バイトですが、4Mにすると高速化
+   - <code>if=</code>: 入力ファイル（ISOのパス）
+   - <code>of=</code>: 出力先デバイス（USBメモリのデバイス名。パーティション番号（sdb1など）ではなく、デバイス全体（sdb）を指定）
+   - <code>status=progress</code>: 進捗を表示
+   - <code>oflag=sync</code>: 書き込み完了まで待機</p>
+<p>実行例:
+   <pre><code class="language-bash">   sudo dd bs=4M if=~/Downloads/archlinux-2025.01.01-x86_64.iso of=/dev/sdb status=progress oflag=sync
+   </code></pre></p>
+<li><strong>書き込み完了を確認</strong></li>
+<p>完了すると「... records in」「... records out」と表示されます。念のためsyncコマンドでバッファをフラッシュします。</p>
+<pre><code class="language-bash">   sync
+   </code></pre>
+<li><strong>USBメモリを安全に取り外す</strong></li>
+<pre><code class="language-bash">   sudo eject /dev/sdb
+   </code></pre>
+<h2>方法2: balenaEtcherで書き込む</h2>
+<p>balenaEtcherはGUIツールで、初心者でも簡単に使えます。クロスプラットフォーム対応です。</p>
+<h3>手順</h3>
+<li><strong>balenaEtcherをインストール</strong></li>
+<p>Arch LinuxではAURからインストールできます。</p>
+<pre><code class="language-bash">   yay -S balena-etcher
+   </code></pre>
+<p>または公式サイトからAppImageをダウンロードして実行。</p>
+<li><strong>balenaEtcherを起動</strong></li>
+<p>ターミナルから<code>balena-etcher</code>と入力するか、アプリケーションメニューから起動します。</p>
+<li><strong>ISOイメージを選択</strong></li>
+<p>「Flash from file」をクリックし、ダウンロードしたArch LinuxのISOを選択します。</p>
+<li><strong>ターゲットUSBを選択</strong></li>
+<p>「Select target」をクリックし、接続したUSBメモリを選択します。自動で認識されます。</p>
+<li><strong>書き込み開始</strong></li>
+<p>「Flash!」ボタンをクリックします。管理者権限が求められるので、パスワードを入力します。</p>
+<li><strong>完了まで待つ</strong></li>
+<p>書き込みが完了すると「Flash Complete!」と表示されます。自動でベリファイも行われます。</p>
+<h2>トラブルシューティング</h2>
+<h3>ddコマンドで「Permission denied」</h3>
+<p>sudoを付け忘れていませんか？必ずsudoで実行してください。</p>
+<h3>ddコマンドで「No space left on device」</h3>
+<p>USBメモリの容量がISOより小さい場合に発生します。2GB以上のUSBを使用しましょう。</p>
+<h3>balenaEtcherで「Error: 0x00000000」</h3>
+<p>USBメモリのフォーマットが原因の場合があります。一度FAT32でフォーマットしてから再試行してください。</p>
+<h3>書き込んだUSBから起動しない</h3>
+<li>BIOS/UEFI設定でUSBブートが有効か確認</li>
+<li>セキュアブートを無効にしてみる</li>
+<li>別のUSBポートや別のUSBメモリで試す</li>
+<hr>
+<p>*この記事はArch Linuxを実機で日常運用しているSioが、実際のインストール・設定経験に基づいてAI生成コンテンツをレビュー・補完しています。btrfsサブボリュームとLUKS暗号化環境で検証済みです。*</p>
+<h2>まとめ</h2>
+<p>Arch LinuxのUSBインストールメディアは、ddコマンドまたはbalenaEtcherで簡単に作成できます。</p>
+<li><strong>ddコマンド</strong>: 高速で確実。ただしデバイス指定を間違えるとデータ消失リスク。中級者以上向け。</li>
+<li><strong>balenaEtcher</strong>: GUIで直感的。初心者でも安心。ベリファイ機能付き。</li>
+<p>どちらを選ぶかは好みですが、初めての方はbalenaEtcherをおすすめします。作成したUSBメディアを使って、Arch Linuxのインストールを進めてください。</p>
+<p>参考: <a href="https://wiki.archlinux.org/title/Installation_guide" target="_blank" rel="noopener">Arch Linux 公式インストールガイド</a></p>0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"Arch LinuxのUSBインストールメディアをddとbalenaEtcherで作成する方法"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"Arch LinuxのUSBインストールメディアをddコマンドとbalenaEtcherを使って作成する手順を詳しく解説。初心者でも失敗しない書き込み方法とトラブルシューティングを紹介。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","Arch Linux",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"Arch Linux"}],["$","span","USB",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"USB"}],["$","span","dd",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"dd"}],["$","span","balenaEtcher",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"balenaEtcher"}],["$","span","ISO書き込み",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"ISO書き込み"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3"]}],null,"$L4"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"oMFWqHyx7sJoNGgtrYd0X"}
+3:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-arch hover:underline","children":"← 記事一覧に戻る"}]}]
+4:["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]
+7:null

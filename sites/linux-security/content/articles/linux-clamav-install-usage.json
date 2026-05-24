@@ -1,0 +1,15 @@
+{
+  "title": "Linuxのウイルス対策にClamAVを導入！インストールから使い方まで徹底解説",
+  "slug": "linux-clamav-install-usage",
+  "metaDescription": "Linux向けウイルス対策ソフトClamAVのインストール方法、基本的なスキャン手順、自動更新設定、隔離・削除の方法を初心者向けに解説。マルウェア対策に最適。",
+  "content": "## はじめに\n\nLinuxはWindowsに比べてウイルスの脅威が少ないと言われていますが、完全に安全というわけではありません。メールサーバーやファイルサーバーとして運用する場合、Windows由来のマルウェアがLinuxを経由して拡散するリスクがあります。そこで役立つのが、オープンソースのウイルス対策ソフト「ClamAV」です。本記事では、ClamAVのインストールから基本的な使い方、自動更新の設定までを解説します。\n\n## ClamAVとは\n\nClamAVは、Linux上で動作するアンチウイルスソフトウェアです。コマンドラインベースで動作し、メールゲートウェイやファイルサーバーでの利用に適しています。定期的にウイルス定義データベースを更新し、マルウェアやトロイの木馬を検出します。GUIは標準では提供されていませんが、CWPやISPConfigなどの管理パネルから利用することもできます。\n\n## インストール方法\n\n### Ubuntu/Debian系\n\n```bash\nsudo apt update\nsudo apt install clamav clamav-daemon -y\n```\n\n### CentOS/RHEL系\n\n```bash\nsudo yum install epel-release\nsudo yum install clamav clamav-update -y\n```\n\n### インストール確認\n\n```bash\nclamscan --version\n```\n\nバージョン情報が表示されればインストール成功です。\n\n## ウイルス定義データベースの更新\n\nインストール直後は定義データベースが古いため、最新化します。\n\n```bash\nsudo freshclam\n```\n\n自動更新を有効にするには、`clamav-daemon`や`clamav-freshclam`サービスを起動します。\n\n```bash\nsudo systemctl start clamav-freshclam\nsudo systemctl enable clamav-freshclam\n```\n\n## 基本的なスキャン方法\n\n### 特定のファイルをスキャン\n\n```bash\nclamscan /path/to/file\n```\n\n### ディレクトリ全体を再帰的にスキャン\n\n```bash\nclamscan -r /path/to/directory\n```\n\n### 感染ファイルを削除する場合\n\n```bash\nclamscan -r --remove /path/to/directory\n```\n\n### 感染ファイルを隔離する場合\n\n```bash\nclamscan -r --move=/quarantine /path/to/directory\n```\n\n※隔離先ディレクトリは事前に作成しておきます。\n\n### ログを出力する\n\n```bash\nclamscan -r --log=/var/log/clamscan.log /path/to/directory\n```\n\n## 自動スキャンの設定（cron）\n\n定期的にスキャンするにはcronを利用します。以下は毎日午前3時にホームディレクトリをスキャンする例です。\n\n```bash\nsudo crontab -e\n```\n\n```\n0 3 * * * /usr/bin/clamscan -r /home --log=/var/log/clamscan_daily.log --quiet\n```\n\n## 隔離されたファイルの管理\n\n隔離したファイルは適宜確認し、誤検知であれば復元、確実なマルウェアは削除します。\n\n```bash\n# 隔離ディレクトリの確認\nls /quarantine\n\n# ファイルを復元\ncp /quarantine/suspected_file /original/location/\n\n# 隔離ファイルを削除\nrm /quarantine/suspected_file\n```\n\n## 注意点\n\n- ClamAVはWindows向けのマルウェア検出に強く、Linuxネイティブのマルウェア検出は限定的です。\n- 大量のファイルをスキャンする際は、システム負荷に注意してください。\n- 誤検知が発生する場合があるため、削除前に内容を確認することを推奨します。\n\n\n\n---\n\n*この記事はArch Linux/btrfs/LUKs環境で実際に検証した内容を基にしています。セキュリティ設定は環境によって異なるため、本番環境への適用前に必ずテスト環境で検証してください。*\n\n## まとめ\n\nClamAVは、Linux環境で手軽に導入できるウイルス対策ソフトです。メールサーバーやファイルサーバーを運用する際は、ぜひ導入を検討してください。定期的なスキャンと定義データベースの更新を忘れずに行い、セキュリティを維持しましょう。",
+  "keywords": [
+    "Linux",
+    "ウイルス対策",
+    "ClamAV",
+    "マルウェア",
+    "スキャン"
+  ],
+  "template": "tutorial",
+  "generatedAt": "2026-05-24T16:45:23.278Z"
+}

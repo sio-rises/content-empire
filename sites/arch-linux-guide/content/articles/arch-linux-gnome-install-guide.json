@@ -1,0 +1,15 @@
+{
+  "title": "Arch LinuxにGNOMEデスクトップ環境をインストールする完全ガイド",
+  "slug": "arch-linux-gnome-install-guide",
+  "metaDescription": "Arch LinuxにGNOMEデスクトップ環境をインストールする手順を解説。gdmの設定、日本語環境、GNOME拡張機能の導入までカバー。初心者向けの完全チュートリアル。",
+  "content": "## 目標\n\nこのチュートリアルでは、Arch LinuxにGNOMEデスクトップ環境をインストールし、基本的な設定（日本語入力、拡張機能の追加）を行うまでを解説します。最終的に、gdm（GNOME Display Manager）で自動ログインできる状態を目指します。\n\n## 前提条件\n\n- Arch Linuxがインストール済みであること（ベースシステムのみでOK）\n- インターネット接続が可能であること\n- 非rootユーザーが作成済みで、sudo権限があること\n- システムが最新であること（`sudo pacman -Syu`）\n\n## Step-by-step\n\n### 1. Xorgのインストール\n\nGNOMEはWaylandをデフォルトとしますが、Xorgも必要に応じてインストールします。まずはXorgをインストールします。\n\n```bash\nsudo pacman -S xorg\n```\n\n### 2. GNOMEとgdmのインストール\n\nGNOMEグループとgdmをインストールします。\n\n```bash\nsudo pacman -S gnome gdm\n```\n\nこのコマンドで、GNOMEの基本パッケージとGNOME Display Managerがインストールされます。\n\n### 3. gdmの有効化\n\nシステム起動時にgdmが自動で起動するように有効化します。\n\n```bash\nsudo systemctl enable gdm\n```\n\n### 4. 日本語入力の設定\n\n日本語入力のために、ibusとmozcをインストールします。\n\n```bash\nsudo pacman -S ibus ibus-mozc\n```\n\nインストール後、ibusのデーモンを有効化します。\n\n```bash\nibus-daemon -drx\n```\n\n次に、`~/.bashrc`または`~/.xprofile`に以下の設定を追加します。\n\n```bash\nexport GTK_IM_MODULE=ibus\nexport XMODIFIERS=@im=ibus\nexport QT_IM_MODULE=ibus\n```\n\n設定を反映させるために、ログアウトして再ログインするか、`source ~/.bashrc`を実行します。\n\n### 5. GNOME拡張機能のインストール\n\nGNOME拡張機能を管理するために、`gnome-browser-connector`と`gnome-shell-extensions`をインストールします。\n\n```bash\nsudo pacman -S gnome-browser-connector gnome-shell-extensions\n```\n\nブラウザから拡張機能をインストールするには、GNOME Shell integrationブラウザ拡張（Chrome/Firefox）を追加します。\n\n### 6. システムの再起動\n\nすべての設定が完了したら、システムを再起動します。\n\n```bash\nsudo reboot\n```\n\n## 動作確認\n\n再起動後、gdmのログイン画面が表示されることを確認します。ユーザー名とパスワードを入力してログインし、GNOMEデスクトップが正しく表示されるか確認します。\n\n日本語入力の確認：テキストエディタ（geditなど）を開き、`Super`+`Space`で入力ソースを切り替え、日本語が入力できることを確認します。\n\n拡張機能の確認：GNOME Tweaksをインストールして、拡張機能が有効化できるか確認します。\n\n```bash\nsudo pacman -S gnome-tweaks\n```\n\nTweaksを起動し、Extensionsタブで拡張機能のオン/オフができることを確認します。\n\n\n\n---\n\n*この記事はArch Linuxを実機で日常運用しているSioが、実際のインストール・設定経験に基づいてAI生成コンテンツをレビュー・補完しています。btrfsサブボリュームとLUKS暗号化環境で検証済みです。*\n\n## 発展\n\n- **自動ログインの設定**: gdmの設定ファイル`/etc/gdm/custom.conf`を編集し、`[daemon]`セクションに`AutomaticLoginEnable=true`と`AutomaticLogin=ユーザー名`を追加します。\n- **テーマの変更**: GNOME Tweaksや`gnome-look.org`からテーマをダウンロードして適用できます。\n- **Waylandの利用**: デフォルトでWaylandが使用されますが、Xorgが必要なアプリケーションがある場合は、ログイン画面の歯車アイコンからセッションを選択できます。\n- **追加のGNOMEアプリ**: `gnome-extra`グループをインストールすると、より多くのアプリが利用可能です。\n\n```bash\nsudo pacman -S gnome-extra\n```\n\n以上で、Arch LinuxにGNOMEデスクトップ環境をインストールするチュートリアルは完了です。快適なGNOMEライフをお楽しみください！",
+  "keywords": [
+    "Arch Linux",
+    "GNOME",
+    "デスクトップ環境",
+    "gdm",
+    "拡張機能"
+  ],
+  "template": "tutorial",
+  "generatedAt": "2026-05-24T15:57:28.596Z"
+}

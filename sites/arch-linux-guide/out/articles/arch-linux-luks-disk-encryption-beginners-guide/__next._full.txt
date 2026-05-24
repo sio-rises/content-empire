@@ -1,0 +1,116 @@
+1:"$Sreact.fragment"
+2:I[24117,["/_next/static/chunks/00mbd8isu7b38.js"],"default"]
+3:I[79967,["/_next/static/chunks/00mbd8isu7b38.js"],"default"]
+5:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+9:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"ViewportBoundary"]
+b:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"MetadataBoundary"]
+d:I[30946,["/_next/static/chunks/00mbd8isu7b38.js"],"default",1]
+:HL["/_next/static/chunks/089_dp2m4y2c2.css","style"]
+0:{"P":null,"c":["","articles","arch-linux-luks-disk-encryption-beginners-guide"],"q":"","i":false,"f":[[["",{"children":["articles",{"children":[["slug","arch-linux-luks-disk-encryption-beginners-guide","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/089_dp2m4y2c2.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/00mbd8isu7b38.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"ja","children":[["$","head",null,{"children":["$","script",null,{"async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019","crossOrigin":"anonymous"}]}],["$","body",null,{"className":"min-h-screen antialiased","children":["$","div",null,{"className":"flex min-h-screen flex-col","children":[["$","header",null,{"className":"border-b border-gray-200 bg-white","children":["$","div",null,{"className":"mx-auto flex max-w-4xl items-center justify-between px-4 py-3","children":[["$","a",null,{"href":"/","className":"text-lg font-bold text-arch hover:opacity-80","children":"Arch Linux 日本語ガイド"}],["$","nav",null,{"className":"flex gap-4 text-sm text-gray-600","children":[["$","a",null,{"href":"/","className":"hover:text-arch","children":"ホーム"}],["$","a",null,{"href":"/about","className":"hover:text-arch","children":"このサイトについて"}]]}]]}]}],["$","main",null,{"className":"flex-1","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400","children":[["$","div",null,{"className":"flex justify-center gap-4 mb-2","children":[["$","a",null,{"href":"/about","className":"hover:text-gray-600","children":"このサイトについて"}],["$","a",null,{"href":"/privacy","className":"hover:text-gray-600","children":"プライバシーポリシー"}]]}],"Arch Linux 日本語ガイド — Built with OpenCode + DeepSeek API"]}]]}]}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L4",null,["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]]}],{},null,false,null]},null,false,"$@8"]},null,false,"$@8"]},null,false,null],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$6",null,{"name":"Next.Metadata","children":"$Lc"}]}]}],null]}],false]],"m":"$undefined","G":["$d",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/089_dp2m4y2c2.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"oMFWqHyx7sJoNGgtrYd0X"}
+e:[]
+8:"$We"
+f:T1efd,<h2>はじめに</h2>
+<p>この記事では、Arch Linuxのインストール時にLUKS（Linux Unified Key Setup）とdm-cryptを使ってディスク全体を暗号化する方法を解説します。対象読者はArch Linuxを初めてインストールする方で、ディスク暗号化の基礎知識があると理解がスムーズです。この手順により、ノートPCを紛失したり盗難に遭った場合でも、データの機密性を守ることができます。</p>
+<h2>前提条件</h2>
+<li>Arch Linuxのインストールメディア（USBなど）で起動していること</li>
+<li>ターゲットディスク（例：/dev/sda）が空であること（または既存データをバックアップ済み）</li>
+<li>インターネット接続が利用可能であること</li>
+<h2>手順</h2>
+<h3>ステップ1: パーティションの作成</h3>
+<p>まず、暗号化するパーティションを作成します。ここではUEFIブート用にEFIシステムパーティション（ESP）と、暗号化するルートパーティションを作成します。</p>
+<pre><code class="language-bash">&lt;h1&gt;ディスクをGPTでパーティショニング&lt;/h1&gt;
+gdisk /dev/sda
+</code></pre>
+<p><code>gdisk</code>内で以下の操作を行います：
+<li><code>o</code> で新しいGPTテーブルを作成</li>
+<li><code>n</code> でパーティション1：サイズ512MiB、タイプコード <code>ef00</code>（EFI System）</li>
+<li><code>n</code> でパーティション2：残り全て、タイプコード <code>8300</code>（Linux filesystem）</li>
+<li><code>w</code> で書き込み</li></p>
+<h3>ステップ2: LUKSコンテナの作成</h3>
+<p>次に、ルートパーティションにLUKS暗号化を設定します。</p>
+<pre><code class="language-bash">&lt;h1&gt;LUKSコンテナを作成（パスフレーズを設定）&lt;/h1&gt;
+cryptsetup luksFormat /dev/sda2
+&lt;h1&gt;コンテナを開く（/dev/mapper/cryptrootとしてマッピング）&lt;/h1&gt;
+cryptsetup open /dev/sda2 cryptroot
+</code></pre>
+<p><code>luksFormat</code>実行時にパスフレーズを求められます。強力なパスフレーズを設定してください。</p>
+<h3>ステップ3: ファイルシステムの作成とマウント</h3>
+<p>暗号化されたデバイスにファイルシステムを作成し、マウントします。</p>
+<pre><code class="language-bash">&lt;h1&gt;ファイルシステムの作成（ext4推奨）&lt;/h1&gt;
+mkfs.ext4 /dev/mapper/cryptroot
+&lt;h1&gt;ESPのファイルシステム作成（FAT32）&lt;/h1&gt;
+mkfs.fat -F32 /dev/sda1
+&lt;h1&gt;マウント&lt;/h1&gt;
+mount /dev/mapper/cryptroot /mnt
+mkdir /mnt/boot
+mount /dev/sda1 /mnt/boot
+</code></pre>
+<h3>ステップ4: Arch Linuxの基本インストール</h3>
+<p><code>pacstrap</code>でベースシステムをインストールします。</p>
+<pre><code class="language-bash">&lt;h1&gt;必須パッケージのインストール&lt;/h1&gt;
+pacstrap /mnt base linux linux-firmware vim
+&lt;h1&gt;fstabの生成&lt;/h1&gt;
+genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
+&lt;h1&gt;ルートディレクトリの変更&lt;/h1&gt;
+arch-chroot /mnt
+</code></pre>
+<h3>ステップ5: システム設定とmkinitcpio</h3>
+<p>chroot内で、mkinitcpioにdm-cryptとLUKSのフックを追加します。</p>
+<pre><code class="language-bash">&lt;h1&gt;/etc/mkinitcpio.confを編集&lt;/h1&gt;
+vim /etc/mkinitcpio.conf
+</code></pre>
+<p><code>HOOKS</code>行を以下のように変更します：</p>
+<pre><code class="language-">HOOKS=(base udev autodetect modconf block keyboard encrypt filesystems fsck)
+</code></pre>
+<p><code>encrypt</code>フックを<code>filesystems</code>の前に追加してください。</p>
+<pre><code class="language-bash">&lt;h1&gt;initramfsを再生成&lt;/h1&gt;
+mkinitcpio -p linux
+</code></pre>
+<h3>ステップ6: ブートローダーの設定</h3>
+<p>GRUBを使用する場合、<code>/etc/default/grub</code>にカーネルパラメータを追加します。</p>
+<pre><code class="language-bash">&lt;h1&gt;パーティションのUUIDを確認&lt;/h1&gt;
+blkid /dev/sda2
+&lt;h1&gt;/etc/default/grubを編集&lt;/h1&gt;
+vim /etc/default/grub
+</code></pre>
+<p><code>GRUB_CMDLINE_LINUX</code>行に以下を追加（UUIDは実際の値に置き換え）：</p>
+<pre><code class="language-">GRUB_CMDLINE_LINUX="cryptdevice=UUID=xxxx-xxxx-xxxx-xxxx-xxxx:cryptroot root=/dev/mapper/cryptroot"
+</code></pre>
+<pre><code class="language-bash">&lt;h1&gt;GRUBをインストール&lt;/h1&gt;
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre>
+<h3>ステップ7: 再起動</h3>
+<p>chrootを抜けて再起動します。</p>
+<pre><code class="language-bash">exit
+umount -R /mnt
+reboot
+</code></pre>
+<p>再起動後、LUKSのパスフレーズを求められます。正しく入力するとシステムが起動します。</p>
+<h2>トラブルシューティング</h2>
+<h3>実体験：日本語キーボードでパスフレーズが通らない</h3>
+<p>筆者自身が経験した問題です。LUKSのパスフレーズを設定した時は日本語キーボード（jp106）を使っていましたが、initramfsの段階ではキーマップがUS配列になっているため、記号を含むパスフレーズが正しく入力できずロックアウトされました。</p>
+<p><strong>対策</strong>:
+<li><code>/etc/mkinitcpio.conf</code> の <code>HOOKS</code> に <code>keymap</code> を追加する</li>
+<li><code>mkinitcpio -P</code> でinitramfsを再生成する</li>
+<li>パスフレーズはASCII文字のみで構成する（記号を使わない）</li></p>
+<p>この設定で再起動後、日本語キーボードで正しくパスフレーズが通るようになりました。</p>
+<h3>エラー: カーネルパニック「not syncing: VFS: Unable to mount root fs」</h3>
+<p><strong>原因</strong>: initramfsにencryptフックが含まれていない、またはカーネルパラメータが間違っている。</p>
+<p><strong>対処</strong>: chroot環境で<code>/etc/mkinitcpio.conf</code>を確認し、<code>mkinitcpio -p linux</code>を再実行。また、<code>/etc/default/grub</code>のUUIDが正しいか確認。</p>
+<h3>エラー: 「cryptsetup: ERROR: cryptroot: cryptsetup failed, bad password or options?」</h3>
+<p><strong>原因</strong>: パスフレーズが間違っている、またはLUKSコンテナが正しく開かれていない。</p>
+<p><strong>対処</strong>: 起動時にパスフレーズを注意深く入力。キーボードレイアウトが正しいか確認（例：日本語キーボードなら<code>loadkeys jp106</code>）。</p>
+<h3>エラー: GRUBインストール時に「efibootmgr: not found」</h3>
+<p><strong>原因</strong>: <code>efibootmgr</code>がインストールされていない。</p>
+<p><strong>対処</strong>: <code>pacman -S efibootmgr</code>でインストールしてから再度<code>grub-install</code>を実行。</p>
+<hr>
+<p>*この記事はArch Linuxを実機で日常運用しているSioが、実際のインストール・設定経験に基づいてAI生成コンテンツをレビュー・補完しています。btrfsサブボリュームとLUKS暗号化環境で検証済みです。*</p>
+<h2>まとめ</h2>
+<p>この記事では、Arch LinuxにLUKS/dm-cryptを使用したディスク暗号化を設定する手順を解説しました。これにより、ディスクが盗まれてもデータは安全です。</p>
+<p>次のステップとして、バックアップ戦略の策定や、スワップパーティションの暗号化（<code>/etc/crypttab</code>の設定）を検討すると良いでしょう。また、LUKSのバックアップヘッダーを安全な場所に保存しておくことをお勧めします（<code>cryptsetup luksHeaderBackup</code>）。</p>4:["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"Arch LinuxでLUKSディスク暗号化を初心者向けに設定する方法"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"Arch LinuxでLUKS/dm-cryptを使ったフルディスク暗号化の手順を初心者向けに解説。インストールから暗号化設定、トラブルシューティングまで。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","Arch Linux",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"Arch Linux"}],["$","span","LUKS",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"LUKS"}],["$","span","dm-crypt",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"dm-crypt"}],["$","span","ディスク暗号化",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"ディスク暗号化"}],["$","span","セキュリティ",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"セキュリティ"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$f"}}]]}],"$L10"]}]
+10:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-arch hover:underline","children":"← 記事一覧に戻る"}]}]
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+7:null
+c:[["$","title","0",{"children":"Arch Linux 日本語ガイド"}],["$","meta","1",{"name":"description","content":"Arch Linuxのインストールからデスクトップ環境構築まで、日本語で体系的に解説するガイドサイトです。"}],["$","meta","2",{"name":"keywords","content":"Arch Linux,Linux,インストール,日本語,デスクトップ環境,btrfs,LUKS"}]]

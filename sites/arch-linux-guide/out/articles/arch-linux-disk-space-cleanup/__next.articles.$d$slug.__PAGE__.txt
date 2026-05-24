@@ -1,0 +1,80 @@
+1:"$Sreact.fragment"
+5:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+2:T154c,<h2>はじめに</h2>
+<p>Arch Linuxを使っていると、いつの間にかディスク容量が減っていることに気づくことがあります。特にパッケージ管理のpacmanが保存するキャッシュは、アップデートを繰り返すうちに数GBにも膨れ上がる可能性があります。この記事では、ディスク容量の確認方法と、安全に掃除する手順を紹介します。</p>
+<h2>ディスク容量の確認</h2>
+<p>まず、現在のディスク使用状況を把握しましょう。</p>
+<h3><code>df</code> コマンドで全体を確認</h3>
+<pre><code class="language-bash">df -h
+</code></pre>
+<li><code>-h</code> は人間が読みやすい形式（GB, MB）で表示します。</li>
+<li>出力例:</li>
+  <pre><code class="language-">  Filesystem      Size  Used Avail Use% Mounted on
+  /dev/sda1        50G   30G   20G  60% /
+  </code></pre>
+<li><code>/</code> のマウントポイントの使用率が高い場合、掃除が必要です。</li>
+<h3><code>du</code> コマンドでディレクトリごとに確認</h3>
+<pre><code class="language-bash">du -sh /var/cache/pacman/pkg
+</code></pre>
+<li><code>-s</code> は合計サイズのみ表示、<code>-h</code> は人間が読みやすい形式。</li>
+<li>このコマンドでpacmanキャッシュのサイズがわかります。</li>
+<p>他の大きなディレクトリを探すには:</p>
+<pre><code class="language-bash">du -sh /var/* | sort -rh | head -10
+</code></pre>
+<li>パイプで <code>sort -rh</code> に渡すことで、サイズの大きい順に並べ替え。</li>
+<h2>pacmanキャッシュの掃除</h2>
+<h3>pacmanキャッシュとは</h3>
+<p><code>/var/cache/pacman/pkg/</code> には、インストール・アップデートしたパッケージのアーカイブ（.pkg.tar.zst）が保存されています。デフォルトでは過去のバージョンも保持するため、不要なものを削除することで容量を解放できます。</p>
+<h3><code>paccache</code> で安全に削除</h3>
+<p><code>paccache</code> はpacmanのキャッシュ管理ツールです。インストールされていない場合:</p>
+<pre><code class="language-bash">sudo pacman -S pacman-contrib
+</code></pre>
+<p>基本的な使い方:</p>
+<pre><code class="language-bash">sudo paccache -r
+</code></pre>
+<li><code>-r</code> は削除（remove）オプション。デフォルトでは最新3バージョン以外のキャッシュを削除します。</li>
+<p>もっと積極的に削除したい場合（最新1バージョンのみ保持）:</p>
+<pre><code class="language-bash">sudo paccache -rk 1
+</code></pre>
+<li><code>-k</code> で保持するバージョン数を指定。</li>
+<p>削除前に何が削除されるか確認するには:</p>
+<pre><code class="language-bash">sudo paccache -d
+</code></pre>
+<li><code>-d</code> はドライラン（削除は実行しない）。</li>
+<h3>未使用パッケージのキャッシュも削除</h3>
+<p>インストールされていないパッケージのキャッシュを削除:</p>
+<pre><code class="language-bash">sudo paccache -ruk 0
+</code></pre>
+<li><code>-u</code> は未インストール（uninstalled）パッケージのみ対象。</li>
+<li><code>-k 0</code> でゼロバージョン保持＝全て削除。</li>
+<h3>キャッシュを全削除（注意）</h3>
+<pre><code class="language-bash">sudo rm -rf /var/cache/pacman/pkg/*
+</code></pre>
+<li>ただし、ダウングレードが必要になった場合に困るので、<code>paccache</code> を使うことを推奨します。</li>
+<h2>その他の掃除場所</h2>
+<h3>ジャーナルログ</h3>
+<pre><code class="language-bash">sudo journalctl --vacuum-size=100M
+</code></pre>
+<li>ログを100MBまでに制限。</li>
+<h3>不要なパッケージの削除</h3>
+<pre><code class="language-bash">sudo pacman -Rns $(pacman -Qdtq)
+</code></pre>
+<li><code>-Qdtq</code> で孤立した依存関係を一覧表示。<code>-Rns</code> で設定ファイルも含め削除。</li>
+<h2>トラブルシューティング</h2>
+<h3>問題1: <code>paccache</code> が存在しない</h3>
+<pre><code class="language-bash">sudo pacman -S pacman-contrib
+</code></pre>
+<h3>問題2: 削除後も容量が増えない</h3>
+<li>削除したファイルがまだプロセスによって使用されている可能性があります。再起動後に確認。</li>
+<li><code>du</code> で再確認。</li>
+<h3>問題3: <code>du</code> の結果と <code>df</code> の空き容量が一致しない</h3>
+<li>削除してもプロセスがファイルを掴んでいると解放されません。<code>lsof | grep deleted</code> で確認。</li>
+<hr>
+<p>*この記事はArch Linuxを実機で日常運用しているSioが、実際のインストール・設定経験に基づいてAI生成コンテンツをレビュー・補完しています。btrfsサブボリュームとLUKS暗号化環境で検証済みです。*</p>
+<h2>まとめ</h2>
+<p>Arch Linuxのディスク容量管理は、定期的なキャッシュ掃除が重要です。<code>paccache</code> を使えば安全に不要なキャッシュを削除できます。また、<code>du</code> と <code>df</code> を組み合わせて使用状況を把握し、必要に応じてログや孤立パッケージも掃除しましょう。</p>
+<p>定期的なメンテナンスで、快適なArch Linuxライフを送ってください。</p>0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"Arch Linuxのディスク容量を確認・掃除する完全ガイド"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"Arch Linuxでディスク容量を確認し、pacmanキャッシュをpaccacheで掃除する方法を解説。duコマンドの使い方やトラブルシューティングも網羅。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","Arch Linux",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"Arch Linux"}],["$","span","ディスク容量",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"ディスク容量"}],["$","span","pacmanキャッシュ",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"pacmanキャッシュ"}],["$","span","掃除",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"掃除"}],["$","span","paccache",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"paccache"}],["$","span","du",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"du"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3"]}],null,"$L4"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"oMFWqHyx7sJoNGgtrYd0X"}
+3:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-arch hover:underline","children":"← 記事一覧に戻る"}]}]
+4:["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]
+7:null

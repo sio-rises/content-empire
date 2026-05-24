@@ -1,0 +1,100 @@
+1:"$Sreact.fragment"
+2:I[24117,["/_next/static/chunks/00mbd8isu7b38.js"],"default"]
+3:I[79967,["/_next/static/chunks/00mbd8isu7b38.js"],"default"]
+5:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+9:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"ViewportBoundary"]
+b:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"MetadataBoundary"]
+d:I[30946,["/_next/static/chunks/00mbd8isu7b38.js"],"default",1]
+:HL["/_next/static/chunks/089_dp2m4y2c2.css","style"]
+0:{"P":null,"c":["","articles","arch-linux-xfce-lightweight-desktop"],"q":"","i":false,"f":[[["",{"children":["articles",{"children":[["slug","arch-linux-xfce-lightweight-desktop","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/089_dp2m4y2c2.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/00mbd8isu7b38.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"ja","children":[["$","head",null,{"children":["$","script",null,{"async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019","crossOrigin":"anonymous"}]}],["$","body",null,{"className":"min-h-screen antialiased","children":["$","div",null,{"className":"flex min-h-screen flex-col","children":[["$","header",null,{"className":"border-b border-gray-200 bg-white","children":["$","div",null,{"className":"mx-auto flex max-w-4xl items-center justify-between px-4 py-3","children":[["$","a",null,{"href":"/","className":"text-lg font-bold text-arch hover:opacity-80","children":"Arch Linux 日本語ガイド"}],["$","nav",null,{"className":"flex gap-4 text-sm text-gray-600","children":[["$","a",null,{"href":"/","className":"hover:text-arch","children":"ホーム"}],["$","a",null,{"href":"/about","className":"hover:text-arch","children":"このサイトについて"}]]}]]}]}],["$","main",null,{"className":"flex-1","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400","children":[["$","div",null,{"className":"flex justify-center gap-4 mb-2","children":[["$","a",null,{"href":"/about","className":"hover:text-gray-600","children":"このサイトについて"}],["$","a",null,{"href":"/privacy","className":"hover:text-gray-600","children":"プライバシーポリシー"}]]}],"Arch Linux 日本語ガイド — Built with OpenCode + DeepSeek API"]}]]}]}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L4",null,["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]]}],{},null,false,null]},null,false,"$@8"]},null,false,"$@8"]},null,false,null],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$6",null,{"name":"Next.Metadata","children":"$Lc"}]}]}],null]}],false]],"m":"$undefined","G":["$d",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/089_dp2m4y2c2.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"oMFWqHyx7sJoNGgtrYd0X"}
+e:[]
+8:"$We"
+f:T197f,<h2>はじめに</h2>
+<p>このチュートリアルでは、Arch Linuxに軽量デスクトップ環境「XFCE」をインストールする手順を解説します。XFCEは低スペックPCでも快適に動作し、カスタマイズ性が高いことで知られています。目標は、最小構成のArch Linuxから、日本語入力が可能なXFCEデスクトップを構築することです。</p>
+<h2>前提条件</h2>
+<li>Arch Linuxがインストールされていること（ベースシステムのみでOK）</li>
+<li>インターネット接続が可能であること</li>
+<li>root権限またはsudoが使える一般ユーザーがいること</li>
+<p>まだArch Linuxをインストールしていない場合は、<a href="https://wiki.archlinux.org/title/Installation_guide" target="_blank" rel="noopener">公式インストールガイド</a>を参照してインストールしてください。</p>
+<h2>Step-by-step</h2>
+<h3>1. システムのアップデート</h3>
+<p>まずはシステムを最新の状態にします。</p>
+<pre><code class="language-bash">sudo pacman -Syu
+</code></pre>
+<h3>2. XFCEと関連パッケージのインストール</h3>
+<p>XFCEグループと推奨パッケージをインストールします。</p>
+<pre><code class="language-bash">sudo pacman -S xfce4 xfce4-goodies
+</code></pre>
+<li><code>xfce4</code>: XFCEデスクトップ環境の基本パッケージ</li>
+<li><code>xfce4-goodies</code>: 追加のプラグインやテーマ、ツール類</li>
+<h3>3. ディスプレイマネージャのインストール（任意）</h3>
+<p>ディスプレイマネージャを使うと、ログイン画面からデスクトップを選択できます。XFCEと相性の良いLightDMを推奨します。</p>
+<pre><code class="language-bash">sudo pacman -S lightdm lightdm-gtk-greeter
+</code></pre>
+<p>LightDMを有効化します。</p>
+<pre><code class="language-bash">sudo systemctl enable lightdm
+</code></pre>
+<h3>4. 日本語入力の設定</h3>
+<p>日本語を入力するために、ibusとmozcをインストールします。</p>
+<pre><code class="language-bash">sudo pacman -S ibus ibus-mozc
+</code></pre>
+<p>次に、ユーザーの<code>.bashrc</code>または<code>.xprofile</code>に以下の行を追加します。</p>
+<pre><code class="language-bash">export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+ibus-daemon -drx
+</code></pre>
+<h3>5. フォントのインストール</h3>
+<p>日本語表示のためにフォントをインストールします。</p>
+<pre><code class="language-bash">sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji
+</code></pre>
+<h3>6. サウンドの設定</h3>
+<p>ALSAとPulseAudioをインストールして音声を有効にします。</p>
+<pre><code class="language-bash">sudo pacman -S alsa-utils pulseaudio pulseaudio-alsa
+</code></pre>
+<h3>7. ネットワークマネージャのインストール</h3>
+<p>ネットワーク管理を簡単にするためNetworkManagerをインストールします。</p>
+<pre><code class="language-bash">sudo pacman -S networkmanager network-manager-applet
+</code></pre>
+<p>NetworkManagerを有効化します。
+<pre><code class="language-bash">sudo systemctl enable NetworkManager
+</code></pre></p>
+<h3>8. 再起動してデスクトップを起動</h3>
+<p>すべての設定が完了したら、システムを再起動します。</p>
+<pre><code class="language-bash">sudo reboot
+</code></pre>
+<p>LightDMが起動し、ログイン画面が表示されます。ユーザー名とパスワードを入力してログインすると、XFCEデスクトップが表示されます。</p>
+<h2>動作確認</h2>
+<h3>デスクトップの基本操作</h3>
+<li>パネル、メニュー、ウィンドウマネージャが正常に動作するか確認</li>
+<li>アプリケーションメニューから端末（xfce4-terminal）を起動</li>
+<h3>日本語入力の確認</h3>
+<p>端末またはテキストエディタ（mousepadなど）を開き、ibusのアイコンをクリックして日本語入力に切り替え、日本語が入力できることを確認します。</p>
+<h3>サウンドの確認</h3>
+<p><code>speaker-test</code>コマンドで音が出るかテストします。</p>
+<pre><code class="language-bash">speaker-test -c 2 -l 1
+</code></pre>
+<h3>ネットワークの確認</h3>
+<p>ネットワークマネージャのアイコンがパネルに表示され、Wi-Fiや有線接続が管理できることを確認します。</p>
+<hr>
+<p>*この記事はArch Linuxを実機で日常運用しているSioが、実際のインストール・設定経験に基づいてAI生成コンテンツをレビュー・補完しています。btrfsサブボリュームとLUKS暗号化環境で検証済みです。*</p>
+<h2>発展</h2>
+<h3>テーマの変更</h3>
+<p>XFCEの外観設定からテーマやアイコンを変更できます。追加のテーマは<code>xfce-look.org</code>などからダウンロード可能です。</p>
+<h3>パフォーマンスチューニング</h3>
+<li>コンポジットマネージャの無効化: 設定 > ウィンドウマネージャ > コンポジットタブで「コンポジットを有効にする」のチェックを外す</li>
+<li>軽量ブラウザの利用: <code>palemoon</code>や<code>qutebrowser</code>など</li>
+<h3>トラブルシューティング</h3>
+<li><strong>LightDMが起動しない</strong>: <code>systemctl status lightdm</code>でエラーを確認。<code>/etc/lightdm/lightdm.conf</code>を編集</li>
+<li><strong>日本語入力が効かない</strong>: <code>ibus restart</code>を試す。<code>.xprofile</code>の設定が正しいか確認</li>
+<li><strong>画面が真っ暗</strong>: グラフィックドライバの問題。<code>lspci -k</code>で使用しているドライバを確認し、必要に応じて<code>xf86-video-*</code>パッケージをインストール</li>
+<h3>参考リンク</h3>
+<li><a href="https://wiki.archlinux.org/title/Xfce" target="_blank" rel="noopener">Arch Linux Wiki: XFCE</a></li>
+<li><a href="https://wiki.archlinux.org/title/LightDM" target="_blank" rel="noopener">Arch Linux Wiki: LightDM</a></li>
+<li><a href="https://wiki.archlinux.org/title/IBus" target="_blank" rel="noopener">Arch Linux Wiki: IBus</a></li>
+<p>以上で、Arch LinuxにXFCEデスクトップ環境を構築するチュートリアルは終了です。軽量でカスタマイズ性の高いXFCEを存分に活用してください。</p>4:["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"Arch LinuxにXFCEをインストールして軽量デスクトップ環境を構築する方法"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"Arch LinuxにXFCEデスクトップ環境をインストールする手順を解説。軽量で低スペックPCにも最適なXFCEの導入から日本語入力設定、トラブルシューティングまで網羅。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","Arch Linux",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"Arch Linux"}],["$","span","XFCE",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"XFCE"}],["$","span","軽量",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"軽量"}],["$","span","デスクトップ環境",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"デスクトップ環境"}],["$","span","低スペック",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"低スペック"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$f"}}]]}],"$L10"]}]
+10:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-arch hover:underline","children":"← 記事一覧に戻る"}]}]
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+7:null
+c:[["$","title","0",{"children":"Arch Linux 日本語ガイド"}],["$","meta","1",{"name":"description","content":"Arch Linuxのインストールからデスクトップ環境構築まで、日本語で体系的に解説するガイドサイトです。"}],["$","meta","2",{"name":"keywords","content":"Arch Linux,Linux,インストール,日本語,デスクトップ環境,btrfs,LUKS"}]]

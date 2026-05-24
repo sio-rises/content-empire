@@ -1,0 +1,110 @@
+1:"$Sreact.fragment"
+2:I[10332,["/_next/static/chunks/007ac~remr-yw.js"],"default"]
+3:I[41511,["/_next/static/chunks/007ac~remr-yw.js"],"default"]
+5:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+9:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"ViewportBoundary"]
+b:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"MetadataBoundary"]
+d:I[30493,["/_next/static/chunks/007ac~remr-yw.js"],"default",1]
+:HL["/_next/static/chunks/0sknqqgyc~d7j.css","style"]
+0:{"P":null,"c":["","articles","deepseek-api-guide"],"q":"","i":false,"f":[[["",{"children":["articles",{"children":[["slug","deepseek-api-guide","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0sknqqgyc~d7j.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/007ac~remr-yw.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"ja","children":[["$","head",null,{"children":["$","script",null,{"async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019","crossOrigin":"anonymous"}]}],["$","body",null,{"className":"min-h-screen antialiased","children":["$","div",null,{"className":"flex min-h-screen flex-col","children":[["$","header",null,{"className":"border-b border-gray-200 bg-white","children":["$","div",null,{"className":"mx-auto flex max-w-4xl items-center justify-between px-4 py-3","children":[["$","a",null,{"href":"/","className":"text-lg font-bold text-ai hover:opacity-80","children":"AIエージェント活用ガイド"}],["$","nav",null,{"className":"flex gap-4 text-sm text-gray-600","children":["$","a",null,{"href":"/","className":"hover:text-ai","children":"ホーム"}]}]]}]}],["$","main",null,{"className":"flex-1","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400","children":"AIエージェント活用ガイド — Built with OpenCode + DeepSeek API"}]]}]}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L4",null,["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]]}],{},null,false,null]},null,false,"$@8"]},null,false,"$@8"]},null,false,null],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$6",null,{"name":"Next.Metadata","children":"$Lc"}]}]}],null]}],false]],"m":"$undefined","G":["$d",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0sknqqgyc~d7j.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"ozMjvJqr-IrJkTdPFeVOD"}
+e:[]
+8:"$We"
+f:T1a73,<h2>DeepSeek APIとは？</h2>
+<p>DeepSeekは中国のAI企業が開発した大規模言語モデルで、APIを通じてテキスト生成やチャット機能を利用できます。OpenAIのGPTシリーズに似た性能を持ちながら、<strong>圧倒的に低い料金</strong>が特徴です。この記事ではDeepSeek APIの基本的な使い方、料金体系、設定方法を詳しく解説します。</p>
+<h2>なぜDeepSeek APIが注目されているのか？</h2>
+<li><strong>低コスト</strong>：OpenAIの約1/10以下の料金で同等の性能を実現</li>
+<li><strong>高速応答</strong>：軽量モデルによる高速な推論</li>
+<li><strong>日本語対応</strong>：日本語の理解・生成に優れる</li>
+<li><strong>簡単な移行</strong>：OpenAI APIと互換性のあるエンドポイント</li>
+<h2>DeepSeek APIの始め方</h2>
+<h3>1. アカウント作成とAPIキーの取得</h3>
+<li><a href="https://platform.deepseek.com/" target="_blank" rel="noopener">DeepSeek Platform</a>にアクセス</li>
+<li>メールアドレスまたはGoogleアカウントで登録</li>
+<li>ログイン後、ダッシュボードから「API Keys」メニューを選択</li>
+<li>「Create API Key」ボタンをクリックしてキーを生成</li>
+<li>キーを安全な場所に保存（<strong>一度しか表示されません</strong>）</li>
+<h3>2. 環境設定</h3>
+<p>Pythonを使用する場合、<code>openai</code>ライブラリをインストールします（DeepSeekはOpenAI互換のため）。</p>
+<pre><code class="language-bash">pip install openai
+</code></pre>
+<p>環境変数にAPIキーを設定：</p>
+<pre><code class="language-bash">export DEEPSEEK_API_KEY="your-api-key-here"
+</code></pre>
+<h3>3. 基本的な使い方</h3>
+<p>#### チャット補完（Chat Completion）</p>
+<pre><code class="language-python">from openai import OpenAI
+<p>client = OpenAI(
+    api_key="your-api-key-here",
+    base_url="https://api.deepseek.com/v1"
+)</p>
+<p>response = client.chat.completions.create(
+    model="deepseek-chat",  # または deepseek-coder
+    messages=[
+        {"role": "system", "content": "あなたは親切なアシスタントです。"},
+        {"role": "user", "content": "DeepSeek APIの使い方を教えてください。"}
+    ],
+    temperature=0.7,
+    max_tokens=1024
+)</p>
+<p>print(response.choices[0].message.content)
+</code></pre></p>
+<p>#### テキスト補完（Legacy）</p>
+<pre><code class="language-python">response = client.completions.create(
+    model="deepseek-chat",
+    prompt="DeepSeek APIの特徴は？",
+    max_tokens=200
+)
+</code></pre>
+<h3>4. 利用可能なモデル</h3>
+<table><thead><tr><th>モデル名</th><th>用途</th><th>コンテキスト長</th></tr></thead><tbody><tr><td>deepseek-chat</td><td>汎用チャット</td><td>32K</td></tr>
+<tr><td>deepseek-coder</td><td>コード生成</td><td>32K</td></tr>
+<tr><td>deepseek-reasoner</td><td>推論特化</td><td>32K</td></tr></tbody></table>
+<h2>料金体系</h2>
+<p>DeepSeek APIの料金は非常に競争力があります。2026年4月時点の価格：</p>
+<table><thead><tr><th>モデル</th><th>入力（1Mトークンあたり）</th><th>出力（1Mトークンあたり）</th></tr></thead><tbody><tr><td>deepseek-chat</td><td>$0.14</td><td>$0.28</td></tr>
+<tr><td>deepseek-coder</td><td>$0.14</td><td>$0.28</td></tr>
+<tr><td>deepseek-reasoner</td><td>$0.55</td><td>$2.19</td></tr></tbody></table>
+<strong>OpenAIとの比較</strong>（GPT-4o miniの場合：入力$0.15、出力$0.60）
+<li>チャットモデル：入力はほぼ同額、出力は<strong>約半分</strong></li>
+<li>推論モデル：GPT-4oと比較すると<strong>約1/10</strong>のコスト</li>
+<p><strong>無料枠</strong>：新規登録時に$10分のクレジットが付与されます（期間限定の可能性あり）。</p>
+<h2>詳細設定とパラメータ</h2>
+<h3>主要パラメータ</h3>
+<table><thead><tr><th>パラメータ</th><th>型</th><th>デフォルト</th><th>説明</th></tr></thead><tbody><tr><td>temperature</td><td>float</td><td>1.0</td><td>0〜2。低いほど決定論的</td></tr>
+<tr><td>top_p</td><td>float</td><td>1.0</td><td>0〜1。累積確率によるサンプリング</td></tr>
+<tr><td>max_tokens</td><td>int</td><td>4096</td><td>生成する最大トークン数</td></tr>
+<tr><td>stream</td><td>bool</td><td>false</td><td>ストリーミング応答を有効にする</td></tr>
+<tr><td>frequency_penalty</td><td>float</td><td>0</td><td>-2〜2。同じトークンの繰り返しを抑制</td></tr>
+<tr><td>presence_penalty</td><td>float</td><td>0</td><td>-2〜2。新しいトピックを促進</td></tr></tbody></table>
+<h3>ストリーミング応答</h3>
+<pre><code class="language-python">stream = client.chat.completions.create(
+    model="deepseek-chat",
+    messages=[{"role": "user", "content": "長い文章を生成してください"}],
+    stream=True
+)
+<p>for chunk in stream:
+    if chunk.choices[0].delta.content:
+        print(chunk.choices[0].delta.content, end="")
+</code></pre></p>
+<h2>OpenAIからの移行ポイント</h2>
+<li><strong>エンドポイントの変更</strong>：<code>https://api.deepseek.com/v1</code> に変更</li>
+<li><strong>モデル名の変更</strong>：<code>deepseek-chat</code> などに変更</li>
+<li><strong>APIキー</strong>：DeepSeekで発行したものを使用</li>
+<li><strong>互換性</strong>：ほとんどのパラメータはそのまま使える</li>
+<h2>よくある質問</h2>
+<p><strong>Q: 日本語の精度は？</strong>
+A: 日本語コーパスで学習しており、自然な日本語を生成します。特に中国語・日本語・英語で高精度。</p>
+<p><strong>Q: レート制限は？</strong>
+A: 無料枠では1分間に60リクエスト程度。有料プランではさらに緩和されます。</p>
+<p><strong>Q: データは学習に使われる？</strong>
+A: API経由のデータは学習に使用しないと明記されています。プライバシーに配慮。</p>
+<hr>
+<p>*この記事はOpenCodeを日常的に使用し、AIエージェントにSSH経由でNixOSをインストールさせるなどの実践経験を持つSioが監修しています。DeepSeek APIのヘビーユーザーとして、実際のコスト感や制限事項を反映しています。*</p>
+<h2>まとめ</h2>
+<p>DeepSeek APIは、コストパフォーマンスに優れたAI APIです。OpenAIと同等の使いやすさを持ちながら、特に出力コストが低いため、大規模なアプリケーションに最適です。まずは無料クレジットで試してみて、その性能を体感してください。</p>
+<p>公式ドキュメント：https://api-docs.deepseek.com/</p>4:["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"DeepSeek API完全ガイド：使い方・料金・設定を徹底解説"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"DeepSeek APIの使い方、料金、設定方法を初心者向けに解説。OpenAIとの比較や安さの秘密も紹介。APIキーの取得から実際のリクエストまでステップバイステップで学べます。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","DeepSeek API",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"DeepSeek API"}],["$","span","使い方",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"使い方"}],["$","span","料金",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"料金"}],["$","span","設定",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"設定"}],["$","span","APIキー",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"APIキー"}],["$","span","OpenAI比較",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"OpenAI比較"}],["$","span","安い",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"安い"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$f"}}]]}],"$L10"]}]
+10:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-ai hover:underline","children":"← 記事一覧に戻る"}]}]
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+7:null
+c:[["$","title","0",{"children":"AIエージェント活用ガイド"}],["$","meta","1",{"name":"description","content":"OpenCode/ClaudeCode/DeepSeekを使ったAIエージェント開発自動化の情報を日本語で発信。"}],["$","meta","2",{"name":"keywords","content":"OpenCode,ClaudeCode,AIエージェント,DeepSeek,開発自動化,プロンプト"}]]

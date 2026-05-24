@@ -1,0 +1,109 @@
+1:"$Sreact.fragment"
+2:I[24117,["/_next/static/chunks/00mbd8isu7b38.js"],"default"]
+3:I[79967,["/_next/static/chunks/00mbd8isu7b38.js"],"default"]
+5:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+9:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"ViewportBoundary"]
+b:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"MetadataBoundary"]
+d:I[30946,["/_next/static/chunks/00mbd8isu7b38.js"],"default",1]
+:HL["/_next/static/chunks/089_dp2m4y2c2.css","style"]
+0:{"P":null,"c":["","articles","arch-linux-dotfiles-chezmoi-yadm-comparison"],"q":"","i":false,"f":[[["",{"children":["articles",{"children":[["slug","arch-linux-dotfiles-chezmoi-yadm-comparison","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/089_dp2m4y2c2.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/00mbd8isu7b38.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"ja","children":[["$","head",null,{"children":["$","script",null,{"async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019","crossOrigin":"anonymous"}]}],["$","body",null,{"className":"min-h-screen antialiased","children":["$","div",null,{"className":"flex min-h-screen flex-col","children":[["$","header",null,{"className":"border-b border-gray-200 bg-white","children":["$","div",null,{"className":"mx-auto flex max-w-4xl items-center justify-between px-4 py-3","children":[["$","a",null,{"href":"/","className":"text-lg font-bold text-arch hover:opacity-80","children":"Arch Linux 日本語ガイド"}],["$","nav",null,{"className":"flex gap-4 text-sm text-gray-600","children":[["$","a",null,{"href":"/","className":"hover:text-arch","children":"ホーム"}],["$","a",null,{"href":"/about","className":"hover:text-arch","children":"このサイトについて"}]]}]]}]}],["$","main",null,{"className":"flex-1","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400","children":[["$","div",null,{"className":"flex justify-center gap-4 mb-2","children":[["$","a",null,{"href":"/about","className":"hover:text-gray-600","children":"このサイトについて"}],["$","a",null,{"href":"/privacy","className":"hover:text-gray-600","children":"プライバシーポリシー"}]]}],"Arch Linux 日本語ガイド — Built with OpenCode + DeepSeek API"]}]]}]}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L4",null,["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]]}],{},null,false,null]},null,false,"$@8"]},null,false,"$@8"]},null,false,null],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$6",null,{"name":"Next.Metadata","children":"$Lc"}]}]}],null]}],false]],"m":"$undefined","G":["$d",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/089_dp2m4y2c2.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"oMFWqHyx7sJoNGgtrYd0X"}
+e:[]
+8:"$We"
+f:T1967,<h2>はじめに</h2>
+<p>Arch Linuxで設定ファイル（ドットファイル）を管理する際、chezmoiとyadmは人気の選択肢です。どちらも設定ファイルのバージョン管理や同期を容易にしますが、アプローチが異なります。本記事では、両ツールの概要、比較表、長所・短所を詳しく解説し、あなたに最適なツールを選びます。</p>
+<h2>各ツールの概要</h2>
+<h3>chezmoi</h3>
+<p>chezmoiは、Goで書かれたドットファイル管理ツールです。設定ファイルをホームディレクトリにシンボリックリンクとして配置し、テンプレート機能を使って環境ごとに設定を変えられます。Gitをバックエンドとして使用し、暗号化も可能です。</p>
+<p>主な特徴：
+<li>テンプレート（Goテンプレート）による動的設定</li>
+<li>暗号化（age, gpg対応）</li>
+<li>冪等性の高い操作</li>
+<li>スクリプトによるフック</li></p>
+<h3>yadm</h3>
+<p>yadmは、Yet Another Dotfiles Managerの略で、シェルスクリプトで書かれた軽量ツールです。Gitのラッパーとして動作し、ドットファイル専用のGitリポジトリを管理します。テンプレート機能や暗号化も備えています。</p>
+<p>主な特徴：
+<li>Gitのサブコマンドとして動作（yadm add, yadm commitなど）</li>
+<li>テンプレート（Jinja2/Goテンプレート）</li>
+<li>暗号化（gpg/openssl）</li>
+<li>代替ファイル（OSやホスト名で切り替え）</li></p>
+<h2>比較表</h2>
+<table><thead><tr><th>機能</th><th>chezmoi</th><th>yadm</th></tr></thead><tbody><tr><td>言語</td><td>Go</td><td>シェルスクリプト（Bash）</td></tr>
+<tr><td>テンプレートエンジン</td><td>Goテンプレート</td><td>Jinja2 / Goテンプレート</td></tr>
+<tr><td>暗号化</td><td>age, gpg</td><td>gpg, openssl</td></tr>
+<tr><td>代替ファイル</td><td>条件付きテンプレート</td><td>代替ファイル（ファイル名ベース）</td></tr>
+<tr><td>スクリプトサポート</td><td>スクリプト（pre/post）</td><td>フック（bootstrap等）</td></tr>
+<tr><td>初期セットアップ</td><td><code>chezmoi init</code></td><td><code>yadm clone</code></td></tr>
+<tr><td>リポジトリ管理</td><td>独自のソース状態</td><td>Gitラッパー</td></tr>
+<tr><td>依存関係</td><td>バイナリのみ</td><td>Git, シェル</td></tr>
+<tr><td>コミュニティ</td><td>活発</td><td>安定</td></tr>
+<tr><td>ドキュメント</td><td>豊富</td><td>十分</td></tr></tbody></table>
+<h2>長所と短所</h2>
+<h3>chezmoi</h3>
+<p><strong>長所</strong>
+<li>強力なテンプレート機能：Goテンプレートで複雑な条件分岐が可能</li>
+<li>暗号化が簡単：ageやgpgでファイル単位で暗号化</li>
+<li>冪等性：何度実行しても同じ結果になる</li>
+<li>スクリプトによる自動化：preApplyScriptなどでカスタム処理</li>
+<li>バイナリ一つで動作：依存が少ない</li></p>
+<p><strong>短所</strong>
+<li>学習曲線：テンプレートやコマンド体系に慣れが必要</li>
+<li>速度：大量ファイルでやや遅い</li>
+<li>独自の状態管理：Gitを直接操作しないため、Gitに詳しいユーザーには違和感</li></p>
+<h3>yadm</h3>
+<p><strong>長所</strong>
+<li>Gitネイティブ：Gitコマンドの延長で使える</li>
+<li>軽量：シェルスクリプトで動作、高速</li>
+<li>代替ファイル：ファイル名のパターンで簡単に切り替え</li>
+<li>テンプレート選択可能：Jinja2またはGoテンプレート</li>
+<li>シンプルな設定：最小限の学習で使い始められる</li></p>
+<p><strong>短所</strong>
+<li>テンプレート機能が限定的：chezmoiほどの柔軟性はない</li>
+<li>暗号化の設定がやや面倒</li>
+<li>シェルスクリプト依存：環境によっては動作が異なる可能性</li>
+<li>コミュニティサイズが小さい</li></p>
+<h2>おすすめの選択</h2>
+<h3>chezmoiがおすすめなケース</h3>
+<li>複数の環境で複雑な設定の切り替えが必要（例：デスクトップとサーバーで異なる設定）</li>
+<li>暗号化を多用する（パスワードやトークンを含むファイル）</li>
+<li>冪等性を重視し、何度でも安全に実行したい</li>
+<li>テンプレートを使って動的に設定を生成したい</li>
+<h3>yadmがおすすめなケース</h3>
+<li>Gitに慣れており、Gitのワークフローをそのまま使いたい</li>
+<li>シンプルな構成で、すぐに使い始めたい</li>
+<li>軽量で高速なツールを求める</li>
+<li>代替ファイルによるOSやホスト名ごとの切り替えがメイン</li>
+<h2>インストールと基本コマンド</h2>
+<h3>chezmoi</h3>
+<pre><code class="language-bash">&lt;h1&gt;AURからインストール&lt;/h1&gt;
+yay -S chezmoi
+<p>&lt;h1&gt;リポジトリの初期化&lt;/h1&gt;
+chezmoi init &lt;リポジトリURL&gt;</p>
+<p>&lt;h1&gt;設定を適用&lt;/h1&gt;
+chezmoi apply</p>
+<p>&lt;h1&gt;ファイルを追加&lt;/h1&gt;
+chezmoi add ~/.bashrc</p>
+<p>&lt;h1&gt;差分を確認&lt;/h1&gt;
+chezmoi diff
+</code></pre></p>
+<h3>yadm</h3>
+<pre><code class="language-bash">&lt;h1&gt;AURからインストール&lt;/h1&gt;
+yay -S yadm
+<p>&lt;h1&gt;リポジトリのクローン&lt;/h1&gt;
+yadm clone &lt;リポジトリURL&gt;</p>
+<p>&lt;h1&gt;ファイルを追加&lt;/h1&gt;
+yadm add ~/.bashrc</p>
+<p>&lt;h1&gt;コミット&lt;/h1&gt;
+yadm commit -m "Add .bashrc"</p>
+<p>&lt;h1&gt;最新の状態に更新&lt;/h1&gt;
+yadm pull
+</code></pre></p>
+<hr>
+<p>*この記事はArch Linuxを実機で日常運用しているSioが、実際のインストール・設定経験に基づいてAI生成コンテンツをレビュー・補完しています。btrfsサブボリュームとLUKS暗号化環境で検証済みです。*</p>
+<h2>まとめ</h2>
+<p>chezmoiとyadmはどちらも優れたドットファイル管理ツールですが、アプローチが異なります。chezmoiは柔軟性と冪等性を重視し、yadmはGitとの親和性とシンプルさを重視します。Arch Linuxユーザーとしては、どちらもAURから簡単にインストールできます。</p>
+<p>あなたのニーズに合わせて最適なツールを選び、快適なドットファイル管理を実現してください。</p>4:["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"Arch Linuxでドットファイル管理を極める！chezmoi vs yadm 徹底比較"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"Arch Linuxユーザー必見！chezmoiとyadmを徹底比較。それぞれの特徴、メリット・デメリットを解説し、あなたに最適なドットファイル管理ツールを選びます。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","Arch Linux",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"Arch Linux"}],["$","span","ドットファイル",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"ドットファイル"}],["$","span","chezmoi",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"chezmoi"}],["$","span","yadm",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"yadm"}],["$","span","設定ファイル",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"設定ファイル"}],["$","span","バージョン管理",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"バージョン管理"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$f"}}]]}],"$L10"]}]
+10:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-arch hover:underline","children":"← 記事一覧に戻る"}]}]
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+7:null
+c:[["$","title","0",{"children":"Arch Linux 日本語ガイド"}],["$","meta","1",{"name":"description","content":"Arch Linuxのインストールからデスクトップ環境構築まで、日本語で体系的に解説するガイドサイトです。"}],["$","meta","2",{"name":"keywords","content":"Arch Linux,Linux,インストール,日本語,デスクトップ環境,btrfs,LUKS"}]]

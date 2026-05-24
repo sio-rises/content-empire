@@ -1,0 +1,2 @@
+:HL["/_next/static/chunks/089_dp2m4y2c2.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"articles","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"arch-linux-wifi-iwd-iwctl","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"oMFWqHyx7sJoNGgtrYd0X"}

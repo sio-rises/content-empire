@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="ja"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/chunks/0sknqqgyc~d7j.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/004m7bjik~jkr.js"/><script src="/_next/static/chunks/01t1wf1uyv-aa.js" async=""></script><script src="/_next/static/chunks/0pclk7tk1w2nf.js" async=""></script><script src="/_next/static/chunks/turbopack-00gh8rufrmpm9.js" async=""></script><script src="/_next/static/chunks/007ac~remr-yw.js" async=""></script><script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019" crossorigin="anonymous"></script><title>AIエージェント活用ガイド</title><meta name="description" content="OpenCode/ClaudeCode/DeepSeekを使ったAIエージェント開発自動化の情報を日本語で発信。"/><meta name="keywords" content="OpenCode,ClaudeCode,AIエージェント,DeepSeek,開発自動化,プロンプト"/><script src="/_next/static/chunks/03~yq9q893hmn.js" noModule=""></script></head><body class="min-h-screen antialiased"><div hidden=""><!--$--><!--/$--></div><div class="flex min-h-screen flex-col"><header class="border-b border-gray-200 bg-white"><div class="mx-auto flex max-w-4xl items-center justify-between px-4 py-3"><a href="/" class="text-lg font-bold text-ai hover:opacity-80">AIエージェント活用ガイド</a><nav class="flex gap-4 text-sm text-gray-600"><a href="/" class="hover:text-ai">ホーム</a></nav></div></header><main class="flex-1"><div class="mx-auto max-w-4xl px-4 py-8"><article><header class="mb-8"><h1 class="text-3xl font-bold tracking-tight text-gray-900">AIエージェントとMCPサーバーの連携：基本設定から実践まで</h1><p class="mt-2 text-gray-500">AIエージェントとMCPサーバーの連携方法を解説。基本概念、実装手順、設定ファイルの例、ツール拡張のベストプラクティスを紹介。</p><div class="mt-4 flex flex-wrap items-center gap-3"><span class="rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600">AIエージェント</span><span class="rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600">MCP</span><span class="rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600">サーバー</span><span class="rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600">連携</span><span class="rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600">設定</span><span class="rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600">ツール</span><span class="rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600">拡張</span><span class="text-xs text-gray-400">2026/5/25</span></div></header><div class="prose max-w-none"><h1>AIエージェントとMCPサーバーの連携：基本設定から実践まで</h1>
+<p>近年、AIエージェントの開発が急速に進み、外部サービスやツールとの連携が重要なテーマとなっています。その中で注目されるのが<strong>MCP（Model Context Protocol）</strong>です。MCPはAIエージェントと外部サーバー間の標準プロトコルであり、エージェントがデータベース、API、ファイルシステムなどに安全かつ効率的にアクセスするための基盤を提供します。本記事では、MCPサーバーの基本概念から具体的な連携設定、ツール拡張の方法までを解説します。</p>
+<h2>MCPとは？</h2>
+<p>MCPはAnthropicが提唱するオープンプロトコルで、AIエージェントと外部リソース（ツールやデータソース）を疎結合で連携させるためのものです。MCPサーバーはエージェントの代わりに外部リソースへのアクセスを仲介し、エージェントはMCPクライアントを通じてサーバーにリクエストを送ります。これにより、エージェントは直接外部APIを叩く必要がなく、セキュリティや拡張性が向上します。</p>
+<h2>MCPサーバーの基本構成</h2>
+<p>MCPサーバーは以下の要素で構成されます。</p>
+<li><strong>トランスポート層</strong>: 通信プロトコル（stdioやHTTP/SSE）</li>
+<li><strong>プロトコル層</strong>: JSON-RPCベースのメッセージ交換</li>
+<li><strong>ツール定義</strong>: エージェントが利用可能な関数（ツール）のスキーマ</li>
+<p>典型的なMCPサーバーは、Node.jsやPythonで実装され、<code>mcp</code>ライブラリを使用します。</p>
+<h2>連携手順（Node.js + TypeScript例）</h2>
+<h3>1. MCPサーバーのセットアップ</h3>
+<p>まず、MCPサーバーを実装します。以下は簡単なファイル読み取りツールを提供するサーバーの例です。</p>
+<pre><code class="language-typescript">import { Server } from "@modelcontextprotocol/sdk/server/index.js";
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import {
+  CallToolRequestSchema,
+  ListToolsRequestSchema,
+} from "@modelcontextprotocol/sdk/types.js";
+<p>const server = new Server(
+  {
+    name: "example-fs-server",
+    version: "1.0.0",
+  },
+  {
+    capabilities: {
+      tools: {},
+    },
+  }
+);</p>
+<p>// ツール一覧を返す
+server.setRequestHandler(ListToolsRequestSchema, async () =&gt; ({
+  tools: [
+    {
+      name: "read_file",
+      description: "Read the contents of a file",
+      inputSchema: {
+        type: "object",
+        properties: {
+          path: { type: "string" },
+        },
+        required: ["path"],
+      },
+    },
+  ],
+}));</p>
+<p>// ツール実行
+server.setRequestHandler(CallToolRequestSchema, async (request) =&gt; {
+  if (request.params.name === "read_file") {
+    const path = request.params.arguments?.path;
+    if (typeof path !== "string") {
+      throw new Error("Invalid path");
+    }
+    // 実際のファイル読み込み処理（セキュリティ注意）
+    const content = await fs.promises.readFile(path, "utf-8");
+    return {
+      content: [
+        {
+          type: "text",
+          text: content,
+        },
+      ],
+    };
+  }
+  throw new Error("Tool not found");
+});</p>
+<p>// トランスポート開始
+const transport = new StdioServerTransport();
+await server.connect(transport);
+</code></pre></p>
+<h3>2. AIエージェント側の設定</h3>
+<p>AIエージェント（例：Claude Desktopやカスタムエージェント）は、MCPクライアントを通じてサーバーに接続します。設定ファイル（<code>claude_desktop_config.json</code>）でサーバーを指定します。</p>
+<pre><code class="language-json">{
+  "mcpServers": {
+    "example-fs": {
+      "command": "node",
+      "args": ["path/to/server.js"],
+      "env": {}
+    }
+  }
+}
+</code></pre>
+<p>この設定により、エージェントは<code>example-fs</code>サーバーの<code>read_file</code>ツールを利用できるようになります。</p>
+<h3>3. ツールの拡張</h3>
+<p>MCPサーバーに新しいツールを追加するには、<code>ListToolsRequestSchema</code>のハンドラでツール定義を追加し、<code>CallToolRequestSchema</code>で処理を実装します。例えば、ファイル書き込みツールを追加する場合：</p>
+<pre><code class="language-typescript">// ツール一覧に追加
+tools.push({
+  name: "write_file",
+  description: "Write content to a file",
+  inputSchema: {
+    type: "object",
+    properties: {
+      path: { type: "string" },
+      content: { type: "string" },
+    },
+    required: ["path", "content"],
+  },
+});
+<p>// CallToolRequestSchema内で分岐
+if (request.params.name === "write_file") {
+  const { path, content } = request.params.arguments;
+  await fs.promises.writeFile(path, content, "utf-8");
+  return { content: [{ type: "text", text: "File written" }] };
+}
+</code></pre></p>
+<h2>実践的な連携パターン</h2>
+<h3>データベース連携</h3>
+<p>MCPサーバーを介してデータベースにアクセスする場合、サーバー内でSQLを実行し、結果を返します。エージェントは直接DBに接続せず、サーバーのツール経由で安全に操作できます。</p>
+<h3>外部API連携</h3>
+<p>REST APIをラップしたMCPサーバーを作成することで、エージェントは標準化されたツールインターフェースで外部サービスを利用できます。</p>
+<h3>マルチサーバー管理</h3>
+<p>エージェントは複数のMCPサーバーを同時に利用可能です。設定ファイルに複数サーバーを記述し、エージェントはコンテキストに応じて適切なサーバーを選択します。</p>
+<h2>注意点とベストプラクティス</h2>
+<li><strong>セキュリティ</strong>: MCPサーバーはエージェントに代わって特権操作を行うため、入力バリデーションとアクセス制御を徹底する。</li>
+<li><strong>エラーハンドリング</strong>: ツール実行時のエラーは適切にエージェントに返す。</li>
+<li><strong>パフォーマンス</strong>: 長時間実行されるツールは非同期処理を考慮する。</li>
+<li><strong>ドキュメント</strong>: 各ツールの説明を明確にし、エージェントが適切にツールを選択できるようにする。</li>
+<hr>
+<p>*この記事はOpenCodeを日常的に使用し、AIエージェントにSSH経由でNixOSをインストールさせるなどの実践経験を持つSioが監修しています。DeepSeek APIのヘビーユーザーとして、実際のコスト感や制限事項を反映しています。*</p>
+<h2>まとめ</h2>
+<p>MCPはAIエージェントと外部リソースの連携を標準化し、開発効率とセキュリティを向上させます。本記事で紹介した手順を参考に、独自のMCPサーバーを構築し、エージェントの機能を拡張してみてください。MCPのエコシステムは急速に発展しており、今後さらに多くのツールやフレームワークが登場するでしょう。</p></div></article><div class="mt-12 border-t border-gray-200 pt-6"><a href="/" class="text-sm text-ai hover:underline">← 記事一覧に戻る</a></div></div><!--$--><!--/$--></main><footer class="border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400">AIエージェント活用ガイド — Built with OpenCode + DeepSeek API</footer></div><script src="/_next/static/chunks/004m7bjik~jkr.js" id="_R_" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[10332,[\"/_next/static/chunks/007ac~remr-yw.js\"],\"default\"]\n3:I[41511,[\"/_next/static/chunks/007ac~remr-yw.js\"],\"default\"]\n5:I[57439,[\"/_next/static/chunks/007ac~remr-yw.js\"],\"OutletBoundary\"]\n6:\"$Sreact.suspense\"\n9:I[57439,[\"/_next/static/chunks/007ac~remr-yw.js\"],\"ViewportBoundary\"]\nb:I[57439,[\"/_next/static/chunks/007ac~remr-yw.js\"],\"MetadataBoundary\"]\nd:I[30493,[\"/_next/static/chunks/007ac~remr-yw.js\"],\"default\",1]\n:HL[\"/_next/static/chunks/0sknqqgyc~d7j.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"c\":[\"\",\"articles\",\"ai-agent-mcp-server-setup\"],\"q\":\"\",\"i\":false,\"f\":[[[\"\",{\"children\":[\"articles\",{\"children\":[[\"slug\",\"ai-agent-mcp-server-setup\",\"d\",null],{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",16],[[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/chunks/0sknqqgyc~d7j.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-0\",{\"src\":\"/_next/static/chunks/007ac~remr-yw.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"ja\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"script\",null,{\"async\":true,\"src\":\"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019\",\"crossOrigin\":\"anonymous\"}]}],[\"$\",\"body\",null,{\"className\":\"min-h-screen antialiased\",\"children\":[\"$\",\"div\",null,{\"className\":\"flex min-h-screen flex-col\",\"children\":[[\"$\",\"header\",null,{\"className\":\"border-b border-gray-200 bg-white\",\"children\":[\"$\",\"div\",null,{\"className\":\"mx-auto flex max-w-4xl items-center justify-between px-4 py-3\",\"children\":[[\"$\",\"a\",null,{\"href\":\"/\",\"className\":\"text-lg font-bold text-ai hover:opacity-80\",\"children\":\"AIエージェント活用ガイド\"}],[\"$\",\"nav\",null,{\"className\":\"flex gap-4 text-sm text-gray-600\",\"children\":[\"$\",\"a\",null,{\"href\":\"/\",\"className\":\"hover:text-ai\",\"children\":\"ホーム\"}]}]]}]}],[\"$\",\"main\",null,{\"className\":\"flex-1\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}],[\"$\",\"footer\",null,{\"className\":\"border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400\",\"children\":\"AIエージェント活用ガイド — Built with OpenCode + DeepSeek API\"}]]}]}]]}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[\"$L4\",null,[\"$\",\"$L5\",null,{\"children\":[\"$\",\"$6\",null,{\"name\":\"Next.MetadataOutlet\",\"children\":\"$@7\"}]}]]}],{},null,false,null]},null,false,\"$@8\"]},null,false,\"$@8\"]},null,false,null],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$L9\",null,{\"children\":\"$La\"}],[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$Lb\",null,{\"children\":[\"$\",\"$6\",null,{\"name\":\"Next.Metadata\",\"children\":\"$Lc\"}]}]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$d\",[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/chunks/0sknqqgyc~d7j.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]]],\"S\":true,\"h\":null,\"s\":\"$undefined\",\"l\":\"$undefined\",\"p\":\"$undefined\",\"d\":\"$undefined\",\"b\":\"ozMjvJqr-IrJkTdPFeVOD\"}\n"])</script><script>self.__next_f.push([1,"e:[]\n8:\"$We\"\n"])</script><script>self.__next_f.push([1,"f:T1ca6,"])</script><script>self.__next_f.push([1,"\u003ch1\u003eAIエージェントとMCPサーバーの連携：基本設定から実践まで\u003c/h1\u003e\n\u003cp\u003e近年、AIエージェントの開発が急速に進み、外部サービスやツールとの連携が重要なテーマとなっています。その中で注目されるのが\u003cstrong\u003eMCP（Model Context Protocol）\u003c/strong\u003eです。MCPはAIエージェントと外部サーバー間の標準プロトコルであり、エージェントがデータベース、API、ファイルシステムなどに安全かつ効率的にアクセスするための基盤を提供します。本記事では、MCPサーバーの基本概念から具体的な連携設定、ツール拡張の方法までを解説します。\u003c/p\u003e\n\u003ch2\u003eMCPとは？\u003c/h2\u003e\n\u003cp\u003eMCPはAnthropicが提唱するオープンプロトコルで、AIエージェントと外部リソース（ツールやデータソース）を疎結合で連携させるためのものです。MCPサーバーはエージェントの代わりに外部リソースへのアクセスを仲介し、エージェントはMCPクライアントを通じてサーバーにリクエストを送ります。これにより、エージェントは直接外部APIを叩く必要がなく、セキュリティや拡張性が向上します。\u003c/p\u003e\n\u003ch2\u003eMCPサーバーの基本構成\u003c/h2\u003e\n\u003cp\u003eMCPサーバーは以下の要素で構成されます。\u003c/p\u003e\n\u003cli\u003e\u003cstrong\u003eトランスポート層\u003c/strong\u003e: 通信プロトコル（stdioやHTTP/SSE）\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eプロトコル層\u003c/strong\u003e: JSON-RPCベースのメッセージ交換\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eツール定義\u003c/strong\u003e: エージェントが利用可能な関数（ツール）のスキーマ\u003c/li\u003e\n\u003cp\u003e典型的なMCPサーバーは、Node.jsやPythonで実装され、\u003ccode\u003emcp\u003c/code\u003eライブラリを使用します。\u003c/p\u003e\n\u003ch2\u003e連携手順（Node.js + TypeScript例）\u003c/h2\u003e\n\u003ch3\u003e1. MCPサーバーのセットアップ\u003c/h3\u003e\n\u003cp\u003eまず、MCPサーバーを実装します。以下は簡単なファイル読み取りツールを提供するサーバーの例です。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-typescript\"\u003eimport { Server } from \"@modelcontextprotocol/sdk/server/index.js\";\nimport { StdioServerTransport } from \"@modelcontextprotocol/sdk/server/stdio.js\";\nimport {\n  CallToolRequestSchema,\n  ListToolsRequestSchema,\n} from \"@modelcontextprotocol/sdk/types.js\";\n\u003cp\u003econst server = new Server(\n  {\n    name: \"example-fs-server\",\n    version: \"1.0.0\",\n  },\n  {\n    capabilities: {\n      tools: {},\n    },\n  }\n);\u003c/p\u003e\n\u003cp\u003e// ツール一覧を返す\nserver.setRequestHandler(ListToolsRequestSchema, async () =\u0026gt; ({\n  tools: [\n    {\n      name: \"read_file\",\n      description: \"Read the contents of a file\",\n      inputSchema: {\n        type: \"object\",\n        properties: {\n          path: { type: \"string\" },\n        },\n        required: [\"path\"],\n      },\n    },\n  ],\n}));\u003c/p\u003e\n\u003cp\u003e// ツール実行\nserver.setRequestHandler(CallToolRequestSchema, async (request) =\u0026gt; {\n  if (request.params.name === \"read_file\") {\n    const path = request.params.arguments?.path;\n    if (typeof path !== \"string\") {\n      throw new Error(\"Invalid path\");\n    }\n    // 実際のファイル読み込み処理（セキュリティ注意）\n    const content = await fs.promises.readFile(path, \"utf-8\");\n    return {\n      content: [\n        {\n          type: \"text\",\n          text: content,\n        },\n      ],\n    };\n  }\n  throw new Error(\"Tool not found\");\n});\u003c/p\u003e\n\u003cp\u003e// トランスポート開始\nconst transport = new StdioServerTransport();\nawait server.connect(transport);\n\u003c/code\u003e\u003c/pre\u003e\u003c/p\u003e\n\u003ch3\u003e2. AIエージェント側の設定\u003c/h3\u003e\n\u003cp\u003eAIエージェント（例：Claude Desktopやカスタムエージェント）は、MCPクライアントを通じてサーバーに接続します。設定ファイル（\u003ccode\u003eclaude_desktop_config.json\u003c/code\u003e）でサーバーを指定します。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-json\"\u003e{\n  \"mcpServers\": {\n    \"example-fs\": {\n      \"command\": \"node\",\n      \"args\": [\"path/to/server.js\"],\n      \"env\": {}\n    }\n  }\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eこの設定により、エージェントは\u003ccode\u003eexample-fs\u003c/code\u003eサーバーの\u003ccode\u003eread_file\u003c/code\u003eツールを利用できるようになります。\u003c/p\u003e\n\u003ch3\u003e3. ツールの拡張\u003c/h3\u003e\n\u003cp\u003eMCPサーバーに新しいツールを追加するには、\u003ccode\u003eListToolsRequestSchema\u003c/code\u003eのハンドラでツール定義を追加し、\u003ccode\u003eCallToolRequestSchema\u003c/code\u003eで処理を実装します。例えば、ファイル書き込みツールを追加する場合：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-typescript\"\u003e// ツール一覧に追加\ntools.push({\n  name: \"write_file\",\n  description: \"Write content to a file\",\n  inputSchema: {\n    type: \"object\",\n    properties: {\n      path: { type: \"string\" },\n      content: { type: \"string\" },\n    },\n    required: [\"path\", \"content\"],\n  },\n});\n\u003cp\u003e// CallToolRequestSchema内で分岐\nif (request.params.name === \"write_file\") {\n  const { path, content } = request.params.arguments;\n  await fs.promises.writeFile(path, content, \"utf-8\");\n  return { content: [{ type: \"text\", text: \"File written\" }] };\n}\n\u003c/code\u003e\u003c/pre\u003e\u003c/p\u003e\n\u003ch2\u003e実践的な連携パターン\u003c/h2\u003e\n\u003ch3\u003eデータベース連携\u003c/h3\u003e\n\u003cp\u003eMCPサーバーを介してデータベースにアクセスする場合、サーバー内でSQLを実行し、結果を返します。エージェントは直接DBに接続せず、サーバーのツール経由で安全に操作できます。\u003c/p\u003e\n\u003ch3\u003e外部API連携\u003c/h3\u003e\n\u003cp\u003eREST APIをラップしたMCPサーバーを作成することで、エージェントは標準化されたツールインターフェースで外部サービスを利用できます。\u003c/p\u003e\n\u003ch3\u003eマルチサーバー管理\u003c/h3\u003e\n\u003cp\u003eエージェントは複数のMCPサーバーを同時に利用可能です。設定ファイルに複数サーバーを記述し、エージェントはコンテキストに応じて適切なサーバーを選択します。\u003c/p\u003e\n\u003ch2\u003e注意点とベストプラクティス\u003c/h2\u003e\n\u003cli\u003e\u003cstrong\u003eセキュリティ\u003c/strong\u003e: MCPサーバーはエージェントに代わって特権操作を行うため、入力バリデーションとアクセス制御を徹底する。\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eエラーハンドリング\u003c/strong\u003e: ツール実行時のエラーは適切にエージェントに返す。\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eパフォーマンス\u003c/strong\u003e: 長時間実行されるツールは非同期処理を考慮する。\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eドキュメント\u003c/strong\u003e: 各ツールの説明を明確にし、エージェントが適切にツールを選択できるようにする。\u003c/li\u003e\n\u003chr\u003e\n\u003cp\u003e*この記事はOpenCodeを日常的に使用し、AIエージェントにSSH経由でNixOSをインストールさせるなどの実践経験を持つSioが監修しています。DeepSeek APIのヘビーユーザーとして、実際のコスト感や制限事項を反映しています。*\u003c/p\u003e\n\u003ch2\u003eまとめ\u003c/h2\u003e\n\u003cp\u003eMCPはAIエージェントと外部リソースの連携を標準化し、開発効率とセキュリティを向上させます。本記事で紹介した手順を参考に、独自のMCPサーバーを構築し、エージェントの機能を拡張してみてください。MCPのエコシステムは急速に発展しており、今後さらに多くのツールやフレームワークが登場するでしょう。\u003c/p\u003e"])</script><script>self.__next_f.push([1,"4:[\"$\",\"div\",null,{\"className\":\"mx-auto max-w-4xl px-4 py-8\",\"children\":[[\"$\",\"article\",null,{\"children\":[[\"$\",\"header\",null,{\"className\":\"mb-8\",\"children\":[[\"$\",\"h1\",null,{\"className\":\"text-3xl font-bold tracking-tight text-gray-900\",\"children\":\"AIエージェントとMCPサーバーの連携：基本設定から実践まで\"}],[\"$\",\"p\",null,{\"className\":\"mt-2 text-gray-500\",\"children\":\"AIエージェントとMCPサーバーの連携方法を解説。基本概念、実装手順、設定ファイルの例、ツール拡張のベストプラクティスを紹介。\"}],[\"$\",\"div\",null,{\"className\":\"mt-4 flex flex-wrap items-center gap-3\",\"children\":[[[\"$\",\"span\",\"AIエージェント\",{\"className\":\"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600\",\"children\":\"AIエージェント\"}],[\"$\",\"span\",\"MCP\",{\"className\":\"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600\",\"children\":\"MCP\"}],[\"$\",\"span\",\"サーバー\",{\"className\":\"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600\",\"children\":\"サーバー\"}],[\"$\",\"span\",\"連携\",{\"className\":\"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600\",\"children\":\"連携\"}],[\"$\",\"span\",\"設定\",{\"className\":\"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600\",\"children\":\"設定\"}],[\"$\",\"span\",\"ツール\",{\"className\":\"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600\",\"children\":\"ツール\"}],[\"$\",\"span\",\"拡張\",{\"className\":\"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600\",\"children\":\"拡張\"}]],[\"$\",\"span\",null,{\"className\":\"text-xs text-gray-400\",\"children\":\"2026/5/25\"}]]}]]}],[\"$\",\"div\",null,{\"className\":\"prose max-w-none\",\"dangerouslySetInnerHTML\":{\"__html\":\"$f\"}}]]}],\"$L10\"]}]\n"])</script><script>self.__next_f.push([1,"10:[\"$\",\"div\",null,{\"className\":\"mt-12 border-t border-gray-200 pt-6\",\"children\":[\"$\",\"a\",null,{\"href\":\"/\",\"className\":\"text-sm text-ai hover:underline\",\"children\":\"← 記事一覧に戻る\"}]}]\n"])</script><script>self.__next_f.push([1,"a:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n"])</script><script>self.__next_f.push([1,"7:null\nc:[[\"$\",\"title\",\"0\",{\"children\":\"AIエージェント活用ガイド\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"OpenCode/ClaudeCode/DeepSeekを使ったAIエージェント開発自動化の情報を日本語で発信。\"}],[\"$\",\"meta\",\"2\",{\"name\":\"keywords\",\"content\":\"OpenCode,ClaudeCode,AIエージェント,DeepSeek,開発自動化,プロンプト\"}]]\n"])</script></body></html>
