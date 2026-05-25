@@ -1,0 +1,59 @@
+1:"$Sreact.fragment"
+2:I[10332,["/_next/static/chunks/007ac~remr-yw.js"],"default"]
+3:I[41511,["/_next/static/chunks/007ac~remr-yw.js"],"default"]
+5:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+9:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"ViewportBoundary"]
+b:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"MetadataBoundary"]
+d:I[30493,["/_next/static/chunks/007ac~remr-yw.js"],"default",1]
+:HL["/_next/static/chunks/0j5zuqvsr0qqd.css","style"]
+0:{"P":null,"c":["","articles","opencode-cli-install-setup"],"q":"","i":false,"f":[[["",{"children":["articles",{"children":[["slug","opencode-cli-install-setup","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0j5zuqvsr0qqd.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/007ac~remr-yw.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"ja","children":[["$","head",null,{"children":["$","script",null,{"async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019","crossOrigin":"anonymous"}]}],["$","body",null,{"className":"min-h-screen antialiased","children":["$","div",null,{"className":"flex min-h-screen flex-col","children":[["$","header",null,{"className":"border-b border-gray-200 bg-white","children":["$","div",null,{"className":"mx-auto flex max-w-4xl items-center justify-between px-4 py-3","children":[["$","a",null,{"href":"/","className":"text-lg font-bold text-ai hover:opacity-80","children":"AIエージェント活用ガイド"}],["$","nav",null,{"className":"flex gap-4 text-sm text-gray-600","children":["$","a",null,{"href":"/","className":"hover:text-ai","children":"ホーム"}]}]]}]}],["$","main",null,{"className":"flex-1","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400","children":["AIエージェント活用ガイド — Built with OpenCode + DeepSeek API",["$","div",null,{"className":"border-t border-gray-100 mt-4 pt-3 text-center text-[10px] text-gray-300","children":[["$","span",null,{"className":"mr-2","children":"関連サイト:"}],["$","a",null,{"href":"https://arch-linux-guide.pages.dev","className":"hover:underline","children":"Arch Linux日本語ガイド"}],"  ",["$","a",null,{"href":"https://nisa-investment.pages.dev","className":"hover:underline","children":"NISA投資入門"}],"  ",["$","a",null,{"href":"https://linux-security.pages.dev","className":"hover:underline","children":"Linuxセキュリティ"}],"  ",["$","a",null,{"href":"https://vps-server-guide.pages.dev","className":"hover:underline","children":"VPSサーバー構築"}]]}]]}]]}]}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L4",null,["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]]}],{},null,false,null]},null,false,"$@8"]},null,false,"$@8"]},null,false,null],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$6",null,{"name":"Next.Metadata","children":"$Lc"}]}]}],null]}],false]],"m":"$undefined","G":["$d",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0j5zuqvsr0qqd.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"cZWNxtWXrIsLiNU6bnRwr"}
+e:[]
+8:"$We"
+f:Td1f,<h2>はじめに</h2>
+<p>OpenCodeは、コマンドラインからコード生成・管理を効率化するCLIツールです。本記事では、OpenCode CLIのインストールから基本的なセットアップ手順までを解説します。前提条件として、Node.jsとnpmがインストールされている必要があります。</p>
+<h2>前提条件</h2>
+<li>Node.js (バージョン14以上推奨)</li>
+<li>npm (Node.jsに同梱)</li>
+<li>ターミナル（macOS/Linux標準、WindowsではPowerShellなど）</li>
+<p>Node.jsが未インストールの場合は、<a href="https://nodejs.org/" target="_blank" rel="noopener">公式サイト</a>からLTS版をダウンロードしてインストールしてください。</p>
+<h2>OpenCode CLIのインストール</h2>
+<p>OpenCode CLIはnpmパッケージとして公開されています。以下のコマンドでグローバルインストールします。</p>
+<pre><code class="language-bash">npm install -g opencode-cli
+</code></pre>
+<p>インストールが完了したら、次のコマンドでバージョンを確認できます。</p>
+<pre><code class="language-bash">opencode --version
+</code></pre>
+<p>正しくインストールされていれば、バージョン番号が表示されます。</p>
+<h3>トラブルシューティング</h3>
+<li><strong>パーミッションエラー</strong>: macOS/Linuxで<code>EACCES</code>エラーが出る場合は、<code>sudo</code>を付けて再実行してください。</li>
+  <pre><code class="language-bash">  sudo npm install -g opencode-cli
+  </code></pre>
+<li><strong>コマンドが見つからない</strong>: npmのグローバルインストール先がPATHに通っていない可能性があります。<code>npm root -g</code>でパスを確認し、シェルの設定ファイル（<code>.bashrc</code>や<code>.zshrc</code>）に追加してください。</li>
+<h2>初期セットアップ</h2>
+<p>インストール後、OpenCodeを使用するための初期設定を行います。</p>
+<h3>1. 認証情報の設定</h3>
+<p>OpenCodeはAPIを利用するため、認証トークンが必要です。以下のコマンドで設定します。</p>
+<pre><code class="language-bash">opencode config set token YOUR_API_TOKEN
+</code></pre>
+<p>トークンはOpenCodeの管理画面から取得してください。</p>
+<h3>2. デフォルトのプロジェクト設定</h3>
+<p>作業ディレクトリを指定します。</p>
+<pre><code class="language-bash">opencode config set directory ./my-projects
+</code></pre>
+<h2>基本的な使い方</h2>
+<p>セットアップが完了したら、簡単なコマンドを試してみましょう。</p>
+<h3>プロジェクトの作成</h3>
+<pre><code class="language-bash">opencode create my-first-project
+</code></pre>
+<h3>テンプレート一覧の表示</h3>
+<pre><code class="language-bash">opencode list-templates
+</code></pre>
+<h3>ヘルプの表示</h3>
+<pre><code class="language-bash">opencode --help
+</code></pre>
+<h2>まとめ</h2>
+<p>この記事では、OpenCode CLIのインストールとセットアップ手順を紹介しました。npmによる簡単な導入と、数ステップの設定で即座に使い始められます。さらに詳しい使い方やコマンドリファレンスは、公式ドキュメントを参照してください。</p>4:["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"OpenCode CLIのインストールとセットアップ完全ガイド"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"OpenCode CLIのインストール方法から初期セットアップまでを詳しく解説。npmを用いた導入手順やターミナルでの設定手順を丁寧に紹介します。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","OpenCode",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"OpenCode"}],["$","span","CLI",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"CLI"}],["$","span","インストール",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"インストール"}],["$","span","セットアップ",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"セットアップ"}],["$","span","npm",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"npm"}],["$","span","ターミナル",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"ターミナル"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$f"}}]]}],["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-ai hover:underline","children":"← 記事一覧に戻る"}]}]]}]
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+7:null
+c:[["$","title","0",{"children":"AIエージェント活用ガイド"}],["$","meta","1",{"name":"description","content":"OpenCode/ClaudeCode/DeepSeekを使ったAIエージェント開発自動化の情報を日本語で発信。"}],["$","meta","2",{"name":"keywords","content":"OpenCode,ClaudeCode,AIエージェント,DeepSeek,開発自動化,プロンプト"}]]

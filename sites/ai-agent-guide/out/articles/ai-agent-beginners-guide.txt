@@ -6,56 +6,43 @@
 9:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"ViewportBoundary"]
 b:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"MetadataBoundary"]
 d:I[30493,["/_next/static/chunks/007ac~remr-yw.js"],"default",1]
-:HL["/_next/static/chunks/0sknqqgyc~d7j.css","style"]
-0:{"P":null,"c":["","articles","ai-agent-beginners-guide"],"q":"","i":false,"f":[[["",{"children":["articles",{"children":[["slug","ai-agent-beginners-guide","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0sknqqgyc~d7j.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/007ac~remr-yw.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"ja","children":[["$","head",null,{"children":["$","script",null,{"async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019","crossOrigin":"anonymous"}]}],["$","body",null,{"className":"min-h-screen antialiased","children":["$","div",null,{"className":"flex min-h-screen flex-col","children":[["$","header",null,{"className":"border-b border-gray-200 bg-white","children":["$","div",null,{"className":"mx-auto flex max-w-4xl items-center justify-between px-4 py-3","children":[["$","a",null,{"href":"/","className":"text-lg font-bold text-ai hover:opacity-80","children":"AIエージェント活用ガイド"}],["$","nav",null,{"className":"flex gap-4 text-sm text-gray-600","children":["$","a",null,{"href":"/","className":"hover:text-ai","children":"ホーム"}]}]]}]}],["$","main",null,{"className":"flex-1","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400","children":"AIエージェント活用ガイド — Built with OpenCode + DeepSeek API"}]]}]}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L4",null,["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]]}],{},null,false,null]},null,false,"$@8"]},null,false,"$@8"]},null,false,null],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$6",null,{"name":"Next.Metadata","children":"$Lc"}]}]}],null]}],false]],"m":"$undefined","G":["$d",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0sknqqgyc~d7j.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"ozMjvJqr-IrJkTdPFeVOD"}
+:HL["/_next/static/chunks/0j5zuqvsr0qqd.css","style"]
+0:{"P":null,"c":["","articles","ai-agent-beginners-guide"],"q":"","i":false,"f":[[["",{"children":["articles",{"children":[["slug","ai-agent-beginners-guide","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0j5zuqvsr0qqd.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/007ac~remr-yw.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"ja","children":[["$","head",null,{"children":["$","script",null,{"async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019","crossOrigin":"anonymous"}]}],["$","body",null,{"className":"min-h-screen antialiased","children":["$","div",null,{"className":"flex min-h-screen flex-col","children":[["$","header",null,{"className":"border-b border-gray-200 bg-white","children":["$","div",null,{"className":"mx-auto flex max-w-4xl items-center justify-between px-4 py-3","children":[["$","a",null,{"href":"/","className":"text-lg font-bold text-ai hover:opacity-80","children":"AIエージェント活用ガイド"}],["$","nav",null,{"className":"flex gap-4 text-sm text-gray-600","children":["$","a",null,{"href":"/","className":"hover:text-ai","children":"ホーム"}]}]]}]}],["$","main",null,{"className":"flex-1","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400","children":["AIエージェント活用ガイド — Built with OpenCode + DeepSeek API",["$","div",null,{"className":"border-t border-gray-100 mt-4 pt-3 text-center text-[10px] text-gray-300","children":[["$","span",null,{"className":"mr-2","children":"関連サイト:"}],["$","a",null,{"href":"https://arch-linux-guide.pages.dev","className":"hover:underline","children":"Arch Linux日本語ガイド"}],"  ",["$","a",null,{"href":"https://nisa-investment.pages.dev","className":"hover:underline","children":"NISA投資入門"}],"  ",["$","a",null,{"href":"https://linux-security.pages.dev","className":"hover:underline","children":"Linuxセキュリティ"}],"  ",["$","a",null,{"href":"https://vps-server-guide.pages.dev","className":"hover:underline","children":"VPSサーバー構築"}]]}]]}]]}]}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L4",null,["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]]}],{},null,false,null]},null,false,"$@8"]},null,false,"$@8"]},null,false,null],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$6",null,{"name":"Next.Metadata","children":"$Lc"}]}]}],null]}],false]],"m":"$undefined","G":["$d",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0j5zuqvsr0qqd.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"cZWNxtWXrIsLiNU6bnRwr"}
 e:[]
 8:"$We"
-f:T17e3,<h1>初心者でもわかるAIエージェントとは？仕組みや活用事例を徹底解説</h1>
-<p>AIエージェントは、近年のLLM（大規模言語モデル）の発展により注目を集めている技術です。本記事では、初心者の方にも理解しやすいように、AIエージェントの基本概念、仕組み、具体的な活用事例を解説します。</p>
-<h2>AIエージェントとは</h2>
-<p>AIエージェントとは、与えられた目標を達成するために、自律的に行動するプログラムです。単なるチャットボットとは異なり、AIエージェントは環境を認識し、計画を立て、ツールを使ってタスクを実行します。</p>
-<h3>従来のAIとの違い</h3>
-従来のAI（例えば分類モデルや単純なルールベースのシステム）は、特定の入力に対して決まった出力を返すだけでした。一方、AIエージェントは複数のステップを組み合わせ、状況に応じて柔軟に行動を変化させます。
-<h2>AIエージェントの仕組み</h2>
-<p>AIエージェントは主に以下の4つの要素から構成されます。</p>
-<li><strong>認識（Perception）</strong>：環境からの情報（ユーザーの入力、センサーデータなど）を受け取ります。</li>
-<li><strong>思考（Reasoning）</strong>：LLMなどの基盤モデルを用いて、目標達成のための計画を立てます。</li>
-<li><strong>行動（Action）</strong>：APIの呼び出し、ファイル操作、Web検索などのツールを実行します。</li>
-<li><strong>学習（Learning）</strong>：過去の行動の結果をフィードバックとして、今後の行動を改善します。</li>
-<h3>LLMとの関係</h3>
-AIエージェントの「頭脳」としてLLMが使われることが多いです。LLMは自然言語の理解と生成に優れており、複雑な指示を解釈して行動計画を立てることができます。ただし、LLM単体では外部の情報やツールを使えないため、AIエージェントはLLMに加えて「ツール使用能力」と「メモリ」を持ちます。
-<h2>AIエージェントの種類</h2>
-<p>AIエージェントはその構造や用途によっていくつかの種類に分類できます。</p>
-<li><strong>シンプルエージェント</strong>：単純なif-thenルールで動作。</li>
-<li><strong>目標ベースエージェント</strong>：目標達成に向けて行動を選択。</li>
-<li><strong>ユーティリティベースエージェント</strong>：複数の選択肢の中から最も効率的な行動を選ぶ。</li>
-<li><strong>学習エージェント</strong>：経験から学習して行動を改善。</li>
-<p>現在注目されているのは、LLMを搭載した「LLMエージェント」です。これは目標ベースかつ学習エージェントの性質を持ちます。</p>
-<h2>AIエージェントの活用事例</h2>
-<h3>カスタマーサポートの自動化</h3>
-顧客からの問い合わせに対し、AIエージェントがFAQを検索したり、注文状況を確認したりして、自動で回答します。必要に応じて人間のオペレーターにエスカレーションします。
-<h3>ソフトウェア開発の支援</h3>
-AIエージェントがコードのバグを特定し、修正案を提案。さらにテストを実行して結果を報告します。例えば、GitHub Copilotの拡張機能として、自律的にプルリクエストを作成するエージェントが研究されています。
-<h3>データ分析の自動化</h3>
-データベースにクエリを実行し、その結果を分析してレポートを自動作成。ユーザーは「先月の売上を地域別に分析して」と指示するだけで、AIエージェントがSQLを生成し、グラフまで作成します。
-<h2>代表的なAIエージェントフレームワーク</h2>
-<h3>AutoGPT</h3>
-GitHubで人気のオープンソースプロジェクト。LLM（GPT-4）を使って目標を自律的に達成します。Web検索やファイル操作が可能で、長期的なタスクも実行できます。
-<h3>LangChain Agent</h3>
-LangChainライブラリに含まれるエージェント機能。様々なLLMやツールを組み合わせてエージェントを構築できます。ReAct（Reasoning + Acting）パターンを採用。
-<h3>Microsoft Copilot Studio</h3>
-ノーコードでAIエージェントを作成できるプラットフォーム。Power Platformと連携し、業務自動化に特化しています。
-<h2>初心者がAIエージェントを始めるには</h2>
-<li><strong>概念を理解する</strong>：本記事で紹介した基本を押さえましょう。</li>
-<li><strong>簡単なエージェントを動かしてみる</strong>：AutoGPTやLangChainのチュートリアルを試すのがおすすめです。</li>
-<li><strong>小さな自動化から始める</strong>：メールの自動返信やニュースの収集など、身近なタスクを自動化してみましょう。</li>
-<li><strong>コミュニティに参加する</strong>：DiscordやGitHubで情報交換すると、学びが深まります。</li>
-<hr>
-<p>*この記事はOpenCodeを日常的に使用し、AIエージェントにSSH経由でNixOSをインストールさせるなどの実践経験を持つSioが監修しています。DeepSeek APIのヘビーユーザーとして、実際のコスト感や制限事項を反映しています。*</p>
-<h2>まとめ</h2>
-<p>AIエージェントは、LLMの能力を拡張し、自律的にタスクを実行できる強力な技術です。初心者の方も、まずは簡単なエージェントを動かしてみることで、その可能性を実感できるでしょう。自動化の波に乗り遅れないためにも、ぜひAIエージェントを試してみてください。</p>
-<blockquote>参考：LangChain公式ドキュメント、AutoGPT GitHubリポジトリ、Microsoft Copilot Studio公式サイト</blockquote>4:["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"初心者でもわかるAIエージェントとは？仕組みや活用事例を徹底解説"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"AIエージェントの基本を初心者向けに解説。LLMとの違い、仕組み、自動化の事例までわかりやすく紹介します。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","AIエージェント",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"AIエージェント"}],["$","span","初心者",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"初心者"}],["$","span","とは",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"とは"}],["$","span","仕組み",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"仕組み"}],["$","span","LLM",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"LLM"}],["$","span","自動化",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"自動化"}],["$","span","解説",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"解説"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$f"}}]]}],"$L10"]}]
-10:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-ai hover:underline","children":"← 記事一覧に戻る"}]}]
+f:T106e,<h2>AIエージェントとは？初心者向けにわかりやすく解説</h2>
+<p>AIエージェントは、与えられた目標を達成するために自律的に行動するソフトウェアです。従来のAIが単に質問に答えるだけだったのに対し、AIエージェントは環境を認識し、計画を立て、ツールを使ってタスクを実行します。例えば、カレンダーを確認して会議を設定したり、Web検索して情報をまとめたりできます。</p>
+<h2>AIエージェントの仕組み：LLMとの関係</h2>
+<p>AIエージェントの中核には<strong>大規模言語モデル（LLM）</strong>が使われます。LLMは膨大なテキストデータから学習しており、人間のような自然言語の理解と生成が可能です。エージェントはLLMを「頭脳」として、以下のようなプロセスで動作します。</p>
+<li><strong>認識</strong>: ユーザーからの指示や環境の情報を取得</li>
+<li><strong>計画</strong>: LLMが目標達成のための手順を考える</li>
+<li><strong>実行</strong>: 手順に従ってツール（API、ファイル操作など）を呼び出す</li>
+<li><strong>学習</strong>: 結果を記憶し、次回の行動に活かす</li>
+<p>例えば「来週のチームミーティングを予約して」という指示に対し、エージェントはカレンダーAPIを呼び出し、空き時間を確認して予約を入れます。</p>
+<h2>AIエージェントと従来のAIの違い</h2>
+<p>従来のチャットボットは、決まったルールに従って応答するだけでした。AIエージェントは以下の点で異なります。</p>
+<li><strong>自律性</strong>: 人間の介入なしに複数ステップのタスクを実行</li>
+<li><strong>適応性</strong>: 状況に応じて計画を変更可能</li>
+<li><strong>ツール利用</strong>: 外部システムと連携して現実世界に働きかけられる</li>
+<h2>なぜ今AIエージェントが注目されているのか</h2>
+<p>2023年以降、LLMの性能向上により、AIエージェントが実用的なレベルに達しました。特に以下の理由で注目されています。</p>
+<li><strong>業務自動化</strong>: メール対応、データ入力、レポート作成などを自動化</li>
+<li><strong>コスト削減</strong>: 人手をかけずに24時間稼働</li>
+<li><strong>スケーラビリティ</strong>: 必要に応じて多数のエージェントを同時に運用可能</li>
+<h2>AIエージェントの具体的な活用例</h2>
+<h3>カスタマーサポート</h3>
+顧客からの問い合わせを自動で受け付け、FAQ回答、注文状況確認、返品処理などを自律的に行います。
+<h3>データ分析</h3>
+「先月の売上トップ10商品を教えて」という指示で、データベースから抽出し、グラフ付きのレポートを生成します。
+<h3>スケジュール管理</h3>
+複数の参加者のカレンダーを調整し、最適な会議時間を提案・予約します。
+<h2>AIエージェントを導入する際の注意点</h2>
+<li><strong>精度の限界</strong>: LLMは完璧ではなく、誤った情報を生成する可能性があります。重要な判断は人間が確認すべきです。</li>
+<li><strong>セキュリティ</strong>: エージェントに与える権限を適切に設定しないと、意図しない操作が行われる恐れがあります。</li>
+<li><strong>プライバシー</strong>: 個人情報を扱う場合は、データの取り扱いに注意が必要です。</li>
+<h2>まとめ：AIエージェントが変える未来</h2>
+<p>AIエージェントは、単なる会話AIを超えて、私たちの仕事や生活を大きく変える可能性を秘めています。特に反復的な業務の自動化や、複雑なタスクの支援において強力なツールとなるでしょう。初心者の方も、まずは簡単なタスクから試してみることをおすすめします。</p>
+<p>参考：OpenAIのAgent機能や、MicrosoftのCopilotなどが実用的なAIエージェントの例です。</p>4:["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"初心者でもわかるAIエージェントとは？仕組みやLLMとの関係、自動化の未来を解説"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"AIエージェントの基本を初心者向けに解説。LLMとの違い、仕組み、自動化への応用までわかりやすく紹介します。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","AIエージェント",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"AIエージェント"}],["$","span","初心者",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"初心者"}],["$","span","とは",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"とは"}],["$","span","仕組み",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"仕組み"}],["$","span","LLM",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"LLM"}],["$","span","自動化",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"自動化"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$f"}}]]}],["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-ai hover:underline","children":"← 記事一覧に戻る"}]}]]}]
 a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 7:null
 c:[["$","title","0",{"children":"AIエージェント活用ガイド"}],["$","meta","1",{"name":"description","content":"OpenCode/ClaudeCode/DeepSeekを使ったAIエージェント開発自動化の情報を日本語で発信。"}],["$","meta","2",{"name":"keywords","content":"OpenCode,ClaudeCode,AIエージェント,DeepSeek,開発自動化,プロンプト"}]]

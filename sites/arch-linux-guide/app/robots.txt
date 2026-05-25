@@ -1,4 +1,4 @@
 User-Agent: *
 Allow: /
 
-Sitemap: https://arch-linux-guide.pages.dev/sitemap.xml
+Sitemap: https://arch.endoarata.jp/sitemap.xml

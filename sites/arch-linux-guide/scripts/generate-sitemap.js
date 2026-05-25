@@ -1,7 +1,7 @@
 const fs = require("fs")
 const path = require("path")
 
-const BASE_URL = "https://arch-linux-guide.pages.dev"
+const BASE_URL = "https://arch.endoarata.jp"
 const SITE_ROOT = path.join(__dirname, "..")
 const CONTENT_DIR = path.join(SITE_ROOT, "content", "articles")
 const PUBLIC_DIR = path.join(SITE_ROOT, "public")

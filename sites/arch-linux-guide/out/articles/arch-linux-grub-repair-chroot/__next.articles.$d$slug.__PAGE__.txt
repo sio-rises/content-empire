@@ -1,7 +1,7 @@
 1:"$Sreact.fragment"
 5:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"OutletBoundary"]
 6:"$Sreact.suspense"
-2:T214b,<h2>はじめに</h2>
+2:T2145,<h2>はじめに</h2>
 <p>筆者も実際に経験したトラブルです。デュアルブート環境でWindowsアップデート後にGRUBが吹き飛び、Arch Linuxが起動しなくなりました。この記事の手順は、その時に実際にUSBメモリからchrootして復旧した方法です。</p>
 <p>Arch Linuxを起動しようとしたら、真っ黒な画面に "GRUB loading..." のまま止まってしまった、あるいは "error: no such partition" や "grub rescue>" というプロンプトが表示された経験はありませんか？この記事では、そんな<strong>Arch Linuxが起動しない</strong>トラブルを、<strong>GRUB</strong>を<strong>修復</strong>することで解決する方法を解説します。USBメモリから<strong>chroot</strong>環境に入り、<strong>ブートローダー</strong>を再インストールする手順を、初心者でも迷わないように具体的に示します。</p>
 <h2>必要なもの</h2>
@@ -62,10 +62,10 @@ mount --bind /sys /mnt/sys
 <pre><code class="language-bash">pacman -S efibootmgr
 </code></pre>
 <h3>9. GRUBの再インストール</h3>
-<p>#### BIOS/レガシーブートの場合</p>
+<h4>BIOS/レガシーブートの場合</h4>
 <pre><code class="language-bash">grub-install /dev/sda
 </code></pre>
-<p>#### UEFIの場合</p>
+<h4>UEFIの場合</h4>
 <pre><code class="language-bash">grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 </code></pre>
 <p><code>--efi-directory</code> はEFIシステムパーティション（ESP）のマウントポイントを指定します。通常は <code>/boot</code> または <code>/efi</code> です。</p>
@@ -108,7 +108,7 @@ grub rescue&gt; normal
 <p><strong>参考リンク</strong>
 <li><a href="https://wiki.archlinux.jp/index.php/GRUB" target="_blank" rel="noopener">ArchWiki: GRUB</a></li>
 <li><a href="https://wiki.archlinux.jp/index.php/Chroot" target="_blank" rel="noopener">ArchWiki: chroot</a></li></p>
-<p>このガイドが、あなたのArch Linux復旧の一助となれば幸いです。</p>0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"Arch Linuxが起動しない？GRUB修復をchrootで解決する完全ガイド"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"Arch Linuxが起動しないときのGRUB修復手順を解説。USBメモリからchrootしてブートローダーを再インストールする方法を初心者向けに詳しく紹介。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","Arch Linux",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"Arch Linux"}],["$","span","起動しない",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"起動しない"}],["$","span","GRUB",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"GRUB"}],["$","span","修復",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"修復"}],["$","span","chroot",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"chroot"}],["$","span","ブートローダー",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"ブートローダー"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3"]}],null,"$L4"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"oMFWqHyx7sJoNGgtrYd0X"}
+<p>このガイドが、あなたのArch Linux復旧の一助となれば幸いです。</p>0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"Arch Linuxが起動しない？GRUB修復をchrootで解決する完全ガイド"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"Arch Linuxが起動しないときのGRUB修復手順を解説。USBメモリからchrootしてブートローダーを再インストールする方法を初心者向けに詳しく紹介。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","Arch Linux",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"Arch Linux"}],["$","span","起動しない",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"起動しない"}],["$","span","GRUB",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"GRUB"}],["$","span","修復",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"修復"}],["$","span","chroot",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"chroot"}],["$","span","ブートローダー",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"ブートローダー"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3"]}],null,"$L4"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"lSUwLKzjeCTnjIay80zjI"}
 3:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-arch hover:underline","children":"← 記事一覧に戻る"}]}]
 4:["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]
 7:null

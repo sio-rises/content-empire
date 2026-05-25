@@ -1,4 +1,4 @@
 User-Agent: *
 Allow: /
 
-Sitemap: https://freelance-guide.pages.dev/sitemap.xml
+Sitemap: https://freelance.endoarata.jp/sitemap.xml

@@ -1,186 +1,186 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://arch-linux-guide.pages.dev</loc>
+    <loc>https://arch.endoarata.jp</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://arch-linux-guide.pages.dev/articles/arch-linux-aur-package-management-yay-paru</loc>
+    <loc>https://arch.endoarata.jp/articles/arch-linux-aur-package-management-yay-paru</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arch-linux-guide.pages.dev/articles/arch-linux-backup-strategy-rsync-tar-btrfs</loc>
+    <loc>https://arch.endoarata.jp/articles/arch-linux-backup-strategy-rsync-tar-btrfs</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arch-linux-guide.pages.dev/articles/arch-linux-black-screen-graphics-driver</loc>
+    <loc>https://arch.endoarata.jp/articles/arch-linux-black-screen-graphics-driver</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arch-linux-guide.pages.dev/articles/arch-linux-btrfs-snapper-snapshot-setup</loc>
+    <loc>https://arch.endoarata.jp/articles/arch-linux-btrfs-snapper-snapshot-setup</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arch-linux-guide.pages.dev/articles/arch-linux-disk-space-cleanup</loc>
+    <loc>https://arch.endoarata.jp/articles/arch-linux-disk-space-cleanup</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arch-linux-guide.pages.dev/articles/arch-linux-dotfiles-chezmoi-yadm-comparison</loc>
+    <loc>https://arch.endoarata.jp/articles/arch-linux-dotfiles-chezmoi-yadm-comparison</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arch-linux-guide.pages.dev/articles/arch-linux-dual-boot-windows-grub-efi</loc>
+    <loc>https://arch.endoarata.jp/articles/arch-linux-dual-boot-windows-grub-efi</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arch-linux-guide.pages.dev/articles/arch-linux-fcitx5-mozc-japanese-input</loc>
+    <loc>https://arch.endoarata.jp/articles/arch-linux-fcitx5-mozc-japanese-input</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arch-linux-guide.pages.dev/articles/arch-linux-firewall-ufw-firewalld-iptables-comparison</loc>
+    <loc>https://arch.endoarata.jp/articles/arch-linux-firewall-ufw-firewalld-iptables-comparison</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arch-linux-guide.pages.dev/articles/arch-linux-flatpak-install-usage</loc>
+    <loc>https://arch.endoarata.jp/articles/arch-linux-flatpak-install-usage</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arch-linux-guide.pages.dev/articles/arch-linux-gnome-install-guide</loc>
+    <loc>https://arch.endoarata.jp/articles/arch-linux-gnome-install-guide</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arch-linux-guide.pages.dev/articles/arch-linux-grub-repair-chroot</loc>
+    <loc>https://arch.endoarata.jp/articles/arch-linux-grub-repair-chroot</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arch-linux-guide.pages.dev/articles/arch-linux-hyprland-wayland-setup</loc>
+    <loc>https://arch.endoarata.jp/articles/arch-linux-hyprland-wayland-setup</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arch-linux-guide.pages.dev/articles/arch-linux-i3-sway-comparison</loc>
+    <loc>https://arch.endoarata.jp/articles/arch-linux-i3-sway-comparison</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arch-linux-guide.pages.dev/articles/arch-linux-kde-plasma-install</loc>
+    <loc>https://arch.endoarata.jp/articles/arch-linux-kde-plasma-install</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arch-linux-guide.pages.dev/articles/arch-linux-kernel-update-guide</loc>
+    <loc>https://arch.endoarata.jp/articles/arch-linux-kernel-update-guide</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arch-linux-guide.pages.dev/articles/arch-linux-luks-disk-encryption-beginners-guide</loc>
+    <loc>https://arch.endoarata.jp/articles/arch-linux-luks-disk-encryption-beginners-guide</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arch-linux-guide.pages.dev/articles/arch-linux-manual-install-guide</loc>
+    <loc>https://arch.endoarata.jp/articles/arch-linux-manual-install-guide</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arch-linux-guide.pages.dev/articles/arch-linux-mirrorlist-update-speedup</loc>
+    <loc>https://arch.endoarata.jp/articles/arch-linux-mirrorlist-update-speedup</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arch-linux-guide.pages.dev/articles/arch-linux-networkmanager-setup</loc>
+    <loc>https://arch.endoarata.jp/articles/arch-linux-networkmanager-setup</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arch-linux-guide.pages.dev/articles/arch-linux-pacman-command-cheat-sheet</loc>
+    <loc>https://arch.endoarata.jp/articles/arch-linux-pacman-command-cheat-sheet</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arch-linux-guide.pages.dev/articles/arch-linux-pacman-error-solutions</loc>
+    <loc>https://arch.endoarata.jp/articles/arch-linux-pacman-error-solutions</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arch-linux-guide.pages.dev/articles/arch-linux-post-install-setup</loc>
+    <loc>https://arch.endoarata.jp/articles/arch-linux-post-install-setup</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arch-linux-guide.pages.dev/articles/arch-linux-ssh-server-setup-security</loc>
+    <loc>https://arch.endoarata.jp/articles/arch-linux-ssh-server-setup-security</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arch-linux-guide.pages.dev/articles/arch-linux-systemd-service-management</loc>
+    <loc>https://arch.endoarata.jp/articles/arch-linux-systemd-service-management</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arch-linux-guide.pages.dev/articles/arch-linux-terminal-setup-zsh-starship-kitty-ghostty</loc>
+    <loc>https://arch.endoarata.jp/articles/arch-linux-terminal-setup-zsh-starship-kitty-ghostty</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arch-linux-guide.pages.dev/articles/arch-linux-usb-install-media-dd-balenaetcher</loc>
+    <loc>https://arch.endoarata.jp/articles/arch-linux-usb-install-media-dd-balenaetcher</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arch-linux-guide.pages.dev/articles/arch-linux-virtualbox-install</loc>
+    <loc>https://arch.endoarata.jp/articles/arch-linux-virtualbox-install</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arch-linux-guide.pages.dev/articles/arch-linux-wifi-iwd-iwctl</loc>
+    <loc>https://arch.endoarata.jp/articles/arch-linux-wifi-iwd-iwctl</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arch-linux-guide.pages.dev/articles/arch-linux-xfce-lightweight-desktop</loc>
+    <loc>https://arch.endoarata.jp/articles/arch-linux-xfce-lightweight-desktop</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

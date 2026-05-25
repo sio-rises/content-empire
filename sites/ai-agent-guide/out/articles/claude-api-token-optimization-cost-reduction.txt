@@ -1,0 +1,121 @@
+1:"$Sreact.fragment"
+2:I[10332,["/_next/static/chunks/007ac~remr-yw.js"],"default"]
+3:I[41511,["/_next/static/chunks/007ac~remr-yw.js"],"default"]
+5:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+9:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"ViewportBoundary"]
+b:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"MetadataBoundary"]
+d:I[30493,["/_next/static/chunks/007ac~remr-yw.js"],"default",1]
+:HL["/_next/static/chunks/0j5zuqvsr0qqd.css","style"]
+0:{"P":null,"c":["","articles","claude-api-token-optimization-cost-reduction"],"q":"","i":false,"f":[[["",{"children":["articles",{"children":[["slug","claude-api-token-optimization-cost-reduction","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0j5zuqvsr0qqd.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/007ac~remr-yw.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"ja","children":[["$","head",null,{"children":["$","script",null,{"async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019","crossOrigin":"anonymous"}]}],["$","body",null,{"className":"min-h-screen antialiased","children":["$","div",null,{"className":"flex min-h-screen flex-col","children":[["$","header",null,{"className":"border-b border-gray-200 bg-white","children":["$","div",null,{"className":"mx-auto flex max-w-4xl items-center justify-between px-4 py-3","children":[["$","a",null,{"href":"/","className":"text-lg font-bold text-ai hover:opacity-80","children":"AIエージェント活用ガイド"}],["$","nav",null,{"className":"flex gap-4 text-sm text-gray-600","children":["$","a",null,{"href":"/","className":"hover:text-ai","children":"ホーム"}]}]]}]}],["$","main",null,{"className":"flex-1","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400","children":["AIエージェント活用ガイド — Built with OpenCode + DeepSeek API",["$","div",null,{"className":"border-t border-gray-100 mt-4 pt-3 text-center text-[10px] text-gray-300","children":[["$","span",null,{"className":"mr-2","children":"関連サイト:"}],["$","a",null,{"href":"https://arch-linux-guide.pages.dev","className":"hover:underline","children":"Arch Linux日本語ガイド"}],"  ",["$","a",null,{"href":"https://nisa-investment.pages.dev","className":"hover:underline","children":"NISA投資入門"}],"  ",["$","a",null,{"href":"https://linux-security.pages.dev","className":"hover:underline","children":"Linuxセキュリティ"}],"  ",["$","a",null,{"href":"https://vps-server-guide.pages.dev","className":"hover:underline","children":"VPSサーバー構築"}]]}]]}]]}]}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L4",null,["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]]}],{},null,false,null]},null,false,"$@8"]},null,false,"$@8"]},null,false,null],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$6",null,{"name":"Next.Metadata","children":"$Lc"}]}]}],null]}],false]],"m":"$undefined","G":["$d",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0j5zuqvsr0qqd.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"cZWNxtWXrIsLiNU6bnRwr"}
+e:[]
+8:"$We"
+f:T1c0e,<h2>はじめに</h2>
+<p>Claude APIを利用する際、コストはトークン消費量に直接依存します。APIの料金は入力（プロンプト）と出力（レスポンス）のトークン数に基づいて計算されるため、トークンを効率的に使うことがコスト削減の鍵です。本記事では、Claude APIのトークン最適化とコスト削減のための実践テクニックを、具体的な方法とともに解説します。</p>
+<h2>トークンとは？</h2>
+<p>トークンは、テキストを分割した単位です。Claudeでは、1トークンは約3〜4文字（英語の場合）または1文字（日本語の場合）に相当します。APIリクエストの費用は、プロンプトとレスポンスの合計トークン数に応じて課金されます。</p>
+<h2>プロンプトの最適化</h2>
+<h3>1. プロンプトを簡潔にする</h3>
+<p>不要な説明や冗長な表現を削減しましょう。例えば、以下のように改善できます。</p>
+<p><strong>非効率なプロンプト:</strong>
+<pre><code class="language-">あなたは優秀な翻訳者です。以下の英文を日本語に翻訳してください。翻訳の際には、自然な日本語になるように注意してください。
+英文: "Hello, how are you?"
+</code></pre></p>
+<p><strong>最適化したプロンプト:</strong>
+<pre><code class="language-">翻訳: "Hello, how are you?" → 日本語
+</code></pre></p>
+<p>これにより、トークン数を約30%削減できます。</p>
+<h3>2. システムプロンプトを活用する</h3>
+<p>Claude APIでは、システムプロンプト（<code>system</code>パラメータ）を使用して、会話の冒頭で指示を与えることができます。システムプロンプトはユーザーとアシスタントのやり取りに含まれないため、毎回同じ指示を繰り返す必要がなく、トークンを節約できます。</p>
+<p><strong>例:</strong>
+<pre><code class="language-json">{
+  "system": "あなたは親切なアシスタントです。簡潔に回答してください。",
+  "messages": [
+    {"role": "user", "content": "Claude APIの使い方を教えて"}
+  ]
+}
+</code></pre></p>
+<h3>3. 指示を具体化する</h3>
+<p>あいまいな指示は、Claudeが余計な推論をしてトークンを消費する原因になります。回答の形式や長さを指定しましょう。</p>
+<p><strong>例:</strong>
+<pre><code class="language-">箇条書きで3つのポイントを挙げてください。各ポイントは50文字以内で。
+</code></pre></p>
+<h2>レスポンスの制御</h2>
+<h3>1. <code>max_tokens</code>を設定する</h3>
+<p><code>max_tokens</code>パラメータでレスポンスの最大トークン数を制限します。過剰に長い回答を防ぎ、コストを予測可能にします。</p>
+<p><strong>例:</strong>
+<pre><code class="language-json">{
+  "max_tokens": 100,
+  "messages": [
+    {"role": "user", "content": "量子コンピュータの仕組みを簡潔に説明してください"}
+  ]
+}
+</code></pre></p>
+<h3>2. <code>stop</code>シーケンスを利用する</h3>
+<p>特定の文字列で生成を停止させることで、不要な部分をカットできます。例えば、JSON出力を期待する場合、<code>stop</code>に<code>"\n"</code>を設定すると、最初の改行で停止します。</p>
+<p><strong>例:</strong>
+<pre><code class="language-json">{
+  "stop": ["\n"],
+  "messages": [
+    {"role": "user", "content": "次の質問に一言で答えてください: 日本の首都は？"}
+  ]
+}
+</code></pre></p>
+<h3>3. 温度パラメータを調整する</h3>
+<p><code>temperature</code>を低く（0〜0.3）設定すると、より決定的で簡潔な回答になり、トークン消費が安定します。逆に高いと多様な表現になり、長くなる可能性があります。</p>
+<h2>トークン管理の実践</h2>
+<h3>1. トークン使用量をモニタリングする</h3>
+<p>APIレスポンスの<code>usage</code>フィールドには、<code>input_tokens</code>と<code>output_tokens</code>が含まれます。これをログに記録し、分析することで、どのリクエストがコストを多く消費しているか把握できます。</p>
+<p><strong>例（Python）:</strong>
+<pre><code class="language-python">import anthropic</p>
+<p>client = anthropic.Anthropic()
+response = client.messages.create(
+    model="claude-3-5-sonnet-20241022",
+    max_tokens=100,
+    messages=[{"role": "user", "content": "こんにちは"}]
+)
+print(response.usage)
+&lt;h1&gt;{'input_tokens': 10, 'output_tokens': 20}&lt;/h1&gt;
+</code></pre></p>
+<h3>2. 会話履歴をトリミングする</h3>
+<p>マルチターンの会話では、過去のメッセージをすべて送信するとトークンが肥大化します。古いやり取りを要約するか、重要な部分だけを残すようにしましょう。</p>
+<p><strong>例:</strong>
+<pre><code class="language-python">&lt;h1&gt;最新の2往復だけを保持&lt;/h1&gt;
+messages = conversation_history[-4:]  # 最新4メッセージ
+</code></pre></p>
+<h3>3. バッチ処理を検討する</h3>
+<p>複数のリクエストを1つにまとめることで、プロンプトの共通部分を削減できます。例えば、複数の質問を1回のAPIコールで送信し、回答を分割して受け取ります。</p>
+<p><strong>非効率:</strong>
+<pre><code class="language-">Q1: 東京の人口は？
+A1: ...
+Q2: 大阪の人口は？
+A2: ...
+</code></pre></p>
+<p><strong>効率的:</strong>
+<pre><code class="language-">以下の質問に順番に答えてください。
+&lt;li&gt;東京の人口は？&lt;/li&gt;
+&lt;li&gt;大阪の人口は？&lt;/li&gt;
+</code></pre></p>
+<h2>モデル選択の最適化</h2>
+<p>Claudeには複数のモデルがあり、タスクに応じて適切なモデルを選ぶことでコストを削減できます。</p>
+<li><strong>Claude 3 Haiku</strong>: 最も高速で低コスト。簡単なタスクや大量のリクエストに最適。</li>
+<li><strong>Claude 3 Sonnet</strong>: バランスの取れた性能。一般的な用途に。</li>
+<li><strong>Claude 3 Opus</strong>: 高精度だが高コスト。複雑な推論が必要な場合のみ使用。</li>
+<p><strong>例:</strong>
+<pre><code class="language-json">{
+  "model": "claude-3-haiku-20240307",
+  "max_tokens": 50,
+  "messages": [{"role": "user", "content": "2+2は？"}]
+}
+</code></pre></p>
+<h2>まとめ</h2>
+<p>Claude APIのトークン最適化は、以下のポイントを意識することで効果的にコスト削減が可能です。</p>
+<li>プロンプトは簡潔にし、システムプロンプトを活用</li>
+<li>レスポンスの長さを<code>max_tokens</code>や<code>stop</code>で制御</li>
+<li>トークン使用量をモニタリングし、会話履歴をトリミング</li>
+<li>タスクに適したモデルを選択</li>
+<p>これらのテクニックを組み合わせることで、APIの利用コストを大幅に削減しつつ、必要な品質を維持できます。ぜひ実践してみてください。</p>4:["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"Claude API トークン最適化ガイド：コスト削減のための実践テクニック"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"Claude APIのトークン消費を最適化し、コストを削減する具体的なテクニックを解説。プロンプト設計、レスポンス制御、トークン管理の実践方法を紹介します。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","Claude API",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"Claude API"}],["$","span","トークン",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"トークン"}],["$","span","最適化",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"最適化"}],["$","span","コスト削減",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"コスト削減"}],["$","span","プロンプト",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"プロンプト"}],["$","span","効率",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"効率"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$f"}}]]}],"$L10"]}]
+10:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-ai hover:underline","children":"← 記事一覧に戻る"}]}]
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+7:null
+c:[["$","title","0",{"children":"AIエージェント活用ガイド"}],["$","meta","1",{"name":"description","content":"OpenCode/ClaudeCode/DeepSeekを使ったAIエージェント開発自動化の情報を日本語で発信。"}],["$","meta","2",{"name":"keywords","content":"OpenCode,ClaudeCode,AIエージェント,DeepSeek,開発自動化,プロンプト"}]]

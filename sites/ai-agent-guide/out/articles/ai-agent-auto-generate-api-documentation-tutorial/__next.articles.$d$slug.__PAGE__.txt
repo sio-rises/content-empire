@@ -1,0 +1,163 @@
+1:"$Sreact.fragment"
+5:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+2:T1d54,<h2>はじめに</h2>
+<p>APIドキュメントの作成と保守は、開発者にとって負担の大きい作業です。特に、複数のエンドポイントやパラメータが存在する場合、手動でのドキュメント作成はミスが発生しやすく、更新漏れが生じることも少なくありません。そこで注目されているのが、<strong>AIエージェント</strong>を活用したAPIドキュメントの自動生成です。本チュートリアルでは、Swagger（OpenAPI）形式の仕様書をAIエージェントが自動生成する方法を、具体的な手順とともに解説します。</p>
+<h2>前提条件</h2>
+<li>Python 3.8以上がインストールされていること</li>
+<li>OpenAI APIキー（または他のLLM APIキー）を取得していること</li>
+<li>基本的なPythonプログラミングの知識</li>
+<h2>ステップ1: 環境準備</h2>
+<p>まず、必要なライブラリをインストールします。</p>
+<pre><code class="language-bash">pip install openai pyyaml flask
+</code></pre>
+<li><code>openai</code>: OpenAIのAPIを呼び出すため</li>
+<li><code>pyyaml</code>: OpenAPI仕様をYAML形式で出力するため</li>
+<li><code>flask</code>: サンプルAPIとして使用</li>
+<h2>ステップ2: サンプルAPIの作成</h2>
+<p>簡単なFlaskアプリケーションを作成します。</p>
+<pre><code class="language-python">&lt;h1&gt;app.py&lt;/h1&gt;
+from flask import Flask, jsonify, request
+<p>app = Flask(__name__)</p>
+<p>@app.route('/users', methods=['GET'])
+def get_users():
+    """ユーザー一覧を取得"""
+    users = [
+        {"id": 1, "name": "Alice"},
+        {"id": 2, "name": "Bob"}
+    ]
+    return jsonify(users)</p>
+<p>@app.route('/users', methods=['POST'])
+def create_user():
+    """新規ユーザーを作成"""
+    data = request.get_json()
+    return jsonify({"id": 3, "name": data["name"]}), 201</p>
+<p>if __name__ == '__main__':
+    app.run(debug=True)
+</code></pre></p>
+<h2>ステップ3: AIエージェントによるドキュメント生成</h2>
+<p>AIエージェントにAPIのソースコードを読み込ませ、OpenAPI仕様を自動生成させます。以下のスクリプトでは、OpenAIのGPTモデルを使用しています。</p>
+<pre><code class="language-python">&lt;h1&gt;generate_docs.py&lt;/h1&gt;
+import openai
+import yaml
+import json
+<p>openai.api_key = "your-api-key"</p>
+<p>def generate_openapi_spec(source_code):
+    prompt = f"""
+    You are an AI assistant that generates OpenAPI 3.0 specification in YAML format from Python Flask source code.
+    Given the following source code, generate a complete OpenAPI spec.
+    Only output the YAML, no additional text.</p>
+<p>Source code:
+    {source_code}
+    """
+    response = openai.ChatCompletion.create(
+        model="gpt-4",
+        messages=[
+            {"role": "system", "content": "You are a helpful assistant."},
+            {"role": "user", "content": prompt}
+        ],
+        max_tokens=2000,
+        temperature=0.2
+    )
+    return response.choices[0].message.content</p>
+<p>if __name__ == "__main__":
+    with open("app.py", "r") as f:
+        code = f.read()
+    spec_yaml = generate_openapi_spec(code)
+    with open("openapi.yaml", "w") as f:
+        f.write(spec_yaml)
+    print("OpenAPI spec generated: openapi.yaml")
+</code></pre></p>
+<h2>ステップ4: 生成結果の確認</h2>
+<p>生成された<code>openapi.yaml</code>を確認します。例えば、以下のような内容が出力されます。</p>
+<pre><code class="language-yaml">openapi: "3.0.0"
+info:
+  title: Sample API
+  version: "1.0.0"
+paths:
+  /users:
+    get:
+      summary: ユーザー一覧を取得
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+    post:
+      summary: 新規ユーザーを作成
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateUserRequest'
+      responses:
+        '201':
+          description: 作成成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+    CreateUserRequest:
+      type: object
+      properties:
+        name:
+          type: string
+</code></pre>
+<h2>ステップ5: ドキュメントの可視化</h2>
+<p>生成したOpenAPI仕様をSwagger UIで表示するには、<code>swagger-ui</code>や<code>redoc</code>などのツールを使用します。簡単な例として、<code>swagger-ui</code>のDockerイメージを利用します。</p>
+<pre><code class="language-bash">docker run -p 8080:8080 -e SWAGGER_JSON=/app/openapi.yaml -v $(pwd):/app swaggerapi/swagger-ui
+</code></pre>
+<p>ブラウザで<code>http://localhost:8080</code>にアクセスすると、自動生成されたAPIドキュメントが表示されます。</p>
+<h2>応用: ソースコード変更時の自動更新</h2>
+<p>AIエージェントをCI/CDパイプラインに組み込むことで、ソースコード変更時に自動的にドキュメントを再生成できます。以下はGitHub Actionsの例です。</p>
+<pre><code class="language-yaml">&lt;h1&gt;.github/workflows/update-docs.yml&lt;/h1&gt;
+name: Update API Docs
+on:
+  push:
+    paths:
+      - 'app.py'
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+      - name: Install dependencies
+        run: pip install openai pyyaml
+      - name: Generate OpenAPI spec
+        run: python generate_docs.py
+      - name: Commit and push
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add openapi.yaml
+          git commit -m "Auto-update OpenAPI spec"
+          git push
+</code></pre>
+<h2>注意点とベストプラクティス</h2>
+<li><strong>プロンプトの工夫</strong>: AIエージェントに正確なドキュメントを生成させるためには、プロンプトで出力形式や注意点を明確に指定します。</li>
+<li><strong>手動レビューの推奨</strong>: 生成されたドキュメントは必ず人間がレビューし、誤りがないか確認します。</li>
+<li><strong>コメントの活用</strong>: ソースコードに適切なdocstringやコメントを記述することで、AIがより正確に解釈できます。</li>
+<li><strong>セキュリティ</strong>: APIキーなどの機密情報をコードに直接記述しないように注意します。環境変数を使用しましょう。</li>
+<h2>まとめ</h2>
+<p>AIエージェントを活用することで、APIドキュメントの自動生成が効率的に行えます。本チュートリアルでは、FlaskアプリのソースコードからOpenAPI仕様を生成する方法を紹介しました。この手法を応用すれば、大規模なAPIでもドキュメントの更新が容易になり、開発者の負担を大幅に軽減できます。ぜひ、実際のプロジェクトで試してみてください。</p>0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"AIエージェントでAPIドキュメントを自動生成するチュートリアル"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"Swagger/OpenAPIを用いてAIエージェントがAPIドキュメントを自動生成する方法を解説。実践的なステップと具体例で効率的なドキュメント管理を実現。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","AIエージェント",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"AIエージェント"}],["$","span","API",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"API"}],["$","span","ドキュメント",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"ドキュメント"}],["$","span","自動生成",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"自動生成"}],["$","span","Swagger",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"Swagger"}],["$","span","OpenAPI",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"OpenAPI"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3"]}],null,"$L4"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"cZWNxtWXrIsLiNU6bnRwr"}
+3:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-ai hover:underline","children":"← 記事一覧に戻る"}]}]
+4:["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]
+7:null

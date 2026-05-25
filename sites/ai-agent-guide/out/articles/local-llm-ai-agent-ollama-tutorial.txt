@@ -1,0 +1,145 @@
+1:"$Sreact.fragment"
+2:I[10332,["/_next/static/chunks/007ac~remr-yw.js"],"default"]
+3:I[41511,["/_next/static/chunks/007ac~remr-yw.js"],"default"]
+5:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+9:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"ViewportBoundary"]
+b:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"MetadataBoundary"]
+d:I[30493,["/_next/static/chunks/007ac~remr-yw.js"],"default",1]
+:HL["/_next/static/chunks/0j5zuqvsr0qqd.css","style"]
+0:{"P":null,"c":["","articles","local-llm-ai-agent-ollama-tutorial"],"q":"","i":false,"f":[[["",{"children":["articles",{"children":[["slug","local-llm-ai-agent-ollama-tutorial","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0j5zuqvsr0qqd.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/007ac~remr-yw.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"ja","children":[["$","head",null,{"children":["$","script",null,{"async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019","crossOrigin":"anonymous"}]}],["$","body",null,{"className":"min-h-screen antialiased","children":["$","div",null,{"className":"flex min-h-screen flex-col","children":[["$","header",null,{"className":"border-b border-gray-200 bg-white","children":["$","div",null,{"className":"mx-auto flex max-w-4xl items-center justify-between px-4 py-3","children":[["$","a",null,{"href":"/","className":"text-lg font-bold text-ai hover:opacity-80","children":"AIエージェント活用ガイド"}],["$","nav",null,{"className":"flex gap-4 text-sm text-gray-600","children":["$","a",null,{"href":"/","className":"hover:text-ai","children":"ホーム"}]}]]}]}],["$","main",null,{"className":"flex-1","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400","children":["AIエージェント活用ガイド — Built with OpenCode + DeepSeek API",["$","div",null,{"className":"border-t border-gray-100 mt-4 pt-3 text-center text-[10px] text-gray-300","children":[["$","span",null,{"className":"mr-2","children":"関連サイト:"}],["$","a",null,{"href":"https://arch-linux-guide.pages.dev","className":"hover:underline","children":"Arch Linux日本語ガイド"}],"  ",["$","a",null,{"href":"https://nisa-investment.pages.dev","className":"hover:underline","children":"NISA投資入門"}],"  ",["$","a",null,{"href":"https://linux-security.pages.dev","className":"hover:underline","children":"Linuxセキュリティ"}],"  ",["$","a",null,{"href":"https://vps-server-guide.pages.dev","className":"hover:underline","children":"VPSサーバー構築"}]]}]]}]]}]}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L4",null,["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]]}],{},null,false,null]},null,false,"$@8"]},null,false,"$@8"]},null,false,null],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$6",null,{"name":"Next.Metadata","children":"$Lc"}]}]}],null]}],false]],"m":"$undefined","G":["$d",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0j5zuqvsr0qqd.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"cZWNxtWXrIsLiNU6bnRwr"}
+e:[]
+8:"$We"
+f:T1c74,<h2>はじめに</h2>
+<p>近年、AIエージェントが注目を集めていますが、クラウド上のLLMを利用するとプライバシーやコストの懸念があります。そこで、ローカルで動作するLLM（ローカルLLM）とAIエージェントを組み合わせることで、オフラインかつプライベートな環境でエージェントを実行できます。本チュートリアルでは、<strong>Ollama</strong>を使ってローカルLLMをセットアップし、AIエージェントと連携する方法を具体的に解説します。</p>
+<h2>ローカルLLMとAIエージェントのメリット</h2>
+<li><strong>プライバシー</strong>: データが外部に送信されないため、機密情報を扱う業務に最適です。</li>
+<li><strong>オフライン動作</strong>: インターネット接続が不要なため、安定した動作が可能です。</li>
+<li><strong>コスト削減</strong>: API費用がかからず、一度セットアップすれば無料で使い放題です。</li>
+<li><strong>カスタマイズ性</strong>: モデルやプロンプトを自由に変更でき、用途に合わせたエージェントを構築できます。</li>
+<h2>必要なもの</h2>
+<li>Ollamaが動作する環境（Windows, macOS, Linux）</li>
+<li>Python 3.8以上</li>
+<li>基本的なコマンドライン操作の知識</li>
+<h2>ステップ1: Ollamaのインストールとモデル準備</h2>
+<h3>1.1 Ollamaのインストール</h3>
+<p><a href="https://ollama.com/" target="_blank" rel="noopener">Ollama公式サイト</a>からOSに合ったインストーラをダウンロードし、インストールします。</p>
+<pre><code class="language-bash">&lt;h1&gt;Linux/macOSの場合（curl経由）&lt;/h1&gt;
+curl -fsSL https://ollama.com/install.sh | sh
+</code></pre>
+<h3>1.2 モデルのダウンロード</h3>
+<p>Ollamaは多くのモデルをサポートしています。ここでは軽量で性能の良い「Mistral」を使用します。</p>
+<pre><code class="language-bash">ollama pull mistral
+</code></pre>
+<p>ダウンロードが完了したら、以下のコマンドで動作確認します。</p>
+<pre><code class="language-bash">ollama run mistral "Hello, how are you?"
+</code></pre>
+<h2>ステップ2: AIエージェントの設計</h2>
+<p>シンプルなタスク実行エージェントを作成します。エージェントはユーザーの指示を解析し、適切なアクションを実行します。今回は「ファイル操作」を例にします。</p>
+<h3>2.1 機能一覧</h3>
+<li>ファイル一覧の表示</li>
+<li>ファイルの内容表示</li>
+<li>ファイルの削除（確認付き）</li>
+<h2>ステップ3: Pythonでエージェントを実装</h2>
+<h3>3.1 必要なライブラリのインストール</h3>
+<pre><code class="language-bash">pip install ollama
+</code></pre>
+<h3>3.2 エージェントコードの作成</h3>
+<p><code>agent.py</code>を作成し、以下のコードを記述します。</p>
+<pre><code class="language-python">import ollama
+import os
+import json
+<p>&lt;h1&gt;Ollamaクライアントの初期化&lt;/h1&gt;
+client = ollama.Client()</p>
+<p>def get_llm_response(prompt):
+    response = client.generate(model='mistral', prompt=prompt)
+    return response['response']</p>
+<p>def parse_command(user_input):
+    # LLMに命令を解析させる
+    system_prompt = """
+    あなたはファイル操作アシスタントです。ユーザーの入力を解析し、以下のJSON形式で出力してください。
+    {
+        "action": "list | read | delete",
+        "params": {
+            "path": "ファイルパス"
+        }
+    }
+    例:
+    - ユーザー: "ファイル一覧を表示" → {"action": "list", "params": {"path": "."}}
+    - ユーザー: "test.txtの内容を表示" → {"action": "read", "params": {"path": "test.txt"}}
+    - ユーザー: "test.txtを削除" → {"action": "delete", "params": {"path": "test.txt"}}
+    """
+    full_prompt = f"{system_prompt}\n\nユーザー: {user_input}"
+    response = get_llm_response(full_prompt)
+    try:
+        # JSON部分を抽出
+        json_start = response.index('{')
+        json_end = response.rindex('}') + 1
+        json_str = response[json_start:json_end]
+        return json.loads(json_str)
+    except:
+        return None</p>
+<p>def execute_action(command):
+    if command is None:
+        return "コマンドを解析できませんでした。"
+    action = command['action']
+    path = command['params']['path']
+    if action == 'list':
+        files = os.listdir(path)
+        return "\n".join(files)
+    elif action == 'read':
+        try:
+            with open(path, 'r') as f:
+                return f.read()
+        except FileNotFoundError:
+            return "ファイルが見つかりません。"
+    elif action == 'delete':
+        confirm = input(f"本当に{path}を削除しますか？ (y/n): ")
+        if confirm.lower() == 'y':
+            os.remove(path)
+            return "削除しました。"
+        else:
+            return "削除をキャンセルしました。"
+    else:
+        return "不明なアクションです。"</p>
+<p>if __name__ == "__main__":
+    print("ファイル操作エージェントを開始します。終了するには 'exit' と入力。")
+    while True:
+        user_input = input("\n指示を入力: ")
+        if user_input.lower() == 'exit':
+            break
+        command = parse_command(user_input)
+        result = execute_action(command)
+        print(result)
+</code></pre></p>
+<h3>3.3 実行テスト</h3>
+<pre><code class="language-bash">python agent.py
+</code></pre>
+<p>以下のように動作します。</p>
+<pre><code class="language-">指示を入力: ファイル一覧を表示
+agent.py
+README.md
+...
+<p>指示を入力: agent.pyの内容を表示
+import ollama
+...
+</code></pre></p>
+<h2>ステップ4: 応用とカスタマイズ</h2>
+<h3>4.1 他のモデルへの変更</h3>
+<p>Ollamaで利用可能なモデルに変更できます。例えば、日本語性能の高い「ELYZA-jp」を使用する場合：</p>
+<pre><code class="language-bash">ollama pull elyza:jp8b
+</code></pre>
+<p>コード内の<code>model='mistral'</code>を<code>model='elyza:jp8b'</code>に変更します。</p>
+<h3>4.2 エージェントの機能拡張</h3>
+<li>ウェブ検索エージェント：ローカルで完結しない場合は、APIと組み合わせることも可能です。</li>
+<li>スケジュール管理：カレンダー操作など。</li>
+<h2>注意点</h2>
+<li>ローカルLLMはクラウド版に比べて応答速度が遅い場合があります。</li>
+<li>モデルのサイズによっては大量のメモリを消費します（8Bモデルで約4GB、13Bモデルで約8GB）。</li>
+<li>セキュリティ：エージェントに削除権限を与える場合は注意が必要です。</li>
+<h2>まとめ</h2>
+<p>Ollamaを使えば、ローカルLLMとAIエージェントを簡単に組み合わせることができます。プライバシーを重視する業務や、オフライン環境での自動化に役立ててください。本チュートリアルを基に、自分だけのエージェントを構築してみましょう。</p>4:["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"ローカルLLMとAIエージェントの組み合わせ：Ollamaでプライバシーを守る実践チュートリアル"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"Ollamaを使ったローカルLLMとAIエージェントの連携方法を解説。プライバシーを守りながらオフラインで動作するAIエージェントの構築手順を紹介します。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","ローカルLLM",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"ローカルLLM"}],["$","span","Ollama",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"Ollama"}],["$","span","AIエージェント",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"AIエージェント"}],["$","span","プライバシー",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"プライバシー"}],["$","span","オフライン",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"オフライン"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$f"}}]]}],"$L10"]}]
+10:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-ai hover:underline","children":"← 記事一覧に戻る"}]}]
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+7:null
+c:[["$","title","0",{"children":"AIエージェント活用ガイド"}],["$","meta","1",{"name":"description","content":"OpenCode/ClaudeCode/DeepSeekを使ったAIエージェント開発自動化の情報を日本語で発信。"}],["$","meta","2",{"name":"keywords","content":"OpenCode,ClaudeCode,AIエージェント,DeepSeek,開発自動化,プロンプト"}]]

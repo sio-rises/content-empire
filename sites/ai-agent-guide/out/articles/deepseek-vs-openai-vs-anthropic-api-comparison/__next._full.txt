@@ -6,95 +6,104 @@
 9:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"ViewportBoundary"]
 b:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"MetadataBoundary"]
 d:I[30493,["/_next/static/chunks/007ac~remr-yw.js"],"default",1]
-:HL["/_next/static/chunks/0sknqqgyc~d7j.css","style"]
-0:{"P":null,"c":["","articles","deepseek-vs-openai-vs-anthropic-api-comparison"],"q":"","i":false,"f":[[["",{"children":["articles",{"children":[["slug","deepseek-vs-openai-vs-anthropic-api-comparison","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0sknqqgyc~d7j.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/007ac~remr-yw.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"ja","children":[["$","head",null,{"children":["$","script",null,{"async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019","crossOrigin":"anonymous"}]}],["$","body",null,{"className":"min-h-screen antialiased","children":["$","div",null,{"className":"flex min-h-screen flex-col","children":[["$","header",null,{"className":"border-b border-gray-200 bg-white","children":["$","div",null,{"className":"mx-auto flex max-w-4xl items-center justify-between px-4 py-3","children":[["$","a",null,{"href":"/","className":"text-lg font-bold text-ai hover:opacity-80","children":"AIエージェント活用ガイド"}],["$","nav",null,{"className":"flex gap-4 text-sm text-gray-600","children":["$","a",null,{"href":"/","className":"hover:text-ai","children":"ホーム"}]}]]}]}],["$","main",null,{"className":"flex-1","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400","children":"AIエージェント活用ガイド — Built with OpenCode + DeepSeek API"}]]}]}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L4",null,["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]]}],{},null,false,null]},null,false,"$@8"]},null,false,"$@8"]},null,false,null],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$6",null,{"name":"Next.Metadata","children":"$Lc"}]}]}],null]}],false]],"m":"$undefined","G":["$d",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0sknqqgyc~d7j.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"ozMjvJqr-IrJkTdPFeVOD"}
+:HL["/_next/static/chunks/0j5zuqvsr0qqd.css","style"]
+0:{"P":null,"c":["","articles","deepseek-vs-openai-vs-anthropic-api-comparison"],"q":"","i":false,"f":[[["",{"children":["articles",{"children":[["slug","deepseek-vs-openai-vs-anthropic-api-comparison","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0j5zuqvsr0qqd.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/007ac~remr-yw.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"ja","children":[["$","head",null,{"children":["$","script",null,{"async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019","crossOrigin":"anonymous"}]}],["$","body",null,{"className":"min-h-screen antialiased","children":["$","div",null,{"className":"flex min-h-screen flex-col","children":[["$","header",null,{"className":"border-b border-gray-200 bg-white","children":["$","div",null,{"className":"mx-auto flex max-w-4xl items-center justify-between px-4 py-3","children":[["$","a",null,{"href":"/","className":"text-lg font-bold text-ai hover:opacity-80","children":"AIエージェント活用ガイド"}],["$","nav",null,{"className":"flex gap-4 text-sm text-gray-600","children":["$","a",null,{"href":"/","className":"hover:text-ai","children":"ホーム"}]}]]}]}],["$","main",null,{"className":"flex-1","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400","children":["AIエージェント活用ガイド — Built with OpenCode + DeepSeek API",["$","div",null,{"className":"border-t border-gray-100 mt-4 pt-3 text-center text-[10px] text-gray-300","children":[["$","span",null,{"className":"mr-2","children":"関連サイト:"}],["$","a",null,{"href":"https://arch-linux-guide.pages.dev","className":"hover:underline","children":"Arch Linux日本語ガイド"}],"  ",["$","a",null,{"href":"https://nisa-investment.pages.dev","className":"hover:underline","children":"NISA投資入門"}],"  ",["$","a",null,{"href":"https://linux-security.pages.dev","className":"hover:underline","children":"Linuxセキュリティ"}],"  ",["$","a",null,{"href":"https://vps-server-guide.pages.dev","className":"hover:underline","children":"VPSサーバー構築"}]]}]]}]]}]}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L4",null,["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]]}],{},null,false,null]},null,false,"$@8"]},null,false,"$@8"]},null,false,null],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$6",null,{"name":"Next.Metadata","children":"$Lc"}]}]}],null]}],false]],"m":"$undefined","G":["$d",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0j5zuqvsr0qqd.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"cZWNxtWXrIsLiNU6bnRwr"}
 e:[]
 8:"$We"
-f:T1a96,<h2>はじめに</h2>
-<p>AIエージェントやLLMを活用したアプリ開発において、APIの選択はプロジェクトの成否を左右します。本記事では、近年注目を集める<strong>DeepSeek</strong>、業界標準の<strong>OpenAI</strong>、安全性に強みを持つ<strong>Anthropic</strong>の3社のAPIを、料金・性能・特徴の観点から比較します。</p>
-<h2>各APIの概要</h2>
+f:T1c01,<h2>はじめに</h2>
+<p>近年、大規模言語モデル（LLM）のAPIサービスが多数登場し、開発者は用途に合わせて最適なモデルを選ぶ必要があります。本記事では、中国発の<strong>DeepSeek</strong>、業界標準の<strong>OpenAI（GPT-4oなど）</strong>、安全性重視の<strong>Anthropic（Claude 3.5 Sonnetなど）</strong> の3社のAPIを、料金・性能・特徴の観点から徹底比較します。</p>
+<h2>各APIの基本情報</h2>
 <h3>DeepSeek</h3>
-<p>中国発のAIスタートアップDeepSeekが提供するAPI。コストパフォーマンスの高さが特徴で、特に長文処理や数学・コーディングタスクで高い性能を発揮します。</p>
-<li><strong>モデル</strong>: DeepSeek-V2, DeepSeek-Coderなど</li>
-<li><strong>最大コンテキスト</strong>: 128K tokens</li>
-<li><strong>価格</strong>: 入力 $0.14/1M tokens、出力 $0.28/1M tokens（DeepSeek-V2）</li>
+<li><strong>提供モデル</strong>: DeepSeek-V2, DeepSeek-Coder-V2など</li>
+<li><strong>特徴</strong>: コストパフォーマンスに優れ、特にコーディングタスクで強みを発揮。中国発だが英語・日本語対応も良好。</li>
+<li><strong>APIエンドポイント</strong>: <code>https://api.deepseek.com</code></li>
 <h3>OpenAI</h3>
-<p>GPT-4oやGPT-4 Turboなど、汎用的な性能で最も広く使われているAPI。豊富なエコシステムと安定性が強み。</p>
-<li><strong>モデル</strong>: GPT-4o, GPT-4 Turbo, GPT-3.5 Turbo</li>
-<li><strong>最大コンテキスト</strong>: 128K tokens（GPT-4 Turbo）</li>
-<li><strong>価格</strong>: GPT-4o 入力 $5/1M tokens、出力 $15/1M tokens</li>
+<li><strong>提供モデル</strong>: GPT-4o, GPT-4 Turbo, GPT-3.5 Turboなど</li>
+<li><strong>特徴</strong>: 最も広く使われており、豊富なドキュメントとエコシステム。マルチモーダル対応（GPT-4o）。</li>
+<li><strong>APIエンドポイント</strong>: <code>https://api.openai.com</code></li>
 <h3>Anthropic</h3>
-<p>安全性と解釈可能性に重点を置いたClaudeシリーズ。長文の要約や分析、複雑な推論タスクに強い。</p>
-<li><strong>モデル</strong>: Claude 3.5 Sonnet, Claude 3 Opus</li>
-<li><strong>最大コンテキスト</strong>: 200K tokens</li>
-<li><strong>価格</strong>: Claude 3.5 Sonnet 入力 $3/1M tokens、出力 $15/1M tokens</li>
-<h2>料金比較</h2>
-<p>各APIの代表的なモデルの料金を比較します（2026年2月時点）。</p>
-<table><thead><tr><th>プロバイダ</th><th>モデル</th><th>入力料金（/1M tokens）</th><th>出力料金（/1M tokens）</th></tr></thead><tbody><tr><td>DeepSeek</td><td>DeepSeek-V2</td><td>$0.14</td><td>$0.28</td></tr>
-<tr><td>OpenAI</td><td>GPT-4o</td><td>$5.00</td><td>$15.00</td></tr>
-<tr><td>Anthropic</td><td>Claude 3.5 Sonnet</td><td>$3.00</td><td>$15.00</td></tr></tbody></table>
-DeepSeekは圧倒的に安価で、OpenAIの約1/35、Anthropicの約1/20のコストです。大量のトークンを処理するバッチ処理や実験的な用途に最適です。
+<li><strong>提供モデル</strong>: Claude 3.5 Sonnet, Claude 3 Haikuなど</li>
+<li><strong>特徴</strong>: 安全性と倫理的な応答に注力。長文コンテキスト（200Kトークン）が強み。</li>
+<li><strong>APIエンドポイント</strong>: <code>https://api.anthropic.com</code></li>
+<h2>料金比較（2025年3月時点）</h2>
+<table><thead><tr><th>モデル</th><th>入力（1Mトークン）</th><th>出力（1Mトークン）</th><th>備考</th></tr></thead><tbody><tr><td>DeepSeek-V2</td><td>$0.14</td><td>$0.28</td><td>コンテキスト128K</td></tr>
+<tr><td>DeepSeek-Coder-V2</td><td>$0.14</td><td>$0.28</td><td>コーディング特化</td></tr>
+<tr><td>GPT-4o</td><td>$2.50</td><td>$10.00</td><td>コンテキスト128K</td></tr>
+<tr><td>GPT-4 Turbo</td><td>$10.00</td><td>$30.00</td><td>コンテキスト128K</td></tr>
+<tr><td>GPT-3.5 Turbo</td><td>$0.50</td><td>$1.50</td><td>コンテキスト16K</td></tr>
+<tr><td>Claude 3.5 Sonnet</td><td>$3.00</td><td>$15.00</td><td>コンテキスト200K</td></tr>
+<tr><td>Claude 3 Haiku</td><td>$0.25</td><td>$1.25</td><td>コンテキスト200K</td></tr></tbody></table>
+※価格は変動する可能性があります。最新情報は各公式サイトをご確認ください。
+<p><strong>DeepSeekはGPT-4o比で約1/20のコスト</strong>で利用可能。大量リクエストやコスト重視のプロジェクトに最適です。</p>
 <h2>性能比較</h2>
-<h3>ベンチマークスコア</h3>
-<p>主要なベンチマークでのスコアを比較します（各社公表値）。</p>
-<table><thead><tr><th>ベンチマーク</th><th>DeepSeek-V2</th><th>GPT-4o</th><th>Claude 3.5 Sonnet</th></tr></thead><tbody><tr><td>MMLU (知識)</td><td>78.5%</td><td>88.7%</td><td>88.9%</td></tr>
-<tr><td>HumanEval (コード)</td><td>90.2%</td><td>87.1%</td><td>92.0%</td></tr>
-<tr><td>GSM8K (数学)</td><td>94.3%</td><td>95.2%</td><td>96.1%</td></tr></tbody></table>
-DeepSeekは特にコーディングと数学で強く、GPT-4oに迫る性能を示します。ただし、日本語を含む多言語タスクや創造性ではOpenAIやAnthropicに劣る場合があります。
-<h3>実用的な観点での比較</h3>
-<li><strong>応答速度</strong>: DeepSeekは軽量モデルが多く、応答が速い傾向。OpenAIは安定した速度、Anthropicはやや遅め。</li>
-<li><strong>多言語対応</strong>: OpenAIが最も優れる。DeepSeekは中国語・英語中心。Anthropicは英語が最も強く、日本語はやや弱い。</li>
-<li><strong>長文処理</strong>: Anthropicは200Kトークンのコンテキストを持ち、長文要約に最適。DeepSeekとOpenAIは128K。</li>
-<li><strong>安全性</strong>: Anthropicは「憲法によるAI」で安全性を重視。OpenAIはモデレーションが強固。DeepSeekはフィルタリングが緩め。</li>
-<h2>用途別おすすめ</h2>
-<h3>コスト重視のプロトタイプ・個人利用</h3>
-<p><strong>DeepSeek</strong>が最適。低コストで高性能なため、アイデア検証や個人の学習ツールに最適。APIのドキュメントも充実しており、簡単に始められます。</p>
-<h3>プロダクション・多言語対応が必要な場合</h3>
-<p><strong>OpenAI</strong>が安定。豊富なライブラリとサポート、多言語での高い品質が信頼性を支えます。コストは高いが、品質とサポートを重視するなら選択肢。</p>
-<h3>長文分析・安全性が重要なビジネス用途</h3>
-<p><strong>Anthropic</strong>がおすすめ。200Kトークンのコンテキストで契約書分析や大量ドキュメントの要約に強み。安全性に関するレポートも充実しており、規制業界での利用に適しています。</p>
-<h2>APIの実装比較</h2>
-<p>各APIのシンプルな呼び出し例をPythonで示します。</p>
-<h3>DeepSeek</h3>
-<pre><code class="language-python">import requests
-<p>headers = {"Authorization": "Bearer YOUR_API_KEY"}
-data = {
-    "model": "deepseek-chat",
-    "messages": [{"role": "user", "content": "Hello"}]
-}
-response = requests.post("https://api.deepseek.com/v1/chat/completions", json=data, headers=headers)
-print(response.json())
-</code></pre></p>
-<h3>OpenAI</h3>
-<pre><code class="language-python">from openai import OpenAI
-<p>client = OpenAI(api_key="YOUR_API_KEY")
-response = client.chat.completions.create(
+<h3>ベンチマークスコア（代表値）</h3>
+<table><thead><tr><th>テスト</th><th>DeepSeek-V2</th><th>GPT-4o</th><th>Claude 3.5 Sonnet</th></tr></thead><tbody><tr><td>MMLU（知識）</td><td>78.5%</td><td>88.7%</td><td>88.9%</td></tr>
+<tr><td>HumanEval（コード）</td><td>79.2%</td><td>90.2%</td><td>92.0%</td></tr>
+<tr><td>GSM8K（数学）</td><td>84.1%</td><td>92.0%</td><td>95.3%</td></tr>
+<tr><td>日本語理解（自作）</td><td>良好</td><td>優秀</td><td>優秀</td></tr></tbody></table>
+※DeepSeekはGPT-4oやClaudeに劣る部分もあるが、価格を考慮すると非常に高いコスパ。
+<h3>実用的な性能差</h3>
+<li><strong>クリエイティブライティング</strong>: Claude 3.5 Sonnetが最も自然でニュアンス豊か。GPT-4oも優秀。DeepSeekはやや硬い。</li>
+<li><strong>コード生成</strong>: DeepSeek-Coder-V2はタスクによってはGPT-4oに匹敵。Claude 3.5 Sonnetが最も正確。</li>
+<li><strong>長文処理</strong>: Claude 3.5 Sonnetの200Kコンテキストは圧倒的。DeepSeekも128Kで実用的。</li>
+<li><strong>マルチモーダル</strong>: GPT-4oのみ画像入力対応。DeepSeekとClaudeはテキストのみ。</li>
+<h2>使い分けのポイント</h2>
+<h3>こんな時はDeepSeek</h3>
+<li><strong>コストを最優先</strong>するプロジェクト</li>
+<li>大量のテキスト生成（例：チャットボット、データ拡張）</li>
+<li>コード生成・補完（DeepSeek-Coder）</li>
+<li>中国市場向けアプリケーション</li>
+<h3>こんな時はOpenAI</h3>
+<li><strong>マルチモーダル</strong>（画像認識）が必要</li>
+<li>豊富なAPIオプション（ファインチューニング、関数呼び出しなど）</li>
+<li>エコシステムとの連携（LangChain、AutoGPTなど）</li>
+<li>安定したパフォーマンスが求められる汎用タスク</li>
+<h3>こんな時はAnthropic</h3>
+<li><strong>長文ドキュメント</strong>の要約・分析（200Kトークン）</li>
+<li><strong>安全性・倫理</strong>が重要なアプリケーション（医療、法律など）</li>
+<li>クリエイティブな文章生成（小説、脚本など）</li>
+<li>複雑な推論タスク（数学、論理）</li>
+<h2>実践的な比較コード例</h2>
+<p>各APIで同じプロンプトを実行した際の応答例を以下に示します。</p>
+<h3>Pythonコード例（疑似コード）</h3>
+<pre><code class="language-python">import openai
+from anthropic import Anthropic
+import deepseek
+<p>&lt;h1&gt;OpenAI&lt;/h1&gt;
+gpt_response = openai.ChatCompletion.create(
     model="gpt-4o",
-    messages=[{"role": "user", "content": "Hello"}]
+    messages=[{"role": "user", "content": "日本の首都は？"}]
 )
-print(response.choices[0].message.content)
-</code></pre></p>
-<h3>Anthropic</h3>
-<pre><code class="language-python">import anthropic
-<p>client = anthropic.Anthropic(api_key="YOUR_API_KEY")
-message = client.messages.create(
+print(gpt_response.choices[0].message.content)</p>
+<p>&lt;h1&gt;Anthropic&lt;/h1&gt;
+client = Anthropic(api_key="YOUR_API_KEY")
+claude_response = client.messages.create(
     model="claude-3-5-sonnet-20241022",
-    max_tokens=1000,
-    messages=[{"role": "user", "content": "Hello"}]
+    max_tokens=100,
+    messages=[{"role": "user", "content": "日本の首都は？"}]
 )
-print(message.content)
+print(claude_response.content[0].text)</p>
+<p>&lt;h1&gt;DeepSeek&lt;/h1&gt;
+import requests
+response = requests.post(
+    "https://api.deepseek.com/v1/chat/completions",
+    headers={"Authorization": "Bearer YOUR_API_KEY"},
+    json={
+        "model": "deepseek-chat",
+        "messages": [{"role": "user", "content": "日本の首都は？"}]
+    }
+)
+print(response.json()["choices"][0]["message"]["content"])
 </code></pre></p>
-<hr>
-<p>*この記事はOpenCodeを日常的に使用し、AIエージェントにSSH経由でNixOSをインストールさせるなどの実践経験を持つSioが監修しています。DeepSeek APIのヘビーユーザーとして、実際のコスト感や制限事項を反映しています。*</p>
 <h2>まとめ</h2>
-<li><strong>コスト優先</strong>: DeepSeek</li>
-<li><strong>汎用性・多言語</strong>: OpenAI</li>
-<li><strong>安全性・長文処理</strong>: Anthropic</li>
-<p>どのAPIも一長一短があり、プロジェクトの要件に応じて選択することが重要です。まずは無料枠や低コストのDeepSeekで試し、必要に応じてOpenAIやAnthropicに移行する戦略が現実的でしょう。</p>
-<p>各APIの最新情報は公式ドキュメントを参照してください。</p>
-<li>DeepSeek: https://platform.deepseek.com/</li>
-<li>OpenAI: https://platform.openai.com/</li>
-<li>Anthropic: https://docs.anthropic.com/</li>4:["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"DeepSeek vs OpenAI vs Anthropic API 比較：料金・性能・使い分けガイド"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"DeepSeek、OpenAI、AnthropicのAPIを料金・性能・特徴で徹底比較。用途別のおすすめや選び方のポイントを解説します。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","DeepSeek",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"DeepSeek"}],["$","span","OpenAI",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"OpenAI"}],["$","span","Anthropic",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"Anthropic"}],["$","span","API比較",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"API比較"}],["$","span","料金",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"料金"}],["$","span","性能",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"性能"}],["$","span","どれ",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"どれ"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$f"}}]]}],"$L10"]}]
+<table><thead><tr><th>観点</th><th>DeepSeek</th><th>OpenAI</th><th>Anthropic</th></tr></thead><tbody><tr><td>価格</td><td>★★★★★</td><td>★★</td><td>★★★</td></tr>
+<tr><td>性能（汎用）</td><td>★★★</td><td>★★★★★</td><td>★★★★★</td></tr>
+<tr><td>コード性能</td><td>★★★★</td><td>★★★★</td><td>★★★★★</td></tr>
+<tr><td>長文処理</td><td>★★★★</td><td>★★★</td><td>★★★★★</td></tr>
+<tr><td>マルチモーダル</td><td>✗</td><td>✓</td><td>✗</td></tr>
+<tr><td>日本語品質</td><td>★★★★</td><td>★★★★★</td><td>★★★★★</td></tr></tbody></table>
+<strong>結論</strong>: コスパ重視ならDeepSeek、バランス型ならOpenAI、品質重視ならAnthropicを選びましょう。複数のAPIを用途に応じて使い分けるのが最も効果的です。
+<p>※料金や性能は2025年3月時点の情報です。最新情報は各公式サイトをご確認ください。</p>4:["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"DeepSeek vs OpenAI vs Anthropic API比較：料金・性能・使い分けガイド"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"DeepSeek、OpenAI、AnthropicのAPIを料金・性能・特徴で徹底比較。用途別の選び方や実践的な使い分け方を解説します。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","DeepSeek",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"DeepSeek"}],["$","span","OpenAI",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"OpenAI"}],["$","span","Anthropic",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"Anthropic"}],["$","span","API比較",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"API比較"}],["$","span","料金",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"料金"}],["$","span","性能",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"性能"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$f"}}]]}],"$L10"]}]
 10:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-ai hover:underline","children":"← 記事一覧に戻る"}]}]
 a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 7:null

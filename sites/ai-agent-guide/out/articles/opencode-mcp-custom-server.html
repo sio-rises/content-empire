@@ -1,0 +1,224 @@
+<!DOCTYPE html><html lang="ja"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/chunks/0j5zuqvsr0qqd.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/004m7bjik~jkr.js"/><script src="/_next/static/chunks/01t1wf1uyv-aa.js" async=""></script><script src="/_next/static/chunks/0pclk7tk1w2nf.js" async=""></script><script src="/_next/static/chunks/turbopack-00gh8rufrmpm9.js" async=""></script><script src="/_next/static/chunks/007ac~remr-yw.js" async=""></script><script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019" crossorigin="anonymous"></script><title>AIエージェント活用ガイド</title><meta name="description" content="OpenCode/ClaudeCode/DeepSeekを使ったAIエージェント開発自動化の情報を日本語で発信。"/><meta name="keywords" content="OpenCode,ClaudeCode,AIエージェント,DeepSeek,開発自動化,プロンプト"/><script src="/_next/static/chunks/03~yq9q893hmn.js" noModule=""></script></head><body class="min-h-screen antialiased"><div hidden=""><!--$--><!--/$--></div><div class="flex min-h-screen flex-col"><header class="border-b border-gray-200 bg-white"><div class="mx-auto flex max-w-4xl items-center justify-between px-4 py-3"><a href="/" class="text-lg font-bold text-ai hover:opacity-80">AIエージェント活用ガイド</a><nav class="flex gap-4 text-sm text-gray-600"><a href="/" class="hover:text-ai">ホーム</a></nav></div></header><main class="flex-1"><div class="mx-auto max-w-4xl px-4 py-8"><article><header class="mb-8"><h1 class="text-3xl font-bold tracking-tight text-gray-900">OpenCodeでMCPサーバーを自作する方法：カスタムツール追加ガイド</h1><p class="mt-2 text-gray-500">OpenCodeのMCPサーバーをTypeScriptで自作し、カスタムツールを追加する方法を解説。実用的なコード例と手順で拡張機能を実現。</p><div class="mt-4 flex flex-wrap items-center gap-3"><span class="rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600">OpenCode</span><span class="rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600">MCPサーバー</span><span class="rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600">自作</span><span class="rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600">カスタムツール</span><span class="rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600">TypeScript</span><span class="rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600">拡張</span><span class="text-xs text-gray-400">2026/5/25</span></div></header><div class="prose max-w-none"><h2>はじめに</h2>
+<p>OpenCodeは、AIアシスタントと連携してコード生成や編集を効率化するツールですが、標準機能だけでは足りない場面もあります。そこで役立つのが<strong>MCP（Model Context Protocol）サーバー</strong>の自作です。MCPサーバーを自作することで、OpenCodeにカスタムツールや外部サービスとの連携機能を追加できます。本記事では、TypeScriptを使用してMCPサーバーを一から作成し、OpenCodeにカスタムツールを追加する手順を詳しく解説します。</p>
+<h2>MCPサーバーとは</h2>
+<p>MCP（Model Context Protocol）は、AIモデル（OpenCodeのAIアシスタント）と外部ツールやデータソースを接続するためのプロトコルです。MCPサーバーを自作することで、以下のようなことが可能になります。</p>
+<li>独自のAPI呼び出し</li>
+<li>ファイルシステム操作</li>
+<li>データベースクエリ</li>
+<li>外部サービスの統合</li>
+<p>OpenCodeは標準でいくつかのMCPサーバーをサポートしていますが、カスタムツールを追加するには自分でサーバーを実装する必要があります。</p>
+<h2>前提条件</h2>
+<li>Node.js 18以上がインストール済み</li>
+<li>npmまたはyarnが使用可能</li>
+<li>OpenCodeがインストール済み（CLIツール）</li>
+<li>TypeScriptの基礎知識</li>
+<h2>ステップ1：プロジェクトのセットアップ</h2>
+<p>まずは新しいディレクトリを作成し、TypeScriptプロジェクトを初期化します。</p>
+<pre><code class="language-bash">mkdir my-mcp-server
+cd my-mcp-server
+npm init -y
+npm install typescript @types/node ts-node --save-dev
+npm install @modelcontextprotocol/sdk
+</code></pre>
+<p><code>@modelcontextprotocol/sdk</code>はMCPサーバーを構築するための公式SDKです。次にTypeScriptの設定ファイルを作成します。</p>
+<pre><code class="language-bash">npx tsc --init
+</code></pre>
+<p><code>tsconfig.json</code>を開き、<code>outDir</code>を<code>./dist</code>、<code>rootDir</code>を<code>./src</code>に設定します。</p>
+<h2>ステップ2：基本的なMCPサーバーの実装</h2>
+<p><code>src/index.ts</code>を作成し、以下のコードを記述します。これは最小限のMCPサーバーで、"hello"というツールを提供します。</p>
+<pre><code class="language-typescript">import { Server } from "@modelcontextprotocol/sdk/server/index.js";
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import {
+  CallToolRequestSchema,
+  ListToolsRequestSchema,
+} from "@modelcontextprotocol/sdk/types.js";
+<p>// サーバーインスタンスを作成
+const server = new Server(
+  {
+    name: "my-mcp-server",
+    version: "1.0.0",
+  },
+  {
+    capabilities: {
+      tools: {},
+    },
+  }
+);</p>
+<p>// ツール一覧を返すハンドラー
+server.setRequestHandler(ListToolsRequestSchema, async () =&gt; {
+  return {
+    tools: [
+      {
+        name: "hello",
+        description: "挨拶を返すツール",
+        inputSchema: {
+          type: "object",
+          properties: {
+            name: {
+              type: "string",
+              description: "名前",
+            },
+          },
+          required: ["name"],
+        },
+      },
+    ],
+  };
+});</p>
+<p>// ツール実行ハンドラー
+server.setRequestHandler(CallToolRequestSchema, async (request) =&gt; {
+  if (request.params.name === "hello") {
+    const name = request.params.arguments?.name as string;
+    return {
+      content: [
+        {
+          type: "text",
+          text: <code>こんにちは、${name}さん！</code>,
+        },
+      ],
+    };
+  }
+  throw new Error(<code>Unknown tool: ${request.params.name}</code>);
+});</p>
+<p>// 標準入出力トランスポートでサーバーを起動
+const transport = new StdioServerTransport();
+await server.connect(transport);
+</code></pre></p>
+<h2>ステップ3：カスタムツールの追加</h2>
+<p>次に、実際に役立つカスタムツールを追加しましょう。例として、ファイルの内容を読み取るツール<code>read_file</code>を実装します。</p>
+<p><code>src/index.ts</code>を編集し、<code>ListToolsRequestSchema</code>のハンドラー内の<code>tools</code>配列に新しいツール定義を追加します。</p>
+<pre><code class="language-typescript">tools: [
+  {
+    name: "hello",
+    description: "挨拶を返すツール",
+    inputSchema: {
+      type: "object",
+      properties: {
+        name: {
+          type: "string",
+          description: "名前",
+        },
+      },
+      required: ["name"],
+    },
+  },
+  {
+    name: "read_file",
+    description: "指定されたファイルの内容を読み取ります",
+    inputSchema: {
+      type: "object",
+      properties: {
+        path: {
+          type: "string",
+          description: "ファイルのパス",
+        },
+      },
+      required: ["path"],
+    },
+  },
+],
+</code></pre>
+<p>次に、<code>CallToolRequestSchema</code>のハンドラーに<code>read_file</code>の処理を追加します。</p>
+<pre><code class="language-typescript">if (request.params.name === "hello") {
+  // 既存の処理
+} else if (request.params.name === "read_file") {
+  const path = request.params.arguments?.path as string;
+  try {
+    const fs = await import("fs/promises");
+    const content = await fs.readFile(path, "utf-8");
+    return {
+      content: [
+        {
+          type: "text",
+          text: content,
+        },
+      ],
+    };
+  } catch (error: any) {
+    return {
+      content: [
+        {
+          type: "text",
+          text: <code>エラー: ${error.message}</code>,
+        },
+      ],
+      isError: true,
+    };
+  }
+}
+</code></pre>
+<p>同様に、他にも便利なツールを追加できます。例えば、現在の日時を返す<code>get_current_time</code>や、簡単な計算を行う<code>calculate</code>などが考えられます。</p>
+<h2>ステップ4：ビルドと実行</h2>
+<p>TypeScriptをコンパイルします。</p>
+<pre><code class="language-bash">npx tsc
+</code></pre>
+<p>これで<code>dist/index.js</code>が生成されます。サーバーをテストするには、以下のコマンドで直接実行できます。</p>
+<pre><code class="language-bash">node dist/index.js
+</code></pre>
+<p>ただし、MCPサーバーは標準入出力を介して通信するため、通常はOpenCodeから呼び出します。</p>
+<h2>ステップ5：OpenCodeへの接続</h2>
+<p>OpenCodeの設定ファイル（通常は<code>~/.opencode/config.json</code>）を編集し、MCPサーバーを追加します。</p>
+<pre><code class="language-json">{
+  "mcpServers": {
+    "my-mcp-server": {
+      "command": "node",
+      "args": ["/absolute/path/to/my-mcp-server/dist/index.js"],
+      "env": {}
+    }
+  }
+}
+</code></pre>
+<p>パスは絶対パスで指定してください。設定後、OpenCodeを再起動すると、AIアシスタントがカスタムツールを認識し、使用できるようになります。</p>
+<h2>高度なカスタマイズ</h2>
+<h3>ツールの入力スキーマを詳細に設定する</h3>
+<p>JSON Schemaに従って、より複雑な入力スキーマを定義できます。例えば、<code>read_file</code>にエンコーディングオプションを追加する場合：</p>
+<pre><code class="language-typescript">inputSchema: {
+  type: "object",
+  properties: {
+    path: { type: "string" },
+    encoding: { type: "string", enum: ["utf-8", "ascii", "base64"] },
+  },
+  required: ["path"],
+}
+</code></pre>
+<h3>リソースの提供</h3>
+<p>ツールだけでなく、リソースを提供することもできます。リソースは読み取り専用のデータで、AIが参照できます。</p>
+<pre><code class="language-typescript">import { ListResourcesRequestSchema, ReadResourceRequestSchema } from "@modelcontextprotocol/sdk/types.js";
+<p>server.setRequestHandler(ListResourcesRequestSchema, async () =&gt; ({
+  resources: [
+    {
+      uri: "file:///config.json",
+      name: "設定ファイル",
+      mimeType: "application/json",
+    },
+  ],
+}));</p>
+<p>server.setRequestHandler(ReadResourceRequestSchema, async (request) =&gt; {
+  if (request.params.uri === "file:///config.json") {
+    const content = JSON.stringify({ key: "value" });
+    return {
+      contents: [
+        {
+          uri: request.params.uri,
+          mimeType: "application/json",
+          text: content,
+        },
+      ],
+    };
+  }
+  throw new Error("Resource not found");
+});
+</code></pre></p>
+<h3>エラーハンドリングの改善</h3>
+<p>ツール実行時にエラーが発生した場合、<code>isError: true</code>を設定してエラーメッセージを返すことで、AIが適切に処理できます。</p>
+<h2>トラブルシューティング</h2>
+<h3>サーバーが認識されない</h3>
+<li>OpenCodeの設定ファイルのパスが正しいか確認</li>
+<li>サーバーが実行可能かどうか、直接起動してテスト</li>
+<li>ログを確認（<code>~/.opencode/logs/</code>）</li>
+<h3>TypeScriptのエラー</h3>
+<li><code>@modelcontextprotocol/sdk</code>のバージョンが最新か確認</li>
+<li><code>tsconfig.json</code>で<code>moduleResolution</code>を<code>node</code>に設定</li>
+<h2>まとめ</h2>
+<p>OpenCodeでMCPサーバーを自作することで、AIアシスタントの機能を大幅に拡張できます。TypeScriptとSDKを使えば、複雑なツールも比較的簡単に実装可能です。今回紹介した手順をベースに、あなたのワークフローに合わせたカスタムツールを開発してみてください。</p>
+<p>次のステップとして、外部APIを呼び出すツールやデータベース操作ツールなどに挑戦すると、さらにOpenCodeの活用範囲が広がります。</p></div></article><div class="mt-12 border-t border-gray-200 pt-6"><a href="/" class="text-sm text-ai hover:underline">← 記事一覧に戻る</a></div></div><!--$--><!--/$--></main><footer class="border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400">AIエージェント活用ガイド — Built with OpenCode + DeepSeek API<div class="border-t border-gray-100 mt-4 pt-3 text-center text-[10px] text-gray-300"><span class="mr-2">関連サイト:</span><a href="https://arch-linux-guide.pages.dev" class="hover:underline">Arch Linux日本語ガイド</a>  <a href="https://nisa-investment.pages.dev" class="hover:underline">NISA投資入門</a>  <a href="https://linux-security.pages.dev" class="hover:underline">Linuxセキュリティ</a>  <a href="https://vps-server-guide.pages.dev" class="hover:underline">VPSサーバー構築</a></div></footer></div><script src="/_next/static/chunks/004m7bjik~jkr.js" id="_R_" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[10332,[\"/_next/static/chunks/007ac~remr-yw.js\"],\"default\"]\n3:I[41511,[\"/_next/static/chunks/007ac~remr-yw.js\"],\"default\"]\n5:I[57439,[\"/_next/static/chunks/007ac~remr-yw.js\"],\"OutletBoundary\"]\n6:\"$Sreact.suspense\"\n9:I[57439,[\"/_next/static/chunks/007ac~remr-yw.js\"],\"ViewportBoundary\"]\nb:I[57439,[\"/_next/static/chunks/007ac~remr-yw.js\"],\"MetadataBoundary\"]\nd:I[30493,[\"/_next/static/chunks/007ac~remr-yw.js\"],\"default\",1]\n:HL[\"/_next/static/chunks/0j5zuqvsr0qqd.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"c\":[\"\",\"articles\",\"opencode-mcp-custom-server\"],\"q\":\"\",\"i\":false,\"f\":[[[\"\",{\"children\":[\"articles\",{\"children\":[[\"slug\",\"opencode-mcp-custom-server\",\"d\",null],{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",16],[[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/chunks/0j5zuqvsr0qqd.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-0\",{\"src\":\"/_next/static/chunks/007ac~remr-yw.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"ja\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"script\",null,{\"async\":true,\"src\":\"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019\",\"crossOrigin\":\"anonymous\"}]}],[\"$\",\"body\",null,{\"className\":\"min-h-screen antialiased\",\"children\":[\"$\",\"div\",null,{\"className\":\"flex min-h-screen flex-col\",\"children\":[[\"$\",\"header\",null,{\"className\":\"border-b border-gray-200 bg-white\",\"children\":[\"$\",\"div\",null,{\"className\":\"mx-auto flex max-w-4xl items-center justify-between px-4 py-3\",\"children\":[[\"$\",\"a\",null,{\"href\":\"/\",\"className\":\"text-lg font-bold text-ai hover:opacity-80\",\"children\":\"AIエージェント活用ガイド\"}],[\"$\",\"nav\",null,{\"className\":\"flex gap-4 text-sm text-gray-600\",\"children\":[\"$\",\"a\",null,{\"href\":\"/\",\"className\":\"hover:text-ai\",\"children\":\"ホーム\"}]}]]}]}],[\"$\",\"main\",null,{\"className\":\"flex-1\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}],[\"$\",\"footer\",null,{\"className\":\"border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400\",\"children\":[\"AIエージェント活用ガイド — Built with OpenCode + DeepSeek API\",[\"$\",\"div\",null,{\"className\":\"border-t border-gray-100 mt-4 pt-3 text-center text-[10px] text-gray-300\",\"children\":[[\"$\",\"span\",null,{\"className\":\"mr-2\",\"children\":\"関連サイト:\"}],[\"$\",\"a\",null,{\"href\":\"https://arch-linux-guide.pages.dev\",\"className\":\"hover:underline\",\"children\":\"Arch Linux日本語ガイド\"}],\"  \",[\"$\",\"a\",null,{\"href\":\"https://nisa-investment.pages.dev\",\"className\":\"hover:underline\",\"children\":\"NISA投資入門\"}],\"  \",[\"$\",\"a\",null,{\"href\":\"https://linux-security.pages.dev\",\"className\":\"hover:underline\",\"children\":\"Linuxセキュリティ\"}],\"  \",[\"$\",\"a\",null,{\"href\":\"https://vps-server-guide.pages.dev\",\"className\":\"hover:underline\",\"children\":\"VPSサーバー構築\"}]]}]]}]]}]}]]}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[\"$L4\",null,[\"$\",\"$L5\",null,{\"children\":[\"$\",\"$6\",null,{\"name\":\"Next.MetadataOutlet\",\"children\":\"$@7\"}]}]]}],{},null,false,null]},null,false,\"$@8\"]},null,false,\"$@8\"]},null,false,null],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$L9\",null,{\"children\":\"$La\"}],[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$Lb\",null,{\"children\":[\"$\",\"$6\",null,{\"name\":\"Next.Metadata\",\"children\":\"$Lc\"}]}]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$d\",[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/chunks/0j5zuqvsr0qqd.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]]],\"S\":true,\"h\":null,\"s\":\"$undefined\",\"l\":\"$undefined\",\"p\":\"$undefined\",\"d\":\"$undefined\",\"b\":\"cZWNxtWXrIsLiNU6bnRwr\"}\n"])</script><script>self.__next_f.push([1,"e:[]\n8:\"$We\"\n"])</script><script>self.__next_f.push([1,"f:T26eb,"])</script><script>self.__next_f.push([1,"\u003ch2\u003eはじめに\u003c/h2\u003e\n\u003cp\u003eOpenCodeは、AIアシスタントと連携してコード生成や編集を効率化するツールですが、標準機能だけでは足りない場面もあります。そこで役立つのが\u003cstrong\u003eMCP（Model Context Protocol）サーバー\u003c/strong\u003eの自作です。MCPサーバーを自作することで、OpenCodeにカスタムツールや外部サービスとの連携機能を追加できます。本記事では、TypeScriptを使用してMCPサーバーを一から作成し、OpenCodeにカスタムツールを追加する手順を詳しく解説します。\u003c/p\u003e\n\u003ch2\u003eMCPサーバーとは\u003c/h2\u003e\n\u003cp\u003eMCP（Model Context Protocol）は、AIモデル（OpenCodeのAIアシスタント）と外部ツールやデータソースを接続するためのプロトコルです。MCPサーバーを自作することで、以下のようなことが可能になります。\u003c/p\u003e\n\u003cli\u003e独自のAPI呼び出し\u003c/li\u003e\n\u003cli\u003eファイルシステム操作\u003c/li\u003e\n\u003cli\u003eデータベースクエリ\u003c/li\u003e\n\u003cli\u003e外部サービスの統合\u003c/li\u003e\n\u003cp\u003eOpenCodeは標準でいくつかのMCPサーバーをサポートしていますが、カスタムツールを追加するには自分でサーバーを実装する必要があります。\u003c/p\u003e\n\u003ch2\u003e前提条件\u003c/h2\u003e\n\u003cli\u003eNode.js 18以上がインストール済み\u003c/li\u003e\n\u003cli\u003enpmまたはyarnが使用可能\u003c/li\u003e\n\u003cli\u003eOpenCodeがインストール済み（CLIツール）\u003c/li\u003e\n\u003cli\u003eTypeScriptの基礎知識\u003c/li\u003e\n\u003ch2\u003eステップ1：プロジェクトのセットアップ\u003c/h2\u003e\n\u003cp\u003eまずは新しいディレクトリを作成し、TypeScriptプロジェクトを初期化します。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003emkdir my-mcp-server\ncd my-mcp-server\nnpm init -y\nnpm install typescript @types/node ts-node --save-dev\nnpm install @modelcontextprotocol/sdk\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e\u003ccode\u003e@modelcontextprotocol/sdk\u003c/code\u003eはMCPサーバーを構築するための公式SDKです。次にTypeScriptの設定ファイルを作成します。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003enpx tsc --init\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e\u003ccode\u003etsconfig.json\u003c/code\u003eを開き、\u003ccode\u003eoutDir\u003c/code\u003eを\u003ccode\u003e./dist\u003c/code\u003e、\u003ccode\u003erootDir\u003c/code\u003eを\u003ccode\u003e./src\u003c/code\u003eに設定します。\u003c/p\u003e\n\u003ch2\u003eステップ2：基本的なMCPサーバーの実装\u003c/h2\u003e\n\u003cp\u003e\u003ccode\u003esrc/index.ts\u003c/code\u003eを作成し、以下のコードを記述します。これは最小限のMCPサーバーで、\"hello\"というツールを提供します。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-typescript\"\u003eimport { Server } from \"@modelcontextprotocol/sdk/server/index.js\";\nimport { StdioServerTransport } from \"@modelcontextprotocol/sdk/server/stdio.js\";\nimport {\n  CallToolRequestSchema,\n  ListToolsRequestSchema,\n} from \"@modelcontextprotocol/sdk/types.js\";\n\u003cp\u003e// サーバーインスタンスを作成\nconst server = new Server(\n  {\n    name: \"my-mcp-server\",\n    version: \"1.0.0\",\n  },\n  {\n    capabilities: {\n      tools: {},\n    },\n  }\n);\u003c/p\u003e\n\u003cp\u003e// ツール一覧を返すハンドラー\nserver.setRequestHandler(ListToolsRequestSchema, async () =\u0026gt; {\n  return {\n    tools: [\n      {\n        name: \"hello\",\n        description: \"挨拶を返すツール\",\n        inputSchema: {\n          type: \"object\",\n          properties: {\n            name: {\n              type: \"string\",\n              description: \"名前\",\n            },\n          },\n          required: [\"name\"],\n        },\n      },\n    ],\n  };\n});\u003c/p\u003e\n\u003cp\u003e// ツール実行ハンドラー\nserver.setRequestHandler(CallToolRequestSchema, async (request) =\u0026gt; {\n  if (request.params.name === \"hello\") {\n    const name = request.params.arguments?.name as string;\n    return {\n      content: [\n        {\n          type: \"text\",\n          text: \u003ccode\u003eこんにちは、${name}さん！\u003c/code\u003e,\n        },\n      ],\n    };\n  }\n  throw new Error(\u003ccode\u003eUnknown tool: ${request.params.name}\u003c/code\u003e);\n});\u003c/p\u003e\n\u003cp\u003e// 標準入出力トランスポートでサーバーを起動\nconst transport = new StdioServerTransport();\nawait server.connect(transport);\n\u003c/code\u003e\u003c/pre\u003e\u003c/p\u003e\n\u003ch2\u003eステップ3：カスタムツールの追加\u003c/h2\u003e\n\u003cp\u003e次に、実際に役立つカスタムツールを追加しましょう。例として、ファイルの内容を読み取るツール\u003ccode\u003eread_file\u003c/code\u003eを実装します。\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003esrc/index.ts\u003c/code\u003eを編集し、\u003ccode\u003eListToolsRequestSchema\u003c/code\u003eのハンドラー内の\u003ccode\u003etools\u003c/code\u003e配列に新しいツール定義を追加します。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-typescript\"\u003etools: [\n  {\n    name: \"hello\",\n    description: \"挨拶を返すツール\",\n    inputSchema: {\n      type: \"object\",\n      properties: {\n        name: {\n          type: \"string\",\n          description: \"名前\",\n        },\n      },\n      required: [\"name\"],\n    },\n  },\n  {\n    name: \"read_file\",\n    description: \"指定されたファイルの内容を読み取ります\",\n    inputSchema: {\n      type: \"object\",\n      properties: {\n        path: {\n          type: \"string\",\n          description: \"ファイルのパス\",\n        },\n      },\n      required: [\"path\"],\n    },\n  },\n],\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e次に、\u003ccode\u003eCallToolRequestSchema\u003c/code\u003eのハンドラーに\u003ccode\u003eread_file\u003c/code\u003eの処理を追加します。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-typescript\"\u003eif (request.params.name === \"hello\") {\n  // 既存の処理\n} else if (request.params.name === \"read_file\") {\n  const path = request.params.arguments?.path as string;\n  try {\n    const fs = await import(\"fs/promises\");\n    const content = await fs.readFile(path, \"utf-8\");\n    return {\n      content: [\n        {\n          type: \"text\",\n          text: content,\n        },\n      ],\n    };\n  } catch (error: any) {\n    return {\n      content: [\n        {\n          type: \"text\",\n          text: \u003ccode\u003eエラー: ${error.message}\u003c/code\u003e,\n        },\n      ],\n      isError: true,\n    };\n  }\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e同様に、他にも便利なツールを追加できます。例えば、現在の日時を返す\u003ccode\u003eget_current_time\u003c/code\u003eや、簡単な計算を行う\u003ccode\u003ecalculate\u003c/code\u003eなどが考えられます。\u003c/p\u003e\n\u003ch2\u003eステップ4：ビルドと実行\u003c/h2\u003e\n\u003cp\u003eTypeScriptをコンパイルします。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003enpx tsc\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eこれで\u003ccode\u003edist/index.js\u003c/code\u003eが生成されます。サーバーをテストするには、以下のコマンドで直接実行できます。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003enode dist/index.js\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eただし、MCPサーバーは標準入出力を介して通信するため、通常はOpenCodeから呼び出します。\u003c/p\u003e\n\u003ch2\u003eステップ5：OpenCodeへの接続\u003c/h2\u003e\n\u003cp\u003eOpenCodeの設定ファイル（通常は\u003ccode\u003e~/.opencode/config.json\u003c/code\u003e）を編集し、MCPサーバーを追加します。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-json\"\u003e{\n  \"mcpServers\": {\n    \"my-mcp-server\": {\n      \"command\": \"node\",\n      \"args\": [\"/absolute/path/to/my-mcp-server/dist/index.js\"],\n      \"env\": {}\n    }\n  }\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eパスは絶対パスで指定してください。設定後、OpenCodeを再起動すると、AIアシスタントがカスタムツールを認識し、使用できるようになります。\u003c/p\u003e\n\u003ch2\u003e高度なカスタマイズ\u003c/h2\u003e\n\u003ch3\u003eツールの入力スキーマを詳細に設定する\u003c/h3\u003e\n\u003cp\u003eJSON Schemaに従って、より複雑な入力スキーマを定義できます。例えば、\u003ccode\u003eread_file\u003c/code\u003eにエンコーディングオプションを追加する場合：\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-typescript\"\u003einputSchema: {\n  type: \"object\",\n  properties: {\n    path: { type: \"string\" },\n    encoding: { type: \"string\", enum: [\"utf-8\", \"ascii\", \"base64\"] },\n  },\n  required: [\"path\"],\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003eリソースの提供\u003c/h3\u003e\n\u003cp\u003eツールだけでなく、リソースを提供することもできます。リソースは読み取り専用のデータで、AIが参照できます。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-typescript\"\u003eimport { ListResourcesRequestSchema, ReadResourceRequestSchema } from \"@modelcontextprotocol/sdk/types.js\";\n\u003cp\u003eserver.setRequestHandler(ListResourcesRequestSchema, async () =\u0026gt; ({\n  resources: [\n    {\n      uri: \"file:///config.json\",\n      name: \"設定ファイル\",\n      mimeType: \"application/json\",\n    },\n  ],\n}));\u003c/p\u003e\n\u003cp\u003eserver.setRequestHandler(ReadResourceRequestSchema, async (request) =\u0026gt; {\n  if (request.params.uri === \"file:///config.json\") {\n    const content = JSON.stringify({ key: \"value\" });\n    return {\n      contents: [\n        {\n          uri: request.params.uri,\n          mimeType: \"application/json\",\n          text: content,\n        },\n      ],\n    };\n  }\n  throw new Error(\"Resource not found\");\n});\n\u003c/code\u003e\u003c/pre\u003e\u003c/p\u003e\n\u003ch3\u003eエラーハンドリングの改善\u003c/h3\u003e\n\u003cp\u003eツール実行時にエラーが発生した場合、\u003ccode\u003eisError: true\u003c/code\u003eを設定してエラーメッセージを返すことで、AIが適切に処理できます。\u003c/p\u003e\n\u003ch2\u003eトラブルシューティング\u003c/h2\u003e\n\u003ch3\u003eサーバーが認識されない\u003c/h3\u003e\n\u003cli\u003eOpenCodeの設定ファイルのパスが正しいか確認\u003c/li\u003e\n\u003cli\u003eサーバーが実行可能かどうか、直接起動してテスト\u003c/li\u003e\n\u003cli\u003eログを確認（\u003ccode\u003e~/.opencode/logs/\u003c/code\u003e）\u003c/li\u003e\n\u003ch3\u003eTypeScriptのエラー\u003c/h3\u003e\n\u003cli\u003e\u003ccode\u003e@modelcontextprotocol/sdk\u003c/code\u003eのバージョンが最新か確認\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003etsconfig.json\u003c/code\u003eで\u003ccode\u003emoduleResolution\u003c/code\u003eを\u003ccode\u003enode\u003c/code\u003eに設定\u003c/li\u003e\n\u003ch2\u003eまとめ\u003c/h2\u003e\n\u003cp\u003eOpenCodeでMCPサーバーを自作することで、AIアシスタントの機能を大幅に拡張できます。TypeScriptとSDKを使えば、複雑なツールも比較的簡単に実装可能です。今回紹介した手順をベースに、あなたのワークフローに合わせたカスタムツールを開発してみてください。\u003c/p\u003e\n\u003cp\u003e次のステップとして、外部APIを呼び出すツールやデータベース操作ツールなどに挑戦すると、さらにOpenCodeの活用範囲が広がります。\u003c/p\u003e"])</script><script>self.__next_f.push([1,"4:[\"$\",\"div\",null,{\"className\":\"mx-auto max-w-4xl px-4 py-8\",\"children\":[[\"$\",\"article\",null,{\"children\":[[\"$\",\"header\",null,{\"className\":\"mb-8\",\"children\":[[\"$\",\"h1\",null,{\"className\":\"text-3xl font-bold tracking-tight text-gray-900\",\"children\":\"OpenCodeでMCPサーバーを自作する方法：カスタムツール追加ガイド\"}],[\"$\",\"p\",null,{\"className\":\"mt-2 text-gray-500\",\"children\":\"OpenCodeのMCPサーバーをTypeScriptで自作し、カスタムツールを追加する方法を解説。実用的なコード例と手順で拡張機能を実現。\"}],[\"$\",\"div\",null,{\"className\":\"mt-4 flex flex-wrap items-center gap-3\",\"children\":[[[\"$\",\"span\",\"OpenCode\",{\"className\":\"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600\",\"children\":\"OpenCode\"}],[\"$\",\"span\",\"MCPサーバー\",{\"className\":\"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600\",\"children\":\"MCPサーバー\"}],[\"$\",\"span\",\"自作\",{\"className\":\"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600\",\"children\":\"自作\"}],[\"$\",\"span\",\"カスタムツール\",{\"className\":\"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600\",\"children\":\"カスタムツール\"}],[\"$\",\"span\",\"TypeScript\",{\"className\":\"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600\",\"children\":\"TypeScript\"}],[\"$\",\"span\",\"拡張\",{\"className\":\"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600\",\"children\":\"拡張\"}]],[\"$\",\"span\",null,{\"className\":\"text-xs text-gray-400\",\"children\":\"2026/5/25\"}]]}]]}],[\"$\",\"div\",null,{\"className\":\"prose max-w-none\",\"dangerouslySetInnerHTML\":{\"__html\":\"$f\"}}]]}],\"$L10\"]}]\n"])</script><script>self.__next_f.push([1,"10:[\"$\",\"div\",null,{\"className\":\"mt-12 border-t border-gray-200 pt-6\",\"children\":[\"$\",\"a\",null,{\"href\":\"/\",\"className\":\"text-sm text-ai hover:underline\",\"children\":\"← 記事一覧に戻る\"}]}]\n"])</script><script>self.__next_f.push([1,"a:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n"])</script><script>self.__next_f.push([1,"7:null\nc:[[\"$\",\"title\",\"0\",{\"children\":\"AIエージェント活用ガイド\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"OpenCode/ClaudeCode/DeepSeekを使ったAIエージェント開発自動化の情報を日本語で発信。\"}],[\"$\",\"meta\",\"2\",{\"name\":\"keywords\",\"content\":\"OpenCode,ClaudeCode,AIエージェント,DeepSeek,開発自動化,プロンプト\"}]]\n"])</script></body></html>

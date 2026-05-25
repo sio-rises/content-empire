@@ -1,4 +1,4 @@
 User-Agent: *
 Allow: /
 
-Sitemap: https://vps-server-guide.pages.dev/sitemap.xml
+Sitemap: https://vps.endoarata.jp/sitemap.xml

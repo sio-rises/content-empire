@@ -1,0 +1,107 @@
+1:"$Sreact.fragment"
+2:I[10332,["/_next/static/chunks/007ac~remr-yw.js"],"default"]
+3:I[41511,["/_next/static/chunks/007ac~remr-yw.js"],"default"]
+5:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+9:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"ViewportBoundary"]
+b:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"MetadataBoundary"]
+d:I[30493,["/_next/static/chunks/007ac~remr-yw.js"],"default",1]
+:HL["/_next/static/chunks/0j5zuqvsr0qqd.css","style"]
+0:{"P":null,"c":["","articles","deepseek-api-batch-processing-guide"],"q":"","i":false,"f":[[["",{"children":["articles",{"children":[["slug","deepseek-api-batch-processing-guide","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0j5zuqvsr0qqd.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/007ac~remr-yw.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"ja","children":[["$","head",null,{"children":["$","script",null,{"async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019","crossOrigin":"anonymous"}]}],["$","body",null,{"className":"min-h-screen antialiased","children":["$","div",null,{"className":"flex min-h-screen flex-col","children":[["$","header",null,{"className":"border-b border-gray-200 bg-white","children":["$","div",null,{"className":"mx-auto flex max-w-4xl items-center justify-between px-4 py-3","children":[["$","a",null,{"href":"/","className":"text-lg font-bold text-ai hover:opacity-80","children":"AIエージェント活用ガイド"}],["$","nav",null,{"className":"flex gap-4 text-sm text-gray-600","children":["$","a",null,{"href":"/","className":"hover:text-ai","children":"ホーム"}]}]]}]}],["$","main",null,{"className":"flex-1","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400","children":["AIエージェント活用ガイド — Built with OpenCode + DeepSeek API",["$","div",null,{"className":"border-t border-gray-100 mt-4 pt-3 text-center text-[10px] text-gray-300","children":[["$","span",null,{"className":"mr-2","children":"関連サイト:"}],["$","a",null,{"href":"https://arch-linux-guide.pages.dev","className":"hover:underline","children":"Arch Linux日本語ガイド"}],"  ",["$","a",null,{"href":"https://nisa-investment.pages.dev","className":"hover:underline","children":"NISA投資入門"}],"  ",["$","a",null,{"href":"https://linux-security.pages.dev","className":"hover:underline","children":"Linuxセキュリティ"}],"  ",["$","a",null,{"href":"https://vps-server-guide.pages.dev","className":"hover:underline","children":"VPSサーバー構築"}]]}]]}]]}]}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L4",null,["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]]}],{},null,false,null]},null,false,"$@8"]},null,false,"$@8"]},null,false,null],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$6",null,{"name":"Next.Metadata","children":"$Lc"}]}]}],null]}],false]],"m":"$undefined","G":["$d",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0j5zuqvsr0qqd.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"cZWNxtWXrIsLiNU6bnRwr"}
+e:[]
+8:"$We"
+f:T140a,<h2>はじめに</h2>
+<p>DeepSeek APIは強力な言語モデルを提供しますが、大量のリクエストを効率的に処理するにはバッチ処理の最適化が欠かせません。本記事では、レート制限を回避しながら大規模生成を実現する具体的な手法を解説します。</p>
+<h2>バッチ処理の基本戦略</h2>
+<h3>リクエストのグループ化</h3>
+<p>複数のプロンプトを1つのAPIリクエストにまとめることで、オーバーヘッドを削減できます。DeepSeek APIは単一リクエスト内で複数の入力を処理できるため、以下のようにJSON配列で送信します。</p>
+<pre><code class="language-json">[
+  {"prompt": "質問1", "max_tokens": 100},
+  {"prompt": "質問2", "max_tokens": 200}
+]
+</code></pre>
+<p>ただし、バッチサイズが大きすぎるとレスポンス時間が増大するため、10〜20件程度が適切です。</p>
+<h3>レート制限への対策</h3>
+<p>DeepSeek APIには分間リクエスト数（RPM）やトークン数（TPM）の制限があります。以下の方法で制限を回避します。</p>
+<li><strong>指数バックオフ</strong>: 429エラー発生時に待機時間を指数関数的に増やす</li>
+<li><strong>ジッターの追加</strong>: リクエスト間隔にランダムな遅延を加え、同時アクセスを分散</li>
+<li><strong>トークン使用量の事前計算</strong>: 各リクエストのトークン数を概算し、制限内に収める</li>
+<p>実装例（Python）:</p>
+<pre><code class="language-python">import time
+import random
+<p>def request_with_retry(api_call, max_retries=5):
+    for i in range(max_retries):
+        try:
+            return api_call()
+        except RateLimitError:
+            wait = (2 ** i) + random.uniform(0, 1)
+            time.sleep(wait)
+    raise Exception("Max retries exceeded")
+</code></pre></p>
+<h2>非同期処理の活用</h2>
+<h3>asyncioとaiohttpの利用</h3>
+<p>同期処理ではリクエストごとに待機時間が発生するため、非同期処理で並行実行します。</p>
+<pre><code class="language-python">import asyncio
+import aiohttp
+<p>async def fetch(session, prompt):
+    async with session.post(url, json={"prompt": prompt}) as resp:
+        return await resp.json()</p>
+<p>async def main():
+    async with aiohttp.ClientSession() as session:
+        tasks = [fetch(session, p) for p in prompts]
+        results = await asyncio.gather(*tasks)
+</code></pre></p>
+<h3>セマフォによる同時実行数の制御</h3>
+<p>レート制限を超えないよう、同時実行数を制限します。</p>
+<pre><code class="language-python">sem = asyncio.Semaphore(10)  # 同時実行数10
+<p>async def bounded_fetch(session, prompt):
+    async with sem:
+        return await fetch(session, prompt)
+</code></pre></p>
+<h2>大規模生成の実践テクニック</h2>
+<h3>タスク分割と結果の結合</h3>
+<p>長文生成が必要な場合、タスクを複数の小さな生成に分割し、後で結合します。</p>
+<li>アウトライン生成</li>
+<li>セクションごとに生成</li>
+<li>結果を連結</li>
+<h3>エラーハンドリングと再試行</h3>
+<p>ネットワークエラーや一時的な障害に備え、以下の処理を実装します。</p>
+<li>タイムアウトの設定（例: 30秒）</li>
+<li>失敗したリクエストのキューへの再投入</li>
+<li>エラーログの保存</li>
+<pre><code class="language-python">def process_batch(prompts, max_retries=3):
+    queue = list(prompts)
+    results = []
+    for prompt in queue:
+        for attempt in range(max_retries):
+            try:
+                result = api_call(prompt, timeout=30)
+                results.append(result)
+                break
+            except Exception as e:
+                if attempt == max_retries - 1:
+                    log_error(prompt, e)
+                else:
+                    time.sleep(2 ** attempt)
+    return results
+</code></pre>
+<h2>パフォーマンス測定とチューニング</h2>
+<h3>ベンチマークの実施</h3>
+<p>以下の指標を測定し、最適なバッチサイズや並列数を決定します。</p>
+<li>スループット（1分あたりの完了リクエスト数）</li>
+<li>レイテンシ（平均応答時間）</li>
+<li>エラー率</li>
+<h3>動的な調整</h3>
+<p>APIの応答時間やエラー率に応じて、バッチサイズや待機時間を動的に変更します。</p>
+<pre><code class="language-python">if error_rate &gt; 0.1:
+    batch_size = max(1, batch_size - 1)
+elif latency &lt; 1.0:
+    batch_size = min(20, batch_size + 1)
+</code></pre>
+<h2>まとめ</h2>
+<p>DeepSeek APIでのバッチ処理最適化は、適切なリクエスト設計、非同期処理、エラーハンドリングの組み合わせが鍵です。レート制限を尊重しつつ、効率的な大規模生成を実現しましょう。</p>
+<p>これらのテクニックを適用することで、APIの制限内で最大限のパフォーマンスを引き出せます。ぜひ実践してみてください。</p>4:["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"DeepSeek APIでバッチ処理を最適化するコツ：大規模生成の実践ガイド"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"DeepSeek APIで大規模なテキスト生成を効率的に行うためのバッチ処理のコツを解説。レート制限対策、非同期処理、エラーハンドリングなど実践的なテクニックを紹介。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","DeepSeek API",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"DeepSeek API"}],["$","span","バッチ処理",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"バッチ処理"}],["$","span","大規模生成",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"大規模生成"}],["$","span","レート制限",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"レート制限"}],["$","span","非同期",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"非同期"}],["$","span","最適化",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"最適化"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$f"}}]]}],"$L10"]}]
+10:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-ai hover:underline","children":"← 記事一覧に戻る"}]}]
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+7:null
+c:[["$","title","0",{"children":"AIエージェント活用ガイド"}],["$","meta","1",{"name":"description","content":"OpenCode/ClaudeCode/DeepSeekを使ったAIエージェント開発自動化の情報を日本語で発信。"}],["$","meta","2",{"name":"keywords","content":"OpenCode,ClaudeCode,AIエージェント,DeepSeek,開発自動化,プロンプト"}]]

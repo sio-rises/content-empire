@@ -1,0 +1,118 @@
+1:"$Sreact.fragment"
+5:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+2:T1b95,<h2>はじめに</h2>
+<p>OpenCodeは、データベース設計とマイグレーションを効率的に行うための強力なツールです。本記事では、Prismaを活用したデータベース設計、マイグレーションの実行、SQLの管理方法を実践的に解説します。OpenCodeを利用することで、開発初期のデータベース設計から本番環境への適用まで、一貫したワークフローを構築できます。</p>
+<h2>OpenCodeとPrismaの連携</h2>
+<p>OpenCodeは、Prisma ORMとシームレスに連携します。PrismaはTypeScript/JavaScript向けの次世代ORMであり、データベーススキーマを宣言的に定義し、マイグレーションを自動生成します。OpenCode上でPrismaを使うことで、以下のようなメリットがあります。</p>
+<li><strong>型安全なデータアクセス</strong>: スキーマから自動生成される型により、コンパイル時にエラーを検出</li>
+<li><strong>マイグレーションの自動化</strong>: スキーマ変更からマイグレーションファイルを自動生成</li>
+<li><strong>複数データベース対応</strong>: PostgreSQL、MySQL、SQLite、SQL Serverなどに対応</li>
+<h2>データベース設計の基本</h2>
+<h3>スキーマ定義</h3>
+<p>Prismaスキーマは、<code>schema.prisma</code>ファイルに記述します。以下は、ブログアプリケーションの例です。</p>
+<pre><code class="language-prisma">datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+<p>generator client {
+  provider = "prisma-client-js"
+}</p>
+<p>model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  name      String?
+  posts     Post[]
+  createdAt DateTime @default(now())
+}</p>
+<p>model Post {
+  id        Int      @id @default(autoincrement())
+  title     String
+  content   String?
+  published Boolean  @default(false)
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  Int
+  createdAt DateTime @default(now())
+}
+</code></pre></p>
+<h3>リレーションの設計</h3>
+<p>1対多のリレーションは、<code>@relation</code>属性で定義します。上記の例では、UserとPostが1対多の関係です。多対多の場合は、中間テーブルを明示的にモデルとして定義するか、<code>@relation</code>で自動生成させます。</p>
+<pre><code class="language-prisma">model Category {
+  id       Int      @id @default(autoincrement())
+  name     String   @unique
+  posts    Post[]
+}
+<p>model Post {
+  id         Int        @id @default(autoincrement())
+  title      String
+  categories Category[]
+}
+</code></pre></p>
+<h2>マイグレーションの実行</h2>
+<h3>初期マイグレーション</h3>
+<p>スキーマ定義後、以下のコマンドで初期マイグレーションを作成します。</p>
+<pre><code class="language-bash">npx prisma migrate dev --name init
+</code></pre>
+<p>このコマンドは、スキーマからマイグレーションSQLファイルを生成し、データベースに適用します。同時にPrisma Clientも生成されます。</p>
+<h3>スキーマ変更時のマイグレーション</h3>
+<p>モデルにフィールドを追加する場合:</p>
+<pre><code class="language-prisma">model User {
+  // 既存フィールド
+  profile String? // 追加
+}
+</code></pre>
+<p>マイグレーションコマンド:</p>
+<pre><code class="language-bash">npx prisma migrate dev --name add-profile
+</code></pre>
+<h3>マイグレーションのロールバック</h3>
+<p>Prismaでは、直接的なロールバックコマンドはありませんが、<code>prisma migrate diff</code>と<code>prisma db execute</code>を使って手動でロールバックできます。また、Gitなどのバージョン管理を使ってマイグレーションファイルを管理するのが一般的です。</p>
+<h2>SQLの管理と最適化</h2>
+<h3>マイグレーションSQLの確認</h3>
+<p>生成されたマイグレーションSQLは、<code>prisma/migrations/</code>ディレクトリに保存されます。必要に応じて手動で編集することも可能です。</p>
+<pre><code class="language-sql">-- CreateTable
+CREATE TABLE "User" (
+    "id" SERIAL NOT NULL,
+    "email" TEXT NOT NULL,
+    "name" TEXT,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT "User_pkey" PRIMARY KEY ("id")
+);
+</code></pre>
+<h3>インデックスの追加</h3>
+<p>パフォーマンス向上のため、インデックスを追加します。</p>
+<pre><code class="language-prisma">model Post {
+  id        Int      @id @default(autoincrement())
+  title     String
+  content   String?
+  published Boolean  @default(false)
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  Int
+  createdAt DateTime @default(now())
+<p>@@index([authorId, published])
+}
+</code></pre></p>
+<h3>生SQLの実行</h3>
+<p>Prisma Clientで生SQLを実行することも可能です。</p>
+<pre><code class="language-typescript">import { PrismaClient } from '@prisma/client'
+const prisma = new PrismaClient()
+<p>const users = await prisma.$queryRaw<code>SELECT * FROM "User" WHERE "email" = ${email}</code>
+</code></pre></p>
+<h2>実践的なワークフロー</h2>
+<li><strong>スキーマ設計</strong>: ビジネス要件に基づきモデルを定義</li>
+<li><strong>初期マイグレーション</strong>: <code>prisma migrate dev</code>でデータベース作成</li>
+<li><strong>開発中の変更</strong>: スキーマ修正後、マイグレーションを繰り返す</li>
+<li><strong>テスト</strong>: テスト用データベースでマイグレーションをテスト</li>
+<li><strong>本番適用</strong>: <code>prisma migrate deploy</code>で本番環境に適用</li>
+<h2>トラブルシューティング</h2>
+<h3>マイグレーション競合</h3>
+<p>複数ブランチでスキーマ変更があった場合、<code>prisma migrate dev</code>で競合が発生することがあります。その場合は、ベースブランチに戻ってマイグレーションをリセットするか、手動で解決します。</p>
+<h3>データ損失の防止</h3>
+<p><code>prisma migrate dev</code>は、データ損失を伴う変更（カラム削除など）を検出すると警告を出します。<code>--create-only</code>オプションを使い、SQLを確認してから適用することもできます。</p>
+<h2>まとめ</h2>
+<p>OpenCodeとPrismaを組み合わせることで、データベース設計からマイグレーションまでを効率的に行えます。型安全なスキーマ定義、自動マイグレーション、SQL管理機能を活用し、堅牢なデータベース基盤を構築しましょう。</p>
+<h2>参考リンク</h2>
+<li><a href="https://www.prisma.io/docs" target="_blank" rel="noopener">Prisma公式ドキュメント</a></li>
+<li><a href="https://opencode.com" target="_blank" rel="noopener">OpenCode公式サイト</a></li>0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"OpenCodeでデータベース設計とマイグレーションを完全マスター"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"OpenCodeを使ったデータベース設計とマイグレーションの実践的なチュートリアル。Prismaを用いたスキーマ定義、マイグレーション実行、SQL管理までを解説。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","OpenCode",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"OpenCode"}],["$","span","データベース",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"データベース"}],["$","span","設計",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"設計"}],["$","span","マイグレーション",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"マイグレーション"}],["$","span","Prisma",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"Prisma"}],["$","span","SQL",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"SQL"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3"]}],null,"$L4"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"cZWNxtWXrIsLiNU6bnRwr"}
+3:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-ai hover:underline","children":"← 記事一覧に戻る"}]}]
+4:["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]
+7:null

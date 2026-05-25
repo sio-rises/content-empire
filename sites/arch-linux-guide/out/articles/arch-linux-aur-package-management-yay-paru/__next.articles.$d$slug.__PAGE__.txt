@@ -1,7 +1,7 @@
 1:"$Sreact.fragment"
 5:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"OutletBoundary"]
 6:"$Sreact.suspense"
-2:T1bbd,
+2:T1bae,
 <hr>
 <p>*この記事はArch Linuxを実機で日常運用しているSioが、実際のインストール・設定経験に基づいてAI生成コンテンツをレビュー・補完しています。btrfsサブボリュームとLUKS暗号化環境で検証済みです。*</p>
 <h2>Arch Linux AURパッケージ管理入門：yayとparuの違いと使い方</h2>
@@ -13,7 +13,7 @@
 <li><strong>仕組み</strong>: AURの各パッケージはPKGBUILDというスクリプトで構成されています。PKGBUILDには、ソースコードの入手先、ビルド手順、依存関係などが記述されています。ユーザーはこのPKGBUILDをダウンロードし、<code>makepkg</code>コマンドでビルド・インストールします。ただし、手動で行うのは面倒なため、AURヘルパーが自動化してくれます。</li>
 <h3>AURヘルパー：yayとparu</h3>
 <p>AURヘルパーは、AURパッケージの検索、ダウンロード、ビルド、インストールを自動化するツールです。代表的なものにyayとparuがあります。</p>
-<p>#### yay（Yet Another Yogurt）</p>
+<h4>yay（Yet Another Yogurt）</h4>
 <li><strong>特徴</strong>: 長年使われてきた定番のAURヘルパー。シンプルで安定しており、多くのユーザーに支持されています。</li>
 <li><strong>インストール</strong>:</li>
   <pre><code class="language-bash">  sudo pacman -S --needed git base-devel
@@ -25,7 +25,7 @@
   - パッケージの検索: <code>yay パッケージ名</code>
   - パッケージのインストール: <code>yay -S パッケージ名</code>
   - システム全体の更新（AUR含む）: <code>yay -Syu</code>
-<p>#### paru（パル）</p>
+<h4>paru（パル）</h4>
 <li><strong>特徴</strong>: yayの後継として開発された、Rust製の高速なAURヘルパー。並列ビルドやカラフルな出力、pacmanとの統合が強化されています。</li>
 <li><strong>インストール</strong>:</li>
   <pre><code class="language-bash">  sudo pacman -S --needed base-devel
@@ -37,7 +37,7 @@
   - パッケージの検索: <code>paru パッケージ名</code>
   - パッケージのインストール: <code>paru -S パッケージ名</code>
   - システム全体の更新（AUR含む）: <code>paru -Syu</code>
-<p>#### yayとparuの違い</p>
+<h4>yayとparuの違い</h4>
 <table><thead><tr><th>機能</th><th>yay</th><th>paru</th></tr></thead><tbody><tr><td>言語</td><td>Go</td><td>Rust</td></tr>
 <tr><td>並列ビルド</td><td>なし（順次）</td><td>あり（高速）</td></tr>
 <tr><td>設定ファイル</td><td>~/.config/yay/config.json</td><td>/etc/paru.conf, ~/.config/paru/paru.conf</td></tr>
@@ -47,7 +47,7 @@
 初心者には、ドキュメントが豊富でコミュニティも大きいyayをおすすめします。一方、速度やモダンな機能を重視するならparuが適しています。
 <h3>実用例：yayとparuでパッケージをインストール</h3>
 <p>ここでは、例として「google-chrome」をインストールする手順を示します。</p>
-<p>#### yayの場合</p>
+<h4>yayの場合</h4>
 <li>パッケージを検索:</li>
    <pre><code class="language-bash">   yay google-chrome
    </code></pre>
@@ -56,7 +56,7 @@
    <pre><code class="language-bash">   yay -S google-chrome
    </code></pre>
    依存関係の確認後、ビルドが開始され、自動的にインストールされます。
-<p>#### paruの場合</p>
+<h4>paruの場合</h4>
 <li>パッケージを検索:</li>
    <pre><code class="language-bash">   paru google-chrome
    </code></pre>
@@ -72,7 +72,7 @@
 <li><strong>AURヘルパーを使わなくてもAURは使える？</strong></li>
   はい。手動でPKGBUILDをダウンロードし、<code>makepkg -si</code>でインストールできます。ただし、依存関係の解決や更新が面倒なため、ヘルパーの使用が推奨されます。
 <h3>まとめ</h3>
-<p>AURはArch Linuxの大きな強みであり、yayやparuといったAURヘルパーを使うことで、その恩恵を簡単に受けられます。初心者の方はまずyayを試し、慣れてきたらparuに移行するのも良いでしょう。AURを活用して、Arch Linuxライフをより充実させてください。</p>0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"Arch Linux AURパッケージ管理入門：yayとparuの違いと使い方"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"Arch LinuxのAUR（Arch User Repository）とAURヘルパーyay、paruの違い、インストール方法、基本的な使い方を初心者向けに解説。PKGBUILDの役割も紹介。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","Arch Linux",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"Arch Linux"}],["$","span","AUR",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"AUR"}],["$","span","yay",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"yay"}],["$","span","paru",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"paru"}],["$","span","PKGBUILD",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"PKGBUILD"}],["$","span","パッケージ管理",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"パッケージ管理"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3"]}],null,"$L4"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"oMFWqHyx7sJoNGgtrYd0X"}
+<p>AURはArch Linuxの大きな強みであり、yayやparuといったAURヘルパーを使うことで、その恩恵を簡単に受けられます。初心者の方はまずyayを試し、慣れてきたらparuに移行するのも良いでしょう。AURを活用して、Arch Linuxライフをより充実させてください。</p>0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"Arch Linux AURパッケージ管理入門：yayとparuの違いと使い方"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"Arch LinuxのAUR（Arch User Repository）とAURヘルパーyay、paruの違い、インストール方法、基本的な使い方を初心者向けに解説。PKGBUILDの役割も紹介。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","Arch Linux",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"Arch Linux"}],["$","span","AUR",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"AUR"}],["$","span","yay",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"yay"}],["$","span","paru",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"paru"}],["$","span","PKGBUILD",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"PKGBUILD"}],["$","span","パッケージ管理",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"パッケージ管理"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3"]}],null,"$L4"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"lSUwLKzjeCTnjIay80zjI"}
 3:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-arch hover:underline","children":"← 記事一覧に戻る"}]}]
 4:["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]
 7:null

@@ -1,0 +1,16 @@
+{
+  "title": "AIエージェントを使ったコードレビュー自動化ガイド：OpenCodeでバグ検出と品質向上",
+  "slug": "ai-agent-code-review-automation-opencode",
+  "metaDescription": "AIエージェントによるコードレビューの自動化手法を解説。OpenCodeを使ったバグ検出、品質向上の具体的な手順を紹介。",
+  "content": "## はじめに\n\nコードレビューはソフトウェア品質を保つために不可欠ですが、時間と労力がかかります。AIエージェントを活用することで、自動化し、バグ検出や品質向上を効率的に行えます。本記事では、オープンソースのAIコードレビューツール「OpenCode」を使った具体的な方法を紹介します。\n\n## AIエージェントによるコードレビューのメリット\n\n- **高速化**: 人間のレビュアーが休憩中でも24時間稼働\n- **一貫性**: 同じ基準でコードをチェック\n- **バグ検出**: パターン認識で潜在的な問題を発見\n- **学習効果**: レビュー結果を蓄積して精度向上\n\n## OpenCodeとは\n\nOpenCodeは、コードレビューに特化したAIエージェントです。GPT-4やClaudeなどのLLMをバックエンドに使い、プルリクエストに対して自動でレビューコメントを生成します。GitHub ActionsやGitLab CIと連携可能です。\n\n### 主な機能\n- コードのスタイルチェック\n- セキュリティ脆弱性の検出\n- パフォーマンス問題の指摘\n- ロジックエラーの特定\n- テストカバレッジの提案\n\n## セットアップ手順\n\n### 1. 環境準備\n\n```bash\n# Python 3.9以上が必要\npip install opencode-ai\n```\n\n### 2. GitHub Actionsとの連携\n\nリポジトリの`.github/workflows/code-review.yml`に以下を追加:\n\n```yaml\nname: AI Code Review\non:\n  pull_request:\n    types: [opened, synchronize]\njobs:\n  review:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v3\n      - name: Run OpenCode\n        uses: opencode-ai/action@v1\n        with:\n          openai_api_key: ${{ secrets.OPENAI_API_KEY }}\n          github_token: ${{ secrets.GITHUB_TOKEN }}\n```\n\n### 3. 設定ファイル\n\nプロジェクトルートに`opencode.yml`を作成:\n\n```yaml\nmodel: gpt-4\nreview:\n  enabled: true\n  style: true\n  security: true\n  performance: true\n  max_comments: 10\nignore_files:\n  - \"*.lock\"\n  - \"vendor/**\"\n```\n\n## 実際のレビュー例\n\n### バグ検出の例\n\n以下のようなコードをプッシュしたとします:\n\n```python\ndef divide(a, b):\n    return a / b\n```\n\nAIエージェントは次のようにコメントします:\n\n> ⚠️ ゼロ除算の可能性があります。bが0の場合にエラーが発生します。try-exceptで処理するか、事前チェックを推奨します。\n\n### 品質向上の例\n\n```javascript\nconst data = fetch('/api/data').then(res => res.json());\n```\n\n> 💡 非同期処理のエラーハンドリングが不足しています。.catch()を追加するか、async/awaitとtry-catchを使用してください。\n\n## カスタマイズとチューニング\n\n### レビューの粒度調整\n\n`opencode.yml`で`max_comments`を調整することで、レビューコメントの数を制限できます。初期は5〜10程度がおすすめです。\n\n### 独自ルールの追加\n\nプロジェクト固有のルールを追加するには、`rules`セクションを使用:\n\n```yaml\nrules:\n  - pattern: \"console.log\"\n    message: \"本番環境ではconsole.logを削除してください\"\n    severity: warning\n```\n\n### モデルの選択\n\nOpenCodeは複数のLLMをサポート。コストと精度のバランスを考慮して選択:\n\n| モデル | 精度 | コスト | 速度 |\n|--------|------|--------|------|\n| GPT-4 | 高い | 高い | 普通 |\n| GPT-3.5 | 中 | 低い | 速い |\n| Claude-2 | 高い | 中 | 普通 |\n\n## 注意点とベストプラクティス\n\n- **APIキーの管理**: GitHub SecretsにAPIキーを保存し、公開リポジトリでは漏洩に注意\n- **レビューの過信**: AIの指摘はあくまで参考に。最終判断は人間が行う\n- **段階的な導入**: まずは一部のリポジトリで試し、効果を確認してから全リポジトリに展開\n- **フィードバックループ**: 誤検出があった場合は設定を調整し、精度を向上\n\n## まとめ\n\nAIエージェントを使ったコードレビュー自動化は、開発効率と品質向上に大きく貢献します。OpenCodeを使えば、簡単に導入でき、バグ検出やコード品質の維持に役立ちます。ぜひ試してみてください。\n\n## 参考リンク\n\n- OpenCode公式: https://opencode.ai\n- GitHub Actions Marketplace: https://github.com/marketplace/actions/opencode\n- OpenAI API: https://platform.openai.com",
+  "keywords": [
+    "AIエージェント",
+    "コードレビュー",
+    "自動化",
+    "品質",
+    "バグ検出",
+    "OpenCode"
+  ],
+  "template": "tutorial",
+  "generatedAt": "2026-05-25T00:35:38.561Z"
+}

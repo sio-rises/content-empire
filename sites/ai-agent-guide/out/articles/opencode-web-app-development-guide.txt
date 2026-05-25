@@ -6,133 +6,132 @@
 9:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"ViewportBoundary"]
 b:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"MetadataBoundary"]
 d:I[30493,["/_next/static/chunks/007ac~remr-yw.js"],"default",1]
-:HL["/_next/static/chunks/0sknqqgyc~d7j.css","style"]
-0:{"P":null,"c":["","articles","opencode-web-app-development-guide"],"q":"","i":false,"f":[[["",{"children":["articles",{"children":[["slug","opencode-web-app-development-guide","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0sknqqgyc~d7j.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/007ac~remr-yw.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"ja","children":[["$","head",null,{"children":["$","script",null,{"async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019","crossOrigin":"anonymous"}]}],["$","body",null,{"className":"min-h-screen antialiased","children":["$","div",null,{"className":"flex min-h-screen flex-col","children":[["$","header",null,{"className":"border-b border-gray-200 bg-white","children":["$","div",null,{"className":"mx-auto flex max-w-4xl items-center justify-between px-4 py-3","children":[["$","a",null,{"href":"/","className":"text-lg font-bold text-ai hover:opacity-80","children":"AIエージェント活用ガイド"}],["$","nav",null,{"className":"flex gap-4 text-sm text-gray-600","children":["$","a",null,{"href":"/","className":"hover:text-ai","children":"ホーム"}]}]]}]}],["$","main",null,{"className":"flex-1","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400","children":"AIエージェント活用ガイド — Built with OpenCode + DeepSeek API"}]]}]}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L4",null,["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]]}],{},null,false,null]},null,false,"$@8"]},null,false,"$@8"]},null,false,null],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$6",null,{"name":"Next.Metadata","children":"$Lc"}]}]}],null]}],false]],"m":"$undefined","G":["$d",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0sknqqgyc~d7j.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"ozMjvJqr-IrJkTdPFeVOD"}
+:HL["/_next/static/chunks/0j5zuqvsr0qqd.css","style"]
+0:{"P":null,"c":["","articles","opencode-web-app-development-guide"],"q":"","i":false,"f":[[["",{"children":["articles",{"children":[["slug","opencode-web-app-development-guide","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0j5zuqvsr0qqd.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/007ac~remr-yw.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"ja","children":[["$","head",null,{"children":["$","script",null,{"async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019","crossOrigin":"anonymous"}]}],["$","body",null,{"className":"min-h-screen antialiased","children":["$","div",null,{"className":"flex min-h-screen flex-col","children":[["$","header",null,{"className":"border-b border-gray-200 bg-white","children":["$","div",null,{"className":"mx-auto flex max-w-4xl items-center justify-between px-4 py-3","children":[["$","a",null,{"href":"/","className":"text-lg font-bold text-ai hover:opacity-80","children":"AIエージェント活用ガイド"}],["$","nav",null,{"className":"flex gap-4 text-sm text-gray-600","children":["$","a",null,{"href":"/","className":"hover:text-ai","children":"ホーム"}]}]]}]}],["$","main",null,{"className":"flex-1","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400","children":["AIエージェント活用ガイド — Built with OpenCode + DeepSeek API",["$","div",null,{"className":"border-t border-gray-100 mt-4 pt-3 text-center text-[10px] text-gray-300","children":[["$","span",null,{"className":"mr-2","children":"関連サイト:"}],["$","a",null,{"href":"https://arch-linux-guide.pages.dev","className":"hover:underline","children":"Arch Linux日本語ガイド"}],"  ",["$","a",null,{"href":"https://nisa-investment.pages.dev","className":"hover:underline","children":"NISA投資入門"}],"  ",["$","a",null,{"href":"https://linux-security.pages.dev","className":"hover:underline","children":"Linuxセキュリティ"}],"  ",["$","a",null,{"href":"https://vps-server-guide.pages.dev","className":"hover:underline","children":"VPSサーバー構築"}]]}]]}]]}]}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L4",null,["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]]}],{},null,false,null]},null,false,"$@8"]},null,false,"$@8"]},null,false,null],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$6",null,{"name":"Next.Metadata","children":"$Lc"}]}]}],null]}],false]],"m":"$undefined","G":["$d",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0j5zuqvsr0qqd.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"cZWNxtWXrIsLiNU6bnRwr"}
 e:[]
 8:"$We"
-f:T1a55,<h1>OpenCodeで始めるWebアプリ開発入門｜Next.jsとReactでAIコーディング</h1>
-<p>AIコーディングツールが急速に進化する中、<strong>OpenCode</strong>はオープンソースで高機能な開発環境として注目を集めています。本記事では、OpenCodeを使ってWebアプリを開発する方法を、Next.jsとReactを例に詳しく解説します。初心者でもステップバイステップで進められるよう、環境構築からAI支援機能の活用までをカバーします。</p>
-<h2>OpenCodeとは？</h2>
-<p>OpenCodeは、AIアシスタントを内蔵したコードエディタです。VS Codeをベースに、コード生成・補完・リファクタリングなどのAI機能をシームレスに利用できます。特筆すべきは、ローカルLLMにも対応しており、プライバシーを保ちながらAIの恩恵を受けられる点です。</p>
-<h3>主な特徴</h3>
-<li>コード補完・生成（GPT-4やClaude、ローカルLLM対応）</li>
-<li>チャットインターフェースによる対話的な開発</li>
-<li>ターミナル統合、Git連携</li>
-<li>拡張機能豊富（VS Code互換）</li>
-<h2>環境構築</h2>
-<h3>1. OpenCodeのインストール</h3>
-<p>公式サイト（https://opencode.ai）からOSに合わせたインストーラをダウンロードします。macOSの場合はHomebrewでもインストール可能です。</p>
-<pre><code class="language-bash">brew install --cask opencode
+f:T174b,<h2>OpenCodeとは？</h2>
+<p>OpenCodeは、AIを活用したコード生成・編集ツールです。特にWebアプリ開発において、Next.jsやReactと組み合わせることで、効率的に開発を進められます。本記事では、OpenCodeを使ったWebアプリ開発の始め方を、具体的な手順とともに解説します。</p>
+<h2>1. 環境準備</h2>
+<h3>必要なツール</h3>
+<li>Node.js (v18以上推奨)</li>
+<li>npm または yarn</li>
+<li>Git</li>
+<li>テキストエディタ（VSCode推奨）</li>
+<h3>OpenCodeのインストール</h3>
+<p>OpenCodeはCLIツールとして提供されています。以下のコマンドでインストールします。</p>
+<pre><code class="language-bash">npm install -g @opencode/cli
 </code></pre>
-<h3>2. Node.jsの準備</h3>
-<p>Next.jsを使用するため、Node.js v18以上が必要です。nvmを使ってインストールすることをおすすめします。</p>
-<pre><code class="language-bash">&lt;h1&gt;nvmのインストール&lt;/h1&gt;
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
-&lt;h1&gt;Node.js v20をインストール&lt;/h1&gt;
-nvm install 20
-nvm use 20
+<p>インストール後、バージョンを確認します。</p>
+<pre><code class="language-bash">opencode --version
 </code></pre>
-<h2>プロジェクトの作成</h2>
-<p>OpenCodeを起動し、ターミナルを開きます。以下のコマンドでNext.jsプロジェクトを作成します。</p>
-<pre><code class="language-bash">npx create-next-app@latest my-app --typescript --tailwind --eslint
+<h2>2. Next.jsプロジェクトの作成</h2>
+<p>OpenCodeはNext.jsとの親和性が高いため、まずはNext.jsのプロジェクトを作成します。</p>
+<pre><code class="language-bash">npx create-next-app@latest my-app --typescript
 cd my-app
 </code></pre>
-<p>プロンプトに従い、App Routerを使用するかどうかなど選択します。今回は「Yes」で進めます。</p>
-<h2>AI支援機能の活用</h2>
-<h3>コード生成</h3>
-<p>OpenCodeの左サイドバーにあるAIアイコンをクリックし、チャットパネルを開きます。例えば「ToDoアプリのリストコンポーネントを作成して」と入力すると、コードを生成してくれます。</p>
-<pre><code class="language-typescript">// 生成されたコード例
-interface Todo {
+<h2>3. OpenCodeの初期化</h2>
+<p>プロジェクトディレクトリでOpenCodeを初期化します。</p>
+<pre><code class="language-bash">opencode init
+</code></pre>
+<p>これにより、<code>.opencode</code>ディレクトリが作成され、設定ファイルが生成されます。</p>
+<h2>4. AIコーディングの基本</h2>
+<p>OpenCodeの最大の特徴は、AIによるコード生成です。以下のように、自然言語で指示を出すだけでコードを生成できます。</p>
+<h3>例：Todoリストコンポーネントの作成</h3>
+<pre><code class="language-bash">opencode generate "ReactのTodoリストコンポーネントを作成。追加、削除、完了の機能を持つ。TypeScriptで書く。"
+</code></pre>
+<p>OpenCodeは、<code>components/TodoList.tsx</code> にコードを生成します。</p>
+<h2>5. 生成されたコードの確認と修正</h2>
+<p>生成されたコードを確認し、必要に応じて修正します。OpenCodeはコードの品質が高いですが、人間のレビューは必須です。</p>
+<pre><code class="language-tsx">// components/TodoList.tsx
+import React, { useState } from 'react';
+<p>interface Todo {
   id: number;
   text: string;
   completed: boolean;
-}
-<p>export default function TodoList() {
+}</p>
+<p>const TodoList: React.FC = () =&gt; {
   const [todos, setTodos] = useState&lt;Todo[]&gt;([]);
   const [input, setInput] = useState('');</p>
 <p>const addTodo = () =&gt; {
-    if (input.trim()) {
-      setTodos([...todos, { id: Date.now(), text: input, completed: false }]);
-      setInput('');
-    }
+    if (input.trim() === '') return;
+    setTodos([...todos, { id: Date.now(), text: input, completed: false }]);
+    setInput('');
+  };</p>
+<p>const toggleTodo = (id: number) =&gt; {
+    setTodos(todos.map(todo =&gt;
+      todo.id === id ? { ...todo, completed: !todo.completed } : todo
+    ));
+  };</p>
+<p>const deleteTodo = (id: number) =&gt; {
+    setTodos(todos.filter(todo =&gt; todo.id !== id));
   };</p>
 <p>return (
     &lt;div&gt;
-      &lt;input value={input} onChange={(e) =&gt; setInput(e.target.value)} /&gt;
+      &lt;h1&gt;Todo List&lt;/h1&gt;
+      &lt;input
+        type="text"
+        value={input}
+        onChange={(e) =&gt; setInput(e.target.value)}
+        onKeyDown={(e) =&gt; e.key === 'Enter' &amp;&amp; addTodo()}
+      /&gt;
       &lt;button onClick={addTodo}&gt;追加&lt;/button&gt;
       &lt;ul&gt;
         {todos.map(todo =&gt; (
-          &lt;li key={todo.id}&gt;{todo.text}&lt;/li&gt;
+          &lt;li key={todo.id}&gt;
+            &lt;span
+              style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}
+              onClick={() =&gt; toggleTodo(todo.id)}
+            &gt;
+              {todo.text}
+            &lt;/span&gt;
+            &lt;button onClick={() =&gt; deleteTodo(todo.id)}&gt;削除&lt;/button&gt;
+          &lt;/li&gt;
         ))}
       &lt;/ul&gt;
     &lt;/div&gt;
   );
-}
+};</p>
+<p>export default TodoList;
 </code></pre></p>
-<h3>コード補完</h3>
-<p>エディタ上でコードを書いていると、自動的に補完候補が表示されます。Tabキーで受け入れられます。特に型定義や繰り返しパターンで効果を発揮します。</p>
-<h3>リファクタリング</h3>
-<p>コードを選択し、右クリックメニューから「AI: リファクタリング」を選ぶと、改善案を提案してくれます。例えば、上記のToDoリストをよりReactらしくリファクタリングしてもらいましょう。</p>
-<h2>実践：シンプルなブログアプリ</h2>
-<h3>ページ構成</h3>
-<li>ホームページ（記事一覧）</li>
-<li>記事詳細ページ</li>
-<h3>データ管理</h3>
-<p>今回は簡易的にローカルのJSONファイルを使用します。</p>
-<li><code>data/posts.json</code>を作成</li>
-<li>ダミーデータを入力</li>
-<pre><code class="language-json">[
-  {
-    "id": 1,
-    "title": "OpenCode入門",
-    "content": "OpenCodeは..."
-  },
-  {
-    "id": 2,
-    "title": "Next.jsの基本",
-    "content": "Next.jsは..."
-  }
-]
+<h2>6. アプリへの組み込み</h2>
+<p>生成したコンポーネントを、<code>pages/index.tsx</code> に組み込みます。</p>
+<pre><code class="language-tsx">// pages/index.tsx
+import type { NextPage } from 'next';
+import TodoList from '../components/TodoList';
+<p>const Home: NextPage = () =&gt; {
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;My App&lt;/h1&gt;
+      &lt;TodoList /&gt;
+    &lt;/div&gt;
+  );
+};</p>
+<p>export default Home;
+</code></pre></p>
+<h2>7. 開発サーバーの起動</h2>
+<pre><code class="language-bash">npm run dev
 </code></pre>
-<h3>ルーティング</h3>
-<p><code>app/page.tsx</code> で一覧を表示し、<code>app/posts/[id]/page.tsx</code> で詳細を表示します。</p>
-<pre><code class="language-typescript">// app/page.tsx
-import posts from '@/data/posts.json';
-import Link from 'next/link';
-<p>export default function Home() {
-  return (
-    &lt;ul&gt;
-      {posts.map(post =&gt; (
-        &lt;li key={post.id}&gt;
-          &lt;Link href={<code>/posts/${post.id}</code>}&gt;{post.title}&lt;/Link&gt;
-        &lt;/li&gt;
-      ))}
-    &lt;/ul&gt;
-  );
-}
-</code></pre></p>
-<pre><code class="language-typescript">// app/posts/[id]/page.tsx
-import posts from '@/data/posts.json';
-import { notFound } from 'next/navigation';
-<p>export default function Post({ params }: { params: { id: string } }) {
-  const post = posts.find(p =&gt; p.id === Number(params.id));
-  if (!post) notFound();
-  return (
-    &lt;article&gt;
-      &lt;h1&gt;{post.title}&lt;/h1&gt;
-      &lt;p&gt;{post.content}&lt;/p&gt;
-    &lt;/article&gt;
-  );
-}
-</code></pre></p>
-<h3>AIでスタイリング</h3>
-<p>チャットで「記事一覧をカード形式でスタイリングして」と依頼すると、Tailwind CSSのクラスを提案してくれます。</p>
-<h2>デバッグとテスト</h2>
-<p>OpenCodeのターミナルで<code>npm run dev</code>を実行し、ブラウザで確認します。エラーが発生した場合、AIチャットにエラーメッセージを貼り付けると解決策を提案してくれます。</p>
-<hr>
-<p>*この記事はOpenCodeを日常的に使用し、AIエージェントにSSH経由でNixOSをインストールさせるなどの実践経験を持つSioが監修しています。DeepSeek APIのヘビーユーザーとして、実際のコスト感や制限事項を反映しています。*</p>
+<p>ブラウザで <code>http://localhost:3000</code> にアクセスし、Todoリストが動作することを確認します。</p>
+<h2>8. OpenCodeの高度な使い方</h2>
+<h3>コンテキストを指定したコード生成</h3>
+<p>プロジェクトの既存コードをコンテキストとして与えることで、より適切なコードを生成できます。</p>
+<pre><code class="language-bash">opencode generate "このプロジェクトのスタイルに合わせて、ヘッダーコンポーネントを作成" --context ./styles/globals.css
+</code></pre>
+<h3>リファクタリング</h3>
+<p>既存のコードを改善するよう指示することも可能です。</p>
+<pre><code class="language-bash">opencode refactor ./components/TodoList.tsx "パフォーマンスを最適化し、useCallbackとuseMemoを使用"
+</code></pre>
+<h2>9. デプロイ</h2>
+<p>Next.jsアプリはVercelに簡単にデプロイできます。</p>
+<li>GitHubリポジトリにコードをプッシュ</li>
+<li>Vercelアカウントを作成し、リポジトリをインポート</li>
+<li>自動デプロイ</li>
+<p>または、以下のコマンドでビルドします。</p>
+<pre><code class="language-bash">npm run build
+</code></pre>
 <h2>まとめ</h2>
-<p>OpenCodeを使えば、AIの支援を受けながら効率的にWebアプリ開発を進められます。特にNext.jsとReactの組み合わせは、AIが生成するコードの品質が高く、初心者でもスムーズに開発できます。ぜひこの機会にOpenCodeを試してみてください。</p>4:["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"OpenCodeで始めるWebアプリ開発入門｜Next.jsとReactでAIコーディング"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"OpenCodeを使ったWebアプリ開発の始め方を解説。Next.jsとReactの環境構築からAIコーディング支援機能まで、実践的なチュートリアルを紹介します。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","OpenCode",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"OpenCode"}],["$","span","Webアプリ",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"Webアプリ"}],["$","span","開発",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"開発"}],["$","span","Next.js",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"Next.js"}],["$","span","React",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"React"}],["$","span","AIコーディング",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"AIコーディング"}],["$","span","入門",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"入門"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$f"}}]]}],"$L10"]}]
+<p>OpenCodeを使うことで、Webアプリ開発の効率が大幅に向上します。特にNext.jsやReactとの組み合わせは強力で、AIの力を借りながら素早くプロトタイプを作成できます。ぜひ実際に試してみてください。</p>4:["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"OpenCodeでWebアプリ開発を始める完全ガイド【初心者向け】"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"OpenCodeを使ったWebアプリ開発の始め方を解説。Next.jsやReactとの連携、AIコーディングの活用方法まで、初心者でもわかる実践的なチュートリアル。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","OpenCode",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"OpenCode"}],["$","span","Webアプリ",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"Webアプリ"}],["$","span","開発",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"開発"}],["$","span","Next.js",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"Next.js"}],["$","span","React",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"React"}],["$","span","AIコーディング",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"AIコーディング"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$f"}}]]}],"$L10"]}]
 10:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-ai hover:underline","children":"← 記事一覧に戻る"}]}]
 a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 7:null

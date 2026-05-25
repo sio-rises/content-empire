@@ -1,0 +1,16 @@
+{
+  "title": "OpenCode CLIのインストールとセットアップ完全ガイド",
+  "slug": "opencode-cli-install-setup",
+  "metaDescription": "OpenCode CLIのインストール方法から初期セットアップまでを詳しく解説。npmを用いた導入手順やターミナルでの設定手順を丁寧に紹介します。",
+  "content": "## はじめに\n\nOpenCodeは、コマンドラインからコード生成・管理を効率化するCLIツールです。本記事では、OpenCode CLIのインストールから基本的なセットアップ手順までを解説します。前提条件として、Node.jsとnpmがインストールされている必要があります。\n\n## 前提条件\n\n- Node.js (バージョン14以上推奨)\n- npm (Node.jsに同梱)\n- ターミナル（macOS/Linux標準、WindowsではPowerShellなど）\n\nNode.jsが未インストールの場合は、[公式サイト](https://nodejs.org/)からLTS版をダウンロードしてインストールしてください。\n\n## OpenCode CLIのインストール\n\nOpenCode CLIはnpmパッケージとして公開されています。以下のコマンドでグローバルインストールします。\n\n```bash\nnpm install -g opencode-cli\n```\n\nインストールが完了したら、次のコマンドでバージョンを確認できます。\n\n```bash\nopencode --version\n```\n\n正しくインストールされていれば、バージョン番号が表示されます。\n\n### トラブルシューティング\n\n- **パーミッションエラー**: macOS/Linuxで`EACCES`エラーが出る場合は、`sudo`を付けて再実行してください。\n  ```bash\n  sudo npm install -g opencode-cli\n  ```\n- **コマンドが見つからない**: npmのグローバルインストール先がPATHに通っていない可能性があります。`npm root -g`でパスを確認し、シェルの設定ファイル（`.bashrc`や`.zshrc`）に追加してください。\n\n## 初期セットアップ\n\nインストール後、OpenCodeを使用するための初期設定を行います。\n\n### 1. 認証情報の設定\n\nOpenCodeはAPIを利用するため、認証トークンが必要です。以下のコマンドで設定します。\n\n```bash\nopencode config set token YOUR_API_TOKEN\n```\n\nトークンはOpenCodeの管理画面から取得してください。\n\n### 2. デフォルトのプロジェクト設定\n\n作業ディレクトリを指定します。\n\n```bash\nopencode config set directory ./my-projects\n```\n\n## 基本的な使い方\n\nセットアップが完了したら、簡単なコマンドを試してみましょう。\n\n### プロジェクトの作成\n\n```bash\nopencode create my-first-project\n```\n\n### テンプレート一覧の表示\n\n```bash\nopencode list-templates\n```\n\n### ヘルプの表示\n\n```bash\nopencode --help\n```\n\n## まとめ\n\nこの記事では、OpenCode CLIのインストールとセットアップ手順を紹介しました。npmによる簡単な導入と、数ステップの設定で即座に使い始められます。さらに詳しい使い方やコマンドリファレンスは、公式ドキュメントを参照してください。",
+  "keywords": [
+    "OpenCode",
+    "CLI",
+    "インストール",
+    "セットアップ",
+    "npm",
+    "ターミナル"
+  ],
+  "template": "howto",
+  "generatedAt": "2026-05-25T00:31:59.321Z"
+}

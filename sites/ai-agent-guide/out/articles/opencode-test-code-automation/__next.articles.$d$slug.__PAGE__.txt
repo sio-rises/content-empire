@@ -1,0 +1,113 @@
+1:"$Sreact.fragment"
+5:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+2:T1b40,<h2>OpenCodeとは？テストコード自動生成の基本</h2>
+<p>OpenCodeは、コード生成AIを活用して開発効率を高めるツールです。特にテストコードの自動生成に強みを持ち、TDD（テスト駆動開発）の実践を支援します。本記事では、OpenCodeを使ってJestベースのテストコードを自動生成し、品質を向上させる方法を具体的に解説します。</p>
+<h2>OpenCodeのセットアップと基本操作</h2>
+<h3>インストール方法</h3>
+<p>OpenCodeはCLIツールとして提供されます。以下のコマンドでインストールします。</p>
+<pre><code class="language-bash">npm install -g opencode
+</code></pre>
+<p>インストール後、OpenCodeの設定ファイルをプロジェクトルートに作成します。</p>
+<pre><code class="language-bash">opencode init
+</code></pre>
+<h3>テストコード自動生成の流れ</h3>
+<li>テストを書きたい関数やモジュールを指定</li>
+<li>OpenCodeがコードを解析し、適切なテストケースを生成</li>
+<li>生成されたテストコードをJestで実行</li>
+<li>必要に応じて手動で修正</li>
+<h2>実践：Jestテストコードの自動生成</h2>
+<h3>サンプル関数：ユーザー名のバリデーション</h3>
+<p>以下のようなシンプルなバリデーション関数を例にします。</p>
+<pre><code class="language-javascript">// validateUsername.js
+export function validateUsername(username) {
+  if (typeof username !== 'string') {
+    throw new Error('Username must be a string');
+  }
+  if (username.length &lt; 3) {
+    throw new Error('Username must be at least 3 characters');
+  }
+  if (username.length &gt; 20) {
+    throw new Error('Username must be at most 20 characters');
+  }
+  if (!/^[a-zA-Z0-9_]+$/.test(username)) {
+    throw new Error('Username can only contain letters, numbers, and underscores');
+  }
+  return username;
+}
+</code></pre>
+<h3>OpenCodeでテスト生成</h3>
+<p>次のコマンドを実行します。</p>
+<pre><code class="language-bash">opencode test --file validateUsername.js --framework jest
+</code></pre>
+<p>生成されるテストコード例：</p>
+<pre><code class="language-javascript">// validateUsername.test.js
+import { validateUsername } from './validateUsername';
+<p>describe('validateUsername', () =&gt; {
+  test('should return the username for valid input', () =&gt; {
+    expect(validateUsername('john_doe')).toBe('john_doe');
+  });</p>
+<p>test('should throw error for non-string input', () =&gt; {
+    expect(() =&gt; validateUsername(123)).toThrow('Username must be a string');
+    expect(() =&gt; validateUsername(null)).toThrow('Username must be a string');
+    expect(() =&gt; validateUsername(undefined)).toThrow('Username must be a string');
+  });</p>
+<p>test('should throw error for too short username', () =&gt; {
+    expect(() =&gt; validateUsername('ab')).toThrow('Username must be at least 3 characters');
+  });</p>
+<p>test('should throw error for too long username', () =&gt; {
+    const longName = 'a'.repeat(21);
+    expect(() =&gt; validateUsername(longName)).toThrow('Username must be at most 20 characters');
+  });</p>
+<p>test('should throw error for invalid characters', () =&gt; {
+    expect(() =&gt; validateUsername('user name')).toThrow('Username can only contain letters, numbers, and underscores');
+    expect(() =&gt; validateUsername('user@name')).toThrow('Username can only contain letters, numbers, and underscores');
+  });
+});
+</code></pre></p>
+<h3>テスト実行</h3>
+<pre><code class="language-bash">npx jest validateUsername.test.js
+</code></pre>
+<p>すべてのテストがパスすることを確認します。</p>
+<h2>TDDサイクルにOpenCodeを組み込む</h2>
+<p>TDDの「Red-Green-Refactor」サイクルにOpenCodeを活用する方法です。</p>
+<li><strong>Red</strong>: まず、実装したい機能のテストを手動で書くか、OpenCodeに「このようなテストを生成して」と指示します。</li>
+<li><strong>Green</strong>: OpenCodeのテスト生成機能を使って、テストをパスする最小限のコードを生成します。</li>
+<li><strong>Refactor</strong>: 生成されたコードをリファクタリングし、品質を高めます。</li>
+<p>OpenCodeはテスト駆動開発の「Green」フェーズを高速化し、開発者が本質的なロジックに集中できるようにします。</p>
+<h2>自動生成テストコードの品質を高めるコツ</h2>
+<h3>エッジケースの指定</h3>
+<p>OpenCodeに生成させる際、以下のようなオプションを追加すると、より網羅的なテストが生成されます。</p>
+<pre><code class="language-bash">opencode test --file validateUsername.js --framework jest --edge-cases
+</code></pre>
+<h3>既存のテストパターンの学習</h3>
+<p>OpenCodeはプロジェクト内の既存テストを分析し、同じスタイルでテストを生成できます。</p>
+<pre><code class="language-bash">opencode test --file newFunction.js --framework jest --learn-from ./tests
+</code></pre>
+<h3>生成後のレビュー</h3>
+<p>自動生成されたテストコードは必ずレビューしましょう。以下のポイントを確認します。</p>
+<li>テストケースが仕様をカバーしているか</li>
+<li>モックやスタブが適切に使われているか</li>
+<li>非同期処理が正しくテストされているか</li>
+<h2>よくあるエラーと解決策</h2>
+<h3>エラー1: テストが実行できない</h3>
+<p><strong>原因</strong>: OpenCodeが生成したテストコードがJestのバージョンと互換性がない。</p>
+<p><strong>解決策</strong>: <code>package.json</code>でJestのバージョンを確認し、OpenCodeの設定ファイルでバージョンを指定します。</p>
+<pre><code class="language-json">// opencode.config.json
+{
+  "jestVersion": "29"
+}
+</code></pre>
+<h3>エラー2: モジュールのインポートが失敗する</h3>
+<p><strong>原因</strong>: OpenCodeが相対パスを正しく解決できない。</p>
+<p><strong>解決策</strong>: テストファイルの生成場所を指定するか、手動でインポートパスを修正します。</p>
+<pre><code class="language-bash">opencode test --file src/utils/validate.js --framework jest --output-dir tests/unit
+</code></pre>
+<h2>まとめ</h2>
+<p>OpenCodeを使ったテストコードの自動生成は、TDDの実践を支援し、コード品質の向上に貢献します。ただし、自動生成に頼りすぎず、開発者自身がテストの意図を理解することが重要です。ぜひ、実際のプロジェクトでOpenCodeを試してみてください。</p>
+<h3>参考リンク</h3>
+<li><a href="https://opencode.dev/docs" target="_blank" rel="noopener">OpenCode公式ドキュメント</a></li>
+<li><a href="https://jestjs.io/" target="_blank" rel="noopener">Jest公式サイト</a></li>0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"OpenCodeでテストコードを自動生成する方法：TDDとJestを使った品質向上ガイド"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"OpenCodeを使ってテストコードを自動生成する方法を解説。TDDの実践、Jestとの連携、品質向上のコツを紹介。初心者でも実践できる具体例付き。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","OpenCode",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"OpenCode"}],["$","span","テストコード",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"テストコード"}],["$","span","自動生成",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"自動生成"}],["$","span","TDD",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"TDD"}],["$","span","Jest",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"Jest"}],["$","span","品質",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"品質"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3"]}],null,"$L4"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"cZWNxtWXrIsLiNU6bnRwr"}
+3:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-ai hover:underline","children":"← 記事一覧に戻る"}]}]
+4:["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]
+7:null

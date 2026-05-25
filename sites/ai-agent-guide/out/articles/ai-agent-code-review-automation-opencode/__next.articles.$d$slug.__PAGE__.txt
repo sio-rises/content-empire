@@ -1,0 +1,94 @@
+1:"$Sreact.fragment"
+5:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+2:T14b6,<h2>はじめに</h2>
+<p>コードレビューはソフトウェア品質を保つために不可欠ですが、時間と労力がかかります。AIエージェントを活用することで、自動化し、バグ検出や品質向上を効率的に行えます。本記事では、オープンソースのAIコードレビューツール「OpenCode」を使った具体的な方法を紹介します。</p>
+<h2>AIエージェントによるコードレビューのメリット</h2>
+<li><strong>高速化</strong>: 人間のレビュアーが休憩中でも24時間稼働</li>
+<li><strong>一貫性</strong>: 同じ基準でコードをチェック</li>
+<li><strong>バグ検出</strong>: パターン認識で潜在的な問題を発見</li>
+<li><strong>学習効果</strong>: レビュー結果を蓄積して精度向上</li>
+<h2>OpenCodeとは</h2>
+<p>OpenCodeは、コードレビューに特化したAIエージェントです。GPT-4やClaudeなどのLLMをバックエンドに使い、プルリクエストに対して自動でレビューコメントを生成します。GitHub ActionsやGitLab CIと連携可能です。</p>
+<h3>主な機能</h3>
+<li>コードのスタイルチェック</li>
+<li>セキュリティ脆弱性の検出</li>
+<li>パフォーマンス問題の指摘</li>
+<li>ロジックエラーの特定</li>
+<li>テストカバレッジの提案</li>
+<h2>セットアップ手順</h2>
+<h3>1. 環境準備</h3>
+<pre><code class="language-bash">&lt;h1&gt;Python 3.9以上が必要&lt;/h1&gt;
+pip install opencode-ai
+</code></pre>
+<h3>2. GitHub Actionsとの連携</h3>
+<p>リポジトリの<code>.github/workflows/code-review.yml</code>に以下を追加:</p>
+<pre><code class="language-yaml">name: AI Code Review
+on:
+  pull_request:
+    types: [opened, synchronize]
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run OpenCode
+        uses: opencode-ai/action@v1
+        with:
+          openai_api_key: ${{ secrets.OPENAI_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+</code></pre>
+<h3>3. 設定ファイル</h3>
+<p>プロジェクトルートに<code>opencode.yml</code>を作成:</p>
+<pre><code class="language-yaml">model: gpt-4
+review:
+  enabled: true
+  style: true
+  security: true
+  performance: true
+  max_comments: 10
+ignore_files:
+  - "*.lock"
+  - "vendor/**"
+</code></pre>
+<h2>実際のレビュー例</h2>
+<h3>バグ検出の例</h3>
+<p>以下のようなコードをプッシュしたとします:</p>
+<pre><code class="language-python">def divide(a, b):
+    return a / b
+</code></pre>
+<p>AIエージェントは次のようにコメントします:</p>
+<blockquote>⚠️ ゼロ除算の可能性があります。bが0の場合にエラーが発生します。try-exceptで処理するか、事前チェックを推奨します。</blockquote>
+<h3>品質向上の例</h3>
+<pre><code class="language-javascript">const data = fetch('/api/data').then(res =&gt; res.json());
+</code></pre>
+<blockquote>💡 非同期処理のエラーハンドリングが不足しています。.catch()を追加するか、async/awaitとtry-catchを使用してください。</blockquote>
+<h2>カスタマイズとチューニング</h2>
+<h3>レビューの粒度調整</h3>
+<p><code>opencode.yml</code>で<code>max_comments</code>を調整することで、レビューコメントの数を制限できます。初期は5〜10程度がおすすめです。</p>
+<h3>独自ルールの追加</h3>
+<p>プロジェクト固有のルールを追加するには、<code>rules</code>セクションを使用:</p>
+<pre><code class="language-yaml">rules:
+  - pattern: "console.log"
+    message: "本番環境ではconsole.logを削除してください"
+    severity: warning
+</code></pre>
+<h3>モデルの選択</h3>
+<p>OpenCodeは複数のLLMをサポート。コストと精度のバランスを考慮して選択:</p>
+<table><thead><tr><th>モデル</th><th>精度</th><th>コスト</th><th>速度</th></tr></thead><tbody><tr><td>GPT-4</td><td>高い</td><td>高い</td><td>普通</td></tr>
+<tr><td>GPT-3.5</td><td>中</td><td>低い</td><td>速い</td></tr>
+<tr><td>Claude-2</td><td>高い</td><td>中</td><td>普通</td></tr></tbody></table>
+<h2>注意点とベストプラクティス</h2>
+<li><strong>APIキーの管理</strong>: GitHub SecretsにAPIキーを保存し、公開リポジトリでは漏洩に注意</li>
+<li><strong>レビューの過信</strong>: AIの指摘はあくまで参考に。最終判断は人間が行う</li>
+<li><strong>段階的な導入</strong>: まずは一部のリポジトリで試し、効果を確認してから全リポジトリに展開</li>
+<li><strong>フィードバックループ</strong>: 誤検出があった場合は設定を調整し、精度を向上</li>
+<h2>まとめ</h2>
+<p>AIエージェントを使ったコードレビュー自動化は、開発効率と品質向上に大きく貢献します。OpenCodeを使えば、簡単に導入でき、バグ検出やコード品質の維持に役立ちます。ぜひ試してみてください。</p>
+<h2>参考リンク</h2>
+<li>OpenCode公式: https://opencode.ai</li>
+<li>GitHub Actions Marketplace: https://github.com/marketplace/actions/opencode</li>
+<li>OpenAI API: https://platform.openai.com</li>0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"AIエージェントを使ったコードレビュー自動化ガイド：OpenCodeでバグ検出と品質向上"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"AIエージェントによるコードレビューの自動化手法を解説。OpenCodeを使ったバグ検出、品質向上の具体的な手順を紹介。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","AIエージェント",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"AIエージェント"}],["$","span","コードレビュー",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"コードレビュー"}],["$","span","自動化",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"自動化"}],["$","span","品質",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"品質"}],["$","span","バグ検出",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"バグ検出"}],["$","span","OpenCode",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"OpenCode"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3"]}],null,"$L4"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"cZWNxtWXrIsLiNU6bnRwr"}
+3:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-ai hover:underline","children":"← 記事一覧に戻る"}]}]
+4:["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]
+7:null

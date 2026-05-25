@@ -1,0 +1,127 @@
+1:"$Sreact.fragment"
+2:I[10332,["/_next/static/chunks/007ac~remr-yw.js"],"default"]
+3:I[41511,["/_next/static/chunks/007ac~remr-yw.js"],"default"]
+5:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+9:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"ViewportBoundary"]
+b:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"MetadataBoundary"]
+d:I[30493,["/_next/static/chunks/007ac~remr-yw.js"],"default",1]
+:HL["/_next/static/chunks/0j5zuqvsr0qqd.css","style"]
+0:{"P":null,"c":["","articles","ai-agent-nixos-ssh-install"],"q":"","i":false,"f":[[["",{"children":["articles",{"children":[["slug","ai-agent-nixos-ssh-install","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0j5zuqvsr0qqd.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/007ac~remr-yw.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"ja","children":[["$","head",null,{"children":["$","script",null,{"async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019","crossOrigin":"anonymous"}]}],["$","body",null,{"className":"min-h-screen antialiased","children":["$","div",null,{"className":"flex min-h-screen flex-col","children":[["$","header",null,{"className":"border-b border-gray-200 bg-white","children":["$","div",null,{"className":"mx-auto flex max-w-4xl items-center justify-between px-4 py-3","children":[["$","a",null,{"href":"/","className":"text-lg font-bold text-ai hover:opacity-80","children":"AIエージェント活用ガイド"}],["$","nav",null,{"className":"flex gap-4 text-sm text-gray-600","children":["$","a",null,{"href":"/","className":"hover:text-ai","children":"ホーム"}]}]]}]}],["$","main",null,{"className":"flex-1","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400","children":["AIエージェント活用ガイド — Built with OpenCode + DeepSeek API",["$","div",null,{"className":"border-t border-gray-100 mt-4 pt-3 text-center text-[10px] text-gray-300","children":[["$","span",null,{"className":"mr-2","children":"関連サイト:"}],["$","a",null,{"href":"https://arch-linux-guide.pages.dev","className":"hover:underline","children":"Arch Linux日本語ガイド"}],"  ",["$","a",null,{"href":"https://nisa-investment.pages.dev","className":"hover:underline","children":"NISA投資入門"}],"  ",["$","a",null,{"href":"https://linux-security.pages.dev","className":"hover:underline","children":"Linuxセキュリティ"}],"  ",["$","a",null,{"href":"https://vps-server-guide.pages.dev","className":"hover:underline","children":"VPSサーバー構築"}]]}]]}]]}]}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L4",null,["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]]}],{},null,false,null]},null,false,"$@8"]},null,false,"$@8"]},null,false,null],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$6",null,{"name":"Next.Metadata","children":"$Lc"}]}]}],null]}],false]],"m":"$undefined","G":["$d",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0j5zuqvsr0qqd.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"cZWNxtWXrIsLiNU6bnRwr"}
+e:[]
+8:"$We"
+f:T17f7,<h2>はじめに</h2>
+<p>AIエージェント（Claude Codeなど）を活用して、リモートサーバーにSSH越しでNixOSをインストールする方法を解説します。このチュートリアルでは、AIエージェントに指示を出すだけで、OSのインストールから初期設定までを自動化します。</p>
+<h3>前提条件</h3>
+<li>リモートサーバーにIPMIやiDRACなどのリモートコンソールアクセスがあること</li>
+<li>サーバーがPXEブートまたはISOマウントに対応していること</li>
+<li>ホストマシン（AIエージェントを実行するマシン）からSSH接続が可能なこと</li>
+<h2>1. 準備</h2>
+<h3>1.1 NixOS minimal ISOのダウンロード</h3>
+<p>まず、NixOSの最小インストールISOをダウンロードします。</p>
+<pre><code class="language-bash">wget https://channels.nixos.org/nixos-24.11/latest-nixos-minimal-x86_64-linux.iso
+</code></pre>
+<h3>1.2 リモートコンソールへのISOマウント</h3>
+<p>IPMIやiDRACのWebインターフェースから、ダウンロードしたISOを仮想メディアとしてマウントします。</p>
+<h3>1.3 サーバーの起動とネットワーク設定</h3>
+<p>サーバーを起動し、NixOSインストーラーが起動したら、ネットワーク設定を行います。</p>
+<pre><code class="language-bash">&lt;h1&gt;DHCPでIPアドレスを取得（自動の場合が多い）&lt;/h1&gt;
+&lt;h1&gt;手動設定の場合&lt;/h1&gt;
+ifconfig eth0 192.168.1.100 netmask 255.255.255.0 up
+route add default gw 192.168.1.1
+</code></pre>
+<h3>1.4 SSH有効化</h3>
+<p>インストーラー上でSSHを有効にします。</p>
+<pre><code class="language-bash">systemctl start sshd
+passwd root  # パスワードを設定（例：password）
+</code></pre>
+<h2>2. AIエージェントのセットアップ</h2>
+<h3>2.1 ホストマシンでの準備</h3>
+<p>ホストマシン（例：ローカルPC）にClaude CodeなどのAIエージェントをインストールします。</p>
+<pre><code class="language-bash">&lt;h1&gt;Claude Codeの場合（例）&lt;/h1&gt;
+npm install -g @anthropic-ai/claude-code
+</code></pre>
+<h3>2.2 SSH接続の確認</h3>
+<p>ホストマシンからインストーラーにSSH接続できるか確認します。</p>
+<pre><code class="language-bash">ssh root@&lt;インストーラーのIPアドレス&gt;
+</code></pre>
+<h2>3. AIエージェントによるNixOSインストール</h2>
+<h3>3.1 エージェントへの指示</h3>
+<p>AIエージェントに対して、以下のような指示を出します。</p>
+<pre><code class="language-">指示: SSHでリモートサーバー（root@&lt;IP&gt;）に接続し、NixOSをインストールしてください。
+&lt;li&gt;ディスクは/dev/sda（または適宜変更）&lt;/li&gt;
+&lt;li&gt;パーティションはGPTで、/boot（512MB）、swap（8GB）、/（残り）&lt;/li&gt;
+&lt;li&gt;ホスト名: mynixos&lt;/li&gt;
+&lt;li&gt;ユーザー名: user&lt;/li&gt;
+&lt;li&gt;公開鍵を設定&lt;/li&gt;
+</code></pre>
+<h3>3.2 AIエージェントの実行内容</h3>
+<p>AIエージェントは以下のようなコマンドを自動実行します。</p>
+<h4>パーティション作成</h4>
+<pre><code class="language-bash">parted /dev/sda -- mklabel gpt
+parted /dev/sda -- mkpart primary 512MB -8GB
+parted /dev/sda -- mkpart primary linux-swap -8GB 100%
+parted /dev/sda -- mkpart ESP fat32 1MB 512MB
+parted /dev/sda -- set 3 esp on
+</code></pre>
+<h4>ファイルシステム作成</h4>
+<pre><code class="language-bash">mkfs.ext4 /dev/sda1
+mkswap /dev/sda2
+mkfs.fat -F 32 /dev/sda3
+</code></pre>
+<h4>マウント</h4>
+<pre><code class="language-bash">mount /dev/sda1 /mnt
+mount --mkdir /dev/sda3 /mnt/boot
+swapon /dev/sda2
+</code></pre>
+<h4>設定生成</h4>
+<pre><code class="language-bash">nixos-generate-config --root /mnt
+</code></pre>
+<h4>configuration.nixの編集</h4>
+<p>AIエージェントが自動で編集します。主な設定項目：</p>
+<pre><code class="language-nix">{ config, pkgs, ... }:
+<p>{
+  imports = [ ./hardware-configuration.nix ];</p>
+<p>boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;</p>
+<p>networking.hostName = "mynixos";
+  networking.networkmanager.enable = true;</p>
+<p>users.users.user = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "networkmanager" ];
+    openssh.authorizedKeys.keys = [
+      "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC..."
+    ];
+  };</p>
+<p>services.openssh.enable = true;</p>
+<p>system.stateVersion = "24.11";
+}
+</code></pre></p>
+<h4>インストール実行</h4>
+<pre><code class="language-bash">nixos-install
+</code></pre>
+<h4>再起動</h4>
+<pre><code class="language-bash">reboot
+</code></pre>
+<h2>4. インストール後の確認</h2>
+<h3>4.1 SSH再接続</h3>
+<p>サーバーが再起動したら、新しいIPアドレス（DHCPの場合）に対してSSH接続します。</p>
+<pre><code class="language-bash">ssh user@&lt;新しいIP&gt;
+</code></pre>
+<h3>4.2 AIエージェントによる初期設定</h3>
+<p>AIエージェントに追加の設定を依頼できます。例：</p>
+<pre><code class="language-">指示: サーバーにDockerとNginxをインストールし、ファイアウォールを設定してください。
+</code></pre>
+<h2>5. トラブルシューティング</h2>
+<h3>SSH接続が拒否される</h3>
+<li>インストーラーで<code>systemctl start sshd</code>が実行されているか確認</li>
+<li>ファイアウォールがSSHポートをブロックしていないか確認</li>
+<h3>インストールに失敗する</h3>
+<li>ディスク名が正しいか確認（<code>lsblk</code>で確認）</li>
+<li>ネットワークが安定しているか確認</li>
+<h2>まとめ</h2>
+<p>AIエージェントを活用することで、NixOSのインストール作業を大幅に自動化できます。特にSSH越しのリモートインストールでは、手動入力の手間が省け、設定ミスも減らせます。本ガイドを参考に、効率的なサーバーセットアップを行ってください。</p>4:["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"AIエージェントでSSH越しにNixOSをインストールする完全ガイド"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"AIエージェント（Claude Codeなど）を使ってリモートサーバーにNixOSをSSH経由でインストールする手順を解説。OSインストールから初期設定まで自動化。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","AIエージェント",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"AIエージェント"}],["$","span","NixOS",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"NixOS"}],["$","span","SSH",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"SSH"}],["$","span","ClaudeCode",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"ClaudeCode"}],["$","span","遠隔操作",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"遠隔操作"}],["$","span","OSインストール",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"OSインストール"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$f"}}]]}],"$L10"]}]
+10:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-ai hover:underline","children":"← 記事一覧に戻る"}]}]
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+7:null
+c:[["$","title","0",{"children":"AIエージェント活用ガイド"}],["$","meta","1",{"name":"description","content":"OpenCode/ClaudeCode/DeepSeekを使ったAIエージェント開発自動化の情報を日本語で発信。"}],["$","meta","2",{"name":"keywords","content":"OpenCode,ClaudeCode,AIエージェント,DeepSeek,開発自動化,プロンプト"}]]

@@ -1,0 +1,73 @@
+1:"$Sreact.fragment"
+5:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+2:T1758,<h2>はじめに</h2>
+<p>サーバー管理の自動化は、DevOpsや運用業務の効率化に不可欠です。本チュートリアルでは、ClaudeCodeを使ってSSH経由でのサーバー管理を自動化する方法を解説します。ClaudeCodeは、自然言語の指示からコードを生成・実行できるAIアシスタントで、サーバー管理タスクを大幅に効率化できます。</p>
+<h2>前提条件</h2>
+<li>ClaudeCodeがインストールされていること（インストール方法は公式ドキュメント参照）</li>
+<li>SSH接続可能なサーバー（Linux）</li>
+<li>基本的なLinuxコマンドの知識</li>
+<h2>1. SSH接続の自動化</h2>
+<p>ClaudeCodeを使ってSSH接続を自動化するには、以下のような指示を与えます。</p>
+<pre><code class="language-">SSHでサーバーに接続して、ディスク使用量を確認してください。
+</code></pre>
+<p>ClaudeCodeは自動的にSSHコマンドを生成し、実行します。接続情報は環境変数や設定ファイルで管理することを推奨します。</p>
+<h3>接続情報の設定例</h3>
+<pre><code class="language-bash">export SSH_HOST="your-server.com"
+export SSH_USER="admin"
+export SSH_KEY="~/.ssh/id_rsa"
+</code></pre>
+<p>ClaudeCodeにこれらの変数を読み込ませることで、毎回の入力を省略できます。</p>
+<h2>2. 定常タスクの自動化</h2>
+<p>サーバー管理で頻繁に行うタスクを自動化します。</p>
+<h3>2.1 パッケージのアップデート</h3>
+<pre><code class="language-">すべてのサーバーでパッケージをアップデートし、不要なパッケージを削除してください。
+</code></pre>
+<p>ClaudeCodeは以下のようなスクリプトを生成します。</p>
+<pre><code class="language-bash">ssh $SSH_USER@$SSH_HOST "sudo apt update &amp;&amp; sudo apt upgrade -y &amp;&amp; sudo apt autoremove -y"
+</code></pre>
+<h3>2.2 ログローテーションの確認</h3>
+<pre><code class="language-">各サーバーのログローテーション設定を確認し、問題があれば修正してください。
+</code></pre>
+<p>ClaudeCodeは<code>/etc/logrotate.d/</code>の設定ファイルをチェックし、適切な設定を提案します。</p>
+<h2>3. 監視とアラートの自動化</h2>
+<p>ClaudeCodeを使ってサーバーの状態を監視し、異常を検知したら通知する仕組みを作ります。</p>
+<pre><code class="language-">サーバーのCPU使用率が80%を超えたら、Slackに通知するスクリプトを作成してください。
+</code></pre>
+<p>ClaudeCodeはcronジョブとSlack APIを組み合わせたスクリプトを生成します。</p>
+<h3>生成されるスクリプト例</h3>
+<pre><code class="language-bash">#!/bin/bash
+THRESHOLD=80
+USAGE=$(ssh $SSH_USER@$SSH_HOST "top -bn1 | grep 'Cpu(s)' | awk '{print $2}' | cut -d'%' -f1")
+if (( $(echo "$USAGE &gt; $THRESHOLD" | bc -l) )); then
+    curl -X POST -H 'Content-type: application/json' --data '{"text":"CPU使用率が'$USAGE'%に達しました"}' $SLACK_WEBHOOK_URL
+fi
+</code></pre>
+<h2>4. バックアップの自動化</h2>
+<p>データベースや重要なファイルのバックアップを自動化します。</p>
+<pre><code class="language-">毎日深夜2時にデータベースのバックアップを取り、30日分保存するスクリプトを作成してください。
+</code></pre>
+<p>ClaudeCodeは<code>mysqldump</code>や<code>pg_dump</code>を使ったバックアップスクリプトと、古いバックアップを削除するロジックを生成します。</p>
+<h2>5. 複数サーバーの一括管理</h2>
+<p>複数のサーバーを一度に管理する場合、ClaudeCodeにリストを渡すことで一括処理が可能です。</p>
+<pre><code class="language-">servers.txtに記載されたすべてのサーバーで、nginxの設定をリロードしてください。
+</code></pre>
+<p>ClaudeCodeは<code>for</code>ループを使って各サーバーにSSH接続し、コマンドを実行します。</p>
+<h2>6. エラーハンドリングとログ記録</h2>
+<p>自動化タスクではエラー処理が重要です。ClaudeCodeに以下のように指示します。</p>
+<pre><code class="language-">各タスクの実行結果をログファイルに記録し、エラーがあった場合はメールで通知してください。
+</code></pre>
+<p>ClaudeCodeは<code>trap</code>や<code>set -e</code>を使った堅牢なスクリプトを生成します。</p>
+<h2>7. 実践的なワークフロー例</h2>
+<p>以下は、ClaudeCodeを使ったサーバー管理のワークフロー例です。</p>
+<li><strong>朝のチェック</strong>: 「全サーバーのディスク使用量、メモリ使用量、ロードアベレージをレポートしてください」</li>
+<li><strong>セキュリティアップデート</strong>: 「セキュリティアップデートのみを適用してください」</li>
+<li><strong>ログ解析</strong>: 「昨日のアクセスログから、エラーが多いページを抽出してください」</li>
+<li><strong>設定変更</strong>: 「nginxのタイムアウト値を60秒に変更し、リロードしてください」</li>
+<h2>まとめ</h2>
+<p>ClaudeCodeを使うことで、サーバー管理の自動化が驚くほど簡単になります。自然言語で指示するだけで、複雑なスクリプトを生成・実行できるため、運用業務の効率が大幅に向上します。</p>
+<p>ただし、自動化スクリプトの実行にはリスクが伴うため、必ずテスト環境で動作確認を行ってから本番環境に適用してください。また、SSH鍵の管理やアクセス制御など、セキュリティにも十分注意しましょう。</p>
+<p>このチュートリアルを参考に、あなたのサーバー管理業務をClaudeCodeで効率化してみてください。</p>0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"ClaudeCodeでサーバー管理を自動化するチュートリアル"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"ClaudeCodeを使ったサーバー管理の自動化方法を解説。SSH接続、定常タスクの自動化、DevOps運用の効率化を実現する具体的な手順を紹介。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","ClaudeCode",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"ClaudeCode"}],["$","span","サーバー管理",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"サーバー管理"}],["$","span","自動化",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"自動化"}],["$","span","SSH",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"SSH"}],["$","span","DevOps",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"DevOps"}],["$","span","運用",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"運用"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3"]}],null,"$L4"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"cZWNxtWXrIsLiNU6bnRwr"}
+3:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-ai hover:underline","children":"← 記事一覧に戻る"}]}]
+4:["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]
+7:null

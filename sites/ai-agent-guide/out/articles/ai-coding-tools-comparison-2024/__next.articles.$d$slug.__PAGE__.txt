@@ -1,64 +1,67 @@
 1:"$Sreact.fragment"
 5:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"OutletBoundary"]
 6:"$Sreact.suspense"
-2:T1a13,<h2>はじめに</h2>
-<p>AIコーディングツールは、開発者の生産性を飛躍的に向上させる存在として急速に普及しています。中でもGitHub Copilot、Cursor、OpenCodeは特に注目を集めており、それぞれ異なるアプローチで開発を支援します。本記事では、これら3つのツールを多角的に比較し、あなたの開発スタイルに最適なツールを見つける手助けをします。</p>
+2:T1977,<h1>AIコーディングツール徹底比較：GitHub Copilot vs Cursor vs OpenCode</h1>
+<p>AIコーディングアシスタントの進化により、開発者の生産性は飛躍的に向上しています。本記事では、代表的な3つのツール「GitHub Copilot」「Cursor」「OpenCode」を比較し、それぞれの特徴や料金、使い勝手を詳しく解説します。</p>
 <h2>各ツールの概要</h2>
 <h3>GitHub Copilot</h3>
-GitHub Copilotは、OpenAIのCodexモデルをベースにしたコード補完ツールです。2021年にリリースされ、Visual Studio Code、JetBrains、Neovimなど主要なエディタで利用可能です。豊富なトレーニングデータにより、幅広い言語やフレームワークに対応しています。
+GitHub Copilotは、GitHubとOpenAIが共同開発したAIペアプログラマーです。Visual Studio Code、JetBrains、Neovimなど主要なIDEで利用可能。GPT-4ベースのモデルを搭載し、コード補完やチャット機能を提供します。
 <h3>Cursor</h3>
-Cursorは、AIファーストのコードエディタです。VSCodeをフォークして作られており、コード補完だけでなく、チャットによる対話的なコード生成やリファクタリング、バグ修正など、より高度なAI機能を統合しています。
+Cursorは、AIファーストのコードエディターです。VS Codeをベースに開発され、コード補完、チャット、コードベース全体の理解に基づくリファクタリングが特徴。複数ファイルにまたがる編集にも対応します。
 <h3>OpenCode</h3>
-OpenCodeは、オープンソースのAIコーディングアシスタントです。ローカル実行が可能で、プライバシーを重視する開発者に適しています。コード補完やチャット機能を備え、カスタマイズ性が高いのが特徴です。
-<h2>機能比較</h2>
-<h3>コード補完精度</h3>
-<li><strong>GitHub Copilot</strong>: 文脈を理解した高度な補完が可能。特に一般的なパターンやライブラリの使用法に強い。</li>
-<li><strong>Cursor</strong>: Copilotと同等以上の補完精度。さらに、プロジェクト全体のコンテキストを考慮した補完が可能。</li>
-<li><strong>OpenCode</strong>: 補完精度はやや劣るが、ローカルモデルを使用するためカスタマイズ次第で改善可能。</li>
-<h3>チャット機能</h3>
-<li><strong>GitHub Copilot Chat</strong>: 2026年に追加。コードに関する質問や説明、リファクタリングの提案が可能。</li>
-<li><strong>Cursor</strong>: チャット機能が標準搭載。コードの選択範囲に対して直接指示を出せ、インラインで編集できる。</li>
-<li><strong>OpenCode</strong>: チャット機能あり。モデルを自由に選択でき、OpenAIやAnthropicのAPIにも対応。</li>
-<h3>対応エディタ</h3>
-<li><strong>GitHub Copilot</strong>: VSCode、JetBrains、Neovim、Visual Studioなど、幅広いエディタに対応。</li>
-<li><strong>Cursor</strong>: 独自エディタのみ。VSCodeの拡張機能をそのまま利用可能。</li>
-<li><strong>OpenCode</strong>: VSCode拡張機能として提供。また、CLIツールとしても利用可能。</li>
-<h3>プライバシーとセキュリティ</h3>
-<li><strong>GitHub Copilot</strong>: コードはクラウドに送信される。企業向けにはデータ利用を制限するオプションあり。</li>
-<li><strong>Cursor</strong>: クラウドベースだが、プライバシーモードを提供。コードを学習に使用しない設定が可能。</li>
-<li><strong>OpenCode</strong>: ローカル実行が可能。コードが外部に送信されないため、セキュリティ要件が厳しいプロジェクトに最適。</li>
-<h2>料金比較</h2>
-<table><thead><tr><th>ツール</th><th>無料プラン</th><th>有料プラン</th></tr></thead><tbody><tr><td>GitHub Copilot</td><td>なし（30日トライアルあり）</td><td>個人: $10/月、企業: $19/月</td></tr>
-<tr><td>Cursor</td><td>月200回の補完 + 50回のチャット</td><td>Pro: $20/月（無制限）</td></tr>
-<tr><td>OpenCode</td><td>完全無料（オープンソース）</td><td>なし（ただしAPI利用料は別途）</td></tr></tbody></table>
-<h2>開発効率への影響</h2>
-<p>実際の開発現場での使用感を比較します。</p>
-<h3>初心者向け</h3>
-<li><strong>GitHub Copilot</strong>: 学習曲線が緩やかで、すぐに使い始められる。</li>
-<li><strong>Cursor</strong>: チャット機能が強力で、コードの説明や修正を対話的に行えるため、学習に役立つ。</li>
-<li><strong>OpenCode</strong>: セットアップにやや手間がかかるが、ローカルで動作するため安心。</li>
-<h3>チーム開発向け</h3>
-<li><strong>GitHub Copilot</strong>: GitHubとの統合が強力。プルリクエストやコードレビューとの連携がスムーズ。</li>
-<li><strong>Cursor</strong>: プロジェクト全体のコンテキストを理解するため、大規模コードベースでの作業効率が高い。</li>
-<li><strong>OpenCode</strong>: チーム内で共有するには設定が必要。カスタマイズ性を活かした統一設定が可能。</li>
-<h2>それぞれの強みと弱み</h2>
+OpenCodeは、オープンソースのAIコーディングツールです。ローカルLLMやクラウドAPI（OpenAI、Anthropicなど）を切り替えて利用可能。プライバシー重視で、コードを外部に送信しない設定も可能です。
+<h2>機能比較表</h2>
+<table><thead><tr><th>機能</th><th>GitHub Copilot</th><th>Cursor</th><th>OpenCode</th></tr></thead><tbody><tr><td>コード補完</td><td>〇（高精度）</td><td>〇（高精度）</td><td>〇（モデル依存）</td></tr>
+<tr><td>チャット機能</td><td>〇</td><td>〇</td><td>〇</td></tr>
+<tr><td>コードベース理解</td><td>△（限定的）</td><td>〇（全文脈）</td><td>〇（全文脈）</td></tr>
+<tr><td>マルチファイル編集</td><td>×</td><td>〇</td><td>〇</td></tr>
+<tr><td>オフライン利用</td><td>×</td><td>×</td><td>〇（ローカルLLM）</td></tr>
+<tr><td>プライバシー</td><td>中（コード送信）</td><td>中（コード送信）</td><td>高（ローカル可）</td></tr>
+<tr><td>対応言語</td><td>主要言語多数</td><td>主要言語多数</td><td>モデル依存</td></tr>
+<tr><td>料金（個人）</td><td>$10/月（個人）</td><td>$20/月（Pro）</td><td>無料（OSS）</td></tr></tbody></table>
+<h2>料金プラン</h2>
 <h3>GitHub Copilot</h3>
-<li><strong>強み</strong>: エディタ対応の広さ、安定した補完精度、GitHubとの連携</li>
-<li><strong>弱み</strong>: 料金がかかる、プライバシー面での懸念</li>
+<li><strong>個人</strong>: $10/月 または $100/年</li>
+<li><strong>ビジネス</strong>: $19/ユーザー/月</li>
+<li><strong>エンタープライズ</strong>: カスタム価格</li>
+<li>学生やOSSメンテナーは無料</li>
 <h3>Cursor</h3>
-<li><strong>強み</strong>: 高度なチャット機能、プロジェクト全体のコンテキスト理解、インライン編集</li>
-<li><strong>弱み</strong>: 独自エディタに依存、料金が比較的高い</li>
+<li><strong>Hobby</strong>: 無料（2000回の補完/月、50回のチャット/月）</li>
+<li><strong>Pro</strong>: $20/月（無制限の補完、チャット）</li>
+<li><strong>Business</strong>: $40/ユーザー/月（管理機能）</li>
 <h3>OpenCode</h3>
-<li><strong>強み</strong>: 完全無料、オープンソース、ローカル実行によるプライバシー保護</li>
-<li><strong>弱み</strong>: 補完精度がやや劣る、セットアップが複雑</li>
-<hr>
-<p>*この記事はOpenCodeを日常的に使用し、AIエージェントにSSH経由でNixOSをインストールさせるなどの実践経験を持つSioが監修しています。DeepSeek APIのヘビーユーザーとして、実際のコスト感や制限事項を反映しています。*</p>
+<li><strong>完全無料</strong>（オープンソース）</li>
+<li>クラウドAPI利用時はAPI料金のみ（従量制）</li>
+<h2>精度と品質の比較</h2>
+<h3>コード補完の精度</h3>
+GitHub CopilotとCursorは、GPT-4ベースのモデルにより高い精度を誇ります。特に、文脈に応じた適切なコード提案が可能。OpenCodeは使用するモデルに依存するため、ローカルLLMでは精度が劣る場合がありますが、GPT-4を利用すれば同等の品質が得られます。
+<h3>コードベースの理解</h3>
+CursorとOpenCodeは、プロジェクト全体のコードをインデックスし、ファイル間の関係を理解した上で提案を行います。GitHub Copilotは現在のファイルのみを参照するため、複数ファイルにまたがるリファクタリングには不向きです。
+<h2>使いやすさと導入のしやすさ</h2>
+<h3>GitHub Copilot</h3>
+<li><strong>セットアップ</strong>: VS Codeに拡張機能をインストールするだけ。GitHubアカウントが必要。</li>
+<li><strong>操作性</strong>: 通常のコーディングの延長で使用可能。Tabキーで提案を受け入れる。</li>
+<li><strong>学習曲線</strong>: 低い。直感的に使える。</li>
+<h3>Cursor</h3>
+<li><strong>セットアップ</strong>: 専用エディターをインストール（VS Codeの設定をインポート可能）。</li>
+<li><strong>操作性</strong>: コマンドパレットからAI機能を呼び出す。Ctrl+Kでインライン編集。</li>
+<li><strong>学習曲線</strong>: 中程度。AIファーストの操作に慣れが必要。</li>
+<h3>OpenCode</h3>
+<li><strong>セットアップ</strong>: VS Code拡張機能としてインストール。またはCLIツールとして利用。</li>
+<li><strong>操作性</strong>: 設定ファイルでモデルやAPIキーを指定。コマンドラインまたはエディター内で使用。</li>
+<li><strong>学習曲線</strong>: 中〜高。設定のカスタマイズが必要。</li>
+<h2>セキュリティとプライバシー</h2>
+<li><strong>GitHub Copilot</strong>: コードはGitHubのサーバーに送信される。企業向けにはデータ使用に関するポリシーあり。</li>
+<li><strong>Cursor</strong>: コードはCursorのサーバーに送信。プライバシーポリシーでデータの使用制限を明記。</li>
+<li><strong>OpenCode</strong>: ローカルLLMを使用すればコードが外部に出ない。クラウドAPI利用時も、送信するデータを制御可能。</li>
 <h2>まとめ：あなたに最適なツールは？</h2>
-<li><strong>汎用性と安定性を求めるなら</strong>: GitHub Copilot</li>
-<li><strong>AIとの対話的な開発を重視するなら</strong>: Cursor</li>
-<li><strong>プライバシーとコストを重視するなら</strong>: OpenCode</li>
-<p>これらのツールは日々進化しており、それぞれが互いの機能を取り入れています。まずは無料トライアルやオープンソース版を試し、自分の開発スタイルに合うかどうかを確認することをおすすめします。</p>
-<p>AIコーディングツールを活用して、開発効率を飛躍的に向上させましょう。</p>0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"AIコーディングツール徹底比較：GitHub Copilot vs Cursor vs OpenCode どれが最適か？"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"GitHub Copilot、Cursor、OpenCodeの3つのAIコーディングツールを機能・料金・開発効率で比較。それぞれの強みと弱みを解説し、あなたに最適なツールを選ぶためのガイドを提供します。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","AIコーディング",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"AIコーディング"}],["$","span","GitHub Copilot",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"GitHub Copilot"}],["$","span","Cursor",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"Cursor"}],["$","span","OpenCode",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"OpenCode"}],["$","span","比較",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"比較"}],["$","span","開発効率",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"開発効率"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3"]}],null,"$L4"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"ozMjvJqr-IrJkTdPFeVOD"}
+<li><strong>手軽に始めたい方</strong>: GitHub Copilotが最も簡単。既存のIDEでそのまま使える。</li>
+<li><strong>高度なAI機能を求める方</strong>: Cursorが強力。コードベース全体を理解したリファクタリングが可能。</li>
+<li><strong>プライバシー重視の方</strong>: OpenCodeが最適。ローカルLLMで完全オフライン運用も可能。</li>
+<li><strong>コストを抑えたい方</strong>: OpenCodeは無料。ただし、高精度を求めるならAPI費用がかかる。</li>
+<p>各ツールにトライアル期間があるので、実際に試してみて自分の開発スタイルに合うか確認することをおすすめします。AIコーディングツールは日々進化しており、2024年後半にはさらに機能が向上するでしょう。</p>
+<hr>
+<p>※本記事の情報は2024年5月時点のものです。最新の料金や機能は各公式サイトをご確認ください。</p>0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"【2024年最新】AIコーディングツール徹底比較：GitHub Copilot vs Cursor vs OpenCode"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"GitHub Copilot、Cursor、OpenCodeの3大AIコーディングツールを徹底比較。機能、料金、対応言語、精度を評価し、最適なツールを選ぶためのポイントを解説します。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","AIコーディング",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"AIコーディング"}],["$","span","GitHub Copilot",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"GitHub Copilot"}],["$","span","Cursor",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"Cursor"}],["$","span","OpenCode",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"OpenCode"}],["$","span","比較",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"比較"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3"]}],null,"$L4"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"cZWNxtWXrIsLiNU6bnRwr"}
 3:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-ai hover:underline","children":"← 記事一覧に戻る"}]}]
 4:["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]
 7:null

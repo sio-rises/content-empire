@@ -2,8 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://ai-agent-guide.pages.dev</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
   <url>
+    <loc>https://ai-agent-guide.pages.dev/articles/ai-agent-auto-generate-api-documentation-tutorial</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://ai-agent-guide.pages.dev/articles/ai-agent-beginners-guide</loc>
-    <lastmod>2026-05-24</lastmod>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ai-agent-guide.pages.dev/articles/ai-agent-blog-auto-generation-deepseek-seo</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -14,8 +26,32 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://ai-agent-guide.pages.dev/articles/ai-agent-code-review-automation-opencode</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ai-agent-guide.pages.dev/articles/ai-agent-development-best-practices-2026</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ai-agent-guide.pages.dev/articles/ai-agent-mcp-server-integration-guide</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://ai-agent-guide.pages.dev/articles/ai-agent-mcp-server-setup</loc>
     <lastmod>2026-05-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ai-agent-guide.pages.dev/articles/ai-agent-multi-agent-coordination-design</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -26,8 +62,26 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://ai-agent-guide.pages.dev/articles/ai-agent-nixos-ssh-install</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://ai-agent-guide.pages.dev/articles/ai-agent-prompt-engineering-tips</loc>
-    <lastmod>2026-05-24</lastmod>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ai-agent-guide.pages.dev/articles/ai-agent-risks-precautions</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ai-agent-guide.pages.dev/articles/ai-agent-security-risks-countermeasures</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -38,8 +92,26 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://ai-agent-guide.pages.dev/articles/ai-agent-use-cases-2026</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ai-agent-guide.pages.dev/articles/ai-agent-vs-traditional-automation</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://ai-agent-guide.pages.dev/articles/ai-coding-tools-comparison-2024</loc>
-    <lastmod>2026-05-24</lastmod>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ai-agent-guide.pages.dev/articles/claude-api-token-optimization-cost-reduction</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -50,20 +122,50 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://ai-agent-guide.pages.dev/articles/claudecode-server-management-automation</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ai-agent-guide.pages.dev/articles/deepseek-api-batch-processing-guide</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://ai-agent-guide.pages.dev/articles/deepseek-api-content-mass-production-cost-estimation</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://ai-agent-guide.pages.dev/articles/deepseek-api-content-production-cost-estimation</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://ai-agent-guide.pages.dev/articles/deepseek-api-guide</loc>
-    <lastmod>2026-05-24</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ai-agent-guide.pages.dev/articles/deepseek-vs-openai-vs-anthropic-api-comparison</loc>
-    <lastmod>2026-05-24</lastmod>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ai-agent-guide.pages.dev/articles/local-llm-ai-agent-ollama-tutorial</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ai-agent-guide.pages.dev/articles/opencode-cli-install-setup</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -74,8 +176,38 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://ai-agent-guide.pages.dev/articles/opencode-database-design-migration</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ai-agent-guide.pages.dev/articles/opencode-github-actions-ci-cd-tutorial</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ai-agent-guide.pages.dev/articles/opencode-guide</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://ai-agent-guide.pages.dev/articles/opencode-introduction-guide</loc>
     <lastmod>2026-05-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ai-agent-guide.pages.dev/articles/opencode-mcp-custom-server</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ai-agent-guide.pages.dev/articles/opencode-skill-customization-guide</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -92,14 +224,20 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://ai-agent-guide.pages.dev/articles/opencode-test-code-automation</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://ai-agent-guide.pages.dev/articles/opencode-vs-claudecode-comparison</loc>
-    <lastmod>2026-05-24</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ai-agent-guide.pages.dev/articles/opencode-web-app-development-guide</loc>
-    <lastmod>2026-05-24</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

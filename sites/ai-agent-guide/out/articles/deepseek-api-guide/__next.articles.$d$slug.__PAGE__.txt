@@ -1,100 +1,129 @@
 1:"$Sreact.fragment"
 5:I[57439,["/_next/static/chunks/007ac~remr-yw.js"],"OutletBoundary"]
 6:"$Sreact.suspense"
-2:T1a73,<h2>DeepSeek APIとは？</h2>
-<p>DeepSeekは中国のAI企業が開発した大規模言語モデルで、APIを通じてテキスト生成やチャット機能を利用できます。OpenAIのGPTシリーズに似た性能を持ちながら、<strong>圧倒的に低い料金</strong>が特徴です。この記事ではDeepSeek APIの基本的な使い方、料金体系、設定方法を詳しく解説します。</p>
-<h2>なぜDeepSeek APIが注目されているのか？</h2>
-<li><strong>低コスト</strong>：OpenAIの約1/10以下の料金で同等の性能を実現</li>
-<li><strong>高速応答</strong>：軽量モデルによる高速な推論</li>
-<li><strong>日本語対応</strong>：日本語の理解・生成に優れる</li>
-<li><strong>簡単な移行</strong>：OpenAI APIと互換性のあるエンドポイント</li>
-<h2>DeepSeek APIの始め方</h2>
-<h3>1. アカウント作成とAPIキーの取得</h3>
-<li><a href="https://platform.deepseek.com/" target="_blank" rel="noopener">DeepSeek Platform</a>にアクセス</li>
-<li>メールアドレスまたはGoogleアカウントで登録</li>
-<li>ログイン後、ダッシュボードから「API Keys」メニューを選択</li>
-<li>「Create API Key」ボタンをクリックしてキーを生成</li>
-<li>キーを安全な場所に保存（<strong>一度しか表示されません</strong>）</li>
-<h3>2. 環境設定</h3>
-<p>Pythonを使用する場合、<code>openai</code>ライブラリをインストールします（DeepSeekはOpenAI互換のため）。</p>
-<pre><code class="language-bash">pip install openai
-</code></pre>
-<p>環境変数にAPIキーを設定：</p>
-<pre><code class="language-bash">export DEEPSEEK_API_KEY="your-api-key-here"
-</code></pre>
-<h3>3. 基本的な使い方</h3>
-<p>#### チャット補完（Chat Completion）</p>
+2:T27cf,<h2>DeepSeek APIとは？</h2>
+<p>DeepSeek APIは、中国のAIスタートアップDeepSeekが提供する大規模言語モデル（LLM）のAPIサービスです。高品質な日本語対応と低価格が特徴で、テキスト生成、チャット、コード補完など多様なタスクに利用できます。本記事では、DeepSeek APIの<strong>使い方</strong>、<strong>料金</strong>、<strong>設定方法</strong>、<strong>APIキー</strong>の取得、そして<strong>OpenAI APIとの比較</strong>について詳しく解説します。</p>
+<h2>DeepSeek APIの料金体系</h2>
+<p>DeepSeek APIは非常に競争力のある価格設定をしています。2025年2月時点の料金は以下の通りです。</p>
+<table><thead><tr><th>モデル</th><th>入力（100万トークンあたり）</th><th>出力（100万トークンあたり）</th></tr></thead><tbody><tr><td>DeepSeek-V2</td><td>$0.14</td><td>$0.28</td></tr>
+<tr><td>DeepSeek-Coder-V2</td><td>$0.14</td><td>$0.28</td></tr>
+<tr><td>DeepSeek-R1</td><td>$0.55</td><td>$2.19</td></tr></tbody></table>
+<li><strong>DeepSeek-V2</strong>：汎用チャット・テキスト生成向け。コストパフォーマンスに優れ、多くのユースケースで推奨。</li>
+<li><strong>DeepSeek-Coder-V2</strong>：コード生成・補完に特化。プログラミング支援に最適。</li>
+<li><strong>DeepSeek-R1</strong>：推論能力を強化したモデル。複雑な問題解決や思考連鎖が必要なタスク向け。</li>
+<p><strong>注意点</strong>：
+<li>料金は変動する可能性があるため、最新情報は<a href="https://platform.deepseek.com" target="_blank" rel="noopener">公式サイト</a>を確認してください。</li>
+<li>無料枠は提供されておらず、使用量に応じた従量課金制です。</li>
+<li>クレジットを事前に購入する方式で、最低チャージ額は$10です。</li></p>
+<h2>OpenAI APIとの比較</h2>
+<p>DeepSeek APIとOpenAI API（GPT-4oなど）を比較すると、以下のような違いがあります。</p>
+<table><thead><tr><th>項目</th><th>DeepSeek API</th><th>OpenAI API</th></tr></thead><tbody><tr><td>料金（入力）</td><td>$0.14〜$0.55 / 1Mトークン</td><td>$2.50〜$5.00 / 1Mトークン</td></tr>
+<tr><td>料金（出力）</td><td>$0.28〜$2.19 / 1Mトークン</td><td>$10.00〜$15.00 / 1Mトークン</td></tr>
+<tr><td>日本語性能</td><td>良好（中国製だが日本語対応）</td><td>非常に高い</td></tr>
+<tr><td>コード生成</td><td>DeepSeek-Coder-V2が強力</td><td>GPT-4oも優秀</td></tr>
+<tr><td>利用可能地域</td><td>全世界（中国国内も含む）</td><td>全世界（一部制限あり）</td></tr>
+<tr><td>ドキュメント</td><td>英語・中国語</td><td>多言語（日本語あり）</td></tr></tbody></table>
+<strong>DeepSeekの強み</strong>：
+<li>圧倒的に低価格（OpenAIの1/10〜1/20）</li>
+<li>コード生成に特化したモデルが別途用意されている</li>
+<li>中国からのアクセスがスムーズ</li>
+<p><strong>OpenAIの強み</strong>：
+<li>日本語品質がより安定している</li>
+<li>豊富なエコシステムとサードパーティツール</li>
+<li>レート制限が緩いプランがある</li></p>
+<p><strong>使い分けのポイント</strong>：
+<li>コストを重視するならDeepSeek、特に大量のトークンを使うバッチ処理やプロトタイピングに最適。</li>
+<li>日本語の自然な応答が必要な本番サービスにはOpenAIを検討。ただし、DeepSeekも日常会話レベルでは十分な品質です。</li></p>
+<h2>APIキーの取得方法</h2>
+<p>DeepSeek APIを使用するには、APIキーが必要です。以下の手順で取得できます。</p>
+<li><strong>アカウント登録</strong>：<a href="https://platform.deepseek.com" target="_blank" rel="noopener">DeepSeek Platform</a>にアクセスし、メールアドレスとパスワードでアカウントを作成します。電話番号認証は不要です。</li>
+<li><strong>ログイン</strong>：登録したメールアドレスとパスワードでログインします。</li>
+<li><strong>APIキーの生成</strong>：ダッシュボードの「API Keys」セクションで「Create API Key」をクリック。キー名を入力して生成します。生成されたキーは一度しか表示されないので、安全な場所にコピーして保存してください。</li>
+<li><strong>クレジットの購入</strong>：ダッシュボードの「Billing」または「Top Up」からクレジットを購入します。最低$10から、PayPalやクレジットカードで支払い可能です。</li>
+<h2>基本的な使い方（Python）</h2>
+<p>DeepSeek APIはOpenAI互換のAPI形式を採用しているため、OpenAIのPythonライブラリをそのまま利用できます。以下はチャット補完のサンプルコードです。</p>
 <pre><code class="language-python">from openai import OpenAI
 <p>client = OpenAI(
-    api_key="your-api-key-here",
-    base_url="https://api.deepseek.com/v1"
+    api_key="YOUR_DEEPSEEK_API_KEY",
+    base_url="https://api.deepseek.com"
 )</p>
 <p>response = client.chat.completions.create(
-    model="deepseek-chat",  # または deepseek-coder
+    model="deepseek-chat",  # DeepSeek-V2相当
     messages=[
         {"role": "system", "content": "あなたは親切なアシスタントです。"},
         {"role": "user", "content": "DeepSeek APIの使い方を教えてください。"}
     ],
-    temperature=0.7,
-    max_tokens=1024
+    max_tokens=1024,
+    temperature=0.7
 )</p>
 <p>print(response.choices[0].message.content)
 </code></pre></p>
-<p>#### テキスト補完（Legacy）</p>
-<pre><code class="language-python">response = client.completions.create(
-    model="deepseek-chat",
-    prompt="DeepSeek APIの特徴は？",
-    max_tokens=200
-)
-</code></pre>
-<h3>4. 利用可能なモデル</h3>
-<table><thead><tr><th>モデル名</th><th>用途</th><th>コンテキスト長</th></tr></thead><tbody><tr><td>deepseek-chat</td><td>汎用チャット</td><td>32K</td></tr>
-<tr><td>deepseek-coder</td><td>コード生成</td><td>32K</td></tr>
-<tr><td>deepseek-reasoner</td><td>推論特化</td><td>32K</td></tr></tbody></table>
-<h2>料金体系</h2>
-<p>DeepSeek APIの料金は非常に競争力があります。2026年4月時点の価格：</p>
-<table><thead><tr><th>モデル</th><th>入力（1Mトークンあたり）</th><th>出力（1Mトークンあたり）</th></tr></thead><tbody><tr><td>deepseek-chat</td><td>$0.14</td><td>$0.28</td></tr>
-<tr><td>deepseek-coder</td><td>$0.14</td><td>$0.28</td></tr>
-<tr><td>deepseek-reasoner</td><td>$0.55</td><td>$2.19</td></tr></tbody></table>
-<strong>OpenAIとの比較</strong>（GPT-4o miniの場合：入力$0.15、出力$0.60）
-<li>チャットモデル：入力はほぼ同額、出力は<strong>約半分</strong></li>
-<li>推論モデル：GPT-4oと比較すると<strong>約1/10</strong>のコスト</li>
-<p><strong>無料枠</strong>：新規登録時に$10分のクレジットが付与されます（期間限定の可能性あり）。</p>
-<h2>詳細設定とパラメータ</h2>
-<h3>主要パラメータ</h3>
-<table><thead><tr><th>パラメータ</th><th>型</th><th>デフォルト</th><th>説明</th></tr></thead><tbody><tr><td>temperature</td><td>float</td><td>1.0</td><td>0〜2。低いほど決定論的</td></tr>
-<tr><td>top_p</td><td>float</td><td>1.0</td><td>0〜1。累積確率によるサンプリング</td></tr>
-<tr><td>max_tokens</td><td>int</td><td>4096</td><td>生成する最大トークン数</td></tr>
-<tr><td>stream</td><td>bool</td><td>false</td><td>ストリーミング応答を有効にする</td></tr>
-<tr><td>frequency_penalty</td><td>float</td><td>0</td><td>-2〜2。同じトークンの繰り返しを抑制</td></tr>
-<tr><td>presence_penalty</td><td>float</td><td>0</td><td>-2〜2。新しいトピックを促進</td></tr></tbody></table>
+<p><strong>ポイント</strong>：
+<li><code>base_url</code>を<code>https://api.deepseek.com</code>に設定します。</li>
+<li>モデル名は<code>deepseek-chat</code>（汎用）、<code>deepseek-coder</code>（コード生成）、<code>deepseek-reasoner</code>（DeepSeek-R1）から選択します。</li>
+<li>パラメータ（<code>temperature</code>, <code>max_tokens</code>, <code>top_p</code>など）はOpenAI APIと共通です。</li></p>
+<h2>設定のカスタマイズ</h2>
+<h3>パラメータ調整</h3>
+<li><strong>temperature</strong>：0〜2の範囲。低いほど決定論的、高いほど多様な応答。デフォルトは1.0。</li>
+<li><strong>max_tokens</strong>：生成する最大トークン数。デフォルトは4096。</li>
+<li><strong>top_p</strong>：0〜1。nucleus samplingの閾値。デフォルトは1.0。</li>
+<li><strong>frequency_penalty</strong>：-2〜2。高いほど同じトピックの繰り返しを抑制。</li>
+<li><strong>presence_penalty</strong>：-2〜2。高いほど新しいトピックを促進。</li>
 <h3>ストリーミング応答</h3>
+<p>リアルタイム表示には<code>stream=True</code>を設定します。</p>
 <pre><code class="language-python">stream = client.chat.completions.create(
     model="deepseek-chat",
-    messages=[{"role": "user", "content": "長い文章を生成してください"}],
+    messages=[{"role": "user", "content": "こんにちは"}],
     stream=True
 )
-<p>for chunk in stream:
-    if chunk.choices[0].delta.content:
+for chunk in stream:
+    if chunk.choices[0].delta.content is not None:
         print(chunk.choices[0].delta.content, end="")
-</code></pre></p>
-<h2>OpenAIからの移行ポイント</h2>
-<li><strong>エンドポイントの変更</strong>：<code>https://api.deepseek.com/v1</code> に変更</li>
-<li><strong>モデル名の変更</strong>：<code>deepseek-chat</code> などに変更</li>
-<li><strong>APIキー</strong>：DeepSeekで発行したものを使用</li>
-<li><strong>互換性</strong>：ほとんどのパラメータはそのまま使える</li>
-<h2>よくある質問</h2>
-<p><strong>Q: 日本語の精度は？</strong>
-A: 日本語コーパスで学習しており、自然な日本語を生成します。特に中国語・日本語・英語で高精度。</p>
-<p><strong>Q: レート制限は？</strong>
-A: 無料枠では1分間に60リクエスト程度。有料プランではさらに緩和されます。</p>
-<p><strong>Q: データは学習に使われる？</strong>
-A: API経由のデータは学習に使用しないと明記されています。プライバシーに配慮。</p>
-<hr>
-<p>*この記事はOpenCodeを日常的に使用し、AIエージェントにSSH経由でNixOSをインストールさせるなどの実践経験を持つSioが監修しています。DeepSeek APIのヘビーユーザーとして、実際のコスト感や制限事項を反映しています。*</p>
+</code></pre>
+<h3>エラーハンドリング</h3>
+<pre><code class="language-python">try:
+    response = client.chat.completions.create(...)
+except openai.APIError as e:
+    print(f"APIエラー: {e}")
+except openai.RateLimitError as e:
+    print(f"レート制限: {e}")
+except openai.AuthenticationError as e:
+    print(f"認証エラー: APIキーを確認してください")
+</code></pre>
+<h2>実践的な使用例</h2>
+<h3>コード生成（DeepSeek-Coder）</h3>
+<pre><code class="language-python">response = client.chat.completions.create(
+    model="deepseek-coder",
+    messages=[
+        {"role": "user", "content": "Pythonでフィボナッチ数列を計算する関数を書いてください。"}
+    ]
+)
+print(response.choices[0].message.content)
+</code></pre>
+<h3>長文要約</h3>
+<p>DeepSeekは最大128Kトークンのコンテキストをサポートするため、長文の要約も可能です。</p>
+<pre><code class="language-python">long_text = "...（長い文章）..."
+response = client.chat.completions.create(
+    model="deepseek-chat",
+    messages=[
+        {"role": "user", "content": f"以下の文章を3行で要約してください。\n\n{long_text}"}
+    ],
+    max_tokens=200
+)
+print(response.choices[0].message.content)
+</code></pre>
+<h2>注意点と制限</h2>
+<li><strong>レート制限</strong>：無料トライアルはありませんが、デフォルトで1分間に60リクエストまで。大量利用の場合は事前に問い合わせが必要です。</li>
+<li><strong>データプライバシー</strong>：DeepSeekは中国企業であるため、データの取り扱いには注意が必要。機密情報の送信は避けてください。</li>
+<li><strong>日本語品質</strong>：OpenAIと比較すると、まれに不自然な表現が出ることがあります。特に専門用語や固有名詞の扱いに注意。</li>
+<li><strong>可用性</strong>：2025年2月時点で安定して稼働していますが、障害情報は公式ステータスページ（<a href="https://status.deepseek.com" target="_blank" rel="noopener">status.deepseek.com</a>）で確認できます。</li>
 <h2>まとめ</h2>
-<p>DeepSeek APIは、コストパフォーマンスに優れたAI APIです。OpenAIと同等の使いやすさを持ちながら、特に出力コストが低いため、大規模なアプリケーションに最適です。まずは無料クレジットで試してみて、その性能を体感してください。</p>
-<p>公式ドキュメント：https://api-docs.deepseek.com/</p>0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"DeepSeek API完全ガイド：使い方・料金・設定を徹底解説"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"DeepSeek APIの使い方、料金、設定方法を初心者向けに解説。OpenAIとの比較や安さの秘密も紹介。APIキーの取得から実際のリクエストまでステップバイステップで学べます。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","DeepSeek API",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"DeepSeek API"}],["$","span","使い方",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"使い方"}],["$","span","料金",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"料金"}],["$","span","設定",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"設定"}],["$","span","APIキー",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"APIキー"}],["$","span","OpenAI比較",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"OpenAI比較"}],["$","span","安い",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"安い"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3"]}],null,"$L4"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"ozMjvJqr-IrJkTdPFeVOD"}
+<p>DeepSeek APIは、低コストで高性能なLLM APIを求める開発者にとって魅力的な選択肢です。特にコスト重視のプロジェクトや、コード生成タスクで真価を発揮します。OpenAI APIと互換性があるため、移行も容易です。</p>
+<p>まずは無料トライアルがないため、$10のクレジットを購入してテストすることをおすすめします。APIキーを取得したら、上記のサンプルコードを試して、実際の応答品質を確認してみてください。</p>
+<p><strong>参考リンク</strong>：
+<li><a href="https://platform.deepseek.com" target="_blank" rel="noopener">DeepSeek Platform</a></li>
+<li><a href="https://platform.deepseek.com/docs" target="_blank" rel="noopener">公式ドキュメント</a></li>
+<li><a href="https://platform.deepseek.com/api-reference" target="_blank" rel="noopener">APIリファレンス</a></li></p>0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"DeepSeek APIの使い方と料金ガイド：設定からOpenAI比較まで"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"DeepSeek APIの基本的な使い方、料金体系、APIキーの取得方法、設定手順を詳しく解説。OpenAI APIとの比較も紹介します。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","DeepSeek API",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"DeepSeek API"}],["$","span","使い方",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"使い方"}],["$","span","料金",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"料金"}],["$","span","設定",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"設定"}],["$","span","APIキー",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"APIキー"}],["$","span","OpenAI比較",{"className":"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600","children":"OpenAI比較"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3"]}],null,"$L4"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"cZWNxtWXrIsLiNU6bnRwr"}
 3:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-ai hover:underline","children":"← 記事一覧に戻る"}]}]
 4:["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]
 7:null

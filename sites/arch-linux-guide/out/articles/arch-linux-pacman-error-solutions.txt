@@ -4,13 +4,15 @@
 5:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"OutletBoundary"]
 6:"$Sreact.suspense"
 9:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"ViewportBoundary"]
-b:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"MetadataBoundary"]
-d:I[30946,["/_next/static/chunks/00mbd8isu7b38.js"],"default",1]
-:HL["/_next/static/chunks/089_dp2m4y2c2.css","style"]
-0:{"P":null,"c":["","articles","arch-linux-pacman-error-solutions"],"q":"","i":false,"f":[[["",{"children":["articles",{"children":[["slug","arch-linux-pacman-error-solutions","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/089_dp2m4y2c2.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/00mbd8isu7b38.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"ja","children":[["$","head",null,{"children":["$","script",null,{"async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019","crossOrigin":"anonymous"}]}],["$","body",null,{"className":"min-h-screen antialiased","children":["$","div",null,{"className":"flex min-h-screen flex-col","children":[["$","header",null,{"className":"border-b border-gray-200 bg-white","children":["$","div",null,{"className":"mx-auto flex max-w-4xl items-center justify-between px-4 py-3","children":[["$","a",null,{"href":"/","className":"text-lg font-bold text-arch hover:opacity-80","children":"Arch Linux 日本語ガイド"}],["$","nav",null,{"className":"flex gap-4 text-sm text-gray-600","children":[["$","a",null,{"href":"/","className":"hover:text-arch","children":"ホーム"}],["$","a",null,{"href":"/about","className":"hover:text-arch","children":"このサイトについて"}]]}]]}]}],["$","main",null,{"className":"flex-1","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400","children":[["$","div",null,{"className":"flex justify-center gap-4 mb-2","children":[["$","a",null,{"href":"/about","className":"hover:text-gray-600","children":"このサイトについて"}],["$","a",null,{"href":"/privacy","className":"hover:text-gray-600","children":"プライバシーポリシー"}]]}],"Arch Linux 日本語ガイド — Built with OpenCode + DeepSeek API"]}]]}]}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L4",null,["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]]}],{},null,false,null]},null,false,"$@8"]},null,false,"$@8"]},null,false,null],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$6",null,{"name":"Next.Metadata","children":"$Lc"}]}]}],null]}],false]],"m":"$undefined","G":["$d",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/089_dp2m4y2c2.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"oMFWqHyx7sJoNGgtrYd0X"}
+c:I[30946,["/_next/static/chunks/00mbd8isu7b38.js"],"default",1]
+:HL["/_next/static/chunks/0htkv1_e0ti01.css","style"]
+0:{"P":null,"c":["","articles","arch-linux-pacman-error-solutions"],"q":"","i":false,"f":[[["",{"children":["articles",{"children":[["slug","arch-linux-pacman-error-solutions","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0htkv1_e0ti01.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/00mbd8isu7b38.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"ja","children":[["$","head",null,{"children":["$","script",null,{"async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019","crossOrigin":"anonymous"}]}],["$","body",null,{"className":"min-h-screen antialiased","children":["$","div",null,{"className":"flex min-h-screen flex-col","children":[["$","header",null,{"className":"border-b border-gray-200 bg-white","children":["$","div",null,{"className":"mx-auto flex max-w-4xl items-center justify-between px-4 py-3","children":[["$","a",null,{"href":"/","className":"text-lg font-bold text-arch hover:opacity-80","children":"Arch Linux 日本語ガイド"}],["$","nav",null,{"className":"flex gap-4 text-sm text-gray-600","children":[["$","a",null,{"href":"/","className":"hover:text-arch","children":"ホーム"}],["$","a",null,{"href":"/about","className":"hover:text-arch","children":"このサイトについて"}]]}]]}]}],["$","main",null,{"className":"flex-1","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400","children":[["$","div",null,{"className":"flex justify-center gap-4 mb-2","children":[["$","a",null,{"href":"/about","className":"hover:text-gray-600","children":"このサイトについて"}],["$","a",null,{"href":"/privacy","className":"hover:text-gray-600","children":"プライバシーポリシー"}]]}],"Arch Linux 日本語ガイド — Built with OpenCode + DeepSeek API",["$","div",null,{"className":"border-t border-gray-100 mt-4 pt-3 text-center text-[10px] text-gray-300","children":[["$","span",null,{"className":"mr-2","children":"関連サイト:"}],["$","a",null,{"href":"https://ai-agent-guide.pages.dev","className":"hover:underline","children":"AIエージェント活用"}],"  ",["$","a",null,{"href":"https://nisa-investment.pages.dev","className":"hover:underline","children":"NISA投資入門"}],"  ",["$","a",null,{"href":"https://linux-security.pages.dev","className":"hover:underline","children":"Linuxセキュリティ"}],"  ",["$","a",null,{"href":"https://vps-server-guide.pages.dev","className":"hover:underline","children":"VPSサーバー構築"}]]}]]}]]}]}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L4",null,["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]]}],{},null,false,null]},null,false,"$@8"]},null,false,"$@8"]},null,false,null],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":"$Lb"}],null]}],false]],"m":"$undefined","G":["$c",["$Ld"]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"lSUwLKzjeCTnjIay80zjI"}
+f:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"MetadataBoundary"]
 e:[]
 8:"$We"
-f:T2be8,<h2>はじめに</h2>
+b:["$","$Lf",null,{"children":["$","$6",null,{"name":"Next.Metadata","children":"$L10"}]}]
+d:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0htkv1_e0ti01.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
+11:T2bc7,<h2>はじめに</h2>
 <p>Arch Linuxを使う上で避けて通れないのがパッケージ管理ツール「pacman」です。しかし、システムアップデートやソフトウェアインストール時に「failed to commit transaction (conflicting files)」や「GPG鍵エラー」といったエラーに遭遇することがあります。本記事では、これらのよくあるエラーの定義・背景・仕組みを解説し、具体的な対処法をコマンド例とともに紹介します。</p>
 <h2>conflicting files（競合ファイル）エラー</h2>
 <h3>定義</h3>
@@ -26,21 +28,21 @@ f:T2be8,<h2>はじめに</h2>
 <h3>仕組み</h3>
 <p>pacmanはトランザクションを実行する前に、インストールされる全ファイルがファイルシステム上に存在しないかチェックします。もし既存のファイルとパスが重複する場合、トランザクションを中止してエラーを報告します。これは、データの上書きや破損を防ぐための安全機構です。</p>
 <h3>実用例：対処法</h3>
-<p>#### 1. 競合ファイルを安全に削除する</p>
+<h4>1. 競合ファイルを安全に削除する</h4>
 <p>まず、競合しているファイルが重要でないことを確認します。例えば、不要な設定ファイルやキャッシュファイルの場合、以下のように削除できます。</p>
 <pre><code class="language-bash">sudo rm /path/to/conflicting/file
 </code></pre>
 <p>その後、再度pacmanを実行します。</p>
 <pre><code class="language-bash">sudo pacman -Syu
 </code></pre>
-<p>#### 2. --overwriteオプションを使う</p>
+<h4>2. --overwriteオプションを使う</h4>
 <p>競合ファイルを強制的に上書きする場合は、<code>--overwrite</code>オプションを使用します。特定のファイルのみ上書きするには、グロブパターンを指定します。</p>
 <pre><code class="language-bash">sudo pacman -Syu --overwrite='/path/to/conflicting/*'
 </code></pre>
 <p>すべての競合を無視して上書きする場合は、ワイルドカードを使用します（注意：システムが不安定になる可能性があるため、最終手段として）。</p>
 <pre><code class="language-bash">sudo pacman -Syu --overwrite='*'
 </code></pre>
-<p>#### 3. パッケージを強制再インストールする</p>
+<h4>3. パッケージを強制再インストールする</h4>
 <p>競合が特定のパッケージに起因する場合、そのパッケージを強制的に再インストールすることで解決できることがあります。</p>
 <pre><code class="language-bash">sudo pacman -S --overwrite='*' &lt;パッケージ名&gt;
 </code></pre>
@@ -58,23 +60,23 @@ f:T2be8,<h2>はじめに</h2>
 <h3>仕組み</h3>
 <p>pacmanはパッケージをダウンロードした後、そのパッケージに付随するGPG署名を検証します。検証には、信頼された鍵（pacman-keyリングに登録された鍵）が必要です。鍵が存在しない、または信頼されていない場合、pacmanはトランザクションを中断します。</p>
 <h3>実用例：対処法</h3>
-<p>#### 1. 鍵の更新と初期化</p>
+<h4>1. 鍵の更新と初期化</h4>
 <p>まず、pacmanの鍵リングを更新します。</p>
 <pre><code class="language-bash">sudo pacman-key --init
 sudo pacman-key --populate archlinux
 </code></pre>
 <p><code>--init</code>で鍵リングを初期化し、<code>--populate</code>でArch Linuxのデフォルト鍵を追加します。</p>
-<p>#### 2. 鍵サーバーから鍵を取得する</p>
+<h4>2. 鍵サーバーから鍵を取得する</h4>
 <p>特定の鍵が見つからない場合は、鍵IDを指定して鍵サーバーから取得します。</p>
 <pre><code class="language-bash">sudo pacman-key --recv-keys &lt;鍵ID&gt;
 sudo pacman-key --lsign-key &lt;鍵ID&gt;
 </code></pre>
 <p><code>--recv-keys</code>で鍵をダウンロードし、<code>--lsign-key</code>でローカルに署名して信頼します。</p>
-<p>#### 3. 鍵サーバーの変更</p>
+<h4>3. 鍵サーバーの変更</h4>
 <p>デフォルトの鍵サーバーが応答しない場合、別のサーバーを指定します。</p>
 <pre><code class="language-bash">sudo pacman-key --keyserver keyserver.ubuntu.com --recv-keys &lt;鍵ID&gt;
 </code></pre>
-<p>#### 4. 署名検証を一時的に無効化する（非推奨）</p>
+<h4>4. 署名検証を一時的に無効化する（非推奨）</h4>
 <p>緊急時のみ、<code>SigLevel</code>を変更して署名検証をスキップできます。<code>/etc/pacman.conf</code>を編集します。</p>
 <pre><code class="language-ini">#SigLevel = Required DatabaseOptional
 SigLevel = Never
@@ -91,22 +93,22 @@ SigLevel = Never
 <h3>仕組み</h3>
 <p>pacmanは実行時に<code>/var/lib/pacman/db.lck</code>というロックファイルを作成します。このファイルが存在する間は他のpacmanプロセスは開始できません。また、パッケージのダウンロード中にエラーが発生すると、キャッシュに不完全なファイルが残り、次のトランザクションでエラーを引き起こします。</p>
 <h3>実用例：対処法</h3>
-<p>#### 1. ロックファイルを削除する</p>
+<h4>1. ロックファイルを削除する</h4>
 <p>ロックファイルが残っている場合、手動で削除します。</p>
 <pre><code class="language-bash">sudo rm /var/lib/pacman/db.lck
 </code></pre>
 <p>その後、再度pacmanを実行します。</p>
-<p>#### 2. キャッシュをクリアする</p>
+<h4>2. キャッシュをクリアする</h4>
 <p>不完全なキャッシュを削除するには、以下のコマンドを使用します。</p>
 <pre><code class="language-bash">sudo pacman -Scc
 </code></pre>
 <p>このコマンドはキャッシュをすべて削除するため、注意が必要です。特定のパッケージのみ削除したい場合は、<code>/var/cache/pacman/pkg/</code>から手動で削除します。</p>
-<p>#### 3. データベースを再構築する</p>
+<h4>3. データベースを再構築する</h4>
 <p>データベースが破損している場合、再構築を試みます。</p>
 <pre><code class="language-bash">sudo pacman -Syy
 </code></pre>
 <p><code>-Syy</code>はデータベースを強制的に更新します。</p>
-<p>#### 4. ディスク容量を確認する</p>
+<h4>4. ディスク容量を確認する</h4>
 <pre><code class="language-bash">df -h
 </code></pre>
 <p>容量不足の場合は、不要なパッケージやファイルを削除します。</p>
@@ -120,8 +122,8 @@ SigLevel = Never
 <li>conflicting files → --overwriteまたはファイル削除</li>
 <li>GPG鍵エラー → pacman-keyの更新と鍵の追加</li>
 <li>failed to commit → ロック削除・キャッシュクリア・データベース更新</li>
-<p>エラーが発生しても慌てず、一つずつ解決していきましょう。</p>4:["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"Arch Linux pacmanエラー完全対処法：conflicting files・GPG鍵・failed to commitを解決"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"Arch Linuxのpacmanで発生する「failed to commit」「conflicting files」「GPGエラー」の原因と具体的な対処法を解説。初心者でも実践できるコマンド例付き。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","Arch Linux",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"Arch Linux"}],["$","span","pacman",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"pacman"}],["$","span","エラー",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"エラー"}],["$","span","failed to commit",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"failed to commit"}],["$","span","conflicting files",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"conflicting files"}],["$","span","GPG",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"GPG"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$f"}}]]}],"$L10"]}]
-10:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-arch hover:underline","children":"← 記事一覧に戻る"}]}]
+<p>エラーが発生しても慌てず、一つずつ解決していきましょう。</p>4:["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"Arch Linux pacmanエラー完全対処法：conflicting files・GPG鍵・failed to commitを解決"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"Arch Linuxのpacmanで発生する「failed to commit」「conflicting files」「GPGエラー」の原因と具体的な対処法を解説。初心者でも実践できるコマンド例付き。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","Arch Linux",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"Arch Linux"}],["$","span","pacman",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"pacman"}],["$","span","エラー",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"エラー"}],["$","span","failed to commit",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"failed to commit"}],["$","span","conflicting files",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"conflicting files"}],["$","span","GPG",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"GPG"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$11"}}]]}],"$L12"]}]
+12:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-arch hover:underline","children":"← 記事一覧に戻る"}]}]
 a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 7:null
-c:[["$","title","0",{"children":"Arch Linux 日本語ガイド"}],["$","meta","1",{"name":"description","content":"Arch Linuxのインストールからデスクトップ環境構築まで、日本語で体系的に解説するガイドサイトです。"}],["$","meta","2",{"name":"keywords","content":"Arch Linux,Linux,インストール,日本語,デスクトップ環境,btrfs,LUKS"}]]
+10:[["$","title","0",{"children":"Arch Linux 日本語ガイド"}],["$","meta","1",{"name":"description","content":"Arch Linuxのインストールからデスクトップ環境構築まで、日本語で体系的に解説するガイドサイトです。"}],["$","meta","2",{"name":"keywords","content":"Arch Linux,Linux,インストール,日本語,デスクトップ環境,btrfs,LUKS"}]]

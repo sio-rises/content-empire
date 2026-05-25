@@ -1,0 +1,16 @@
+{
+  "title": "OpenCodeスキルシステム完全ガイド：カスタマイズ・拡張・MCP・プラグイン",
+  "slug": "opencode-skill-customization-guide",
+  "metaDescription": "OpenCodeのスキルシステムを徹底解説。カスタマイズ方法、MCPやプラグインによる拡張、スキル開発のチュートリアルを紹介。",
+  "content": "## OpenCodeのスキルシステムとは\n\nOpenCodeは、AIアシスタントとしてコード生成や解析を得意としますが、その機能は「スキル」と呼ばれるモジュールによって拡張できます。スキルシステムを活用することで、特定のタスクに特化した動作や、外部サービスとの連携が可能になります。本記事では、スキルの基本概念からカスタマイズ、拡張方法までを実践的に解説します。\n\n### スキルの基本構造\n\nスキルは以下の要素で構成されます：\n- **トリガー**：特定のキーワードやパターンで発動\n- **アクション**：実行される処理（コード生成、APIコールなど）\n- **コンテキスト**：スキルが利用する変数や設定\n\nOpenCodeは標準で複数のスキルを搭載していますが、ユーザーが独自に定義することも可能です。\n\n## スキルのカスタマイズ方法\n\n### 1. 設定ファイルの編集\n\nOpenCodeのスキルは、JSONまたはYAML形式の設定ファイルで管理されます。例えば、`skills/my-skill.yaml` を作成します：\n\n```yaml\nname: \"custom-skill\"\ndescription: \"特定のフレームワーク用のコード生成\"\ntriggers:\n  - \"generate:react-component\"\nactions:\n  - type: \"code-generation\"\n    language: \"javascript\"\n    template: |\n      import React from 'react';\n      const {{componentName}} = () => {\n        return <div>{{content}}</div>;\n      };\n      export default {{componentName}};\ncontext:\n  componentName: \"string\"\n  content: \"string\"\n```\n\nこのスキルは、「generate:react-component」というトリガーで発動し、Reactコンポーネントのテンプレートを生成します。\n\n### 2. スキルの有効化\n\n作成したスキルを有効にするには、OpenCodeの設定でスキルディレクトリを指定します。\n\n```bash\nopencode --skills-dir ./skills\n```\n\nまたは、GUI設定画面からスキルをインポートすることもできます。\n\n## MCPによる拡張\n\nMCP（Model Context Protocol）は、OpenCodeが外部ツールやデータソースと連携するためのプロトコルです。スキルからMCPサーバーを呼び出すことで、データベース検索やファイル操作などを実行できます。\n\n### MCPスキルの例\n\n```yaml\nname: \"db-query\"\ndescription: \"データベースにクエリを実行\"\ntriggers:\n  - \"query:database\"\nactions:\n  - type: \"mcp-call\"\n    server: \"my-db-server\"\n    method: \"query\"\n    params:\n      sql: \"{{query}}\"\ncontext:\n  query: \"string\"\n```\n\nこのスキルは、MCPサーバー「my-db-server」に対してクエリを送信し、結果を返します。MCPサーバーは別途設定が必要ですが、一度構築すれば複数のスキルから再利用可能です。\n\n## プラグインによる拡張\n\nプラグインは、スキルよりも高度な拡張方法です。プラグインはJavaScriptやPythonで記述でき、OpenCodeの内部APIにアクセスできます。\n\n### プラグインの作成手順\n\n1. **プラグインディレクトリを作成**：`plugins/my-plugin/`\n2. **プラグインファイルを作成**：`main.js`\n\n```javascript\nmodule.exports = {\n  name: 'my-plugin',\n  hooks: {\n    'before-response': (context) => {\n      // 応答前に処理を追加\n      context.response = context.response.toUpperCase();\n    },\n  },\n};\n```\n\n3. **プラグインを登録**：設定ファイルにプラグインのパスを追加します。\n\n```json\n{\n  \"plugins\": [\"./plugins/my-plugin\"]\n}\n```\n\nプラグインは、スキルの実行前後や、メッセージの送受信時にフックできます。これにより、ログ記録や入力変換などが可能です。\n\n## 実践的なスキル開発チュートリアル\n\n### ステップ1：スキルの要件定義\n\n例えば、「コードレビュー支援スキル」を作成します。このスキルは、コードのスタイル違反を検出し、修正案を提示します。\n\n### ステップ2：スキルファイルの作成\n\n```yaml\nname: \"code-review\"\ndescription: \"コードレビューを実行し、スタイル違反を指摘\"\ntriggers:\n  - \"review:code\"\nactions:\n  - type: \"code-analysis\"\n    rules:\n      - \"no-unused-vars\"\n      - \"prefer-const\"\n    format: \"markdown\"\n```\n\n### ステップ3：テストと調整\n\n実際にトリガーを実行し、期待通り動作するか確認します。必要に応じてルールを追加・変更します。\n\n### ステップ4：共有・配布\n\n作成したスキルは、YAMLファイル単体で共有できます。コミュニティで公開することで、他のユーザーも利用可能です。\n\n## まとめ\n\nOpenCodeのスキルシステムは、カスタマイズ性が高く、MCPやプラグインと組み合わせることで強力な拡張が可能です。本記事で紹介した方法を参考に、自分だけのスキルを作成してみてください。公式ドキュメントやコミュニティフォーラムも活用すると、さらに高度な活用ができるでしょう。",
+  "keywords": [
+    "OpenCode",
+    "スキル",
+    "カスタマイズ",
+    "拡張",
+    "MCP",
+    "プラグイン"
+  ],
+  "template": "tutorial",
+  "generatedAt": "2026-05-25T00:31:16.417Z"
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html><html lang="ja"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/chunks/0j5zuqvsr0qqd.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/004m7bjik~jkr.js"/><script src="/_next/static/chunks/01t1wf1uyv-aa.js" async=""></script><script src="/_next/static/chunks/0pclk7tk1w2nf.js" async=""></script><script src="/_next/static/chunks/turbopack-00gh8rufrmpm9.js" async=""></script><script src="/_next/static/chunks/007ac~remr-yw.js" async=""></script><script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019" crossorigin="anonymous"></script><title>AIエージェント活用ガイド</title><meta name="description" content="OpenCode/ClaudeCode/DeepSeekを使ったAIエージェント開発自動化の情報を日本語で発信。"/><meta name="keywords" content="OpenCode,ClaudeCode,AIエージェント,DeepSeek,開発自動化,プロンプト"/><script src="/_next/static/chunks/03~yq9q893hmn.js" noModule=""></script></head><body class="min-h-screen antialiased"><div hidden=""><!--$--><!--/$--></div><div class="flex min-h-screen flex-col"><header class="border-b border-gray-200 bg-white"><div class="mx-auto flex max-w-4xl items-center justify-between px-4 py-3"><a href="/" class="text-lg font-bold text-ai hover:opacity-80">AIエージェント活用ガイド</a><nav class="flex gap-4 text-sm text-gray-600"><a href="/" class="hover:text-ai">ホーム</a></nav></div></header><main class="flex-1"><div class="mx-auto max-w-4xl px-4 py-8"><article><header class="mb-8"><h1 class="text-3xl font-bold tracking-tight text-gray-900">AIエージェントでAPIドキュメントを自動生成するチュートリアル</h1><p class="mt-2 text-gray-500">Swagger/OpenAPIを用いてAIエージェントがAPIドキュメントを自動生成する方法を解説。実践的なステップと具体例で効率的なドキュメント管理を実現。</p><div class="mt-4 flex flex-wrap items-center gap-3"><span class="rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600">AIエージェント</span><span class="rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600">API</span><span class="rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600">ドキュメント</span><span class="rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600">自動生成</span><span class="rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600">Swagger</span><span class="rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600">OpenAPI</span><span class="text-xs text-gray-400">2026/5/25</span></div></header><div class="prose max-w-none"><h2>はじめに</h2>
+<p>APIドキュメントの作成と保守は、開発者にとって負担の大きい作業です。特に、複数のエンドポイントやパラメータが存在する場合、手動でのドキュメント作成はミスが発生しやすく、更新漏れが生じることも少なくありません。そこで注目されているのが、<strong>AIエージェント</strong>を活用したAPIドキュメントの自動生成です。本チュートリアルでは、Swagger（OpenAPI）形式の仕様書をAIエージェントが自動生成する方法を、具体的な手順とともに解説します。</p>
+<h2>前提条件</h2>
+<li>Python 3.8以上がインストールされていること</li>
+<li>OpenAI APIキー（または他のLLM APIキー）を取得していること</li>
+<li>基本的なPythonプログラミングの知識</li>
+<h2>ステップ1: 環境準備</h2>
+<p>まず、必要なライブラリをインストールします。</p>
+<pre><code class="language-bash">pip install openai pyyaml flask
+</code></pre>
+<li><code>openai</code>: OpenAIのAPIを呼び出すため</li>
+<li><code>pyyaml</code>: OpenAPI仕様をYAML形式で出力するため</li>
+<li><code>flask</code>: サンプルAPIとして使用</li>
+<h2>ステップ2: サンプルAPIの作成</h2>
+<p>簡単なFlaskアプリケーションを作成します。</p>
+<pre><code class="language-python">&lt;h1&gt;app.py&lt;/h1&gt;
+from flask import Flask, jsonify, request
+<p>app = Flask(__name__)</p>
+<p>@app.route('/users', methods=['GET'])
+def get_users():
+    """ユーザー一覧を取得"""
+    users = [
+        {"id": 1, "name": "Alice"},
+        {"id": 2, "name": "Bob"}
+    ]
+    return jsonify(users)</p>
+<p>@app.route('/users', methods=['POST'])
+def create_user():
+    """新規ユーザーを作成"""
+    data = request.get_json()
+    return jsonify({"id": 3, "name": data["name"]}), 201</p>
+<p>if __name__ == '__main__':
+    app.run(debug=True)
+</code></pre></p>
+<h2>ステップ3: AIエージェントによるドキュメント生成</h2>
+<p>AIエージェントにAPIのソースコードを読み込ませ、OpenAPI仕様を自動生成させます。以下のスクリプトでは、OpenAIのGPTモデルを使用しています。</p>
+<pre><code class="language-python">&lt;h1&gt;generate_docs.py&lt;/h1&gt;
+import openai
+import yaml
+import json
+<p>openai.api_key = "your-api-key"</p>
+<p>def generate_openapi_spec(source_code):
+    prompt = f"""
+    You are an AI assistant that generates OpenAPI 3.0 specification in YAML format from Python Flask source code.
+    Given the following source code, generate a complete OpenAPI spec.
+    Only output the YAML, no additional text.</p>
+<p>Source code:
+    {source_code}
+    """
+    response = openai.ChatCompletion.create(
+        model="gpt-4",
+        messages=[
+            {"role": "system", "content": "You are a helpful assistant."},
+            {"role": "user", "content": prompt}
+        ],
+        max_tokens=2000,
+        temperature=0.2
+    )
+    return response.choices[0].message.content</p>
+<p>if __name__ == "__main__":
+    with open("app.py", "r") as f:
+        code = f.read()
+    spec_yaml = generate_openapi_spec(code)
+    with open("openapi.yaml", "w") as f:
+        f.write(spec_yaml)
+    print("OpenAPI spec generated: openapi.yaml")
+</code></pre></p>
+<h2>ステップ4: 生成結果の確認</h2>
+<p>生成された<code>openapi.yaml</code>を確認します。例えば、以下のような内容が出力されます。</p>
+<pre><code class="language-yaml">openapi: "3.0.0"
+info:
+  title: Sample API
+  version: "1.0.0"
+paths:
+  /users:
+    get:
+      summary: ユーザー一覧を取得
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+    post:
+      summary: 新規ユーザーを作成
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateUserRequest'
+      responses:
+        '201':
+          description: 作成成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+    CreateUserRequest:
+      type: object
+      properties:
+        name:
+          type: string
+</code></pre>
+<h2>ステップ5: ドキュメントの可視化</h2>
+<p>生成したOpenAPI仕様をSwagger UIで表示するには、<code>swagger-ui</code>や<code>redoc</code>などのツールを使用します。簡単な例として、<code>swagger-ui</code>のDockerイメージを利用します。</p>
+<pre><code class="language-bash">docker run -p 8080:8080 -e SWAGGER_JSON=/app/openapi.yaml -v $(pwd):/app swaggerapi/swagger-ui
+</code></pre>
+<p>ブラウザで<code>http://localhost:8080</code>にアクセスすると、自動生成されたAPIドキュメントが表示されます。</p>
+<h2>応用: ソースコード変更時の自動更新</h2>
+<p>AIエージェントをCI/CDパイプラインに組み込むことで、ソースコード変更時に自動的にドキュメントを再生成できます。以下はGitHub Actionsの例です。</p>
+<pre><code class="language-yaml">&lt;h1&gt;.github/workflows/update-docs.yml&lt;/h1&gt;
+name: Update API Docs
+on:
+  push:
+    paths:
+      - 'app.py'
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+      - name: Install dependencies
+        run: pip install openai pyyaml
+      - name: Generate OpenAPI spec
+        run: python generate_docs.py
+      - name: Commit and push
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add openapi.yaml
+          git commit -m "Auto-update OpenAPI spec"
+          git push
+</code></pre>
+<h2>注意点とベストプラクティス</h2>
+<li><strong>プロンプトの工夫</strong>: AIエージェントに正確なドキュメントを生成させるためには、プロンプトで出力形式や注意点を明確に指定します。</li>
+<li><strong>手動レビューの推奨</strong>: 生成されたドキュメントは必ず人間がレビューし、誤りがないか確認します。</li>
+<li><strong>コメントの活用</strong>: ソースコードに適切なdocstringやコメントを記述することで、AIがより正確に解釈できます。</li>
+<li><strong>セキュリティ</strong>: APIキーなどの機密情報をコードに直接記述しないように注意します。環境変数を使用しましょう。</li>
+<h2>まとめ</h2>
+<p>AIエージェントを活用することで、APIドキュメントの自動生成が効率的に行えます。本チュートリアルでは、FlaskアプリのソースコードからOpenAPI仕様を生成する方法を紹介しました。この手法を応用すれば、大規模なAPIでもドキュメントの更新が容易になり、開発者の負担を大幅に軽減できます。ぜひ、実際のプロジェクトで試してみてください。</p></div></article><div class="mt-12 border-t border-gray-200 pt-6"><a href="/" class="text-sm text-ai hover:underline">← 記事一覧に戻る</a></div></div><!--$--><!--/$--></main><footer class="border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400">AIエージェント活用ガイド — Built with OpenCode + DeepSeek API<div class="border-t border-gray-100 mt-4 pt-3 text-center text-[10px] text-gray-300"><span class="mr-2">関連サイト:</span><a href="https://arch-linux-guide.pages.dev" class="hover:underline">Arch Linux日本語ガイド</a>  <a href="https://nisa-investment.pages.dev" class="hover:underline">NISA投資入門</a>  <a href="https://linux-security.pages.dev" class="hover:underline">Linuxセキュリティ</a>  <a href="https://vps-server-guide.pages.dev" class="hover:underline">VPSサーバー構築</a></div></footer></div><script src="/_next/static/chunks/004m7bjik~jkr.js" id="_R_" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[10332,[\"/_next/static/chunks/007ac~remr-yw.js\"],\"default\"]\n3:I[41511,[\"/_next/static/chunks/007ac~remr-yw.js\"],\"default\"]\n5:I[57439,[\"/_next/static/chunks/007ac~remr-yw.js\"],\"OutletBoundary\"]\n6:\"$Sreact.suspense\"\n9:I[57439,[\"/_next/static/chunks/007ac~remr-yw.js\"],\"ViewportBoundary\"]\nb:I[57439,[\"/_next/static/chunks/007ac~remr-yw.js\"],\"MetadataBoundary\"]\nd:I[30493,[\"/_next/static/chunks/007ac~remr-yw.js\"],\"default\",1]\n:HL[\"/_next/static/chunks/0j5zuqvsr0qqd.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"c\":[\"\",\"articles\",\"ai-agent-auto-generate-api-documentation-tutorial\"],\"q\":\"\",\"i\":false,\"f\":[[[\"\",{\"children\":[\"articles\",{\"children\":[[\"slug\",\"ai-agent-auto-generate-api-documentation-tutorial\",\"d\",null],{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",16],[[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/chunks/0j5zuqvsr0qqd.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-0\",{\"src\":\"/_next/static/chunks/007ac~remr-yw.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"ja\",\"children\":[[\"$\",\"head\",null,{\"children\":[\"$\",\"script\",null,{\"async\":true,\"src\":\"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1506848814061019\",\"crossOrigin\":\"anonymous\"}]}],[\"$\",\"body\",null,{\"className\":\"min-h-screen antialiased\",\"children\":[\"$\",\"div\",null,{\"className\":\"flex min-h-screen flex-col\",\"children\":[[\"$\",\"header\",null,{\"className\":\"border-b border-gray-200 bg-white\",\"children\":[\"$\",\"div\",null,{\"className\":\"mx-auto flex max-w-4xl items-center justify-between px-4 py-3\",\"children\":[[\"$\",\"a\",null,{\"href\":\"/\",\"className\":\"text-lg font-bold text-ai hover:opacity-80\",\"children\":\"AIエージェント活用ガイド\"}],[\"$\",\"nav\",null,{\"className\":\"flex gap-4 text-sm text-gray-600\",\"children\":[\"$\",\"a\",null,{\"href\":\"/\",\"className\":\"hover:text-ai\",\"children\":\"ホーム\"}]}]]}]}],[\"$\",\"main\",null,{\"className\":\"flex-1\",\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}],[\"$\",\"footer\",null,{\"className\":\"border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400\",\"children\":[\"AIエージェント活用ガイド — Built with OpenCode + DeepSeek API\",[\"$\",\"div\",null,{\"className\":\"border-t border-gray-100 mt-4 pt-3 text-center text-[10px] text-gray-300\",\"children\":[[\"$\",\"span\",null,{\"className\":\"mr-2\",\"children\":\"関連サイト:\"}],[\"$\",\"a\",null,{\"href\":\"https://arch-linux-guide.pages.dev\",\"className\":\"hover:underline\",\"children\":\"Arch Linux日本語ガイド\"}],\"  \",[\"$\",\"a\",null,{\"href\":\"https://nisa-investment.pages.dev\",\"className\":\"hover:underline\",\"children\":\"NISA投資入門\"}],\"  \",[\"$\",\"a\",null,{\"href\":\"https://linux-security.pages.dev\",\"className\":\"hover:underline\",\"children\":\"Linuxセキュリティ\"}],\"  \",[\"$\",\"a\",null,{\"href\":\"https://vps-server-guide.pages.dev\",\"className\":\"hover:underline\",\"children\":\"VPSサーバー構築\"}]]}]]}]]}]}]]}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[\"$L4\",null,[\"$\",\"$L5\",null,{\"children\":[\"$\",\"$6\",null,{\"name\":\"Next.MetadataOutlet\",\"children\":\"$@7\"}]}]]}],{},null,false,null]},null,false,\"$@8\"]},null,false,\"$@8\"]},null,false,null],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$L9\",null,{\"children\":\"$La\"}],[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$Lb\",null,{\"children\":[\"$\",\"$6\",null,{\"name\":\"Next.Metadata\",\"children\":\"$Lc\"}]}]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$d\",[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/chunks/0j5zuqvsr0qqd.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]]],\"S\":true,\"h\":null,\"s\":\"$undefined\",\"l\":\"$undefined\",\"p\":\"$undefined\",\"d\":\"$undefined\",\"b\":\"cZWNxtWXrIsLiNU6bnRwr\"}\n"])</script><script>self.__next_f.push([1,"e:[]\n8:\"$We\"\n"])</script><script>self.__next_f.push([1,"f:T1d54,"])</script><script>self.__next_f.push([1,"\u003ch2\u003eはじめに\u003c/h2\u003e\n\u003cp\u003eAPIドキュメントの作成と保守は、開発者にとって負担の大きい作業です。特に、複数のエンドポイントやパラメータが存在する場合、手動でのドキュメント作成はミスが発生しやすく、更新漏れが生じることも少なくありません。そこで注目されているのが、\u003cstrong\u003eAIエージェント\u003c/strong\u003eを活用したAPIドキュメントの自動生成です。本チュートリアルでは、Swagger（OpenAPI）形式の仕様書をAIエージェントが自動生成する方法を、具体的な手順とともに解説します。\u003c/p\u003e\n\u003ch2\u003e前提条件\u003c/h2\u003e\n\u003cli\u003ePython 3.8以上がインストールされていること\u003c/li\u003e\n\u003cli\u003eOpenAI APIキー（または他のLLM APIキー）を取得していること\u003c/li\u003e\n\u003cli\u003e基本的なPythonプログラミングの知識\u003c/li\u003e\n\u003ch2\u003eステップ1: 環境準備\u003c/h2\u003e\n\u003cp\u003eまず、必要なライブラリをインストールします。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003epip install openai pyyaml flask\n\u003c/code\u003e\u003c/pre\u003e\n\u003cli\u003e\u003ccode\u003eopenai\u003c/code\u003e: OpenAIのAPIを呼び出すため\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003epyyaml\u003c/code\u003e: OpenAPI仕様をYAML形式で出力するため\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003eflask\u003c/code\u003e: サンプルAPIとして使用\u003c/li\u003e\n\u003ch2\u003eステップ2: サンプルAPIの作成\u003c/h2\u003e\n\u003cp\u003e簡単なFlaskアプリケーションを作成します。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-python\"\u003e\u0026lt;h1\u0026gt;app.py\u0026lt;/h1\u0026gt;\nfrom flask import Flask, jsonify, request\n\u003cp\u003eapp = Flask(__name__)\u003c/p\u003e\n\u003cp\u003e@app.route('/users', methods=['GET'])\ndef get_users():\n    \"\"\"ユーザー一覧を取得\"\"\"\n    users = [\n        {\"id\": 1, \"name\": \"Alice\"},\n        {\"id\": 2, \"name\": \"Bob\"}\n    ]\n    return jsonify(users)\u003c/p\u003e\n\u003cp\u003e@app.route('/users', methods=['POST'])\ndef create_user():\n    \"\"\"新規ユーザーを作成\"\"\"\n    data = request.get_json()\n    return jsonify({\"id\": 3, \"name\": data[\"name\"]}), 201\u003c/p\u003e\n\u003cp\u003eif __name__ == '__main__':\n    app.run(debug=True)\n\u003c/code\u003e\u003c/pre\u003e\u003c/p\u003e\n\u003ch2\u003eステップ3: AIエージェントによるドキュメント生成\u003c/h2\u003e\n\u003cp\u003eAIエージェントにAPIのソースコードを読み込ませ、OpenAPI仕様を自動生成させます。以下のスクリプトでは、OpenAIのGPTモデルを使用しています。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-python\"\u003e\u0026lt;h1\u0026gt;generate_docs.py\u0026lt;/h1\u0026gt;\nimport openai\nimport yaml\nimport json\n\u003cp\u003eopenai.api_key = \"your-api-key\"\u003c/p\u003e\n\u003cp\u003edef generate_openapi_spec(source_code):\n    prompt = f\"\"\"\n    You are an AI assistant that generates OpenAPI 3.0 specification in YAML format from Python Flask source code.\n    Given the following source code, generate a complete OpenAPI spec.\n    Only output the YAML, no additional text.\u003c/p\u003e\n\u003cp\u003eSource code:\n    {source_code}\n    \"\"\"\n    response = openai.ChatCompletion.create(\n        model=\"gpt-4\",\n        messages=[\n            {\"role\": \"system\", \"content\": \"You are a helpful assistant.\"},\n            {\"role\": \"user\", \"content\": prompt}\n        ],\n        max_tokens=2000,\n        temperature=0.2\n    )\n    return response.choices[0].message.content\u003c/p\u003e\n\u003cp\u003eif __name__ == \"__main__\":\n    with open(\"app.py\", \"r\") as f:\n        code = f.read()\n    spec_yaml = generate_openapi_spec(code)\n    with open(\"openapi.yaml\", \"w\") as f:\n        f.write(spec_yaml)\n    print(\"OpenAPI spec generated: openapi.yaml\")\n\u003c/code\u003e\u003c/pre\u003e\u003c/p\u003e\n\u003ch2\u003eステップ4: 生成結果の確認\u003c/h2\u003e\n\u003cp\u003e生成された\u003ccode\u003eopenapi.yaml\u003c/code\u003eを確認します。例えば、以下のような内容が出力されます。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-yaml\"\u003eopenapi: \"3.0.0\"\ninfo:\n  title: Sample API\n  version: \"1.0.0\"\npaths:\n  /users:\n    get:\n      summary: ユーザー一覧を取得\n      responses:\n        '200':\n          description: 成功\n          content:\n            application/json:\n              schema:\n                type: array\n                items:\n                  $ref: '#/components/schemas/User'\n    post:\n      summary: 新規ユーザーを作成\n      requestBody:\n        required: true\n        content:\n          application/json:\n            schema:\n              $ref: '#/components/schemas/CreateUserRequest'\n      responses:\n        '201':\n          description: 作成成功\n          content:\n            application/json:\n              schema:\n                $ref: '#/components/schemas/User'\ncomponents:\n  schemas:\n    User:\n      type: object\n      properties:\n        id:\n          type: integer\n        name:\n          type: string\n    CreateUserRequest:\n      type: object\n      properties:\n        name:\n          type: string\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2\u003eステップ5: ドキュメントの可視化\u003c/h2\u003e\n\u003cp\u003e生成したOpenAPI仕様をSwagger UIで表示するには、\u003ccode\u003eswagger-ui\u003c/code\u003eや\u003ccode\u003eredoc\u003c/code\u003eなどのツールを使用します。簡単な例として、\u003ccode\u003eswagger-ui\u003c/code\u003eのDockerイメージを利用します。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003edocker run -p 8080:8080 -e SWAGGER_JSON=/app/openapi.yaml -v $(pwd):/app swaggerapi/swagger-ui\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eブラウザで\u003ccode\u003ehttp://localhost:8080\u003c/code\u003eにアクセスすると、自動生成されたAPIドキュメントが表示されます。\u003c/p\u003e\n\u003ch2\u003e応用: ソースコード変更時の自動更新\u003c/h2\u003e\n\u003cp\u003eAIエージェントをCI/CDパイプラインに組み込むことで、ソースコード変更時に自動的にドキュメントを再生成できます。以下はGitHub Actionsの例です。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-yaml\"\u003e\u0026lt;h1\u0026gt;.github/workflows/update-docs.yml\u0026lt;/h1\u0026gt;\nname: Update API Docs\non:\n  push:\n    paths:\n      - 'app.py'\njobs:\n  generate:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2\n      - name: Set up Python\n        uses: actions/setup-python@v2\n        with:\n          python-version: '3.9'\n      - name: Install dependencies\n        run: pip install openai pyyaml\n      - name: Generate OpenAPI spec\n        run: python generate_docs.py\n      - name: Commit and push\n        run: |\n          git config --global user.name 'github-actions'\n          git config --global user.email 'github-actions@github.com'\n          git add openapi.yaml\n          git commit -m \"Auto-update OpenAPI spec\"\n          git push\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2\u003e注意点とベストプラクティス\u003c/h2\u003e\n\u003cli\u003e\u003cstrong\u003eプロンプトの工夫\u003c/strong\u003e: AIエージェントに正確なドキュメントを生成させるためには、プロンプトで出力形式や注意点を明確に指定します。\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e手動レビューの推奨\u003c/strong\u003e: 生成されたドキュメントは必ず人間がレビューし、誤りがないか確認します。\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eコメントの活用\u003c/strong\u003e: ソースコードに適切なdocstringやコメントを記述することで、AIがより正確に解釈できます。\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eセキュリティ\u003c/strong\u003e: APIキーなどの機密情報をコードに直接記述しないように注意します。環境変数を使用しましょう。\u003c/li\u003e\n\u003ch2\u003eまとめ\u003c/h2\u003e\n\u003cp\u003eAIエージェントを活用することで、APIドキュメントの自動生成が効率的に行えます。本チュートリアルでは、FlaskアプリのソースコードからOpenAPI仕様を生成する方法を紹介しました。この手法を応用すれば、大規模なAPIでもドキュメントの更新が容易になり、開発者の負担を大幅に軽減できます。ぜひ、実際のプロジェクトで試してみてください。\u003c/p\u003e"])</script><script>self.__next_f.push([1,"4:[\"$\",\"div\",null,{\"className\":\"mx-auto max-w-4xl px-4 py-8\",\"children\":[[\"$\",\"article\",null,{\"children\":[[\"$\",\"header\",null,{\"className\":\"mb-8\",\"children\":[[\"$\",\"h1\",null,{\"className\":\"text-3xl font-bold tracking-tight text-gray-900\",\"children\":\"AIエージェントでAPIドキュメントを自動生成するチュートリアル\"}],[\"$\",\"p\",null,{\"className\":\"mt-2 text-gray-500\",\"children\":\"Swagger/OpenAPIを用いてAIエージェントがAPIドキュメントを自動生成する方法を解説。実践的なステップと具体例で効率的なドキュメント管理を実現。\"}],[\"$\",\"div\",null,{\"className\":\"mt-4 flex flex-wrap items-center gap-3\",\"children\":[[[\"$\",\"span\",\"AIエージェント\",{\"className\":\"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600\",\"children\":\"AIエージェント\"}],[\"$\",\"span\",\"API\",{\"className\":\"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600\",\"children\":\"API\"}],[\"$\",\"span\",\"ドキュメント\",{\"className\":\"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600\",\"children\":\"ドキュメント\"}],[\"$\",\"span\",\"自動生成\",{\"className\":\"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600\",\"children\":\"自動生成\"}],[\"$\",\"span\",\"Swagger\",{\"className\":\"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600\",\"children\":\"Swagger\"}],[\"$\",\"span\",\"OpenAPI\",{\"className\":\"rounded-full bg-purple-50 px-2.5 py-0.5 text-xs text-purple-600\",\"children\":\"OpenAPI\"}]],[\"$\",\"span\",null,{\"className\":\"text-xs text-gray-400\",\"children\":\"2026/5/25\"}]]}]]}],[\"$\",\"div\",null,{\"className\":\"prose max-w-none\",\"dangerouslySetInnerHTML\":{\"__html\":\"$f\"}}]]}],\"$L10\"]}]\n"])</script><script>self.__next_f.push([1,"10:[\"$\",\"div\",null,{\"className\":\"mt-12 border-t border-gray-200 pt-6\",\"children\":[\"$\",\"a\",null,{\"href\":\"/\",\"className\":\"text-sm text-ai hover:underline\",\"children\":\"← 記事一覧に戻る\"}]}]\n"])</script><script>self.__next_f.push([1,"a:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n"])</script><script>self.__next_f.push([1,"7:null\nc:[[\"$\",\"title\",\"0\",{\"children\":\"AIエージェント活用ガイド\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"OpenCode/ClaudeCode/DeepSeekを使ったAIエージェント開発自動化の情報を日本語で発信。\"}],[\"$\",\"meta\",\"2\",{\"name\":\"keywords\",\"content\":\"OpenCode,ClaudeCode,AIエージェント,DeepSeek,開発自動化,プロンプト\"}]]\n"])</script></body></html>

@@ -1,4 +1,4 @@
 User-Agent: *
 Allow: /
 
-Sitemap: https://python-beginner.pages.dev/sitemap.xml
+Sitemap: https://python.endoarata.jp/sitemap.xml

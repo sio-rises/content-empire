@@ -1,7 +1,7 @@
 1:"$Sreact.fragment"
 5:I[79323,["/_next/static/chunks/00mbd8isu7b38.js"],"OutletBoundary"]
 6:"$Sreact.suspense"
-2:T2447,<h2>目標</h2>
+2:T2435,<h2>目標</h2>
 <p>VirtualBox上にArch Linuxの仮想マシンを作成し、基本的な設定とゲスト追加機能のインストールまでを行います。これにより、ホストOSに影響を与えずにArch Linuxを安全に練習・実験できる環境を構築します。</p>
 <h2>前提条件</h2>
 <li>ホストOS: Windows / macOS / Linux（VirtualBoxが動作する環境）</li>
@@ -77,7 +77,7 @@ swapon /dev/sda2
 <h3>10. chrootして設定</h3>
 <pre><code class="language-bash">arch-chroot /mnt
 </code></pre>
-<p>#### 10.1 タイムゾーンとロケール</p>
+<h4>10.1 タイムゾーンとロケール</h4>
 <pre><code class="language-bash">ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 hwclock --systohc
 </code></pre>
@@ -85,7 +85,7 @@ hwclock --systohc
 <pre><code class="language-bash">locale-gen
 echo "LANG=en_US.UTF-8" &gt; /etc/locale.conf
 </code></pre>
-<p>#### 10.2 ホスト名とホスト設定</p>
+<h4>10.2 ホスト名とホスト設定</h4>
 <pre><code class="language-bash">echo "archvm" &gt; /etc/hostname
 </code></pre>
 <p><code>/etc/hosts</code> に以下を追加。</p>
@@ -93,17 +93,17 @@ echo "LANG=en_US.UTF-8" &gt; /etc/locale.conf
 ::1         localhost
 127.0.1.1   archvm.localdomain archvm
 </code></pre>
-<p>#### 10.3 ネットワーク設定（起動時にdhcpcdを有効化）</p>
+<h4>10.3 ネットワーク設定（起動時にdhcpcdを有効化）</h4>
 <pre><code class="language-bash">systemctl enable dhcpcd
 </code></pre>
-<p>#### 10.4 rootパスワードの設定</p>
+<h4>10.4 rootパスワードの設定</h4>
 <pre><code class="language-bash">passwd
 </code></pre>
-<p>#### 10.5 ブートローダーのインストール（GRUB）</p>
+<h4>10.5 ブートローダーのインストール（GRUB）</h4>
 <pre><code class="language-bash">grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 </code></pre>
-<p>#### 10.6 一般ユーザーの作成</p>
+<h4>10.6 一般ユーザーの作成</h4>
 <pre><code class="language-bash">useradd -m archuser
 passwd archuser
 echo "archuser ALL=(ALL) ALL" &gt;&gt; /etc/sudoers.d/archuser
@@ -145,7 +145,7 @@ echo '/swapfile none swap defaults 0 0' | sudo tee -a /etc/fstab
 <hr>
 <p>*この記事はArch Linuxを実機で日常運用しているSioが、実際のインストール・設定経験に基づいてAI生成コンテンツをレビュー・補完しています。btrfsサブボリュームとLUKS暗号化環境で検証済みです。*</p>
 <h2>まとめ</h2>
-<p>このチュートリアルでは、VirtualBox上にArch Linuxをインストールする手順を解説しました。仮想環境であれば、気軽に実験や設定の練習ができるため、Arch Linuxの学習に最適です。ぜひ日々の運用に役立ててください。</p>0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"Arch LinuxをVirtualBoxにインストールする完全ガイド【2026年版】"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"VirtualBox上にArch Linuxをインストールする手順を初心者向けに解説。ISOダウンロードからVM作成、基本設定、ゲスト追加機能までをステップバイステップで紹介。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","Arch Linux",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"Arch Linux"}],["$","span","VirtualBox",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"VirtualBox"}],["$","span","仮想マシン",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"仮想マシン"}],["$","span","VM",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"VM"}],["$","span","練習環境",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"練習環境"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3"]}],null,"$L4"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"oMFWqHyx7sJoNGgtrYd0X"}
+<p>このチュートリアルでは、VirtualBox上にArch Linuxをインストールする手順を解説しました。仮想環境であれば、気軽に実験や設定の練習ができるため、Arch Linuxの学習に最適です。ぜひ日々の運用に役立ててください。</p>0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto max-w-4xl px-4 py-8","children":[["$","article",null,{"children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-3xl font-bold tracking-tight text-gray-900","children":"Arch LinuxをVirtualBoxにインストールする完全ガイド【2026年版】"}],["$","p",null,{"className":"mt-2 text-gray-500","children":"VirtualBox上にArch Linuxをインストールする手順を初心者向けに解説。ISOダウンロードからVM作成、基本設定、ゲスト追加機能までをステップバイステップで紹介。"}],["$","div",null,{"className":"mt-4 flex flex-wrap items-center gap-3","children":[[["$","span","Arch Linux",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"Arch Linux"}],["$","span","VirtualBox",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"VirtualBox"}],["$","span","仮想マシン",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"仮想マシン"}],["$","span","VM",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"VM"}],["$","span","練習環境",{"className":"rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-600","children":"練習環境"}]],["$","span",null,{"className":"text-xs text-gray-400","children":"2026/5/25"}]]}]]}],["$","div",null,{"className":"prose max-w-none","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3"]}],null,"$L4"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"lSUwLKzjeCTnjIay80zjI"}
 3:["$","div",null,{"className":"mt-12 border-t border-gray-200 pt-6","children":["$","a",null,{"href":"/","className":"text-sm text-arch hover:underline","children":"← 記事一覧に戻る"}]}]
 4:["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]
 7:null
